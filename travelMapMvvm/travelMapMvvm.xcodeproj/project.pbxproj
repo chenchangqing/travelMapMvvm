@@ -20,8 +20,6 @@
 		E6FD769C1B8C5F7C00E527CD /* CJCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76781B8C5F7C00E527CD /* CJCollectionViewCellModel.swift */; };
 		E6FD769D1B8C5F7C00E527CD /* CJCollectionViewHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76791B8C5F7C00E527CD /* CJCollectionViewHeaderModel.swift */; };
 		E6FD769E1B8C5F7C00E527CD /* CJCollectionViewHeaderModelTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD767B1B8C5F7C00E527CD /* CJCollectionViewHeaderModelTypeEnum.swift */; };
-		E6FD769F1B8C5F7C00E527CD /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = E6FD767D1B8C5F7C00E527CD /* filter.json */; };
-		E6FD76A01B8C5F7C00E527CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD767E1B8C5F7C00E527CD /* Main.storyboard */; };
 		E6FD76A11B8C5F7C00E527CD /* QueryCategoryDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76811B8C5F7C00E527CD /* QueryCategoryDataViewModel.swift */; };
 		E6FD76A21B8C5F7C00E527CD /* QueryCategoryDataViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76821B8C5F7C00E527CD /* QueryCategoryDataViewModelProtocol.swift */; };
 		E6FD76A31B8C5F7C00E527CD /* CJCollectionViewCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76851B8C5F7C00E527CD /* CJCollectionViewCellButton.swift */; };
@@ -31,6 +29,8 @@
 		E6FD76A71B8C5F7C00E527CD /* CJCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD768D1B8C5F7C00E527CD /* CJCollectionViewHeader.swift */; };
 		E6FD76A81B8C5F7C00E527CD /* CJCollectionViewHeaderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD768F1B8C5F7C00E527CD /* CJCollectionViewHeaderDelegate.swift */; };
 		E6FD76A91B8C5F7C00E527CD /* CJSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76911B8C5F7C00E527CD /* CJSelectionCollectionView.swift */; };
+		E6FD76AC1B8C611900E527CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD76AB1B8C611900E527CD /* Main.storyboard */; };
+		E6FD76AF1B8C61CC00E527CD /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = E6FD76AE1B8C61CC00E527CD /* filter.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,6 @@
 		E6FD76781B8C5F7C00E527CD /* CJCollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewCellModel.swift; sourceTree = "<group>"; };
 		E6FD76791B8C5F7C00E527CD /* CJCollectionViewHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeaderModel.swift; sourceTree = "<group>"; };
 		E6FD767B1B8C5F7C00E527CD /* CJCollectionViewHeaderModelTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeaderModelTypeEnum.swift; sourceTree = "<group>"; };
-		E6FD767D1B8C5F7C00E527CD /* filter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filter.json; sourceTree = "<group>"; };
-		E6FD767E1B8C5F7C00E527CD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E6FD76811B8C5F7C00E527CD /* QueryCategoryDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCategoryDataViewModel.swift; sourceTree = "<group>"; };
 		E6FD76821B8C5F7C00E527CD /* QueryCategoryDataViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryCategoryDataViewModelProtocol.swift; sourceTree = "<group>"; };
 		E6FD76851B8C5F7C00E527CD /* CJCollectionViewCellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewCellButton.swift; sourceTree = "<group>"; };
@@ -75,6 +73,8 @@
 		E6FD768D1B8C5F7C00E527CD /* CJCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeader.swift; sourceTree = "<group>"; };
 		E6FD768F1B8C5F7C00E527CD /* CJCollectionViewHeaderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeaderDelegate.swift; sourceTree = "<group>"; };
 		E6FD76911B8C5F7C00E527CD /* CJSelectionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJSelectionCollectionView.swift; sourceTree = "<group>"; };
+		E6FD76AB1B8C611900E527CD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E6FD76AE1B8C61CC00E527CD /* filter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filter.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,8 +295,8 @@
 		E6FD767C1B8C5F7C00E527CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E6FD767D1B8C5F7C00E527CD /* filter.json */,
-				E6FD767E1B8C5F7C00E527CD /* Main.storyboard */,
+				E6FD76AD1B8C61CC00E527CD /* Json */,
+				E6FD76AA1B8C611900E527CD /* Storyborads */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -396,6 +396,22 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		E6FD76AA1B8C611900E527CD /* Storyborads */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD76AB1B8C611900E527CD /* Main.storyboard */,
+			);
+			path = Storyborads;
+			sourceTree = "<group>";
+		};
+		E6FD76AD1B8C61CC00E527CD /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD76AE1B8C61CC00E527CD /* filter.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -476,8 +492,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6FD769F1B8C5F7C00E527CD /* filter.json in Resources */,
-				E6FD76A01B8C5F7C00E527CD /* Main.storyboard in Resources */,
+				E6FD76AC1B8C611900E527CD /* Main.storyboard in Resources */,
+				E6FD76AF1B8C61CC00E527CD /* filter.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
