@@ -1,67 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YTg-AT-2pm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F56-va-NKj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="mjF-bJ-uGL">
+        <!--Side Menu-->
+        <scene sceneID="drT-it-lV6">
             <objects>
-                <viewController id="YTg-AT-2pm" customClass="ViewController" customModule="CJMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F56-va-NKj" customClass="SSASideMenu" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wko-qg-ETA"/>
-                        <viewControllerLayoutGuide type="bottom" id="UYG-dr-4DW"/>
+                        <viewControllerLayoutGuide type="top" id="xOj-8Q-e9D"/>
+                        <viewControllerLayoutGuide type="bottom" id="UuY-8W-xIJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZNp-M2-jGb">
+                    <view key="view" contentMode="scaleToFill" id="Iln-8n-s1c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZM-Yo-imU" customClass="CJSelectionCollectionView" customModule="CJMvvm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKy-TX-Abr">
-                                <rect key="frame" x="0.0" y="627" width="188" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hQ9-Ye-j9t"/>
-                                </constraints>
-                                <state key="normal" title="确定">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87u-Xb-VD4">
-                                <rect key="frame" x="188" y="627" width="187" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="zro-xD-8dk"/>
-                                </constraints>
-                                <state key="normal" title="重置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yZM-Yo-imU" firstAttribute="top" secondItem="ZNp-M2-jGb" secondAttribute="top" constant="20" id="1c0-8j-3hR"/>
-                            <constraint firstItem="UYG-dr-4DW" firstAttribute="top" secondItem="87u-Xb-VD4" secondAttribute="bottom" id="2tk-tz-JKu"/>
-                            <constraint firstItem="iKy-TX-Abr" firstAttribute="width" secondItem="87u-Xb-VD4" secondAttribute="width" id="7Ow-9F-bXy"/>
-                            <constraint firstItem="87u-Xb-VD4" firstAttribute="leading" secondItem="iKy-TX-Abr" secondAttribute="trailing" id="DGC-ed-VAA"/>
-                            <constraint firstItem="87u-Xb-VD4" firstAttribute="leading" secondItem="iKy-TX-Abr" secondAttribute="trailing" id="Hmk-gr-5Jf"/>
-                            <constraint firstAttribute="trailing" secondItem="87u-Xb-VD4" secondAttribute="trailing" id="J3A-0N-Xse"/>
-                            <constraint firstItem="87u-Xb-VD4" firstAttribute="top" secondItem="yZM-Yo-imU" secondAttribute="bottom" constant="10" id="MDZ-zS-rFB"/>
-                            <constraint firstItem="yZM-Yo-imU" firstAttribute="leading" secondItem="ZNp-M2-jGb" secondAttribute="leading" id="Qpr-Qg-Jax"/>
-                            <constraint firstAttribute="trailing" secondItem="yZM-Yo-imU" secondAttribute="trailing" id="RXJ-6x-jRu"/>
-                            <constraint firstItem="UYG-dr-4DW" firstAttribute="top" secondItem="iKy-TX-Abr" secondAttribute="bottom" id="XAJ-tU-u4V"/>
-                            <constraint firstItem="iKy-TX-Abr" firstAttribute="leading" secondItem="ZNp-M2-jGb" secondAttribute="leading" id="hpa-xQ-TKg"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="selectionCollectionView" destination="yZM-Yo-imU" id="35F-Fi-cIS"/>
-                    </connections>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="fadeMenuView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scaleMenuView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scaleBackgroundImageView" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="parallaxEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OFl-65-8Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ScR-F6-5lk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290.5" y="295.5"/>
+            <point key="canvasLocation" x="373" y="217"/>
         </scene>
     </scenes>
 </document>
