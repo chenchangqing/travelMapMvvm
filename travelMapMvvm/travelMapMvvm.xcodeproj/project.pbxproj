@@ -33,6 +33,8 @@
 		E6FD76AC1B8C611900E527CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD76AB1B8C611900E527CD /* Main.storyboard */; };
 		E6FD76AF1B8C61CC00E527CD /* filter.json in Resources */ = {isa = PBXBuildFile; fileRef = E6FD76AE1B8C61CC00E527CD /* filter.json */; };
 		E6FD76B21B8C638200E527CD /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B11B8C638200E527CD /* SSASideMenu.swift */; };
+		E6FD76B41B8C68DC00E527CD /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B31B8C68DC00E527CD /* LeftViewController.swift */; };
+		E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B51B8C693C00E527CD /* IndexViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E6FD76AB1B8C611900E527CD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E6FD76AE1B8C61CC00E527CD /* filter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filter.json; sourceTree = "<group>"; };
 		E6FD76B11B8C638200E527CD /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
+		E6FD76B31B8C68DC00E527CD /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		E6FD76B51B8C693C00E527CD /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				E6FD76641B8C5F7C00E527CD /* ViewController.swift */,
+				E6FD76B31B8C68DC00E527CD /* LeftViewController.swift */,
+				E6FD76B51B8C693C00E527CD /* IndexViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +613,8 @@
 				E6FD76961B8C5F7C00E527CD /* ViewController.swift in Sources */,
 				E6FD76A11B8C5F7C00E527CD /* QueryCategoryDataViewModel.swift in Sources */,
 				E6FD76B21B8C638200E527CD /* SSASideMenu.swift in Sources */,
+				E6FD76B41B8C68DC00E527CD /* LeftViewController.swift in Sources */,
+				E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */,
 				E6FD769A1B8C5F7C00E527CD /* OrderedDictionary.swift in Sources */,
 				E6FD76981B8C5F7C00E527CD /* OrderedDictionaryDataSourceProtocol.swift in Sources */,
 				E6FD76A81B8C5F7C00E527CD /* CJCollectionViewHeaderDelegate.swift in Sources */,
