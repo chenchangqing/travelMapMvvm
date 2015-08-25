@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
-import UIKit
+import JSONHelper
 
 // 攻略信息
-class StrategyModel: NSObject {
+class StrategyModel: NSObject, Deserializable {
    
     var strategyId      : String?               // 攻略ID
     var picUrl          : String?               // 攻略配图地址
@@ -24,42 +24,25 @@ class StrategyModel: NSObject {
     var strategyMonth   : MonthEnum?            // 攻略使用的月份
     var strategyType    : StrategyTypeEnum?     // 攻略类型
     
-    init(dictionary: [String:AnyObject]) {
+    override init() {}
+    
+    required init(data : [String:AnyObject]) {
         
-        // kvc
-        super.init()
-        self.setValuesForKeysWithDictionary(dictionary)
-        
+        strategyId <-- data["strategyId"]
+        picUrl <-- data["picUrl"]
+        title <-- data["title"]
     }
     
-    /**
-     * kvc 特殊处理
-     */
-    override func setValue(value: AnyObject?, forKey key: String) {
+    override var description : String {
         
-        if key == kStrategyTheme {
-            
-            
-            if let strategyTheme = value as? Int {
+        get {
+            if let title = title {
                 
-                self.strategyTheme = StrategyThemeEnum.instance(strategyTheme)
+                return title
             }
-        }
-        
-        if key == kStrategyMonth {
-            
-            if let strategyMonth = value as? Int {
-                
-                self.strategyMonth = MonthEnum.instance(strategyMonth)
-            }
-        }
-        
-        if key == kStrategyType {
-            
-            if let strategyType = value as? Int {
-                
-                self.strategyType = StrategyTypeEnum.instance(strategyType)
-            }
+            return ""
         }
     }
+    
+    
 }

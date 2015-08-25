@@ -9,7 +9,7 @@
 import Foundation
 
 /**
-* 首页查询攻略参数结构体
+* 查询攻略参数结构体01
 */
 struct QueryModelListParams01 {
     
@@ -17,6 +17,6 @@ struct QueryModelListParams01 {
     var strategyMonthArray:[MonthEnum] = MonthEnum.allValues
     var strategyTypeArray:[StrategyTypeEnum] = StrategyTypeEnum.allValues
     var order: StrategyOrderEnum = StrategyOrderEnum.Default
-    var rows: Int = 5
+    var rowCount: Int = 5
     var startId: String?
 }

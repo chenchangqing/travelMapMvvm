@@ -11,28 +11,36 @@ import UIKit
 /**
  * 首页控制器
  */
-class IndexViewController: UIViewController {
+class IndexViewController: UITableViewController {
+    
+    private var viewModel: IndexViewModelProtocol!
 
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        setup()
+        
+        // 查询首页攻略列表
+        viewModel.queryIndexPageStrategyList()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - setup
+    
+    private func setup() {
+        
+        // 初始化ViewModel
+        setupViewModel()
     }
-    */
+    
+    private func setupViewModel() {
+        
+        viewModel = IndexViewModel.shareInstance({ (success, msg, data) -> Void in
+            
+            println(data)
+        })
+    }
 
+    // MARK: -
 }

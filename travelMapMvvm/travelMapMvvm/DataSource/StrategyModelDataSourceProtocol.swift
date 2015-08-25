@@ -14,16 +14,16 @@ import Foundation
 protocol StrategyModelDataSourceProtocol {
    
     /**
-     * 首页查询攻略
-     * 
-     * @param 攻略主题数组
-     * @param 旅游月份数组
-     * @param 攻略类型数组
-     * @param 攻略排序
-     * @param 行数
-     * @param 攻略ID(查询这个ID以后的数据)
+     * 查询攻略列表
+     *
+     * @param strategyThemes 攻略主题
+     * @param strategyTypes 攻略类型
+     * @param strategyMonths 攻略月份
+     * @param strategyOrder 攻略排序
+     * @param rows 查询行数
+     * @param startStrategyId 从这个ID开始查询
      *
      * @return
      */
-    func queryModelList(params: QueryModelListParams01) -> [StrategyModel]
+    func queryModelList(params: QueryModelListParams01,callback:NetReuqestCallBackForStrategyModelArray)
 }

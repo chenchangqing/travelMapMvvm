@@ -4,4 +4,5 @@ pod 'MJRefresh', '~>1.4.7'
 pod 'AFNetworking', '~>2.5.4'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'RBStoryboardLink', '~> 0.1.4'
+pod 'JSONHelper'
 use_frameworks!
