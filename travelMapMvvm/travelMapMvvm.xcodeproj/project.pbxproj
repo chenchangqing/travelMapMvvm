@@ -19,6 +19,8 @@
 		E6FD76C41B8C6D8100E527CD /* MonthEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C11B8C6D8100E527CD /* MonthEnum.swift */; };
 		E6FD76C51B8C6D8100E527CD /* StrategyThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */; };
 		E6FD76C61B8C6D8100E527CD /* StrategyTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */; };
+		E6FD76CD1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76CC1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift */; };
+		E6FD76CF1B8C756900E527CD /* StrategyOrderEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76CE1B8C756900E527CD /* StrategyOrderEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyThemeEnum.swift; sourceTree = "<group>"; };
 		E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyTypeEnum.swift; sourceTree = "<group>"; };
 		E6FD76C71B8C6DC700E527CD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		E6FD76CC1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyModelDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6FD76CE1B8C756900E527CD /* StrategyOrderEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyOrderEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 		E6FD76651B8C5F7C00E527CD /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD76CC1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift */,
 				E6FD76661B8C5F7C00E527CD /* Impl */,
 			);
 			path = DataSource;
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				E6FD76C11B8C6D8100E527CD /* MonthEnum.swift */,
+				E6FD76CE1B8C756900E527CD /* StrategyOrderEnum.swift */,
 				E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */,
 				E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */,
 			);
@@ -537,6 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FD76CF1B8C756900E527CD /* StrategyOrderEnum.swift in Sources */,
 				E6FD76B21B8C638200E527CD /* SSASideMenu.swift in Sources */,
 				E6FD76C51B8C6D8100E527CD /* StrategyThemeEnum.swift in Sources */,
 				E6FD76BF1B8C6CF000E527CD /* StrategyModel.swift in Sources */,
@@ -545,6 +552,7 @@
 				E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */,
 				E6FD76931B8C5F7C00E527CD /* AppDelegate.swift in Sources */,
 				E6FD76C41B8C6D8100E527CD /* MonthEnum.swift in Sources */,
+				E6FD76CD1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
