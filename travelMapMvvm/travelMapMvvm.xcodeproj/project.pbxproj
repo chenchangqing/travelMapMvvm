@@ -144,6 +144,21 @@
 			path = Impl;
 			sourceTree = "<group>";
 		};
+		E662C77D1B8CA3D80051C53C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E662C77E1B8CA3D80051C53C /* Impl */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E662C77E1B8CA3D80051C53C /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
 		E6FD762F1B8C5F1800E527CD = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +184,7 @@
 			children = (
 				E6FD765D1B8C5F7C00E527CD /* AppDelegate */,
 				E6FD76631B8C5F7C00E527CD /* Controllers */,
-				E6FD767F1B8C5F7C00E527CD /* ViewMoldels */,
+				E662C77D1B8CA3D80051C53C /* ViewModels */,
 				E662C7791B8CA2FB0051C53C /* Business */,
 				E6FD76651B8C5F7C00E527CD /* DataSource */,
 				E6FD76771B8C5F7C00E527CD /* Models */,
@@ -304,21 +319,6 @@
 				E6FD76AA1B8C611900E527CD /* Storyborads */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E6FD767F1B8C5F7C00E527CD /* ViewMoldels */ = {
-			isa = PBXGroup;
-			children = (
-				E6FD76801B8C5F7C00E527CD /* Impl */,
-			);
-			path = ViewMoldels;
-			sourceTree = "<group>";
-		};
-		E6FD76801B8C5F7C00E527CD /* Impl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Impl;
 			sourceTree = "<group>";
 		};
 		E6FD76831B8C5F7C00E527CD /* Views */ = {
