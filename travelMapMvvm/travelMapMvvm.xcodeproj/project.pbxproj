@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7E59F461794CB9D4DE07AEC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C19C2FD405E9E8F60A20A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E662C7621B8C9AE10051C53C /* QueryModelListPageParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662C7611B8C9AE10051C53C /* QueryModelListPageParams.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 		E6FD76931B8C5F7C00E527CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD765E1B8C5F7C00E527CD /* AppDelegate.swift */; };
 		E6FD76AC1B8C611900E527CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD76AB1B8C611900E527CD /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		23CD330A67D6B624E82A2B7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94C19C2FD405E9E8F60A20A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461F072C84AB40B04DE28C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E662C7611B8C9AE10051C53C /* QueryModelListPageParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryModelListPageParams.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD763C1B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,14 @@
 				94C19C2FD405E9E8F60A20A2 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E662C7601B8C9ACA0051C53C /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				E662C7611B8C9AE10051C53C /* QueryModelListPageParams.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		E6FD762F1B8C5F1800E527CD = {
@@ -242,6 +252,7 @@
 		E6FD76771B8C5F7C00E527CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E662C7601B8C9ACA0051C53C /* Structs */,
 				E6FD76BE1B8C6CF000E527CD /* StrategyModel.swift */,
 				E6FD767A1B8C5F7C00E527CD /* Enums */,
 			);
@@ -549,6 +560,7 @@
 				E6FD76BF1B8C6CF000E527CD /* StrategyModel.swift in Sources */,
 				E6FD76C61B8C6D8100E527CD /* StrategyTypeEnum.swift in Sources */,
 				E6FD76B41B8C68DC00E527CD /* LeftViewController.swift in Sources */,
+				E662C7621B8C9AE10051C53C /* QueryModelListPageParams.swift in Sources */,
 				E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */,
 				E6FD76931B8C5F7C00E527CD /* AppDelegate.swift in Sources */,
 				E6FD76C41B8C6D8100E527CD /* MonthEnum.swift in Sources */,
