@@ -11,7 +11,7 @@ import Foundation
 /**
 * 首页查询攻略参数结构体
 */
-struct QueryModelListPageParams{
+struct QueryModelListParams01 {
     
     var strategyThemeArray:[StrategyThemeEnum] = StrategyThemeEnum.allValues
     var strategyMonthArray:[MonthEnum] = MonthEnum.allValues

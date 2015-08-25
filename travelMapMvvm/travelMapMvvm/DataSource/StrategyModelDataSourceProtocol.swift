@@ -15,6 +15,6 @@ protocol StrategyModelDataSourceProtocol {
    
     /**
      * 首页查询攻略
-     */
-    func queryModelList(params: QueryModelListPageParams) -> [StrategyModel]
+    */
+    func queryModelList(params: QueryModelListParams01) -> [StrategyModel]
 }
