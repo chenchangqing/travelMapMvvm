@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		C7E59F461794CB9D4DE07AEC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C19C2FD405E9E8F60A20A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E662C7621B8C9AE10051C53C /* QueryModelListParams01.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662C7611B8C9AE10051C53C /* QueryModelListParams01.swift */; };
-		E662C7641B8CA1710051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C7631B8CA1710051C53C /* readme.txt */; };
-		E662C7661B8CA17C0051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C7651B8CA17C0051C53C /* readme.txt */; };
-		E662C7681B8CA1840051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C7671B8CA1840051C53C /* readme.txt */; };
 		E662C76A1B8CA1A10051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C7691B8CA1A10051C53C /* readme.txt */; };
 		E662C76C1B8CA1A90051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C76B1B8CA1A90051C53C /* readme.txt */; };
 		E662C76E1B8CA1B10051C53C /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E662C76D1B8CA1B10051C53C /* readme.txt */; };
@@ -51,9 +48,6 @@
 		94C19C2FD405E9E8F60A20A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461F072C84AB40B04DE28C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E662C7611B8C9AE10051C53C /* QueryModelListParams01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryModelListParams01.swift; sourceTree = "<group>"; };
-		E662C7631B8CA1710051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.txt; path = travelMapMvvm/DataSource/Database/readme.txt; sourceTree = SOURCE_ROOT; };
-		E662C7651B8CA17C0051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.txt; path = travelMapMvvm/DataSource/Cache/readme.txt; sourceTree = SOURCE_ROOT; };
-		E662C7671B8CA1840051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = readme.txt; path = travelMapMvvm/DataSource/Network/readme.txt; sourceTree = SOURCE_ROOT; };
 		E662C7691B8CA1A10051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E662C76B1B8CA1A90051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E662C76D1B8CA1B10051C53C /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
@@ -242,35 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				E6FD76CC1B8C73F500E527CD /* StrategyModelDataSourceProtocol.swift */,
-				E6FD76661B8C5F7C00E527CD /* Impl */,
 			);
 			path = DataSource;
-			sourceTree = "<group>";
-		};
-		E6FD76661B8C5F7C00E527CD /* Impl */ = {
-			isa = PBXGroup;
-			children = (
-				E6FD76BB1B8C6C0600E527CD /* Database */,
-				E6FD76671B8C5F7C00E527CD /* Cache */,
-				E6FD766A1B8C5F7C00E527CD /* Network */,
-			);
-			path = Impl;
-			sourceTree = "<group>";
-		};
-		E6FD76671B8C5F7C00E527CD /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				E662C7651B8CA17C0051C53C /* readme.txt */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
-		E6FD766A1B8C5F7C00E527CD /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				E662C7671B8CA1840051C53C /* readme.txt */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		E6FD766C1B8C5F7C00E527CD /* General */ = {
@@ -424,14 +391,6 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
-		E6FD76BB1B8C6C0600E527CD /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				E662C7631B8CA1710051C53C /* readme.txt */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
 		E6FD76C01B8C6D4100E527CD /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,15 +484,12 @@
 			files = (
 				E662C7721B8CA1CA0051C53C /* readme.txt in Resources */,
 				E662C76A1B8CA1A10051C53C /* readme.txt in Resources */,
-				E662C7681B8CA1840051C53C /* readme.txt in Resources */,
-				E662C7641B8CA1710051C53C /* readme.txt in Resources */,
 				E662C77C1B8CA2FB0051C53C /* readme.txt in Resources */,
 				E662C7781B8CA1E70051C53C /* readme.txt in Resources */,
 				E662C7741B8CA1D40051C53C /* readme.txt in Resources */,
 				E6FD76AC1B8C611900E527CD /* Main.storyboard in Resources */,
 				E662C7761B8CA1DE0051C53C /* readme.txt in Resources */,
 				E662C76C1B8CA1A90051C53C /* readme.txt in Resources */,
-				E662C7661B8CA17C0051C53C /* readme.txt in Resources */,
 				E662C7701B8CA1BA0051C53C /* readme.txt in Resources */,
 				E662C76E1B8CA1B10051C53C /* readme.txt in Resources */,
 				E6FD76AF1B8C61CC00E527CD /* filter.json in Resources */,
