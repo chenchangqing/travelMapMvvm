@@ -15,6 +15,10 @@
 		E6FD76B21B8C638200E527CD /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B11B8C638200E527CD /* SSASideMenu.swift */; };
 		E6FD76B41B8C68DC00E527CD /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B31B8C68DC00E527CD /* LeftViewController.swift */; };
 		E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76B51B8C693C00E527CD /* IndexViewController.swift */; };
+		E6FD76BF1B8C6CF000E527CD /* StrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76BE1B8C6CF000E527CD /* StrategyModel.swift */; };
+		E6FD76C41B8C6D8100E527CD /* MonthEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C11B8C6D8100E527CD /* MonthEnum.swift */; };
+		E6FD76C51B8C6D8100E527CD /* StrategyThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */; };
+		E6FD76C61B8C6D8100E527CD /* StrategyTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,11 @@
 		E6FD76B11B8C638200E527CD /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
 		E6FD76B31B8C68DC00E527CD /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6FD76B51B8C693C00E527CD /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		E6FD76BE1B8C6CF000E527CD /* StrategyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyModel.swift; sourceTree = "<group>"; };
+		E6FD76C11B8C6D8100E527CD /* MonthEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthEnum.swift; sourceTree = "<group>"; };
+		E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyThemeEnum.swift; sourceTree = "<group>"; };
+		E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyTypeEnum.swift; sourceTree = "<group>"; };
+		E6FD76C71B8C6DC700E527CD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +219,7 @@
 		E6FD766C1B8C5F7C00E527CD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD76C01B8C6D4100E527CD /* Constant */,
 				E6FD76B01B8C638200E527CD /* SSASideMenu */,
 				E6FD766D1B8C5F7C00E527CD /* Bridging-Header */,
 			);
@@ -227,6 +237,7 @@
 		E6FD76771B8C5F7C00E527CD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD76BE1B8C6CF000E527CD /* StrategyModel.swift */,
 				E6FD767A1B8C5F7C00E527CD /* Enums */,
 			);
 			path = Models;
@@ -235,6 +246,9 @@
 		E6FD767A1B8C5F7C00E527CD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD76C11B8C6D8100E527CD /* MonthEnum.swift */,
+				E6FD76C21B8C6D8100E527CD /* StrategyThemeEnum.swift */,
+				E6FD76C31B8C6D8100E527CD /* StrategyTypeEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -363,6 +377,14 @@
 			children = (
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		E6FD76C01B8C6D4100E527CD /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E6FD76C71B8C6DC700E527CD /* Constant.h */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,9 +538,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FD76B21B8C638200E527CD /* SSASideMenu.swift in Sources */,
+				E6FD76C51B8C6D8100E527CD /* StrategyThemeEnum.swift in Sources */,
+				E6FD76BF1B8C6CF000E527CD /* StrategyModel.swift in Sources */,
+				E6FD76C61B8C6D8100E527CD /* StrategyTypeEnum.swift in Sources */,
 				E6FD76B41B8C68DC00E527CD /* LeftViewController.swift in Sources */,
 				E6FD76B61B8C693C00E527CD /* IndexViewController.swift in Sources */,
 				E6FD76931B8C5F7C00E527CD /* AppDelegate.swift in Sources */,
+				E6FD76C41B8C6D8100E527CD /* MonthEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
