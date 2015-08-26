@@ -13,7 +13,7 @@ class ImageDataSource: ImageDataSourceProtocol {
     class func shareInstance()->ImageDataSourceProtocol{
         struct YRSingleton{
             static var predicate:dispatch_once_t = 0
-            static var instance:ImageDataSourceProtocol? = nil
+            static var instance:ImageDataSource? = nil
         }
         dispatch_once(&YRSingleton.predicate,{
             YRSingleton.instance=ImageDataSource()

@@ -23,16 +23,16 @@ class IndexViewController: UITableViewController {
         setup()
         
         // 注册KVO
-        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.addObserver(self, forKeyPath: kData, options: NSKeyValueObservingOptions.New, context: nil)
+        indexViewModel.indexViewObservedModel.addObserver(self, forKeyPath: pStrategyList, options: NSKeyValueObservingOptions.New, context: nil)
         
         // 查询首页数据
-        indexViewModel.queryIndexPageStrategyListBusiness.execute()
+        indexViewModel.refreshStrategyList()
     }
     
     deinit {
     
         // 注销KVO
-        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.removeObserver(self, forKeyPath: kData)
+        indexViewModel.indexViewObservedModel.removeObserver(self, forKeyPath: pStrategyList)
     }
     
     // MARK: - setup
@@ -45,16 +45,13 @@ class IndexViewController: UITableViewController {
     
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         
-        if keyPath == kData {
+        if keyPath == pStrategyList {
             
             let newValue: AnyObject? = change[NSKeyValueChangeNewKey]
             
             if let newValue=newValue as? [StrategyModel] {
                 
-                for strategy in newValue {
-                    
-                    println(strategy.title)
-                }
+                // 刷新table
             }
         }
     }

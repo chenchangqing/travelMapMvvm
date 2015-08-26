@@ -15,7 +15,7 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
     class func shareInstance()->StrategyModelDataSourceProtocol{
         struct YRSingleton{
             static var predicate:dispatch_once_t = 0
-            static var instance:StrategyModelDataSourceProtocol? = nil
+            static var instance:JSONStrategyModelDataSource? = nil
         }
         dispatch_once(&YRSingleton.predicate,{
             YRSingleton.instance=JSONStrategyModelDataSource()

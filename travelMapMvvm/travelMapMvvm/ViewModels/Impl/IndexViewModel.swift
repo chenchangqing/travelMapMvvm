@@ -9,6 +9,37 @@
 
 class IndexViewModel: IndexViewModelProtocol {
     
-    let queryIndexPageStrategyListBusiness:AbstractBusinessProtocol = QueryIndexPageStrategyListBusiness()
-
+    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
+    
+    // MARK: - Implement
+    
+    var indexViewObservedModel =  IndexViewObservedModel()
+    
+    func refreshStrategyList() {
+        
+        strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01(), callback: { (success, msg, data) -> Void in
+            
+            if success {
+                
+                if let data=data {
+                    
+                    self.indexViewObservedModel.setValue(data, forKey: pStrategyList)
+                }
+            }
+        })
+    }
+    
+    func loadmoreStrategyList() {
+        
+        strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01(), callback: { (success, msg, data) -> Void in
+            
+            if success {
+                
+                if let data=data {
+                    
+                    self.indexViewObservedModel.mutableArrayValueForKey(pStrategyList).addObjectsFromArray(data)
+                }
+            }
+        })
+    }
 }

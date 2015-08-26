@@ -8,8 +8,17 @@
 
 protocol IndexViewModelProtocol {
     
+    // 被观察的数据
+    var indexViewObservedModel : IndexViewObservedModel { get set }
+    
     /**
-     * 查询首页攻略业务
+     * 下拉刷新
      */
-    var queryIndexPageStrategyListBusiness : AbstractBusinessProtocol { get }
+    func refreshStrategyList()
+    
+    /**
+     * 上拉加载更多
+     */
+    func loadmoreStrategyList()
+    
 }

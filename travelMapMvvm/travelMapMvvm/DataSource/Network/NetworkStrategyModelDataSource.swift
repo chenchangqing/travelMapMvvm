@@ -13,7 +13,7 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
     class func shareInstance()->StrategyModelDataSourceProtocol{
         struct YRSingleton{
             static var predicate:dispatch_once_t = 0
-            static var instance:StrategyModelDataSourceProtocol? = nil
+            static var instance:NetworkStrategyModelDataSource? = nil
         }
         dispatch_once(&YRSingleton.predicate,{
             YRSingleton.instance=NetworkStrategyModelDataSource()
