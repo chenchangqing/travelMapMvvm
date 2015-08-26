@@ -7,34 +7,7 @@
 //
 
 
-class IndexViewModel: IndexViewModelProtocol {
+class IndexViewModel: NSObject, IndexViewModelProtocol {
     
-    // MARK: - 单例
-    
-    class func shareInstance(callback: NetReuqestCallBack)->IndexViewModelProtocol{
-        struct YRSingleton{
-            static var predicate:dispatch_once_t = 0
-            static var instance:IndexViewModelProtocol? = nil
-        }
-        dispatch_once(&YRSingleton.predicate,{
-            YRSingleton.instance=IndexViewModel(callback: callback)
-        })
-        return YRSingleton.instance!
-    }
-    
-    private var business : QueryIndexPageStrategyListBusinessProtocol!
-
-    // MARK: - implement
-    
-    func queryIndexPageStrategyList() {
-        
-        business.execute()
-    }
-    
-    // MARK: - init
-    
-    init(callback: NetReuqestCallBack) {
-        
-        business = QueryIndexPageStrategyListBusiness.shareInstance(callback)
-    }
+    let queryIndexPageStrategyListBusiness = QueryIndexPageStrategyListBusiness.shareInstance()
 }

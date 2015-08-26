@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
+class NetworkStrategyModelDataSource: NSObject, StrategyModelDataSourceProtocol {
    
     func queryModelList(params: QueryModelListParams01, callback: NetReuqestCallBackForStrategyModelArray) {
         

@@ -13,7 +13,7 @@ import UIKit
  */
 class IndexViewController: UITableViewController {
     
-    private var viewModel: IndexViewModelProtocol!
+    private var indexViewModel: IndexViewModelProtocol = IndexViewModel()
 
     // MARK: -
     
@@ -21,26 +21,37 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         setup()
-        
-        // 查询首页攻略列表
-        viewModel.queryIndexPageStrategyList()
+    }
+    
+    deinit {
+    
+        // 注销KVO
+        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.removeObserver(self, forKeyPath: kData)
     }
     
     // MARK: - setup
     
     private func setup() {
+     
+        // 注册KVO
+        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.addObserver(self, forKeyPath: kData, options: NSKeyValueObservingOptions.New, context: nil)
         
-        // 初始化ViewModel
-        setupViewModel()
+        // 查询首页数据
+        indexViewModel.queryIndexPageStrategyListBusiness.execute()
     }
     
-    private func setupViewModel() {
+    // MARK: - KVO
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
         
-        viewModel = IndexViewModel.shareInstance({ (success, msg, data) -> Void in
+        if keyPath == kData {
             
-            println(data)
-        })
+            let newValue: AnyObject? = change[NSKeyValueChangeNewKey]
+            
+            if let newValue=newValue as? [StrategyModel] {
+                
+                println(newValue)
+            }
+        }
     }
-
-    // MARK: -
 }

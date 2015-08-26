@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol IndexViewModelProtocol {
+protocol IndexViewModelProtocol : AbstractViewModelProtocol {
     
-    /**
-     * 查询首页小编推荐的攻略
-     */
-    func queryIndexPageStrategyList()
+    var queryIndexPageStrategyListBusiness : QueryIndexPageStrategyListBusinessProtocol { get }
 }

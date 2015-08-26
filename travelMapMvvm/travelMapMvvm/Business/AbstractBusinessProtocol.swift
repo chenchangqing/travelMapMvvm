@@ -16,14 +16,9 @@ protocol AbstractBusinessProtocol {
     // 业务是否可以执行
     var isValid : Bool { get }
     
-    // 业务数据
-    var callback: NetReuqestCallBack {
-        
-        get
-        
-        set
-    }
-    
     // 执行业务
     func execute()
+    
+    // 业务数据
+    var businessModel : BusinessModel { get set }
 }

@@ -8,18 +8,18 @@
 
 import UIKit
 
-class QueryIndexPageStrategyListBusiness: QueryIndexPageStrategyListBusinessProtocol {
+class QueryIndexPageStrategyListBusiness: NSObject, QueryIndexPageStrategyListBusinessProtocol {
     
     
     // MARK: - 单例
     
-    class func shareInstance(callback: NetReuqestCallBack)->QueryIndexPageStrategyListBusinessProtocol{
+    class func shareInstance()->QueryIndexPageStrategyListBusinessProtocol{
         struct YRSingleton{
             static var predicate:dispatch_once_t = 0
             static var instance:QueryIndexPageStrategyListBusinessProtocol? = nil
         }
         dispatch_once(&YRSingleton.predicate,{
-            YRSingleton.instance=QueryIndexPageStrategyListBusiness(callback: callback)
+            YRSingleton.instance=QueryIndexPageStrategyListBusiness()
         })
         return YRSingleton.instance!
     }
@@ -44,24 +44,26 @@ class QueryIndexPageStrategyListBusiness: QueryIndexPageStrategyListBusinessProt
         }
     }
     
-    var callback : NetReuqestCallBack = { (success,msg,data) in }
+    var businessModel = BusinessModel()
     
     func execute() {
         
         dataSourceProtocol.queryModelList(QueryModelListParams01(), callback: { (success, msg, data) -> Void in
             
-            self.dataSourceProtocol.queryModelList(QueryModelListParams01(), callback: { (success, msg, data) -> Void in
-                
-                self.callback(success: success, msg: msg, data: data)
-            })
+//            println(self.businessModel)
+            
+            self.businessModel.setValue(success, forKey: kSuccess)
+            self.businessModel.setValue(msg, forKey: kMsg)
+            self.businessModel.setValue(data, forKey: kData)
+            
+//            println(self.businessModel)
         })
     }
     
     // MARK: - init
     
-    init(callback: NetReuqestCallBack) {
+    override init() {
         
-        self.callback = callback
         dataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     }
 }

@@ -45,6 +45,8 @@
 		E659F4DB1B8CEFFF005CD9FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E659F4B71B8CEFFF005CD9FD /* readme.txt */; };
 		E659F4DC1B8CEFFF005CD9FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E659F4B81B8CEFFF005CD9FD /* readme.txt */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
+		E69741CE1B8D58E700B33FEF /* AbstractViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */; };
+		E69741D01B8D5CF100B33FEF /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69741CF1B8D5CF100B33FEF /* BusinessModel.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,8 @@
 		E659F4B71B8CEFFF005CD9FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E659F4B81B8CEFFF005CD9FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewModelProtocol.swift; sourceTree = "<group>"; };
+		E69741CF1B8D5CF100B33FEF /* BusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD76521B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				E659F4791B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift */,
-				E659F47A1B8CEFFF005CD9FD /* Impl */,
 				E659F47D1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift */,
+				E659F47A1B8CEFFF005CD9FD /* Impl */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			children = (
 				E659F4961B8CEFFF005CD9FD /* Enums */,
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
+				E69741CF1B8D5CF100B33FEF /* BusinessModel.swift */,
 				E659F49C1B8CEFFF005CD9FD /* Structs */,
 			);
 			path = Models;
@@ -308,8 +313,9 @@
 		E659F4A31B8CEFFF005CD9FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E659F4A41B8CEFFF005CD9FD /* Impl */,
+				E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */,
 				E659F4A71B8CEFFF005CD9FD /* IndexViewModelProtocol.swift */,
+				E659F4A41B8CEFFF005CD9FD /* Impl */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -426,15 +432,15 @@
 			isa = PBXGroup;
 			children = (
 				E659F4761B8CEFFF005CD9FD /* AppDelegate */,
-				E659F4781B8CEFFF005CD9FD /* Business */,
 				E659F47E1B8CEFFF005CD9FD /* Config */,
 				E659F4821B8CEFFF005CD9FD /* Controllers */,
+				E659F4A31B8CEFFF005CD9FD /* ViewModels */,
+				E659F4781B8CEFFF005CD9FD /* Business */,
 				E659F4851B8CEFFF005CD9FD /* DataSource */,
+				E659F4951B8CEFFF005CD9FD /* Models */,
 				E659F48F1B8CEFFF005CD9FD /* General */,
 				E659F4921B8CEFFF005CD9FD /* Helper */,
-				E659F4951B8CEFFF005CD9FD /* Models */,
 				E659F49E1B8CEFFF005CD9FD /* Resources */,
-				E659F4A31B8CEFFF005CD9FD /* ViewModels */,
 				E659F4A81B8CEFFF005CD9FD /* Views */,
 				E6FD763B1B8C5F1800E527CD /* Supporting Files */,
 			);
@@ -636,6 +642,7 @@
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
 				E659F4BB1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift in Sources */,
+				E69741CE1B8D58E700B33FEF /* AbstractViewModelProtocol.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E659F4BA1B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
@@ -644,6 +651,7 @@
 				E659F4C01B8CEFFF005CD9FD /* LeftViewController.swift in Sources */,
 				E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
+				E69741D01B8D5CF100B33FEF /* BusinessModel.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
