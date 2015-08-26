@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import Foundation
-
 /**
  * 攻略数据操作
  */

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import Foundation
-
 protocol AbstractBusinessProtocol {
     
     // 业务名称

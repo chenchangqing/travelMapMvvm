@@ -7,7 +7,8 @@
 //
 
 
-class IndexViewModel: NSObject, IndexViewModelProtocol {
+class IndexViewModel: IndexViewModelProtocol {
     
-    let queryIndexPageStrategyListBusiness = QueryIndexPageStrategyListBusiness.shareInstance()
+    let queryIndexPageStrategyListBusiness:AbstractBusinessProtocol = QueryIndexPageStrategyListBusiness()
+
 }

@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C7E59F461794CB9D4DE07AEC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C19C2FD405E9E8F60A20A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
+		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
+		E611B39B1B8D882B0034B267 /* DownloadImageBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39A1B8D882B0034B267 /* DownloadImageBusiness.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BA1B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4791B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift */; };
 		E659F4BB1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F47B1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift */; };
 		E659F4BC1B8CEFFF005CD9FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E659F47C1B8CEFFF005CD9FD /* readme.txt */; };
-		E659F4BD1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F47D1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4831B8CEFFF005CD9FD /* IndexViewController.swift */; };
 		E659F4C01B8CEFFF005CD9FD /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4841B8CEFFF005CD9FD /* LeftViewController.swift */; };
@@ -45,7 +47,6 @@
 		E659F4DB1B8CEFFF005CD9FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E659F4B71B8CEFFF005CD9FD /* readme.txt */; };
 		E659F4DC1B8CEFFF005CD9FD /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = E659F4B81B8CEFFF005CD9FD /* readme.txt */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
-		E69741CE1B8D58E700B33FEF /* AbstractViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */; };
 		E69741D01B8D5CF100B33FEF /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69741CF1B8D5CF100B33FEF /* BusinessModel.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
@@ -64,11 +65,13 @@
 		23CD330A67D6B624E82A2B7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94C19C2FD405E9E8F60A20A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461F072C84AB40B04DE28C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
+		E611B39A1B8D882B0034B267 /* DownloadImageBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadImageBusiness.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F4791B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractBusinessProtocol.swift; sourceTree = "<group>"; };
 		E659F47B1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryIndexPageStratrgyListBusiness.swift; sourceTree = "<group>"; };
 		E659F47C1B8CEFFF005CD9FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
-		E659F47D1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyModelBusinessProtocol.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
 		E659F4811B8CEFFF005CD9FD /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		E659F4B71B8CEFFF005CD9FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E659F4B81B8CEFFF005CD9FD /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewModelProtocol.swift; sourceTree = "<group>"; };
 		E69741CF1B8D5CF100B33FEF /* BusinessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				E659F4791B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift */,
-				E659F47D1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift */,
 				E659F47A1B8CEFFF005CD9FD /* Impl */,
 			);
 			path = Business;
@@ -169,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F47B1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift */,
+				E611B39A1B8D882B0034B267 /* DownloadImageBusiness.swift */,
 				E659F47C1B8CEFFF005CD9FD /* readme.txt */,
 			);
 			path = Impl;
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F48E1B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift */,
+				E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -225,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F48C1B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift */,
+				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
 				E659F48D1B8CEFFF005CD9FD /* readme.txt */,
 			);
 			path = Network;
@@ -313,7 +317,6 @@
 		E659F4A31B8CEFFF005CD9FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E69741CD1B8D58E700B33FEF /* AbstractViewModelProtocol.swift */,
 				E659F4A71B8CEFFF005CD9FD /* IndexViewModelProtocol.swift */,
 				E659F4A41B8CEFFF005CD9FD /* Impl */,
 			);
@@ -434,6 +437,7 @@
 				E659F4761B8CEFFF005CD9FD /* AppDelegate */,
 				E659F47E1B8CEFFF005CD9FD /* Config */,
 				E659F4821B8CEFFF005CD9FD /* Controllers */,
+				E659F4A81B8CEFFF005CD9FD /* Views */,
 				E659F4A31B8CEFFF005CD9FD /* ViewModels */,
 				E659F4781B8CEFFF005CD9FD /* Business */,
 				E659F4851B8CEFFF005CD9FD /* DataSource */,
@@ -441,7 +445,6 @@
 				E659F48F1B8CEFFF005CD9FD /* General */,
 				E659F4921B8CEFFF005CD9FD /* Helper */,
 				E659F49E1B8CEFFF005CD9FD /* Resources */,
-				E659F4A81B8CEFFF005CD9FD /* Views */,
 				E6FD763B1B8C5F1800E527CD /* Supporting Files */,
 			);
 			path = travelMapMvvm;
@@ -637,23 +640,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
-				E659F4BD1B8CEFFF005CD9FD /* StrategyModelBusinessProtocol.swift in Sources */,
 				E659F4D41B8CEFFF005CD9FD /* IndexViewModelProtocol.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
 				E659F4BB1B8CEFFF005CD9FD /* QueryIndexPageStratrgyListBusiness.swift in Sources */,
-				E69741CE1B8D58E700B33FEF /* AbstractViewModelProtocol.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E659F4BA1B8CEFFF005CD9FD /* AbstractBusinessProtocol.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
 				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E659F4C01B8CEFFF005CD9FD /* LeftViewController.swift in Sources */,
+				E611B39B1B8D882B0034B267 /* DownloadImageBusiness.swift in Sources */,
 				E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
 				E69741D01B8D5CF100B33FEF /* BusinessModel.swift in Sources */,
+				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
+				E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,

@@ -8,8 +8,7 @@
 
 import JSONHelper
 
-class JSONStrategyModelDataSource: NSObject, StrategyModelDataSourceProtocol {
-    
+class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
     
     // MARK: - 单例
     

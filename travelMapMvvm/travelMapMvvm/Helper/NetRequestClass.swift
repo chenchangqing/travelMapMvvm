@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import Foundation
 import AFNetworking
 
 /**

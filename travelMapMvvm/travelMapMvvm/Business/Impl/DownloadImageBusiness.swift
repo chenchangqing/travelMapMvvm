@@ -1,24 +1,22 @@
 //
-//  QueryIndexPageStrategyListBusiness.swift
+//  DownloadImageBusiness.swift
 //  travelMapMvvm
 //
 //  Created by green on 15/8/26.
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
-
-class QueryIndexPageStrategyListBusiness: AbstractBusinessProtocol {
+class DownloadImageBusiness: AbstractBusinessProtocol {
     
-    private var strategyModelDataSourceProtocol : StrategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
-   
+    private var imageDataSourceProtocol : ImageDataSourceProtocol = ImageDataSource.shareInstance()
+    
     // MARK: - implement
     
     var title : String {
         
         get {
             
-            return "查询首页小编推荐的攻略"
+            return "下载图片"
         }
     }
     
@@ -34,12 +32,23 @@ class QueryIndexPageStrategyListBusiness: AbstractBusinessProtocol {
     
     func execute() {
         
-        // 开始查询
-        strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01(), callback: { (success, msg, data) -> Void in
+        // 开始下载
+        imageDataSourceProtocol.downloadImageWithUrl(url, callback: { (success, msg, data) -> Void in
             
             self.businessModel.setValue(success, forKey: kSuccess)
             self.businessModel.setValue(msg, forKey: kMsg)
             self.businessModel.setValue(data, forKey: kData)
         })
+    }
+    
+    // MARK: -
+    
+    private var url : NSURL!
+    
+    // MARK: - init
+    
+    init(url:NSURL) {
+        
+        self.url = url
     }
 }

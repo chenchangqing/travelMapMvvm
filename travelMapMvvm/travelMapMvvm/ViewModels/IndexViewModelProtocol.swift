@@ -6,9 +6,10 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import Foundation
-
-protocol IndexViewModelProtocol : AbstractViewModelProtocol {
+protocol IndexViewModelProtocol {
     
-    var queryIndexPageStrategyListBusiness : QueryIndexPageStrategyListBusinessProtocol { get }
+    /**
+     * 查询首页攻略业务
+     */
+    var queryIndexPageStrategyListBusiness : AbstractBusinessProtocol { get }
 }

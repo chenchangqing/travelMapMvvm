@@ -13,3 +13,7 @@
 
 // test json file name
 #define kQueryStrategyList @"queryStrategyList"
+
+// 提示
+#define msgImageDownloadSuccess @"图片下载成功"
+#define msgImageDownloadFailure @"图片下载失败"

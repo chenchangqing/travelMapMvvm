@@ -6,9 +6,8 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
 
-class ReadJsonClass: NSObject {
+class ReadJsonClass {
    
     /**
      * 解析json
