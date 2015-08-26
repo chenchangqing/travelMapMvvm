@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
-
 class IndexViewObservedModel: NSObject {
    
     var strategyList = [StrategyModel]()

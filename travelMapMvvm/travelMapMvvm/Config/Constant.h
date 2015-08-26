@@ -20,3 +20,4 @@
 
 // 被观察的属性名
 #define pStrategyList  @"strategyList"
+#define pImage @"image"

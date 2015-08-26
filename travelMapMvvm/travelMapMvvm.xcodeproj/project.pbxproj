@@ -13,6 +13,10 @@
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
 		E611B3A61B8DAF660034B267 /* IndexViewObservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A51B8DAF660034B267 /* IndexViewObservedModel.swift */; };
 		E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A71B8DB01B0034B267 /* OperationEnum.swift */; };
+		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
+		E611B3AC1B8DBE5F0034B267 /* StrategyCellObservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3AB1B8DBE5F0034B267 /* StrategyCellObservedModel.swift */; };
+		E611B3AE1B8DBF210034B267 /* StrategyCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3AD1B8DBF210034B267 /* StrategyCellModelProtocol.swift */; };
+		E611B3B01B8DBFD60034B267 /* StrategyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3AF1B8DBFD60034B267 /* StrategyCellModel.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4831B8CEFFF005CD9FD /* IndexViewController.swift */; };
@@ -68,6 +72,10 @@
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
 		E611B3A51B8DAF660034B267 /* IndexViewObservedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewObservedModel.swift; sourceTree = "<group>"; };
 		E611B3A71B8DB01B0034B267 /* OperationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationEnum.swift; sourceTree = "<group>"; };
+		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
+		E611B3AB1B8DBE5F0034B267 /* StrategyCellObservedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCellObservedModel.swift; sourceTree = "<group>"; };
+		E611B3AD1B8DBF210034B267 /* StrategyCellModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCellModelProtocol.swift; sourceTree = "<group>"; };
+		E611B3AF1B8DBFD60034B267 /* StrategyCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCellModel.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E611B3A51B8DAF660034B267 /* IndexViewObservedModel.swift */,
+				E611B3AB1B8DBE5F0034B267 /* StrategyCellObservedModel.swift */,
 			);
 			path = BeObservedModels;
 			sourceTree = "<group>";
@@ -303,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F4A71B8CEFFF005CD9FD /* IndexViewModelProtocol.swift */,
+				E611B3AD1B8DBF210034B267 /* StrategyCellModelProtocol.swift */,
 				E659F4A41B8CEFFF005CD9FD /* Impl */,
 				E611B3A41B8DAF2F0034B267 /* BeObservedModels */,
 			);
@@ -313,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F4A51B8CEFFF005CD9FD /* IndexViewModel.swift */,
+				E611B3AF1B8DBFD60034B267 /* StrategyCellModel.swift */,
 				E659F4A61B8CEFFF005CD9FD /* readme.txt */,
 			);
 			path = Impl;
@@ -351,6 +362,7 @@
 			children = (
 				E659F4AE1B8CEFFF005CD9FD /* Delegate */,
 				E659F4B01B8CEFFF005CD9FD /* readme.txt */,
+				E611B3A91B8DB9080034B267 /* StrategyCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -628,19 +640,23 @@
 				E659F4D41B8CEFFF005CD9FD /* IndexViewModelProtocol.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
+				E611B3B01B8DBFD60034B267 /* StrategyCellModel.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
 				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
 				E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E659F4C01B8CEFFF005CD9FD /* LeftViewController.swift in Sources */,
+				E611B3AE1B8DBF210034B267 /* StrategyCellModelProtocol.swift in Sources */,
 				E611B3A61B8DAF660034B267 /* IndexViewObservedModel.swift in Sources */,
 				E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
+				E611B3AC1B8DBE5F0034B267 /* StrategyCellObservedModel.swift in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
 				E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */,
+				E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */,
