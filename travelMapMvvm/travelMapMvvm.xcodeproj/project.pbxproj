@@ -196,10 +196,10 @@
 		E659F4851B8CEFFF005CD9FD /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				E659F48E1B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
-				E659F48E1B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";

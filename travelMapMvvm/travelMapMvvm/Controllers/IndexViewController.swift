@@ -21,6 +21,12 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         setup()
+        
+        // 注册KVO
+        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.addObserver(self, forKeyPath: kData, options: NSKeyValueObservingOptions.New, context: nil)
+        
+        // 查询首页数据
+        indexViewModel.queryIndexPageStrategyListBusiness.execute()
     }
     
     deinit {
@@ -32,12 +38,7 @@ class IndexViewController: UITableViewController {
     // MARK: - setup
     
     private func setup() {
-     
-        // 注册KVO
-        indexViewModel.queryIndexPageStrategyListBusiness.businessModel.addObserver(self, forKeyPath: kData, options: NSKeyValueObservingOptions.New, context: nil)
         
-        // 查询首页数据
-        indexViewModel.queryIndexPageStrategyListBusiness.execute()
     }
     
     // MARK: - KVO
@@ -50,7 +51,10 @@ class IndexViewController: UITableViewController {
             
             if let newValue=newValue as? [StrategyModel] {
                 
-                println(newValue)
+                for strategy in newValue {
+                    
+                    println(strategy.title)
+                }
             }
         }
     }

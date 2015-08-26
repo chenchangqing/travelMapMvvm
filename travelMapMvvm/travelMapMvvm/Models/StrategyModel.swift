@@ -15,11 +15,11 @@ class StrategyModel: NSObject, Deserializable {
     var picUrl          : String?               // 攻略配图地址
     var title           : String?               // 攻略名称
     var createTime      : String?               // 创建时间 YYYY-MM-dd
-    var visitNumber     : String?               // 浏览次数
+    var visitNumber     : Int?                  // 浏览次数
     var author          : String?               // 小编
     var authorPicUrl    : String?               // 小编头像
     var desc            : String?               // 简介
-    var likeNumber      : String?               // 喜欢人数
+    var likeNumber      : Int?                  // 喜欢人数
     var strategyTheme   : StrategyThemeEnum?    // 攻略主题
     var strategyMonth   : MonthEnum?            // 攻略使用的月份
     var strategyType    : StrategyTypeEnum?     // 攻略类型
@@ -28,21 +28,29 @@ class StrategyModel: NSObject, Deserializable {
     
     required init(data : [String:AnyObject]) {
         
-        strategyId <-- data["strategyId"]
-        picUrl <-- data["picUrl"]
-        title <-- data["title"]
-    }
-    
-    override var description : String {
+        strategyId      <-- data["strategyId"]
+        picUrl          <-- data["picUrl"]
+        title           <-- data["title"]
+        createTime      <-- data["createTime"]
+        visitNumber     <-- data["visitNumber"]
+        author          <-- data["author"]
+        authorPicUrl    <-- data["authorPicUrl"]
+        desc            <-- data["desc"]
+        likeNumber      <-- data["likeNumber"]
         
-        get {
-            if let title = title {
-                
-                return title
-            }
-            return ""
+        if let strategyTheme=data["strategyTheme"] as? String {
+            
+            self.strategyTheme = StrategyThemeEnum(rawValue: strategyTheme)
+        }
+        
+        if let strategyMonth=data["strategyMonth"] as? String {
+            
+            self.strategyMonth = MonthEnum(rawValue: strategyMonth)
+        }
+        
+        if let strategyType=data["strategyType"] as? String {
+            
+            self.strategyType = StrategyTypeEnum(rawValue: strategyType)
         }
     }
-    
-    
 }
