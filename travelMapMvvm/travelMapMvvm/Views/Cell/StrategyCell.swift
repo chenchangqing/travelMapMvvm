@@ -32,41 +32,14 @@ class StrategyCell: UITableViewCell, ReactiveView  {
     // 小编名称
     @IBOutlet private weak var authorNameL: UILabel!
     
-    // image view model
-    private var authImageViewModel          : ImageViewModel!
-    private var strategyPicImageViewModel   : ImageViewModel!
-    
     // MARK: - init
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setup()
-    }
-    
-    // MARK: - setup
-    
-    private func setup() {
-        
         selectionStyle = UITableViewCellSelectionStyle.None
         strategyPic.layer.masksToBounds = true
         strategyPic.layer.cornerRadius = 8
-        
-        // 小编头像
-//        authImageViewModel          = ImageViewModel()
-//        
-//        RACObserve(authImageViewModel, "image").subscribeNextAs { (image:UIImage!) -> () in
-//            
-//            self.authorHeadC.image = image
-//        }
-        
-        // 攻略图片
-        strategyPicImageViewModel   = ImageViewModel()
-        
-        RACObserve(strategyPicImageViewModel, "image").subscribeNextAs { (image:UIImage!) -> () in
-            
-            self.strategyPic.image = image
-        }
     }
     
     // MARK: - ReactiveView
@@ -76,51 +49,89 @@ class StrategyCell: UITableViewCell, ReactiveView  {
         if let viewModel = viewModel as? StrategyModel {
             
             // 重用时重置图片
-//            self.rac_prepareForReuseSignal.subscribeNext {
-//                (next: AnyObject!) -> () in
-//                
-//                self.authImageViewModel.image = UIImage()
-//                self.strategyPicImageViewModel.image = UIImage()
-//            }
-            
-//            strategyNameL.text = viewModel.title
-//            dateL.text         = viewModel.createTime
-//            visiteNumL.text    = "\(viewModel.visitNumber)"
-//            authorNameL.text   = viewModel.author
-            
-            if let picUrl=viewModel.picUrl {
+            self.rac_prepareForReuseSignal.subscribeNext {
+                (next: AnyObject!) -> () in
                 
-                if let url=NSURL(string: picUrl) {
-                    
-                    strategyPicImageViewModel.downloadImageWithUrl(url).deliverOn(RACScheduler.mainThreadScheduler())
-//                        .takeUntil(self.rac_prepareForReuseSignal)
-                        .subscribeNextAs { (result:ResultModel) -> () in
-                            
-                        self.strategyPic.image = result.data as? UIImage
-                    }
-                }
+                self.authorHeadC.image = UIImage()
+                self.strategyPic.image = nil
             }
             
-//            if let picUrl=viewModel.authorPicUrl {
-//                
-//                if let url=NSURL(string: picUrl) {
-//                    
-//                authImageViewModel.downloadImageWithUrl(url).deliverOn(RACScheduler.mainThreadScheduler())
-//                        .takeUntil(self.rac_prepareForReuseSignal)
-//                        .subscribeNextAs { (result:ResultModel) -> () in
-//                            
-//                        if let image=result.data as? UIImage {
-//                            
-//                            self.authorHeadC.image = image
-//                        }
-//                    }
-//                }
-//            }
+            strategyNameL.text = viewModel.title
+            dateL.text         = viewModel.createTime
+            visiteNumL.text    = "\(viewModel.visitNumber)"
+            authorNameL.text   = viewModel.author
+            
+            // 加载小编头像
+            if !self.loadLocalAuthorPic(viewModel) {
+                
+                self.loadNetAuthorPic(viewModel)
+            }
+            
+            // 加载攻略图片
+            if !self.loadLocalStrategyPic(viewModel) {
+                
+                self.loadNetStrategyPic(viewModel)
+            }
             
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    // MARK: - 图片加载
+    
+    /**
+     * 内存加载小编图片
+     */
+    private func loadLocalAuthorPic(viewModel:StrategyModel) -> Bool{
+        
+        if let request = viewModel.requestAuthorPic {
+            
+            if let image = UIImageView.sharedImageCache().cachedImageForRequest(request) {
+                
+                authorHeadC.image = image
+                return true
+            }
+        }
+        return false
+    }
+    
+    /**
+     * 从内存加载攻略图片
+     */
+    private func loadLocalStrategyPic(viewModel:StrategyModel) -> Bool{
+        
+        if let request = viewModel.requestStrategyPic {
+            
+            if let image = UIImageView.sharedImageCache().cachedImageForRequest(request) {
+                
+                strategyPic.image = image
+                return true
+            }
+        }
+        return false
+    }
+    
+    /**
+     * 网络加载小编头像
+     */
+    private func loadNetAuthorPic(viewModel:StrategyModel) {
+        
+        viewModel.downloadAuthorPicImageWithUrl()?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+            
+            if let image=result.data as? UIImage {
+                
+                self.authorHeadC.image = image
+            }
+        })
+    }
+    
+    /**
+     * 网络加载攻略图片
+     */
+    private func loadNetStrategyPic(viewModel:StrategyModel) {
+        
+        viewModel.downloadStrategyPicImageWithUrl()?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+            
+            self.strategyPic.image = result.data as? UIImage
+        })
     }
 }

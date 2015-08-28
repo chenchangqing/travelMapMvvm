@@ -7,6 +7,7 @@
 //
 
 import ReactiveCocoa
+import AFNetworking
 
 class ImageDataSource: ImageDataSourceProtocol {
     
@@ -31,6 +32,7 @@ class ImageDataSource: ImageDataSourceProtocol {
             if (error == nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let image = UIImage(data: data)
+                    UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
                     callback(success: true, msg: msgImageDownloadSuccess, data: image)
                 })
             } else {
@@ -47,6 +49,7 @@ class ImageDataSource: ImageDataSourceProtocol {
             (subscriber: RACSubscriber!) -> RACDisposable! in
             let data = NSData(contentsOfURL: url)
             let image = UIImage(data: data!)
+            UIImageView.sharedImageCache().cacheImage(image, forRequest: NSURLRequest(URL: url))
             subscriber.sendNext(ResultModel(success: true, msg: msgImageDownloadSuccess, data: image))
             subscriber.sendCompleted()
             return nil

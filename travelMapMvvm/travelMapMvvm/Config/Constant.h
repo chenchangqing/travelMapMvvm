@@ -17,7 +17,3 @@
 // 提示
 #define msgImageDownloadSuccess @"图片下载成功"
 #define msgImageDownloadFailure @"图片下载失败"
-
-// 被观察的属性名
-#define pStrategyList  @"strategyList"
-#define pImage @"image"

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
+import ReactiveCocoa
+
 // 攻略信息
 class StrategyModel: NSObject, Deserializable {
    
@@ -21,6 +23,21 @@ class StrategyModel: NSObject, Deserializable {
     var strategyTheme   : StrategyThemeEnum?    // 攻略主题
     var strategyMonth   : MonthEnum?            // 攻略使用的月份
     var strategyType    : StrategyTypeEnum?     // 攻略类型
+    
+    private var imageDataSourceProtocol = ImageDataSource.shareInstance()
+    
+    var requestStrategyPic  : NSURLRequest? {
+        get {
+            let url = isValidStrategyPicUrl()
+            return url == nil ? nil : NSURLRequest(URL: url!)
+        }
+    }
+    var requestAuthorPic    : NSURLRequest?{
+        get {
+            let url = isValidAuthorPicUrl()
+            return url == nil ? nil : NSURLRequest(URL: url!)
+        }
+    }
     
     override init() {}
     
@@ -50,5 +67,62 @@ class StrategyModel: NSObject, Deserializable {
             
             self.strategyType = StrategyTypeEnum(rawValue: strategyType)
         }
+    }
+    
+    /**
+     * 下载小编头像图片
+     */
+    func downloadAuthorPicImageWithUrl() -> RACSignal? {
+        
+        if let url = isValidAuthorPicUrl() {
+            
+            return imageDataSourceProtocol.downloadImageWithUrl(url)
+        }
+        
+        return nil
+    }
+    
+    /**
+     * 下载攻略图片
+     */
+    func downloadStrategyPicImageWithUrl() -> RACSignal? {
+        
+        if let url = isValidStrategyPicUrl() {
+            
+            return imageDataSourceProtocol.downloadImageWithUrl(url)
+        }
+        
+        return nil
+    }
+    
+    /**
+     * 攻略图片是否有效
+     */
+    private func isValidStrategyPicUrl() -> NSURL? {
+        
+        if let picUrl=picUrl {
+            
+            if let url=NSURL(string: picUrl) {
+                
+                return url
+            }
+        }
+        return nil
+    }
+    
+    /**
+     * 小编头像图片是否有效
+     */
+    private func isValidAuthorPicUrl() -> NSURL? {
+        
+        
+        if let picUrl=authorPicUrl {
+            
+            if let url=NSURL(string: picUrl) {
+                
+                return url
+            }
+        }
+        return nil
     }
 }

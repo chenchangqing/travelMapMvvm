@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import JSONHelper
 import ReactiveCocoa
 
 class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
