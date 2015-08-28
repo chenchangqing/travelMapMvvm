@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
-import JSONHelper
-
 // 攻略信息
 class StrategyModel: NSObject, Deserializable {
    

@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import AFNetworking
+import ReactiveCocoa
 
 /**
  * 攻略Cell 
  */
-class StrategyCell: UITableViewCell {
+class StrategyCell: UITableViewCell, ReactiveView  {
 
     // 攻略图片
     @IBOutlet private weak var strategyPic: UIImageView!
@@ -32,103 +32,16 @@ class StrategyCell: UITableViewCell {
     // 小编名称
     @IBOutlet private weak var authorNameL: UILabel!
     
-    private var strategyCellModel:StrategyCellModelProtocol = StrategyCellModel()
+    // image view model
+    private var authImageViewModel          : ImageViewModel!
+    private var strategyPicImageViewModel   : ImageViewModel!
     
-    // MARK: -
-    
-    // 攻略配图地址
-    var picUrl: String? {
-        
-        willSet {
-            
-            if let newValue=newValue {
-                
-                if let url = NSURL(string: newValue) {
-                    
-                    strategyPic.setImageWithURL(url)
-                }
-            }
-        }
-    }
-    
-    // 攻略名称
-    var title: String? {
-        
-        willSet {
-            
-            if let newValue=newValue {
-                
-                strategyNameL.text = newValue
-            }
-        }
-    }
-    
-    // 创建时间 YYYY-MM-dd
-    var createTime: String? {
-        
-        willSet {
-            
-            if let createTime=newValue {
-                
-                dateL.text = newValue
-            }
-        }
-    }
-    
-    // 浏览次数
-    var visitNumber: Int? {
-        
-        willSet {
-            
-            if let visitNumber=newValue {
-                
-                visiteNumL.text = "浏览量:\(visitNumber)次"
-            }
-        }
-    }
-    
-    // 小编头像
-    var authorPicUrl: String?{
-        
-        willSet {
-            
-            if let newValue=newValue {
-                
-                if let url=NSURL(string: newValue) {
-                    
-                    strategyCellModel.downloadStrategyImage(url)
-                }
-            }
-        }
-    }
-    
-    // 小编
-    var author: String?{
-        
-        willSet {
-            
-            if let newValue=newValue {
-                
-                authorNameL.text = newValue
-            }
-        }
-    }
-    
-    // MARK: -
+    // MARK: - init
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setup()
-        
-        // 设置kvo
-        strategyCellModel.strategyCellObservedModel.addObserver(self, forKeyPath: pImage, options: NSKeyValueObservingOptions.New, context: nil)
-    }
-    
-    deinit {
-        
-        // 注销kvo
-        strategyCellModel.strategyCellObservedModel.removeObserver(self, forKeyPath: pImage)
     }
     
     // MARK: - setup
@@ -138,21 +51,76 @@ class StrategyCell: UITableViewCell {
         selectionStyle = UITableViewCellSelectionStyle.None
         strategyPic.layer.masksToBounds = true
         strategyPic.layer.cornerRadius = 8
+        
+        // 小编头像
+//        authImageViewModel          = ImageViewModel()
+//        
+//        RACObserve(authImageViewModel, "image").subscribeNextAs { (image:UIImage!) -> () in
+//            
+//            self.authorHeadC.image = image
+//        }
+        
+        // 攻略图片
+        strategyPicImageViewModel   = ImageViewModel()
+        
+        RACObserve(strategyPicImageViewModel, "image").subscribeNextAs { (image:UIImage!) -> () in
+            
+            self.strategyPic.image = image
+        }
     }
     
-    // MARK: - 处理图片
+    // MARK: - ReactiveView
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    func bindViewModel(viewModel: AnyObject) {
         
-        if keyPath == pImage {
+        if let viewModel = viewModel as? StrategyModel {
             
-            let newValue: AnyObject? = change[NSKeyValueChangeNewKey]
+            // 重用时重置图片
+//            self.rac_prepareForReuseSignal.subscribeNext {
+//                (next: AnyObject!) -> () in
+//                
+//                self.authImageViewModel.image = UIImage()
+//                self.strategyPicImageViewModel.image = UIImage()
+//            }
             
-            if let newValue=newValue as? UIImage {
+//            strategyNameL.text = viewModel.title
+//            dateL.text         = viewModel.createTime
+//            visiteNumL.text    = "\(viewModel.visitNumber)"
+//            authorNameL.text   = viewModel.author
+            
+            if let picUrl=viewModel.picUrl {
                 
-                // 更新图片
-                authorHeadC.image = newValue
+                if let url=NSURL(string: picUrl) {
+                    
+                    strategyPicImageViewModel.downloadImageWithUrl(url).deliverOn(RACScheduler.mainThreadScheduler())
+//                        .takeUntil(self.rac_prepareForReuseSignal)
+                        .subscribeNextAs { (result:ResultModel) -> () in
+                            
+                        self.strategyPic.image = result.data as? UIImage
+                    }
+                }
             }
+            
+//            if let picUrl=viewModel.authorPicUrl {
+//                
+//                if let url=NSURL(string: picUrl) {
+//                    
+//                authImageViewModel.downloadImageWithUrl(url).deliverOn(RACScheduler.mainThreadScheduler())
+//                        .takeUntil(self.rac_prepareForReuseSignal)
+//                        .subscribeNextAs { (result:ResultModel) -> () in
+//                            
+//                        if let image=result.data as? UIImage {
+//                            
+//                            self.authorHeadC.image = image
+//                        }
+//                    }
+//                }
+//            }
+            
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 }

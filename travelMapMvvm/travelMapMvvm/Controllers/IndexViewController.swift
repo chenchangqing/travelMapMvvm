@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 /**
  * 首页控制器
  */
 class IndexViewController: UITableViewController {
     
-    private var indexViewModel: IndexViewModelProtocol = IndexViewModel()
+    private var viewModel: IndexViewModel!
+    private var bindingHelper: TableViewBindingHelper!
 
     // MARK: -
     
@@ -21,38 +23,16 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         setup()
-        
-        // 注册KVO
-        indexViewModel.indexViewObservedModel.addObserver(self, forKeyPath: pStrategyList, options: NSKeyValueObservingOptions.New, context: nil)
-        
-        // 查询首页数据
-        indexViewModel.refreshStrategyList()
-    }
-    
-    deinit {
-    
-        // 注销KVO
-        indexViewModel.indexViewObservedModel.removeObserver(self, forKeyPath: pStrategyList)
+
     }
     
     // MARK: - setup
     
     private func setup() {
         
-    }
-    
-    // MARK: - KVO
-    
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        viewModel = IndexViewModel()
         
-        if keyPath == pStrategyList {
-            
-            let newValue: AnyObject? = change[NSKeyValueChangeNewKey]
-            
-            if let newValue=newValue as? [StrategyModel] {
-                
-                // 刷新table
-            }
-        }
+        bindingHelper = TableViewBindingHelper(tableView: self.tableView, sourceSignal: RACObserve(viewModel, "strategyList"), reuseIdentifier: "cell", cellHeight: 200, selectionCommand: nil)
+        
     }
 }

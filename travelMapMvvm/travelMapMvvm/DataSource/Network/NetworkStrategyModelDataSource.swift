@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
+import ReactiveCocoa
+
 class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
     
     // MARK: - 单例
@@ -23,5 +25,13 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
    
     func queryModelList(params: QueryModelListParams01, callback: NetReuqestCallBackForStrategyModelArray) {
         
+    }
+    
+    func queryModelList(params: QueryModelListParams01) -> RACSignal {
+        
+        return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
+            
+            return nil
+        })
     }
 }

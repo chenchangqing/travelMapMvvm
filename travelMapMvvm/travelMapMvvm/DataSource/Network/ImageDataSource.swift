@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
+import ReactiveCocoa
+
 class ImageDataSource: ImageDataSourceProtocol {
     
     // MARK: - 单例
@@ -36,5 +38,19 @@ class ImageDataSource: ImageDataSourceProtocol {
             }
         })
         task.resume()
+    }
+    
+    func downloadImageWithUrl(url: NSURL) -> RACSignal {
+        
+        let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
+        let signal = RACSignal.createSignal({
+            (subscriber: RACSubscriber!) -> RACDisposable! in
+            let data = NSData(contentsOfURL: url)
+            let image = UIImage(data: data!)
+            subscriber.sendNext(ResultModel(success: true, msg: msgImageDownloadSuccess, data: image))
+            subscriber.sendCompleted()
+            return nil
+        })
+        return signal.subscribeOn(scheduler)
     }
 }
