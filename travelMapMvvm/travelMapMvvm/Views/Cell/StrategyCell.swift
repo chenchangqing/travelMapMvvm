@@ -56,10 +56,10 @@ class StrategyCell: UITableViewCell, ReactiveView  {
                 self.strategyPic.image = nil
             }
             
-            strategyNameL.text = viewModel.title == nil ? "" : "\(viewModel.title)"
-            dateL.text         = viewModel.createTime == nil ? "" : "\(viewModel.createTime)"
-            visiteNumL.text    = viewModel.visitNumber == nil ? "" : "\(viewModel.visitNumber)"
-            authorNameL.text   = viewModel.author == nil ? "" : "\(viewModel.author)"
+            strategyNameL.text = viewModel.title
+            dateL.text         = viewModel.createTime
+            visiteNumL.text    = viewModel.visitNumber == nil ? "" : "\(viewModel.visitNumber!)"
+            authorNameL.text   = viewModel.author
             
             // 加载小编头像
             if !self.loadLocalAuthorPic(viewModel) {
