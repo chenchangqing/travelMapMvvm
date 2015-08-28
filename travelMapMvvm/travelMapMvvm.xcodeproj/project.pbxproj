@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C7E59F461794CB9D4DE07AEC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C19C2FD405E9E8F60A20A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E60E01F21B90BC7D000D09ED /* NetworkActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E01F11B90BC7D000D09ED /* NetworkActivity.swift */; };
 		E60E01F41B90C6AB000D09ED /* NSError+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E01F31B90C6AB000D09ED /* NSError+Custom.swift */; };
 		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
 		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
@@ -91,7 +90,6 @@
 		23CD330A67D6B624E82A2B7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94C19C2FD405E9E8F60A20A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461F072C84AB40B04DE28C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E60E01F11B90BC7D000D09ED /* NetworkActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivity.swift; sourceTree = "<group>"; };
 		E60E01F31B90C6AB000D09ED /* NSError+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Custom.swift"; sourceTree = "<group>"; };
 		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				E698AD471B8FEF94001B7D71 /* JSONHelper.swift */,
 				E659F4931B8CEFFF005CD9FD /* NetRequestClass.swift */,
 				E659F4941B8CEFFF005CD9FD /* ReadJsonClass.swift */,
-				E60E01F11B90BC7D000D09ED /* NetworkActivity.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -725,7 +722,6 @@
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E698AD831B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
-				E60E01F21B90BC7D000D09ED /* NetworkActivity.swift in Sources */,
 				E698AD9C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
 				E698AD511B8FF108001B7D71 /* TableViewBindingHelper.swift in Sources */,
