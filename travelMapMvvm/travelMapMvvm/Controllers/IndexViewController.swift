@@ -22,17 +22,35 @@ class IndexViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        // 初始化
+        setupIndexViewModel()
+        setupTableView()
+        
+        // 查询数据
+        viewModel.executeSearch.execute(nil)
 
     }
     
     // MARK: - setup
     
-    private func setup() {
+    /**
+     * 初始化viewModel
+     */
+    private func setupIndexViewModel() {
         
         viewModel = IndexViewModel()
+    }
+    
+    /**
+     * 初始化tableView
+     */
+    private func setupTableView() {
         
-        bindingHelper = TableViewBindingHelper(tableView: self.tableView, sourceSignal: RACObserve(viewModel, "strategyList"), reuseIdentifier: "cell", cellHeight: 200, selectionCommand: nil)
-        
+        bindingHelper = TableViewBindingHelper(
+            tableView: self.tableView,
+            sourceSignal: RACObserve(viewModel, "strategyList"),
+            reuseIdentifier: "cell",
+            cellHeight: 200,
+            selectionCommand: nil)
     }
 }

@@ -47,11 +47,25 @@ class ImageDataSource: ImageDataSourceProtocol {
         let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
         let signal = RACSignal.createSignal({
             (subscriber: RACSubscriber!) -> RACDisposable! in
-            let data = NSData(contentsOfURL: url)
-            let image = UIImage(data: data!)
-            UIImageView.sharedImageCache().cacheImage(image, forRequest: NSURLRequest(URL: url))
-            subscriber.sendNext(ResultModel(success: true, msg: msgImageDownloadSuccess, data: image))
-            subscriber.sendCompleted()
+            
+            let session = NSURLSession.sharedSession()
+            let request = NSMutableURLRequest(URL: url)
+            
+            let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                if (error == nil) {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        let image = UIImage(data: data)
+                        UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
+                        subscriber.sendNext(ResultModel(success: true, msg: msgImageDownloadSuccess, data: image))
+                        subscriber.sendCompleted()
+                    })
+                } else {
+                    subscriber.sendError(error!)
+                }
+            })
+            task.resume()
+            
             return nil
         })
         return signal.subscribeOn(scheduler)

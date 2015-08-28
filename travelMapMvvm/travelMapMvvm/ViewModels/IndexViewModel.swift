@@ -12,18 +12,32 @@ class IndexViewModel: NSObject {
     
     private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
+    // 数据源（一直处于被观察状态）
     dynamic var strategyList = [StrategyModel]()
+    
+    // 查询命令
     var executeSearch : RACCommand!
     
     override init() {
         
         super.init()
         
-        executeSearch = RACCommand() {
-            (any:AnyObject!) -> RACSignal in
+        setupExecuteSearch()
+    }
+    
+    // MARK : - setup
+    
+    /**
+     * 初始化查询命令
+     */
+    private func setupExecuteSearch() {
         
+        executeSearch = RACCommand() { (any:AnyObject!) -> RACSignal in
+            
+            // 查询
             let singal = self.strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01())
             
+            // 重置数据源
             singal.subscribeNextAs({ (result:ResultModel!) -> Void in
                 
                 if let strategyList = result.data as? [StrategyModel] {
@@ -33,11 +47,6 @@ class IndexViewModel: NSObject {
             })
             
             return singal
-        }
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 3)), dispatch_get_main_queue()) { () -> Void in
-            
-            executeSearch.execute(nil)
         }
     }
     
