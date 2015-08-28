@@ -35,7 +35,7 @@
         <scene sceneID="FbU-I4-Kq0">
             <objects>
                 <tableViewController id="uIO-7s-XOw" customClass="IndexViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="UrQ-wk-XHY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="UrQ-wk-XHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,10 +51,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULl-w3-YgS">
-                                            <rect key="frame" x="8" y="8" width="359" height="191"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="192"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-94-FE1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="191"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="192"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apa-3D-uYL">
                                                     <rect key="frame" x="8" y="8" width="343" height="21"/>
@@ -93,7 +93,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-zW-YY8" customClass="GCircleControl" customModule="travelMapMvvm" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="153" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="154" width="30" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="9gr-YY-0Ro"/>
@@ -101,7 +101,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fM-W0-Gxv">
-                                                    <rect key="frame" x="46" y="158" width="200" height="21"/>
+                                                    <rect key="frame" x="46" y="159" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="8DT-Pv-I7o"/>
                                                         <constraint firstAttribute="height" constant="21" id="i3j-Db-B0N"/>
