@@ -115,7 +115,14 @@ class StrategyCell: UITableViewCell, ReactiveView  {
      */
     private func loadNetAuthorPic(viewModel:StrategyModel) {
         
-        viewModel.downloadAuthorPicImageWithUrl()?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+        let downloadSingal = viewModel.downloadAuthorPicImageWithUrl()
+        
+        downloadSingal?.subscribeError({ (error:NSError!) -> Void in
+            
+            println(error.domain)
+        })
+        
+        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
             
             if let image=result.data as? UIImage {
                 
@@ -129,7 +136,14 @@ class StrategyCell: UITableViewCell, ReactiveView  {
      */
     private func loadNetStrategyPic(viewModel:StrategyModel) {
         
-        viewModel.downloadStrategyPicImageWithUrl()?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+        let downloadSingal = viewModel.downloadStrategyPicImageWithUrl()
+        
+        downloadSingal?.subscribeError({ (error:NSError!) -> Void in
+            
+            println(error.domain)
+        })
+        
+        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
             
             self.strategyPic.image = result.data as? UIImage
         })

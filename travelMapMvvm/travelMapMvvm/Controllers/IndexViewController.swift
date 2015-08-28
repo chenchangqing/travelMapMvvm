@@ -30,10 +30,7 @@ class IndexViewController: UITableViewController {
         self.indicatorView.startAnimation()
         
         // 延时3秒查询数据
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 3)), dispatch_get_main_queue(), { () -> Void in
-        
-            self.viewModel.executeSearch.execute(nil)
-        })
+        self.viewModel.executeSearch.execute(nil)
 
     }
     
@@ -74,7 +71,8 @@ class IndexViewController: UITableViewController {
         var animated = CATransition()
         animated.duration = 1.0
         animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        animated.type = kCATransitionFade
+        animated.type = kCATransitionPush
+        animated.subtype = "fromLeft"
         animated.removedOnCompletion = true
         
         self.view.layer.addAnimation(animated, forKey: nil)

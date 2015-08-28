@@ -50,9 +50,9 @@ class NetRequestClass {
      * POST请求
      */
     class func netRequestPOSTWithRequestURL(
+        callback:NetReuqestCallBack,
         requestURlString:String,
-        parameters:[String:AnyObject],
-        callback:NetReuqestCallBack) {
+        parameters:[String:AnyObject]=[String:AnyObject]()) {
             
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/html","text/plain"]) as Set<NSObject>
@@ -83,9 +83,9 @@ class NetRequestClass {
      * GET请求
      */
     class func netRequestGETWithRequestURL(
+        callback:NetReuqestCallBack,
         requestURlString:String,
-        parameters:[String:AnyObject],
-        callback:NetReuqestCallBack) {
+        parameters:[String:AnyObject]=[String:AnyObject]()) {
             
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer.acceptableContentTypes = NSSet(array: ["text/html","text/plain"]) as Set<NSObject>

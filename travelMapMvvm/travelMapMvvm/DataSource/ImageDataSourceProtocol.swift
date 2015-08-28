@@ -14,16 +14,6 @@ import ReactiveCocoa
 protocol ImageDataSourceProtocol {
     
     /**
-     * 下载图片(正常GCD)
-     * 
-     * @param url 图片地址
-     * @callback 回调
-     *
-     * @return
-     */
-    func downloadImageWithUrl(url: NSURL, callback:NetRequestCallBackForDownloadImage)
-    
-    /**
      * 下载图片(使用ReactiveCocoa)
      *
      * @param url 图片地址

@@ -23,64 +23,37 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    // MARK: - implement
-    
-    func queryModelList(params: QueryModelListParams01, callback: NetReuqestCallBackForStrategyModelArray) {
-        
-        let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
-        
-        let success = resultDic[kSuccess] as? Bool
-        let msg     = resultDic[kMsg] as? String
-        let data: AnyObject?    = resultDic[kData]
-        
-        if let success=success {
-            
-            var strategyList = [StrategyModel]()
-            
-            if let data: AnyObject=data {
-                
-                strategyList <-- data
-                
-                callback(success: success, msg: msg, data: strategyList)
-            } else {
-                
-                callback(success: false, msg: msg, data: nil)
-            }
-        } else {
-            
-            callback(success: false, msg: msg, data: nil)
-        }
-    }
-    
-    
     func queryModelList(params: QueryModelListParams01) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
-            
-            let success = resultDic[kSuccess] as? Bool
-            let msg     = resultDic[kMsg] as? String
-            let data: AnyObject?    = resultDic[kData]
-            
-            if let success=success {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)), dispatch_get_main_queue(), { () -> Void in
                 
-                var strategyList = [StrategyModel]()
+                let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
                 
-                if let data: AnyObject=data {
+                let success = resultDic[kSuccess] as? Bool
+                let msg     = resultDic[kMsg] as? String
+                let data: AnyObject?    = resultDic[kData]
+                
+                if let success=success {
                     
-                    strategyList <-- data
+                    var strategyList = [StrategyModel]()
                     
-                    subscriber.sendNext(ResultModel(success: true, msg: msg, data: strategyList))
+                    if let data: AnyObject=data {
+                        
+                        strategyList <-- data
+                        
+                        subscriber.sendNext(ResultModel(success: true, msg: msg, data: strategyList))
+                    } else {
+                        
+                        subscriber.sendNext(ResultModel(success: false, msg: msg, data: nil))
+                    }
                 } else {
                     
                     subscriber.sendNext(ResultModel(success: false, msg: msg, data: nil))
                 }
-            } else {
-                
-                subscriber.sendNext(ResultModel(success: false, msg: msg, data: nil))
-            }
-            subscriber.sendCompleted()
+                subscriber.sendCompleted()
+            })
             
             return nil
         })

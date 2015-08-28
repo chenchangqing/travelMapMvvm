@@ -10,6 +10,7 @@ import ReactiveCocoa
 
 class IndexViewModel: NSObject {
     
+//    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
     private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
     // 数据源（一直处于被观察状态）
@@ -36,6 +37,13 @@ class IndexViewModel: NSObject {
             
             // 查询
             let singal = self.strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01())
+            
+            // 错误处理
+            singal.subscribeError({ (error:NSError!) -> Void in
+                
+                println(error.domain)
+                self.strategyList = [StrategyModel]()
+            })
             
             // 重置数据源
             singal.subscribeNextAs({ (result:ResultModel!) -> Void in
