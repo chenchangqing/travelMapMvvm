@@ -57,9 +57,26 @@ class IndexViewController: UITableViewController {
             sourceSignal: RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
                 
                 self.indicatorView.stopAnimation()
+                self.executeFadeAnimation()
             },
             reuseIdentifier: "cell",
             cellHeight: 200,
             selectionCommand: nil)
+    }
+    
+    // MARK: - 动画
+    
+    /**
+     * 动画
+     */
+    private func executeFadeAnimation() {
+        
+        var animated = CATransition()
+        animated.duration = 1.0
+        animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        animated.type = kCATransitionFade
+        animated.removedOnCompletion = true
+        
+        self.view.layer.addAnimation(animated, forKey: nil)
     }
 }
