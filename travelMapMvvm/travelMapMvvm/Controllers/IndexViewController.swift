@@ -104,11 +104,13 @@ class IndexViewController: UITableViewController {
      */
     private func callbackAfterGetData(any:AnyObject!) {
         
-        // 停止提示
-        self.indicatorView.stopAnimation()
-        
         // 开始动画
-        self.executeFadeAnimation()
+        if !self.indicatorView.hidden {
+            
+            self.executeFadeAnimation()
+            // 停止提示
+            self.indicatorView.stopAnimation()
+        }
         
         // 拿到当前的下拉刷新控件，结束刷新状态
         self.tableView.header.endRefreshing()
