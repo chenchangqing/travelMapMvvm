@@ -82,7 +82,7 @@ class IndexViewModel: NSObject {
             // 重置数据源
             singal.subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
                 
-                self.setValue(self.strategyList + strategyList, forKey: "strategyList")
+                self.strategyList += strategyList
             })
             
             return singal

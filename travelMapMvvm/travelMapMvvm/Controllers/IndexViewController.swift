@@ -63,7 +63,6 @@ class IndexViewController: UITableViewController {
             // 查询数据
             self.viewModel.loadmoreSearch.execute(nil)
         }
-        tableView.footer.ignoredScrollViewContentInsetBottom = -50
         tableView.footer.automaticallyChangeAlpha = true
     }
     
@@ -159,10 +158,20 @@ class IndexViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let item: AnyObject = viewModel.strategyList[indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
-        if let reactiveView = cell as? ReactiveView {
-            reactiveView.bindViewModel(item)
+        
+        // 解决模拟器越界
+        if indexPath.row < viewModel.strategyList.count {
+            
+            let item: AnyObject = viewModel.strategyList[indexPath.row]
+            if let reactiveView = cell as? ReactiveView {
+                reactiveView.bindViewModel(item)
+            }
+            println(indexPath)
+        } else {
+            
+            print(indexPath)
+            print("-越界\n")
         }
         return cell
     }

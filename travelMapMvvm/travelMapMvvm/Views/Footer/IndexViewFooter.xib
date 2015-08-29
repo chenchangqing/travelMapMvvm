@@ -20,6 +20,9 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU7-sV-O9T">
                                     <rect key="frame" x="0.0" y="8" width="78" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="cWQ-e9-dJR"/>
+                                    </constraints>
                                     <state key="normal" title="筛选" backgroundImage="u65">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,6 +30,9 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9j-fK-qSa">
                                     <rect key="frame" x="82" y="8" width="78" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="1GS-Rl-Rgp"/>
+                                    </constraints>
                                     <state key="normal" title="排序" backgroundImage="u67">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,6 +50,12 @@
                                 <constraint firstItem="X9j-fK-qSa" firstAttribute="top" secondItem="Jss-jS-Why" secondAttribute="top" constant="8" id="mfx-Sk-ENA"/>
                                 <constraint firstItem="X9j-fK-qSa" firstAttribute="width" secondItem="hU7-sV-O9T" secondAttribute="width" id="uQH-q7-sCz"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="lyE-s4-GJI"/>
+                                    <exclude reference="mfx-Sk-ENA"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
