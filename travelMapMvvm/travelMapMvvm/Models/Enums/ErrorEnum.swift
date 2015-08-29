@@ -42,15 +42,6 @@ enum ErrorEnum : String {
         return nil
     }
     
-    // 错误域
-    var errorDommain:String  {
-        
-        get {
-            
-            return "com.city8.go"
-        }
-    }
-    
     // errorCode
     var errorCode: Int {
         

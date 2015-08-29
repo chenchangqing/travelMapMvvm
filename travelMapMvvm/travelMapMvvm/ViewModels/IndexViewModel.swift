@@ -10,8 +10,8 @@ import ReactiveCocoa
 
 class IndexViewModel: NSObject {
     
-    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
-//    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
+//    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
+    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
     // 数据源（一直处于被观察状态）
     dynamic var strategyList = [StrategyModel]()
@@ -76,8 +76,7 @@ class IndexViewModel: NSObject {
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
                 
-                println(error.localizedDescription)
-                self.strategyList = [StrategyModel]()
+                self.setValue(error.localizedDescription, forKey: "errorMsg")
             })
             
             // 重置数据源

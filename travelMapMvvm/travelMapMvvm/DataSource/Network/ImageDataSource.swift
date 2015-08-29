@@ -34,21 +34,31 @@ class ImageDataSource: ImageDataSourceProtocol {
             let request = NSMutableURLRequest(URL: url)
             
             let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+
+                let downloadImageError = NSError(
+                    domain: kErrorDomain,
+                    code: ErrorEnum.ImageDownloadError.errorCode,
+                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue + "(" + url.description + ")"])
+                
                 if (error == nil) {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
                         let image = UIImage(data: data)
-                        UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
-                        subscriber.sendNext(image)
-                        subscriber.sendCompleted()
+                        
+                        if let image=image {
+                            
+                            UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
+                            subscriber.sendNext(image)
+                            subscriber.sendCompleted()
+                        } else {
+                            
+                            subscriber.sendError(downloadImageError)
+                        }
                         AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                     })
                 } else {
                     
-                    subscriber.sendError(NSError(
-                        domain: ErrorEnum.ImageDownloadError.errorDommain,
-                        code: ErrorEnum.ImageDownloadError.errorCode,
-                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue]))
+                    subscriber.sendError(downloadImageError)
                     AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                 }
             })

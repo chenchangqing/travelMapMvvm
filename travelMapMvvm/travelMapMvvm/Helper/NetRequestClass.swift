@@ -71,7 +71,7 @@ class NetRequestClass {
             } else {
                 
                 callback(error:NSError(
-                    domain: ErrorEnum.ServerError.errorDommain,
+                    domain: kErrorDomain,
                     code: ErrorEnum.ServerError.errorCode,
                     userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
             }
@@ -108,7 +108,7 @@ class NetRequestClass {
                 
                 
                 callback(error:NSError(
-                    domain: ErrorEnum.ServerError.errorDommain,
+                    domain: kErrorDomain,
                     code: ErrorEnum.ServerError.errorCode,
                     userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
             }

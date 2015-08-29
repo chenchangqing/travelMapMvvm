@@ -44,7 +44,7 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
                     } else {
                         
                         subscriber.sendError(NSError(
-                            domain: ErrorEnum.JSONError.errorDommain,
+                            domain:kErrorDomain,
                             code: ErrorEnum.JSONError.errorCode,
                             userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
                         ))
