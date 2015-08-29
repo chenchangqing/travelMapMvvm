@@ -27,6 +27,14 @@ class IndexViewController: UITableViewController {
         setupMJRefresh()
         setupTableView()
         
+        // 如果出现错误则提示
+        RACObserve(viewModel, "errorMsg").subscribeNextAs { (errorMsg:String) -> () in
+            if !errorMsg.isEmpty {
+                
+                self.showHUDErrorMessage(errorMsg)
+            }
+        }
+        
         // 提示动画
         self.indicatorView.startAnimation()
         

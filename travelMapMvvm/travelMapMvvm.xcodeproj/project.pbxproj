@@ -52,6 +52,13 @@
 		E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BC1B91689400F3EA40 /* UIScrollView+MJRefresh.m */; };
 		E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */; };
 		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
+		E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */; };
+		E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */; };
+		E688EFB41B91D52E00C01B23 /* MB-Error.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAC1B91D52E00C01B23 /* MB-Error.png */; };
+		E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAD1B91D52E00C01B23 /* MB-Error@2x.png */; };
+		E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */ = {isa = PBXBuildFile; fileRef = E688EFAF1B91D52E00C01B23 /* MBProgressHUD+Simplify.m */; };
+		E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E688EFB11B91D52E00C01B23 /* UIViewController+MBProgressHUD.m */; };
+		E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E688EFB91B91D60D00C01B23 /* MBProgressHUD.m */; };
 		E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD471B8FEF94001B7D71 /* JSONHelper.swift */; };
 		E698AD4E1B8FF108001B7D71 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4A1B8FF108001B7D71 /* RAC.swift */; };
 		E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4B1B8FF108001B7D71 /* RACObserve.swift */; };
@@ -173,6 +180,16 @@
 		E68730BD1B91689400F3EA40 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
+		E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark.png"; sourceTree = "<group>"; };
+		E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark@2x.png"; sourceTree = "<group>"; };
+		E688EFAC1B91D52E00C01B23 /* MB-Error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Error.png"; sourceTree = "<group>"; };
+		E688EFAD1B91D52E00C01B23 /* MB-Error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Error@2x.png"; sourceTree = "<group>"; };
+		E688EFAE1B91D52E00C01B23 /* MBProgressHUD+Simplify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Simplify.h"; sourceTree = "<group>"; };
+		E688EFAF1B91D52E00C01B23 /* MBProgressHUD+Simplify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Simplify.m"; sourceTree = "<group>"; };
+		E688EFB01B91D52E00C01B23 /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
+		E688EFB11B91D52E00C01B23 /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
+		E688EFB81B91D60D00C01B23 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E688EFB91B91D60D00C01B23 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E698AD461B8FEF94001B7D71 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHelper.h; sourceTree = "<group>"; };
 		E698AD471B8FEF94001B7D71 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		E698AD4A1B8FF108001B7D71 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
@@ -321,6 +338,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E688EFA91B91D52E00C01B23 /* MBProgressHUD */,
 				E68730921B91689300F3EA40 /* MJRefresh2.4.7 */,
 				E698AD9E1B905C15001B7D71 /* Extension */,
 				E698AD5C1B905BA5001B7D71 /* NVActivityIndicatorView */,
@@ -547,6 +565,23 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		E688EFA91B91D52E00C01B23 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E688EFB81B91D60D00C01B23 /* MBProgressHUD.h */,
+				E688EFB91B91D60D00C01B23 /* MBProgressHUD.m */,
+				E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */,
+				E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */,
+				E688EFAC1B91D52E00C01B23 /* MB-Error.png */,
+				E688EFAD1B91D52E00C01B23 /* MB-Error@2x.png */,
+				E688EFAE1B91D52E00C01B23 /* MBProgressHUD+Simplify.h */,
+				E688EFAF1B91D52E00C01B23 /* MBProgressHUD+Simplify.m */,
+				E688EFB01B91D52E00C01B23 /* UIViewController+MBProgressHUD.h */,
+				E688EFB11B91D52E00C01B23 /* UIViewController+MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		E698AD491B8FF108001B7D71 /* ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +797,10 @@
 			files = (
 				E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */,
 				E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */,
+				E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */,
+				E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */,
+				E688EFB41B91D52E00C01B23 /* MB-Error.png in Resources */,
+				E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
 				E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */,
 			);
@@ -852,6 +891,7 @@
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
+				E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
@@ -893,6 +933,7 @@
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,
 				E698AD811B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */,
 				E68730C91B91689400F3EA40 /* MJRefreshBackStateFooter.m in Sources */,
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
 				E68730CF1B91689400F3EA40 /* UIScrollView+MJExtension.m in Sources */,
@@ -904,6 +945,7 @@
 				E698AD901B905BA6001B7D71 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,
+				E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */,
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,

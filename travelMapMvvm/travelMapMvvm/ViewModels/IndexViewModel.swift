@@ -22,6 +22,9 @@ class IndexViewModel: NSObject {
     // 上拉加载更多操作
     var loadmoreSearch : RACCommand!
     
+    // 错误信息
+    var errorMsg: String = ""
+    
     override init() {
         
         super.init()
@@ -46,14 +49,14 @@ class IndexViewModel: NSObject {
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
                 
-                println(error.localizedDescription)
-                self.strategyList = [StrategyModel]()
+                self.setValue(error.localizedDescription, forKey: "errorMsg")
+                self.setValue([StrategyModel](), forKey: "strategyList")
             })
             
             // 重置数据源
             singal.subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
                 
-                self.strategyList = strategyList
+                self.setValue(strategyList, forKey: "strategyList")
             })
             
             return singal

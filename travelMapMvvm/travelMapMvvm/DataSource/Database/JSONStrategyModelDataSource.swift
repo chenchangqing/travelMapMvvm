@@ -27,7 +27,7 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)), dispatch_get_main_queue(), { () -> Void in
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
                 
                 let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
                 

@@ -49,13 +49,11 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
-  install_framework 'MBProgressHUD.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
-  install_framework 'MBProgressHUD.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
 fi
