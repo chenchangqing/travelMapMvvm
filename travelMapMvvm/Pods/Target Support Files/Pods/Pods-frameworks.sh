@@ -17,8 +17,8 @@ install_framework()
   fi
 
   # use filter instead of exclude so missing patterns dont' throw errors
-  echo "rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" ${source} ${destination}"
-  rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" "${source}" "${destination}"
+  echo "rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" --filter "- Modules/" ${source} ${destination}"
+  rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" --filter "- Modules/" "${source}" "${destination}"
   # Resign the code if required by the build settings to avoid unstable apps
   if [ "${CODE_SIGNING_REQUIRED}" == "YES" ]; then
       code_sign "${destination}/$1"
@@ -50,14 +50,12 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'MBProgressHUD.framework'
-  install_framework 'MJRefresh.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFNetworking.framework'
   install_framework 'MBProgressHUD.framework'
-  install_framework 'MJRefresh.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
 fi

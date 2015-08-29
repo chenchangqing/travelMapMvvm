@@ -6,5 +6,5 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <RBStoryboardLink/RBStoryboardLink.h>
-#import <MJRefresh/MJRefresh.h>
+#import "MJRefresh.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
