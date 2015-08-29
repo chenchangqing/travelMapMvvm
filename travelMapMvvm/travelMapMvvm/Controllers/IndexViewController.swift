@@ -15,7 +15,6 @@ import ReactiveCocoa
 class IndexViewController: UITableViewController {
     
     private var viewModel: IndexViewModel!
-    private var bindingHelper: TableViewBindingHelper!
 
     // MARK: -
     
@@ -25,7 +24,6 @@ class IndexViewController: UITableViewController {
         // 初始化
         setupIndexViewModel()
         setupMJRefresh()
-        setupTableView()
         
         // 如果出现错误则提示
         RACObserve(viewModel, "errorMsg").subscribeNextAs { (errorMsg:String) -> () in
@@ -33,6 +31,15 @@ class IndexViewController: UITableViewController {
                 
                 self.showHUDErrorMessage(errorMsg)
             }
+        }
+        
+        // 更新tableView
+        RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
+            
+            self.callbackAfterGetData(any)
+        }.subscribeNext {(d:AnyObject!) -> () in
+            
+            self.tableView.reloadData()
         }
         
         // 提示动画
@@ -71,22 +78,6 @@ class IndexViewController: UITableViewController {
         }
     }
     
-    
-    /**
-     * 初始化tableView
-     */
-    private func setupTableView() {
-        
-        bindingHelper = TableViewBindingHelper(
-            tableView: self.tableView,
-            sourceSignal: RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
-                self.callbackAfterGetData(any)
-            },
-            reuseIdentifier: "cell",
-            cellHeight: 200,
-            selectionCommand: nil)
-    }
-    
     // MARK: - 动画
     
     /**
@@ -97,15 +88,13 @@ class IndexViewController: UITableViewController {
         var animated = CATransition()
         animated.duration = 1.0
         animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-//        animated.type = kCATransitionPush
-//        animated.subtype = "fromLeft"
         animated.type = kCATransitionFade
         animated.removedOnCompletion = true
         
         self.view.layer.addAnimation(animated, forKey: nil)
     }
     
-    // MARK: - 
+    // MARK: - 请求数据之后回调
     
     /**
      * 请求数据之后回调
@@ -137,5 +126,30 @@ class IndexViewController: UITableViewController {
                 self.tableView.footer.resetNoMoreData()
             }
         }
+    }
+    
+    //MARK: - UITableView
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.strategyList.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let item: AnyObject = viewModel.strategyList[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        if let reactiveView = cell as? ReactiveView {
+            reactiveView.bindViewModel(item)
+        }
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 200
+    }
+    
+    override func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
+        
     }
 }
