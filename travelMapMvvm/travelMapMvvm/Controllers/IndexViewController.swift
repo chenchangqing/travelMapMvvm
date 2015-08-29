@@ -100,7 +100,6 @@ class IndexViewController: UITableViewController {
                 self.callbackAfterGetData(any)
             },
             reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
-    
     }
     
     /**
