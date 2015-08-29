@@ -167,11 +167,11 @@ class IndexViewController: UITableViewController {
             if let reactiveView = cell as? ReactiveView {
                 reactiveView.bindViewModel(item)
             }
-            println(indexPath)
+//            println(indexPath)
         } else {
             
-            print(indexPath)
-            print("-越界\n")
+//            print(indexPath)
+//            print("-越界\n")
         }
         return cell
     }
