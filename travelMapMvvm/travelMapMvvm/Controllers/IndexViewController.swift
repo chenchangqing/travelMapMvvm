@@ -15,6 +15,8 @@ import ReactiveCocoa
 class IndexViewController: UITableViewController {
     
     private var viewModel: IndexViewModel!
+    private let kCellIdentifier = "cell"
+    private let kFooterIdentifier = "footer"
 
     // MARK: -
     
@@ -24,23 +26,8 @@ class IndexViewController: UITableViewController {
         // 初始化
         setupIndexViewModel()
         setupMJRefresh()
-        
-        // 如果出现错误则提示
-        RACObserve(viewModel, "errorMsg").subscribeNextAs { (errorMsg:String) -> () in
-            if !errorMsg.isEmpty {
-                
-                self.showHUDErrorMessage(errorMsg)
-            }
-        }
-        
-        // 更新tableView
-        RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
-            
-            self.callbackAfterGetData(any)
-        }.subscribeNext {(d:AnyObject!) -> () in
-            
-            self.tableView.reloadData()
-        }
+        setupObserve()
+        setupReuseFooter()
         
         // 提示动画
         self.indicatorView.startAnimation()
@@ -76,6 +63,41 @@ class IndexViewController: UITableViewController {
             // 查询数据
             self.viewModel.loadmoreSearch.execute(nil)
         }
+        tableView.footer.ignoredScrollViewContentInsetBottom = -50
+        tableView.footer.automaticallyChangeAlpha = true
+    }
+    
+    /**
+     * 初始化属性观察
+     */
+    private func setupObserve() {
+        
+        // 如果出现错误则提示
+        RACObserve(viewModel, "errorMsg").subscribeNextAs { (errorMsg:String) -> () in
+            if !errorMsg.isEmpty {
+                
+                self.showHUDErrorMessage(errorMsg)
+            }
+        }
+        
+        // 更新tableView
+        RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
+            
+            self.callbackAfterGetData(any)
+        }.subscribeNext {(d:AnyObject!) -> () in
+            
+            self.tableView.reloadData()
+        }
+    
+    }
+    
+    /**
+     * 初始化重用footer
+     */
+    private func setupReuseFooter() {
+        
+        let nib = UINib(nibName: "IndexViewFooter", bundle: nil)
+        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: kFooterIdentifier)
     }
     
     // MARK: - 动画
@@ -131,13 +153,14 @@ class IndexViewController: UITableViewController {
     //MARK: - UITableView
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return viewModel.strategyList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let item: AnyObject = viewModel.strategyList[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
         if let reactiveView = cell as? ReactiveView {
             reactiveView.bindViewModel(item)
         }
@@ -151,5 +174,21 @@ class IndexViewController: UITableViewController {
     
     override func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
         
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+
+        return 50
+    }
+
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let footer = tableView.dequeueReusableHeaderFooterViewWithIdentifier(kFooterIdentifier) as! UIView
+        return footer
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+//        
+//        println(scrollView.contentOffset.y)
     }
 }
