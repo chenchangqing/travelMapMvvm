@@ -10,8 +10,8 @@ import ReactiveCocoa
 
 class IndexViewModel: NSObject {
     
-//    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
-    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
+    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
+//    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
     // 数据源（一直处于被观察状态）
     dynamic var strategyList = [StrategyModel]()
@@ -46,17 +46,14 @@ class IndexViewModel: NSObject {
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
                 
-                println(error.domain)
+                println(error.localizedDescription)
                 self.strategyList = [StrategyModel]()
             })
             
             // 重置数据源
-            singal.subscribeNextAs({ (result:ResultModel!) -> Void in
+            singal.subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
                 
-                if let strategyList = result.data as? [StrategyModel] {
-                    
-                    self.strategyList = strategyList
-                }
+                self.strategyList = strategyList
             })
             
             return singal
@@ -76,17 +73,14 @@ class IndexViewModel: NSObject {
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
                 
-                println(error.domain)
+                println(error.localizedDescription)
                 self.strategyList = [StrategyModel]()
             })
             
             // 重置数据源
-            singal.subscribeNextAs({ (result:ResultModel!) -> Void in
+            singal.subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
                 
-                if let strategyList = result.data as? [StrategyModel] {
-                    
-                    self.strategyList += strategyList
-                }
+                self.strategyList += strategyList
             })
             
             return singal

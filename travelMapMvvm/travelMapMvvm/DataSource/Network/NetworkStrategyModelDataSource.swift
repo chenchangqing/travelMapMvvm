@@ -28,17 +28,15 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
                 
-            NetRequestClass.netRequestGETWithRequestURL({ (success, msg, data) -> Void in
+            NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)), dispatch_get_main_queue(), { () -> Void in
                     
-                    if success {
+                    if error == nil {
                         
-                        subscriber.sendNext(ResultModel(success: true, msg: msg, data: data))
+                        subscriber.sendNext(data!)
                         subscriber.sendCompleted()
                     } else {
-                        
-                        let error = NSError.instance("queryModelList", errorStr: msg)
                         
                         subscriber.sendError(error)
                         

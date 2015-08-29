@@ -62,21 +62,24 @@ class NetRequestClass {
             let resultDic = responseObj as! [NSObject:AnyObject]
             
             let success = resultDic[kSuccess] as? Bool
-            let msg     = resultDic[kMsg] as? String
+            let msg     = (resultDic[kMsg] as? String) == nil ? "" : ":" + (resultDic[kMsg] as? String)!
             let data: AnyObject?    = resultDic[kData]
             
             if let success=success {
                 
-                callback(success: success, msg: msg, data: data)
+                callback(error: nil, data: data)
             } else {
                 
-                callback(success: false, msg: msg, data: data)
+                callback(error:NSError(
+                    domain: ErrorEnum.ServerError.errorDommain,
+                    code: ErrorEnum.ServerError.errorCode,
+                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
             }
             
-        }) { (operation, error) -> Void in
-            
-            callback(success: false, msg: error.description, data: nil)
-        }
+            }) { (operation, error) -> Void in
+                
+                callback(error:error, data: nil)
+            }
     }
     
     /**
@@ -95,20 +98,24 @@ class NetRequestClass {
             let resultDic = responseObj as! [NSObject:AnyObject]
             
             let success = resultDic[kSuccess] as? Bool
-            let msg     = resultDic[kMsg] as? String
+            let msg     = (resultDic[kMsg] as? String) == nil ? "" : ":" + (resultDic[kMsg] as? String)!
             let data: AnyObject?    = resultDic[kData]
             
             if let success=success {
                 
-                callback(success: success, msg: msg, data: data)
+                callback(error: nil, data: data)
             } else {
                 
-                callback(success: false, msg: msg, data: data)
+                
+                callback(error:NSError(
+                    domain: ErrorEnum.ServerError.errorDommain,
+                    code: ErrorEnum.ServerError.errorCode,
+                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
             }
             
         }) { (operation, error) -> Void in
             
-            callback(success: false, msg: error.description, data: nil)
+            callback(error:error, data: nil)
         }
             
     }

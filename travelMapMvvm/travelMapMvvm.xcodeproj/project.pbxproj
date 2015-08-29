@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C7E59F461794CB9D4DE07AEC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C19C2FD405E9E8F60A20A2 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		E60E01F41B90C6AB000D09ED /* NSError+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E01F31B90C6AB000D09ED /* NSError+Custom.swift */; };
 		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
 		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
@@ -52,13 +51,13 @@
 		E68730CF1B91689400F3EA40 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BA1B91689400F3EA40 /* UIScrollView+MJExtension.m */; };
 		E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BC1B91689400F3EA40 /* UIScrollView+MJRefresh.m */; };
 		E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */; };
+		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
 		E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD471B8FEF94001B7D71 /* JSONHelper.swift */; };
 		E698AD4E1B8FF108001B7D71 /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4A1B8FF108001B7D71 /* RAC.swift */; };
 		E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4B1B8FF108001B7D71 /* RACObserve.swift */; };
 		E698AD501B8FF108001B7D71 /* RACSignal+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4C1B8FF108001B7D71 /* RACSignal+Extensions.swift */; };
 		E698AD511B8FF108001B7D71 /* TableViewBindingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD4D1B8FF108001B7D71 /* TableViewBindingHelper.swift */; };
 		E698AD551B8FF356001B7D71 /* IndexViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD521B8FF356001B7D71 /* IndexViewModel.swift */; };
-		E698AD5B1B9011E1001B7D71 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD5A1B9011E1001B7D71 /* ResultModel.swift */; };
 		E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD5E1B905BA5001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift */; };
 		E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD5F1B905BA5001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift */; };
 		E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD601B905BA5001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
@@ -109,7 +108,6 @@
 		23CD330A67D6B624E82A2B7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94C19C2FD405E9E8F60A20A2 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461F072C84AB40B04DE28C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		E60E01F31B90C6AB000D09ED /* NSError+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Custom.swift"; sourceTree = "<group>"; };
 		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
@@ -174,6 +172,7 @@
 		E68730BC1B91689400F3EA40 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		E68730BD1B91689400F3EA40 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		E698AD461B8FEF94001B7D71 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHelper.h; sourceTree = "<group>"; };
 		E698AD471B8FEF94001B7D71 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		E698AD4A1B8FF108001B7D71 /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
@@ -181,7 +180,6 @@
 		E698AD4C1B8FF108001B7D71 /* RACSignal+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RACSignal+Extensions.swift"; sourceTree = "<group>"; };
 		E698AD4D1B8FF108001B7D71 /* TableViewBindingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingHelper.swift; sourceTree = "<group>"; };
 		E698AD521B8FF356001B7D71 /* IndexViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewModel.swift; sourceTree = "<group>"; };
-		E698AD5A1B9011E1001B7D71 /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		E698AD5E1B905BA5001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
 		E698AD5F1B905BA5001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
 		E698AD601B905BA5001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
@@ -357,7 +355,6 @@
 				E659F4961B8CEFFF005CD9FD /* Enums */,
 				E659F49C1B8CEFFF005CD9FD /* Structs */,
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
-				E698AD5A1B9011E1001B7D71 /* ResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,6 +367,7 @@
 				E659F4991B8CEFFF005CD9FD /* StrategyThemeEnum.swift */,
 				E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */,
 				E611B3A71B8DB01B0034B267 /* OperationEnum.swift */,
+				E688EFA51B919B5200C01B23 /* ErrorEnum.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -611,7 +609,6 @@
 			isa = PBXGroup;
 			children = (
 				E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */,
-				E60E01F31B90C6AB000D09ED /* NSError+Custom.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -832,7 +829,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E60E01F41B90C6AB000D09ED /* NSError+Custom.swift in Sources */,
 				E68730CC1B91689400F3EA40 /* MJRefreshStateHeader.m in Sources */,
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -857,6 +853,7 @@
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
+				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
 				E698AD501B8FF108001B7D71 /* RACSignal+Extensions.swift in Sources */,
 				E659F4C01B8CEFFF005CD9FD /* LeftViewController.swift in Sources */,
@@ -868,7 +865,6 @@
 				E698AD4E1B8FF108001B7D71 /* RAC.swift in Sources */,
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				E659F4BF1B8CEFFF005CD9FD /* IndexViewController.swift in Sources */,
-				E698AD5B1B9011E1001B7D71 /* ResultModel.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,

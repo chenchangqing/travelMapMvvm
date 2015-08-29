@@ -39,14 +39,16 @@ class ImageDataSource: ImageDataSourceProtocol {
                         
                         let image = UIImage(data: data)
                         UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
-                        subscriber.sendNext(ResultModel(success: true, msg: msgImageDownloadSuccess, data: image))
+                        subscriber.sendNext(image)
                         subscriber.sendCompleted()
                         AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                     })
                 } else {
                     
-                    let error = NSError.instance("queryModelList", errorStr: error.description)
-                    subscriber.sendError(error)
+                    subscriber.sendError(NSError(
+                        domain: ErrorEnum.ImageDownloadError.errorDommain,
+                        code: ErrorEnum.ImageDownloadError.errorCode,
+                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue]))
                     AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                 }
             })

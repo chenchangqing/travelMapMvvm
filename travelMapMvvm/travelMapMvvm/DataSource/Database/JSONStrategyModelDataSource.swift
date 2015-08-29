@@ -31,28 +31,28 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
                 
                 let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
                 
-                let success = resultDic[kSuccess] as? Bool
-                let msg     = resultDic[kMsg] as? String
-                let data: AnyObject?    = resultDic[kData]
-                
-                if let success=success {
+                if resultDic.error == nil {
                     
                     var strategyList = [StrategyModel]()
                     
-                    if let data: AnyObject=data {
+                    if let data: AnyObject=resultDic.data {
                         
-                        strategyList <-- data
+                        strategyList <-- data[kData]
                         
-                        subscriber.sendNext(ResultModel(success: true, msg: msg, data: strategyList))
+                        subscriber.sendNext(strategyList)
+                        subscriber.sendCompleted()
                     } else {
                         
-                        subscriber.sendNext(ResultModel(success: false, msg: msg, data: nil))
+                        subscriber.sendError(NSError(
+                            domain: ErrorEnum.JSONError.errorDommain,
+                            code: ErrorEnum.JSONError.errorCode,
+                            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
+                        ))
                     }
                 } else {
                     
-                    subscriber.sendNext(ResultModel(success: false, msg: msg, data: nil))
+                    subscriber.sendError(resultDic.error!)
                 }
-                subscriber.sendCompleted()
             })
             
             return nil

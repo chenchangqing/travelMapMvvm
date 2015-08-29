@@ -12,9 +12,10 @@ class ReadJsonClass {
     /**
      * 解析json
      */
-    class func readJsonData(fileName:String) -> [String:AnyObject] {
+    class func readJsonData(fileName:String) -> (error:NSError?,data:AnyObject?){
         
-        var result = [String:AnyObject]()
+        var error:NSError?
+        var data:AnyObject?
         
         let path        = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
         
@@ -24,15 +25,15 @@ class ReadJsonClass {
             
             if let jsonData=jsonData {
                 
-                let tempResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil)
+                let tempResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: &error)
                 
                 if let tempResult=tempResult as? [String:AnyObject] {
                     
-                    result = tempResult
+                    data = tempResult
                 }
             }
         }
         
-        return result
+        return (error,data)
     }
 }

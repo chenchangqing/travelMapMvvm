@@ -119,15 +119,12 @@ class StrategyCell: UITableViewCell, ReactiveView  {
         
         downloadSingal?.subscribeError({ (error:NSError!) -> Void in
             
-            println(error.domain)
+            println(error.localizedDescription)
         })
         
-        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (image:UIImage!) -> () in
             
-            if let image=result.data as? UIImage {
-                
-                self.authorHeadC.image = image
-            }
+            self.authorHeadC.image = image
         })
     }
     
@@ -140,12 +137,12 @@ class StrategyCell: UITableViewCell, ReactiveView  {
         
         downloadSingal?.subscribeError({ (error:NSError!) -> Void in
             
-            println(error.domain)
+            println(error.localizedDescription)
         })
         
-        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (result:ResultModel) -> () in
+        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (image:UIImage!) -> () in
             
-            self.strategyPic.image = result.data as? UIImage
+            self.strategyPic.image = image
         })
     }
 }
