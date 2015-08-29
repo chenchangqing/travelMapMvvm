@@ -24,14 +24,14 @@ class IndexViewController: UITableViewController {
         
         // 初始化
         setupIndexViewModel()
-        setupTableView()
         setupMJRefresh()
+        setupTableView()
         
         // 提示动画
         self.indicatorView.startAnimation()
         
-        // 延时3秒查询数据
-        self.viewModel.executeSearch.execute(nil)
+        // 马上进入刷新状态
+        tableView.header.beginRefreshing()
 
     }
     
@@ -52,24 +52,15 @@ class IndexViewController: UITableViewController {
         
         tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)), dispatch_get_main_queue(), { () -> Void in
-                
-                // 拿到当前的下拉刷新控件，结束刷新状态
-                self.tableView.header.endRefreshing()
-            })
+            // 查询数据
+            self.viewModel.refreshSearch.execute(nil)
         })
         
         tableView.footer = MJRefreshBackNormalFooter { () -> Void in
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 2)), dispatch_get_main_queue(), { () -> Void in
-                
-                // 拿到当前的上拉刷新控件，结束刷新状态
-                self.tableView.footer.endRefreshing()
-            })
+            // 查询数据
+            self.viewModel.loadmoreSearch.execute(nil)
         }
-        
-        // 马上进入刷新状态
-        tableView.header.beginRefreshing()
     }
     
     
@@ -81,9 +72,7 @@ class IndexViewController: UITableViewController {
         bindingHelper = TableViewBindingHelper(
             tableView: self.tableView,
             sourceSignal: RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
-                
-                self.indicatorView.stopAnimation()
-                self.executeFadeAnimation()
+                self.callbackAfterGetData(any)
             },
             reuseIdentifier: "cell",
             cellHeight: 200,
@@ -100,10 +89,43 @@ class IndexViewController: UITableViewController {
         var animated = CATransition()
         animated.duration = 1.0
         animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        animated.type = kCATransitionPush
-        animated.subtype = "fromLeft"
+//        animated.type = kCATransitionPush
+//        animated.subtype = "fromLeft"
+        animated.type = kCATransitionFade
         animated.removedOnCompletion = true
         
         self.view.layer.addAnimation(animated, forKey: nil)
+    }
+    
+    // MARK: - 
+    
+    /**
+     * 请求数据之后回调
+     */
+    private func callbackAfterGetData(any:AnyObject!) {
+        
+        // 停止提示
+        self.indicatorView.stopAnimation()
+        
+        // 开始动画
+        self.executeFadeAnimation()
+        
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        self.tableView.header.endRefreshing()
+        
+        // 拿到当前的上拉刷新控件，结束刷新状态
+        self.tableView.footer.endRefreshing()
+        
+        // set table status
+        if let strategyList=any as? [StrategyModel] {
+            
+            if strategyList.count > 20 {
+                
+                self.tableView.footer.noticeNoMoreData()
+            } else {
+                
+                self.tableView.footer.resetNoMoreData()
+            }
+        }
     }
 }
