@@ -80,11 +80,23 @@ class TableViewBindingHelper: NSObject, UITableViewDataSource, UITableViewDelega
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let item: AnyObject = data[indexPath.row]
+
     let cell = tableView.dequeueReusableCellWithIdentifier(templateCell.reuseIdentifier!) as! UITableViewCell
-    if let reactiveView = cell as? ReactiveView {
-      reactiveView.bindViewModel(item)
+    
+    // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
+    if indexPath.row < data.count {
+        
+        let item: AnyObject = data[indexPath.row]
+        if let reactiveView = cell as? ReactiveView {
+            reactiveView.bindViewModel(item)
+        }
+            println(indexPath)
+    } else {
+        
+            print(indexPath)
+            print("-越界\n")
     }
+    
     return cell
   }
   

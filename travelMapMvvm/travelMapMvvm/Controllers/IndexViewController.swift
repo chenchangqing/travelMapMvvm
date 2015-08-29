@@ -16,7 +16,8 @@ class IndexViewController: UITableViewController {
     
     private var viewModel: IndexViewModel!
     private let kCellIdentifier = "cell"
-    private let kFooterIdentifier = "footer"
+    private var bindingHelper: TableViewBindingHelper!
+    private var footer:UIView!
 
     // MARK: -
     
@@ -24,10 +25,10 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         // 初始化
+        setupReuseFooter()
         setupIndexViewModel()
         setupMJRefresh()
         setupObserve()
-        setupReuseFooter()
         
         // 提示动画
         self.indicatorView.startAnimation()
@@ -35,6 +36,18 @@ class IndexViewController: UITableViewController {
         // 马上进入刷新状态
         tableView.header.beginRefreshing()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        footer.hidden = false
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        footer.hidden = true
     }
     
     // MARK: - setup
@@ -80,13 +93,13 @@ class IndexViewController: UITableViewController {
         }
         
         // 更新tableView
-        RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
-            
-            self.callbackAfterGetData(any)
-        }.subscribeNext {(d:AnyObject!) -> () in
-            
-            self.tableView.reloadData()
-        }
+        bindingHelper = TableViewBindingHelper(
+            tableView: tableView,
+            sourceSignal: RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
+                
+                self.callbackAfterGetData(any)
+            },
+            reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
     
     }
     
@@ -95,8 +108,16 @@ class IndexViewController: UITableViewController {
      */
     private func setupReuseFooter() {
         
-        let nib = UINib(nibName: "IndexViewFooter", bundle: nil)
-        tableView.registerNib(nib, forHeaderFooterViewReuseIdentifier: kFooterIdentifier)
+        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? UIView
+        if let footer=footer {
+            
+            footer.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.navigationController?.view.addSubview(footer)
+            
+            // constrains
+        self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[footer]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
+        self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[footer(50)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
+        }
     }
     
     // MARK: - 动画
@@ -121,6 +142,12 @@ class IndexViewController: UITableViewController {
      * 请求数据之后回调
      */
     private func callbackAfterGetData(any:AnyObject!) {
+        
+        // 显示footer
+        if footer.hidden {
+            
+            footer.hidden = false
+        }
         
         // 开始动画
         if !self.indicatorView.hidden {
@@ -147,57 +174,5 @@ class IndexViewController: UITableViewController {
                 self.tableView.footer.resetNoMoreData()
             }
         }
-    }
-    
-    //MARK: - UITableView
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return viewModel.strategyList.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
-        
-        // 解决模拟器越界
-        if indexPath.row < viewModel.strategyList.count {
-            
-            let item: AnyObject = viewModel.strategyList[indexPath.row]
-            if let reactiveView = cell as? ReactiveView {
-                reactiveView.bindViewModel(item)
-            }
-//            println(indexPath)
-        } else {
-            
-//            print(indexPath)
-//            print("-越界\n")
-        }
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        return 200
-    }
-    
-    override func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
-        
-    }
-    
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-
-        return 50
-    }
-
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        let footer = tableView.dequeueReusableHeaderFooterViewWithIdentifier(kFooterIdentifier) as! UIView
-        return footer
-    }
-    
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-//        
-//        println(scrollView.contentOffset.y)
     }
 }
