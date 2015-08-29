@@ -25,7 +25,7 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         // 初始化
-        setupReuseFooter()
+        setupFooter()
         setupIndexViewModel()
         setupMJRefresh()
         setupObserve()
@@ -106,7 +106,7 @@ class IndexViewController: UITableViewController {
     /**
      * 初始化重用footer
      */
-    private func setupReuseFooter() {
+    private func setupFooter() {
         
         footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? UIView
         if let footer=footer {
