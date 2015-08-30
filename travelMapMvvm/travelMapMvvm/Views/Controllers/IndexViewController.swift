@@ -53,6 +53,23 @@ class IndexViewController: UITableViewController {
     // MARK: - setup
     
     /**
+     * 初始化重用footer
+     */
+    private func setupFooter() {
+        
+        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? UIView
+        if let footer=footer {
+            
+            footer.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.navigationController?.view.addSubview(footer)
+            
+            // constrains
+            self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[footer]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
+            self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[footer(50)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
+        }
+    }
+    
+    /**
      * 初始化viewModel
      */
     private func setupIndexViewModel() {
@@ -102,23 +119,6 @@ class IndexViewController: UITableViewController {
             reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
     }
     
-    /**
-     * 初始化重用footer
-     */
-    private func setupFooter() {
-        
-        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? UIView
-        if let footer=footer {
-            
-            footer.setTranslatesAutoresizingMaskIntoConstraints(false)
-            self.navigationController?.view.addSubview(footer)
-            
-            // constrains
-        self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[footer]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
-        self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[footer(50)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
-        }
-    }
-    
     // MARK: - 动画
     
     /**
@@ -141,12 +141,6 @@ class IndexViewController: UITableViewController {
      * 请求数据之后回调
      */
     private func callbackAfterGetData(any:AnyObject!) {
-        
-        // 显示footer
-        if footer.hidden {
-            
-            footer.hidden = false
-        }
         
         // 开始动画
         if !self.indicatorView.hidden {
