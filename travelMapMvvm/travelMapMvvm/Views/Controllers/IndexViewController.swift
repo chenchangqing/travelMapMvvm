@@ -17,7 +17,7 @@ class IndexViewController: UITableViewController {
     private var viewModel: IndexViewModel!
     private let kCellIdentifier = "cell"
     private var bindingHelper: TableViewBindingHelper!
-    private var footer:UIView!
+    private var footer:IndexViewFooter!
 
     // MARK: -
     
@@ -57,7 +57,8 @@ class IndexViewController: UITableViewController {
      */
     private func setupFooter() {
         
-        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? UIView
+        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? IndexViewFooter
+        
         if let footer=footer {
             
             footer.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -66,6 +67,18 @@ class IndexViewController: UITableViewController {
             // constrains
             self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[footer]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
             self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[footer(50)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
+            
+            // 跳转至筛选页面
+            footer.goFilterBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                self.performSegueWithIdentifier(kSegueFromIndexViewControllerToFilterViewController, sender: nil)
+            })
+            
+            // 跳转至排序页面
+            footer.goOrderBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                self.performSegueWithIdentifier(kSegueFromIndexViewControllerToDesViewController, sender: nil)
+            })
         }
     }
     
@@ -166,6 +179,19 @@ class IndexViewController: UITableViewController {
                 
                 self.tableView.footer.resetNoMoreData()
             }
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func unwindSegueToIndexViewController(segue: UIStoryboardSegue) {
+        
+        if segue.identifier == kSegueFromFilterViewControllerToIndexViewController {
+            
+        }
+        
+        if segue.identifier == kSegueFromDesViewControllerToIndexViewController {
+            
         }
     }
 }

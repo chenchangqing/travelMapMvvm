@@ -80,6 +80,10 @@
                     <exclude reference="9wW-zf-aEk"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="goFilterBtn" destination="hU7-sV-O9T" id="loA-uJ-64b"/>
+                <outlet property="goOrderBtn" destination="X9j-fK-qSa" id="KGR-XC-NLt"/>
+            </connections>
         </view>
     </objects>
     <resources>

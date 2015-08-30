@@ -18,3 +18,10 @@
 #define kErrorDomain @"com.city.go"
 
 
+// segue
+#define kSegueFromIndexViewControllerToFilterViewController @"FromIndexViewControllerToFilterViewController"
+#define kSegueFromIndexViewControllerToDesViewController    @"FromIndexViewControllerToDesViewController"
+#define kSegueFromFilterViewControllerToIndexViewController @"FromFilterViewControllerToIndexViewController"
+#define kSegueFromDesViewControllerToIndexViewController    @"FromDesViewControllerToIndexViewController"
+
+

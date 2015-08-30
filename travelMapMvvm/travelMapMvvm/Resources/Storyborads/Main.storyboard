@@ -163,37 +163,17 @@
                             <outlet property="delegate" destination="uIO-7s-XOw" id="XEv-pb-dPS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f4h-OX-zWx">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Z2p-EK-kNw">
-                            <connections>
-                                <segue destination="B6E-kL-8Wr" kind="show" id="cXG-bh-XIo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="f4h-OX-zWx"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="bz7-8v-DKg" kind="presentation" identifier="FromIndexViewControllerToFilterViewController" id="4HT-u1-4ka"/>
+                        <segue destination="tK5-IC-uFA" kind="presentation" identifier="FromIndexViewControllerToDesViewController" id="mSf-Ng-eyN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK8-Vf-DD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Bzd-d5-TaE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="983.5" y="187.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6KS-vI-ehj">
-            <objects>
-                <viewController id="B6E-kL-8Wr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="v0V-tH-12I"/>
-                        <viewControllerLayoutGuide type="bottom" id="WTG-1w-kRq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Sp0-bG-YhR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="58p-si-qwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1403.5" y="188.5"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="0o6-l0-Ug3">
@@ -376,6 +356,187 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivt-OG-KBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="475" y="188"/>
+        </scene>
+        <!--排序-->
+        <scene sceneID="5hr-Qi-HUg">
+            <objects>
+                <viewController storyboardIdentifier="DesViewController" id="xvf-lm-EFc" customClass="DesViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="giF-Le-9lI"/>
+                        <viewControllerLayoutGuide type="bottom" id="hSi-sx-x3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OuY-pc-9HT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-GN-VLb">
+                                <rect key="frame" x="0.0" y="627" width="188" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8mp-J7-Huq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="r6d-BN-pGa"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="r6d-BN-pGa"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha8-CA-Cg4">
+                                <rect key="frame" x="188" y="627" width="187" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="g0u-Ks-38d"/>
+                                </constraints>
+                                <state key="normal" title="重置">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIQ-n2-StJ" customClass="CJSelectionCollectionView" customModule="travelMapMvvm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ha8-CA-Cg4" firstAttribute="top" secondItem="LIQ-n2-StJ" secondAttribute="bottom" id="7SM-qw-ZQm"/>
+                            <constraint firstItem="LIQ-n2-StJ" firstAttribute="leading" secondItem="OuY-pc-9HT" secondAttribute="leading" id="BM0-CE-akJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ha8-CA-Cg4" secondAttribute="trailing" id="CZj-0Q-gJH"/>
+                            <constraint firstItem="hSi-sx-x3e" firstAttribute="top" secondItem="ha8-CA-Cg4" secondAttribute="bottom" id="EID-7X-6kz"/>
+                            <constraint firstItem="Irb-GN-VLb" firstAttribute="top" secondItem="LIQ-n2-StJ" secondAttribute="bottom" id="MqL-rA-NLA"/>
+                            <constraint firstAttribute="trailing" secondItem="LIQ-n2-StJ" secondAttribute="trailing" id="X4n-cO-Vnt"/>
+                            <constraint firstItem="ha8-CA-Cg4" firstAttribute="leading" secondItem="Irb-GN-VLb" secondAttribute="trailing" id="cEA-Mg-eO0"/>
+                            <constraint firstItem="ha8-CA-Cg4" firstAttribute="width" secondItem="Irb-GN-VLb" secondAttribute="width" id="cwK-yg-AIg"/>
+                            <constraint firstItem="ha8-CA-Cg4" firstAttribute="leading" secondItem="Irb-GN-VLb" secondAttribute="trailing" id="ehL-js-vMj"/>
+                            <constraint firstItem="LIQ-n2-StJ" firstAttribute="top" secondItem="giF-Le-9lI" secondAttribute="bottom" id="hEX-zF-wFD"/>
+                            <constraint firstItem="Irb-GN-VLb" firstAttribute="leading" secondItem="OuY-pc-9HT" secondAttribute="leading" id="xKJ-h7-WCs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="排序" id="YkC-yv-vJr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="UIP-xr-u4L">
+                            <connections>
+                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromDesViewControllerToIndexViewController" unwindAction="unwindSegueToIndexViewController:" id="fhm-oK-fs8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="okBtn" destination="Irb-GN-VLb" id="wlo-cE-XAD"/>
+                        <outlet property="resetBtn" destination="ha8-CA-Cg4" id="dxY-wi-ypF"/>
+                        <outlet property="selectionCollectionView" destination="LIQ-n2-StJ" id="P9R-tB-wI9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oJ-OV-EZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="187.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BPc-uw-gGS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tK5-IC-uFA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Bp-2X-DSS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xvf-lm-EFc" kind="relationship" relationship="rootViewController" id="HgF-tC-rBV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqw-gh-BEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427.5" y="187.5"/>
+        </scene>
+        <!--筛选-->
+        <scene sceneID="Yhf-SU-pk8">
+            <objects>
+                <viewController storyboardIdentifier="FilterViewController" id="0nD-6q-RXU" customClass="FilterViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wfp-Uy-352"/>
+                        <viewControllerLayoutGuide type="bottom" id="xLt-Xe-bN4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JcJ-Sm-V69">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-5O-8vo" customClass="CJSelectionCollectionView" customModule="travelMapMvvm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfB-j7-CdJ">
+                                <rect key="frame" x="0.0" y="627" width="188" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mk0-Cg-ES5"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-EN-Xby">
+                                <rect key="frame" x="188" y="627" width="187" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bOQ-ZA-8x8"/>
+                                </constraints>
+                                <state key="normal" title="重置">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7yU-EN-Xby" firstAttribute="leading" secondItem="XfB-j7-CdJ" secondAttribute="trailing" id="1PC-m2-IMl"/>
+                            <constraint firstItem="7yU-EN-Xby" firstAttribute="leading" secondItem="XfB-j7-CdJ" secondAttribute="trailing" id="BfY-WL-dmA"/>
+                            <constraint firstAttribute="trailing" secondItem="ffp-5O-8vo" secondAttribute="trailing" id="D5g-UR-NcR"/>
+                            <constraint firstItem="xLt-Xe-bN4" firstAttribute="top" secondItem="XfB-j7-CdJ" secondAttribute="bottom" id="Igq-sd-h6q"/>
+                            <constraint firstItem="XfB-j7-CdJ" firstAttribute="width" secondItem="7yU-EN-Xby" secondAttribute="width" id="NHk-mh-giS"/>
+                            <constraint firstAttribute="trailing" secondItem="7yU-EN-Xby" secondAttribute="trailing" id="Uo0-LV-B60"/>
+                            <constraint firstItem="xLt-Xe-bN4" firstAttribute="top" secondItem="7yU-EN-Xby" secondAttribute="bottom" id="bkj-h8-9f0"/>
+                            <constraint firstItem="ffp-5O-8vo" firstAttribute="leading" secondItem="JcJ-Sm-V69" secondAttribute="leading" id="g59-LU-qOA"/>
+                            <constraint firstItem="ffp-5O-8vo" firstAttribute="top" secondItem="wfp-Uy-352" secondAttribute="bottom" id="izS-de-yIg"/>
+                            <constraint firstItem="XfB-j7-CdJ" firstAttribute="leading" secondItem="JcJ-Sm-V69" secondAttribute="leading" id="vYj-hd-K9D"/>
+                            <constraint firstItem="7yU-EN-Xby" firstAttribute="top" secondItem="ffp-5O-8vo" secondAttribute="bottom" id="ztd-pK-Dnr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="筛选" id="aoe-dH-xsq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="f1R-dD-u6O">
+                            <connections>
+                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromFilterViewControllerToIndexViewController" unwindAction="unwindSegueToIndexViewController:" id="RtN-eY-jOG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="okBtn" destination="XfB-j7-CdJ" id="KSG-BY-sjs"/>
+                        <outlet property="resetBtn" destination="7yU-EN-Xby" id="8mm-7L-gDK"/>
+                        <outlet property="selectionCollectionView" destination="ffp-5O-8vo" id="YAk-qN-WtP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWC-l7-rcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="928.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P6h-ks-ti3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bz7-8v-DKg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vf8-Gg-LLj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0nD-6q-RXU" kind="relationship" relationship="rootViewController" id="3j3-Va-drD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ha-dj-cih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427.5" y="928.5"/>
         </scene>
     </scenes>
 </document>
