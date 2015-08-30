@@ -101,6 +101,15 @@
 		E698ADA01B905C23001B7D71 /* UIViewController+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
+		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
+		E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3E1B9357CA009C7DA1 /* CJCollectionViewCell.swift */; };
+		E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3F1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift */; };
+		E6AA5E4D1B9357CA009C7DA1 /* CJCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E401B9357CA009C7DA1 /* CJCollectionViewHeader.swift */; };
+		E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E411B9357CA009C7DA1 /* CJSelectionCollectionView.swift */; };
+		E6AA5E4F1B9357CA009C7DA1 /* CJCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E431B9357CA009C7DA1 /* CJCollectionViewCellModel.swift */; };
+		E6AA5E501B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E441B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift */; };
+		E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E461B9357CA009C7DA1 /* OrderedDictionary.swift */; };
+		E6AA5E521B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E491B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -236,6 +245,17 @@
 		E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+IndicatorView.swift"; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
+		E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CollectionCellStyle.m"; sourceTree = "<group>"; };
+		E6AA5E3E1B9357CA009C7DA1 /* CJCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewCell.swift; sourceTree = "<group>"; };
+		E6AA5E3F1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewEmptyCell.swift; sourceTree = "<group>"; };
+		E6AA5E401B9357CA009C7DA1 /* CJCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeader.swift; sourceTree = "<group>"; };
+		E6AA5E411B9357CA009C7DA1 /* CJSelectionCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJSelectionCollectionView.swift; sourceTree = "<group>"; };
+		E6AA5E431B9357CA009C7DA1 /* CJCollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewCellModel.swift; sourceTree = "<group>"; };
+		E6AA5E441B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CJCollectionViewHeaderModel.swift; sourceTree = "<group>"; };
+		E6AA5E461B9357CA009C7DA1 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		E6AA5E481B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		E6AA5E491B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD76521B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -335,6 +355,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E6AA5E3A1B9357CA009C7DA1 /* SelectionCollectionView */,
 				E688EFA91B91D52E00C01B23 /* MBProgressHUD */,
 				E68730921B91689300F3EA40 /* MJRefresh2.4.7 */,
 				E698AD9E1B905C15001B7D71 /* Extension */,
@@ -650,6 +671,56 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		E6AA5E3A1B9357CA009C7DA1 /* SelectionCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA5E3B1B9357CA009C7DA1 /* Category */,
+				E6AA5E3E1B9357CA009C7DA1 /* CJCollectionViewCell.swift */,
+				E6AA5E3F1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift */,
+				E6AA5E401B9357CA009C7DA1 /* CJCollectionViewHeader.swift */,
+				E6AA5E411B9357CA009C7DA1 /* CJSelectionCollectionView.swift */,
+				E6AA5E421B9357CA009C7DA1 /* Model */,
+				E6AA5E451B9357CA009C7DA1 /* OrderedDictionary */,
+				E6AA5E471B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout */,
+			);
+			path = SelectionCollectionView;
+			sourceTree = "<group>";
+		};
+		E6AA5E3B1B9357CA009C7DA1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */,
+				E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E6AA5E421B9357CA009C7DA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA5E431B9357CA009C7DA1 /* CJCollectionViewCellModel.swift */,
+				E6AA5E441B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6AA5E451B9357CA009C7DA1 /* OrderedDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA5E461B9357CA009C7DA1 /* OrderedDictionary.swift */,
+			);
+			path = OrderedDictionary;
+			sourceTree = "<group>";
+		};
+		E6AA5E471B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA5E481B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.h */,
+				E6AA5E491B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m */,
+			);
+			path = UICollectionViewLeftAlignedLayout;
+			sourceTree = "<group>";
+		};
 		E6FD762F1B8C5F1800E527CD = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +946,7 @@
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
+				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -894,6 +966,7 @@
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
@@ -907,13 +980,18 @@
 				E68730C71B91689400F3EA40 /* MJRefreshBackGifFooter.m in Sources */,
 				E698AD4E1B8FF108001B7D71 /* RAC.swift in Sources */,
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
+				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
+				E6AA5E4F1B9357CA009C7DA1 /* CJCollectionViewCellModel.swift in Sources */,
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				E68730C41B91689400F3EA40 /* MJRefreshAutoGifFooter.m in Sources */,
+				E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */,
 				E698AD881B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
+				E6AA5E4D1B9357CA009C7DA1 /* CJCollectionViewHeader.swift in Sources */,
 				E698AD8E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
@@ -924,9 +1002,11 @@
 				E698AD9C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift in Sources */,
 				E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */,
 				E68730CE1B91689400F3EA40 /* MJRefreshConst.m in Sources */,
+				E6AA5E521B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
 				E698AD511B8FF108001B7D71 /* TableViewBindingHelper.swift in Sources */,
 				E698AD991B905BA6001B7D71 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				E6AA5E501B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift in Sources */,
 				E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */,
 				E698AD891B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */,

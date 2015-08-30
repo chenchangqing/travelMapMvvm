@@ -6,6 +6,8 @@
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+Simplify.h"
 #import "UIViewController+MBProgressHUD.h"
+#import "UICollectionViewLeftAlignedLayout.h"
+#import "UIButton+CollectionCellStyle.h"
 #import <AFNetworking/AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <RBStoryboardLink/RBStoryboardLink.h>
