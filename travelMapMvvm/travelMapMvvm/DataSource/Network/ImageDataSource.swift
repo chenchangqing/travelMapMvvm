@@ -34,6 +34,7 @@ class ImageDataSource: ImageDataSourceProtocol {
             let request = NSMutableURLRequest(URL: url)
             
             let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
 
                 let downloadImageError = NSError(
                     domain: kErrorDomain,
@@ -54,12 +55,10 @@ class ImageDataSource: ImageDataSourceProtocol {
                             
                             subscriber.sendError(downloadImageError)
                         }
-                        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                     })
                 } else {
                     
                     subscriber.sendError(downloadImageError)
-                    AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                 }
             })
             task.resume()
