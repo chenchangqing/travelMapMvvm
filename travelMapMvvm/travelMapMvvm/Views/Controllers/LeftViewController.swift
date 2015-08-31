@@ -50,6 +50,10 @@ class LeftViewController: UITableViewController {
         setupTableViewSeparatorInset()
         setupCurrentUser()
         setupHeadC()
+        
+        // 设置用户名称 登入状态
+        nameL.text = currentUser?.userName == nil ? "未登录" : currentUser?.userName
+        loginStatusL.text = currentUser == nil ? "    登录账号" : "    退出账号"
     }
     
     // MARK: - setup
