@@ -103,6 +103,8 @@
 		E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */; };
 		E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F131B93F1D700BA089B /* FilterViewModel.swift */; };
 		E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F151B93F1E500BA089B /* DesViewModel.swift */; };
+		E6A46F181B943B6400BA089B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F171B943B6400BA089B /* UserModel.swift */; };
+		E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F191B94405E00BA089B /* ImageViewModel.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
@@ -254,6 +256,8 @@
 		E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewDataSource.swift; sourceTree = "<group>"; };
 		E6A46F131B93F1D700BA089B /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		E6A46F151B93F1E500BA089B /* DesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesViewModel.swift; sourceTree = "<group>"; };
+		E6A46F171B943B6400BA089B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E6A46F191B94405E00BA089B /* ImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 				E659F4961B8CEFFF005CD9FD /* Enums */,
 				E659F49C1B8CEFFF005CD9FD /* Structs */,
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
+				E6A46F171B943B6400BA089B /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				E698AD521B8FF356001B7D71 /* IndexViewModel.swift */,
 				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
 				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
+				E6A46F191B94405E00BA089B /* ImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -981,6 +987,7 @@
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E698AD921B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
+				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
@@ -1023,6 +1030,7 @@
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
+				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E698AD831B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,

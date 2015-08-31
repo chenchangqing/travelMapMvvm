@@ -62,87 +62,14 @@ class StrategyCell: UITableViewCell, ReactiveView  {
             authorNameL.text   = viewModel.author
             
             // 加载小编头像
-            if !self.loadLocalAuthorPic(viewModel) {
-                
-                self.loadNetAuthorPic(viewModel)
-            }
+            let authorImageViewModel = ImageViewModel(urlString: viewModel.authorPicUrl)
+            RACObserve(authorImageViewModel, "image") ~> RAC(authorHeadC, "image")
+            authorImageViewModel.downloadImageCommand.execute(nil)
             
             // 加载攻略图片
-            if !self.loadLocalStrategyPic(viewModel) {
-                
-                self.loadNetStrategyPic(viewModel)
-            }
-            
+            let strategyImageViewModel = ImageViewModel(urlString: viewModel.picUrl, defaultImage:UIImage(named: "defaultImage.jpg")!)
+            RACObserve(strategyImageViewModel, "image") ~> RAC(strategyPic, "image")
+            strategyImageViewModel.downloadImageCommand.execute(nil)
         }
-    }
-    
-    // MARK: - 图片加载
-    
-    /**
-     * 内存加载小编图片
-     */
-    private func loadLocalAuthorPic(viewModel:StrategyModel) -> Bool{
-        
-        if let request = viewModel.requestAuthorPic {
-            
-            if let image = UIImageView.sharedImageCache().cachedImageForRequest(request) {
-                
-                authorHeadC.image = image
-                return true
-            }
-        }
-        return false
-    }
-    
-    /**
-     * 从内存加载攻略图片
-     */
-    private func loadLocalStrategyPic(viewModel:StrategyModel) -> Bool{
-        
-        if let request = viewModel.requestStrategyPic {
-            
-            if let image = UIImageView.sharedImageCache().cachedImageForRequest(request) {
-                
-                strategyPic.image = image
-                return true
-            }
-        }
-        return false
-    }
-    
-    /**
-     * 网络加载小编头像
-     */
-    private func loadNetAuthorPic(viewModel:StrategyModel) {
-        
-        let downloadSingal = viewModel.downloadAuthorPicImageWithUrl()
-        
-        downloadSingal?.subscribeError({ (error:NSError!) -> Void in
-            
-            println(error.localizedDescription)
-        })
-        
-        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (image:UIImage!) -> () in
-            
-            self.authorHeadC.image = image
-        })
-    }
-    
-    /**
-     * 网络加载攻略图片
-     */
-    private func loadNetStrategyPic(viewModel:StrategyModel) {
-        
-        let downloadSingal = viewModel.downloadStrategyPicImageWithUrl()
-        
-        downloadSingal?.subscribeError({ (error:NSError!) -> Void in
-            
-            println(error.localizedDescription)
-        })
-        
-        downloadSingal?.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (image:UIImage!) -> () in
-            
-            self.strategyPic.image = image
-        })
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
+import ReactiveCocoa
 
 /**
  * 侧边栏控制器
@@ -21,6 +21,11 @@ class LeftViewController: UITableViewController {
     
     @IBOutlet private weak var loginStatusL: UILabel!   // 登录状态
     
+    var userHeaderViewModel : ImageViewModel!
+    
+    // 当前用户
+    var currentUser:UserModel?
+    
     // 内容视图在 left view中上下等间距
     private lazy var contentViewMargin:CGFloat = {
         
@@ -32,6 +37,7 @@ class LeftViewController: UITableViewController {
     private let kUserHeadCellHeight:CGFloat = 100           // 包含头像的cell高度
     private let kNumberOfCellWithoutHeadCell:CGFloat = 6    // tableView cell个数 - 一个head cell = 6
     private let kSeparatorMargin:CGFloat = 15               // 分割线的左右边距
+    private let kUser:String = "user"                       // 用户key
     
     // MARK: -
 
@@ -42,6 +48,8 @@ class LeftViewController: UITableViewController {
         setupTopView()
         setupBottomView()
         setupTableViewSeparatorInset()
+        setupCurrentUser()
+        setupHeadC()
     }
     
     // MARK: - setup
@@ -83,6 +91,28 @@ class LeftViewController: UITableViewController {
         tableView.separatorInset = insets
     }
     
+    /**
+     * 查询当前登录用户
+     */
+    private func setupCurrentUser() {
+        
+        var uData = NSUserDefaults.standardUserDefaults().objectForKey(kUser) as? NSData
+        
+        if let ud=uData {
+            currentUser = NSKeyedUnarchiver.unarchiveObjectWithData(ud) as? UserModel
+        }
+    }
+    
+    /**
+     * 初始化头像circle控件
+     */
+    private func setupHeadC() {
+        
+        userHeaderViewModel = ImageViewModel(urlString: currentUser?.userPicUrl,defaultImage:UIImage(named: "userHeader.jpg")!)
+        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
+        userHeaderViewModel.downloadImageCommand.execute(nil)
+    }
+    
     // MARK: - UITableView
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -95,6 +125,6 @@ class LeftViewController: UITableViewController {
         
         return (CGRectGetHeight(UIScreen.mainScreen().bounds) * CGFloat(sideMenuViewController!.contentViewScaleValue) - kUserHeadCellHeight) / kNumberOfCellWithoutHeadCell
     }
-    
+
 
 }
