@@ -24,7 +24,7 @@ class ImageViewModel: NSObject {
     var request: NSURLRequest?
     
     // 被观察的图片，一旦变更及时更新视图
-    var image:UIImage = UIImage()
+    dynamic var image:UIImage = UIImage()
     
     private var imageDataSourceProtocol = ImageDataSource.shareInstance()
     private var downloadImageCommand : RACCommand!
@@ -56,7 +56,7 @@ class ImageViewModel: NSObject {
             } else {
                 return false
             }
-            }.distinctUntilChanged()
+        }.distinctUntilChanged()
         
         // 初始化下载图片命令
         downloadImageCommand = RACCommand(enabled: commandEnabledSignal, signalBlock: { (any:AnyObject!) -> RACSignal! in
@@ -96,34 +96,26 @@ class ImageViewModel: NSObject {
     
     // MARK: - load image
     
-    func loadImage() {
-        
-        if !loadImageWithCache() {
-            
-            loadImageWithNetwork()
-        }
-    }
-    
     /**
      * 从缓存加载
      */
-    private func loadImageWithCache() -> Bool {
+    func loadImageWithCache() -> UIImage? {
         
         if let request=request {
             
             if let image=UIImageView.sharedImageCache().cachedImageForRequest(request) {
                 
                 self.setValue(image, forKey: "image")
-                return true
+                return image
             }
         }
-        return false
+        return nil
     }
     
     /**
      * 从网络加载
      */
-    private func loadImageWithNetwork() {
+    func loadImageWithNetwork() {
         
         self.downloadImageCommand.execute(nil)
     }

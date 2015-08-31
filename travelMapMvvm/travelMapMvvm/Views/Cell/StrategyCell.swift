@@ -66,19 +66,33 @@ class StrategyCell: UITableViewCell, ReactiveView  {
             
             // 加载小编头像
             authorImageViewModel.urlString = viewModel.authorPicUrl
-            RACObserve(authorImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
+            
+            if let image = authorImageViewModel.loadImageWithCache() {
                 
-                self.authorHeadC.image = image
-            })
-            authorImageViewModel.loadImage()
+                authorHeadC.image = image
+            } else {
+                
+                RACObserve(authorImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
+                    
+                    self.authorHeadC.image = image
+                })
+                authorImageViewModel.loadImageWithNetwork()
+            }
             
             // 加载攻略图片
             strategyImageViewModel.urlString = viewModel.picUrl
-            RACObserve(strategyImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
+            
+            if let image = strategyImageViewModel.loadImageWithCache() {
                 
-                self.strategyPic.image = image
-            })
-            strategyImageViewModel.loadImage()
+                strategyPic.image = image
+            } else {
+                
+                RACObserve(strategyImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
+                    
+                    self.strategyPic.image = image
+                })
+                strategyImageViewModel.loadImageWithNetwork()
+            }
         }
     }
 }

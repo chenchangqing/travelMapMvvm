@@ -21,7 +21,7 @@ class LeftViewController: UITableViewController {
     
     @IBOutlet private weak var loginStatusL: UILabel!   // 登录状态
     
-    var userHeaderViewModel : ImageViewModel!
+    var userHeaderViewModel = ImageViewModel(urlString: nil,defaultImage:UIImage(named: "userHeader.jpg")!)
     
     // 当前用户
     var currentUser:UserModel?
@@ -108,9 +108,13 @@ class LeftViewController: UITableViewController {
      */
     private func setupHeadC() {
         
-//        userHeaderViewModel = ImageViewModel(urlString: currentUser?.userPicUrl,defaultImage:UIImage(named: "userHeader.jpg")!)
-//        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
-//        userHeaderViewModel.downloadImageCommand.execute(nil)
+        if let image = userHeaderViewModel.loadImageWithCache() {
+            
+            headC.image = image
+        } else {
+            
+            RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
+        }
     }
     
     // MARK: - UITableView
