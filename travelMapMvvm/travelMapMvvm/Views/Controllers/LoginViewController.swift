@@ -45,5 +45,8 @@ class LoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
     }
+    
+    @IBAction func unwindSegueToLoginViewController(segue: UIStoryboardSegue) {
+    }
 
 }
