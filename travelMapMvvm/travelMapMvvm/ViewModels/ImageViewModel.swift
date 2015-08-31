@@ -10,7 +10,13 @@ import ReactiveCocoa
 
 class ImageViewModel: NSObject {
    
-    private var urlString : String?         // 图片路径
+    var urlString : String?         // 图片路径
+    {
+        didSet {
+            
+            self.setValue(isValidPicUrl(), forKey: "url")
+        }
+    }
     
     // 被观察的图片，一旦变更及时更新视图
     var url  : NSURL?

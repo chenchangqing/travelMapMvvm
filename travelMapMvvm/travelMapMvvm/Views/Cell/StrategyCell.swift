@@ -32,6 +32,9 @@ class StrategyCell: UITableViewCell, ReactiveView  {
     // 小编名称
     @IBOutlet private weak var authorNameL: UILabel!
     
+    private var authorImageViewModel = ImageViewModel(urlString: nil)
+    private var strategyImageViewModel = ImageViewModel(urlString: nil, defaultImage:UIImage(named: "defaultImage.jpg")!)
+    
     // MARK: - init
     
     override func awakeFromNib() {
@@ -62,16 +65,16 @@ class StrategyCell: UITableViewCell, ReactiveView  {
             authorNameL.text   = viewModel.author
             
             // 加载小编头像
-            let authorImageViewModel = ImageViewModel(urlString: viewModel.authorPicUrl)
-            RACObserve(authorImageViewModel, "image").subscribeNextAs({ (image:UIImage!) -> () in
+            authorImageViewModel.urlString = viewModel.authorPicUrl
+            RACObserve(authorImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
                 
                 self.authorHeadC.image = image
             })
             authorImageViewModel.downloadImageCommand.execute(nil)
             
             // 加载攻略图片
-            let strategyImageViewModel = ImageViewModel(urlString: viewModel.picUrl, defaultImage:UIImage(named: "defaultImage.jpg")!)
-            RACObserve(strategyImageViewModel, "image").subscribeNextAs({ (image:UIImage!) -> () in
+            strategyImageViewModel.urlString = viewModel.picUrl
+            RACObserve(strategyImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
                 
                 self.strategyPic.image = image
             })
