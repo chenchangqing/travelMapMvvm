@@ -46,4 +46,12 @@ extension UIViewController {
             return indicatorView
         }
     }
+    
+    /**
+     * 从storyboard中加载ViewController
+     */
+    func getViewController(storyboardName:String,identifier:String) -> UIViewController? {
+        
+        return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewControllerWithIdentifier(identifier) as? UIViewController
+    }
 }

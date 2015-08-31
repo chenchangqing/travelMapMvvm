@@ -98,7 +98,7 @@
 		E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD7B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift */; };
 		E698AD9C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD7C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift */; };
 		E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD7D1B905BA6001B7D71 /* NVActivityIndicatorView.swift */; };
-		E698ADA01B905C23001B7D71 /* UIViewController+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */; };
+		E698ADA01B905C23001B7D71 /* UIViewController+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */; };
 		E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */; };
 		E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */; };
 		E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F131B93F1D700BA089B /* FilterViewModel.swift */; };
@@ -251,7 +251,7 @@
 		E698AD7B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		E698AD7C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
 		E698AD7D1B905BA6001B7D71 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorView.swift; sourceTree = "<group>"; };
-		E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+IndicatorView.swift"; sourceTree = "<group>"; };
+		E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+General.swift"; sourceTree = "<group>"; };
 		E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewDataSource.swift; sourceTree = "<group>"; };
 		E6A46F131B93F1D700BA089B /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
@@ -684,7 +684,7 @@
 			children = (
 				E6AA5E571B936050009C7DA1 /* UIView+General.h */,
 				E6AA5E581B936050009C7DA1 /* UIView+General.m */,
-				E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */,
+				E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1071,7 +1071,7 @@
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */,
 				E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */,
-				E698ADA01B905C23001B7D71 /* UIViewController+IndicatorView.swift in Sources */,
+				E698ADA01B905C23001B7D71 /* UIViewController+General.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

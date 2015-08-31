@@ -112,6 +112,7 @@ class LeftViewController: UITableViewController {
      */
     private func setupHeadC() {
         
+        headC.enabled = false
         if let image = userHeaderViewModel.loadImageWithCache() {
             
             headC.image = image
@@ -133,6 +134,68 @@ class LeftViewController: UITableViewController {
         
         return (CGRectGetHeight(UIScreen.mainScreen().bounds) * CGFloat(sideMenuViewController!.contentViewScaleValue) - kUserHeadCellHeight) / kNumberOfCellWithoutHeadCell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+        switch (indexPath.row) {
+            
+        // 点击头像所在行
+        case 0:
+            
+            if let currentUser=currentUser {
+                
+                println("已经登录")
+            } else {
+                
+                println("没有登录")
+            }
+            
+            break;
+            
+        // 点击首页所在行
+        case 1:
+            
+            sideMenuViewController?.contentViewController = getViewController("main", identifier: "IndexViewControllerNav")
+            sideMenuViewController?.hideMenuViewController()
+            
+            break;
+            
+        // 点击我的旅行地所在行
+        case 2:
+            
+            break;
+            
+        // 点击我的地图所在行
+        case 3:
+            
+            break;
+            
+        // 点击修改资料所在行
+        case 4:
+            
+            break;
+            
+        // 点击工具箱
+        case 5:
+            
+            break;
+            
+        // 点击登录帐号/登出帐号所在行
+        case 6:
+            
+            if let currentUser=currentUser {
+                
+                println("已经登录")
+            } else {
+                
+                println("没有登录")
+            }
+            
+            break;
 
+        default:
+            break;
+        }
+    }
 
 }
