@@ -42,8 +42,10 @@ class ImageDataSource: ImageDataSourceProtocol {
                 // 网络下载
                 let session = NSURLSession.sharedSession()
                 let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-//                    AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
-                    
+
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
+                    })
                     let downloadImageError = NSError(
                         domain: kErrorDomain,
                         code: ErrorEnum.ImageDownloadError.errorCode,
@@ -70,11 +72,11 @@ class ImageDataSource: ImageDataSourceProtocol {
                     }
                 })
                 task.resume()
-//                AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
+                AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
             }
             
             return nil
         })
-        return signal.subscribeOn(scheduler)
+        return signal
     }
 }

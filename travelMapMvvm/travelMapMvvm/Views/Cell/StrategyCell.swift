@@ -63,12 +63,18 @@ class StrategyCell: UITableViewCell, ReactiveView  {
             
             // 加载小编头像
             let authorImageViewModel = ImageViewModel(urlString: viewModel.authorPicUrl)
-            RACObserve(authorImageViewModel, "image") ~> RAC(authorHeadC, "image")
+            RACObserve(authorImageViewModel, "image").subscribeNextAs({ (image:UIImage!) -> () in
+                
+                self.authorHeadC.image = image
+            })
             authorImageViewModel.downloadImageCommand.execute(nil)
             
             // 加载攻略图片
             let strategyImageViewModel = ImageViewModel(urlString: viewModel.picUrl, defaultImage:UIImage(named: "defaultImage.jpg")!)
-            RACObserve(strategyImageViewModel, "image") ~> RAC(strategyPic, "image")
+            RACObserve(strategyImageViewModel, "image").subscribeNextAs({ (image:UIImage!) -> () in
+                
+                self.strategyPic.image = image
+            })
             strategyImageViewModel.downloadImageCommand.execute(nil)
         }
     }
