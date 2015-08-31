@@ -77,6 +77,6 @@ class ImageDataSource: ImageDataSourceProtocol {
             
             return nil
         })
-        return signal
+        return signal.subscribeOn(scheduler)
     }
 }

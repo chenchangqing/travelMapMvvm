@@ -108,9 +108,9 @@ class LeftViewController: UITableViewController {
      */
     private func setupHeadC() {
         
-        userHeaderViewModel = ImageViewModel(urlString: currentUser?.userPicUrl,defaultImage:UIImage(named: "userHeader.jpg")!)
-        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
-        userHeaderViewModel.downloadImageCommand.execute(nil)
+//        userHeaderViewModel = ImageViewModel(urlString: currentUser?.userPicUrl,defaultImage:UIImage(named: "userHeader.jpg")!)
+//        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
+//        userHeaderViewModel.downloadImageCommand.execute(nil)
     }
     
     // MARK: - UITableView

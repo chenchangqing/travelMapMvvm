@@ -70,7 +70,7 @@ class StrategyCell: UITableViewCell, ReactiveView  {
                 
                 self.authorHeadC.image = image
             })
-            authorImageViewModel.downloadImageCommand.execute(nil)
+            authorImageViewModel.loadImage()
             
             // 加载攻略图片
             strategyImageViewModel.urlString = viewModel.picUrl
@@ -78,7 +78,7 @@ class StrategyCell: UITableViewCell, ReactiveView  {
                 
                 self.strategyPic.image = image
             })
-            strategyImageViewModel.downloadImageCommand.execute(nil)
+            strategyImageViewModel.loadImage()
         }
     }
 }
