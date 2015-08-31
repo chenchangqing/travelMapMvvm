@@ -54,4 +54,11 @@ extension UIViewController {
         
         return UIStoryboard(name: storyboardName, bundle: nil).instantiateViewControllerWithIdentifier(identifier) as? UIViewController
     }
+    
+    /**
+     * dissmiss modal
+     */
+    @IBAction func dissSelfAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

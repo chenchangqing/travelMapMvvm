@@ -105,6 +105,11 @@
 		E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F151B93F1E500BA089B /* DesViewModel.swift */; };
 		E6A46F181B943B6400BA089B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F171B943B6400BA089B /* UserModel.swift */; };
 		E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F191B94405E00BA089B /* ImageViewModel.swift */; };
+		E6A46F1D1B94994A00BA089B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A46F1C1B94994A00BA089B /* Login.storyboard */; };
+		E6A46F1F1B949E5A00BA089B /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F1E1B949E5A00BA089B /* ColorHelper.swift */; };
+		E6A46F211B949EDC00BA089B /* UIButton+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F201B949EDC00BA089B /* UIButton+Login.swift */; };
+		E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F221B94A00000BA089B /* UIView+Login.swift */; };
+		E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F241B94A0D000BA089B /* LoginViewController.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
@@ -258,6 +263,11 @@
 		E6A46F151B93F1E500BA089B /* DesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesViewModel.swift; sourceTree = "<group>"; };
 		E6A46F171B943B6400BA089B /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E6A46F191B94405E00BA089B /* ImageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		E6A46F1C1B94994A00BA089B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E6A46F1E1B949E5A00BA089B /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		E6A46F201B949EDC00BA089B /* UIButton+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Login.swift"; sourceTree = "<group>"; };
+		E6A46F221B94A00000BA089B /* UIView+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Login.swift"; sourceTree = "<group>"; };
+		E6A46F241B94A0D000BA089B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
@@ -398,6 +408,7 @@
 		E659F4921B8CEFFF005CD9FD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E6A46F1E1B949E5A00BA089B /* ColorHelper.swift */,
 				E698AD461B8FEF94001B7D71 /* JSONHelper.h */,
 				E698AD471B8FEF94001B7D71 /* JSONHelper.swift */,
 				E659F4931B8CEFFF005CD9FD /* NetRequestClass.swift */,
@@ -460,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F4A21B8CEFFF005CD9FD /* Main.storyboard */,
+				E6A46F1C1B94994A00BA089B /* Login.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -685,6 +697,8 @@
 				E6AA5E571B936050009C7DA1 /* UIView+General.h */,
 				E6AA5E581B936050009C7DA1 /* UIView+General.m */,
 				E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */,
+				E6A46F201B949EDC00BA089B /* UIButton+Login.swift */,
+				E6A46F221B94A00000BA089B /* UIView+Login.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -696,6 +710,7 @@
 				E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
+				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -900,6 +915,7 @@
 				E688EFC61B92015D00C01B23 /* Images.xcassets in Resources */,
 				E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */,
 				E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */,
+				E6A46F1D1B94994A00BA089B /* Login.storyboard in Resources */,
 				E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */,
 				E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */,
 				E688EFB41B91D52E00C01B23 /* MB-Error.png in Resources */,
@@ -981,6 +997,7 @@
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
+				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
@@ -1014,6 +1031,7 @@
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				E6A46F1F1B949E5A00BA089B /* ColorHelper.swift in Sources */,
 				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
 				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
@@ -1026,11 +1044,13 @@
 				E698AD881B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
 				E6AA5E4D1B9357CA009C7DA1 /* CJCollectionViewHeader.swift in Sources */,
+				E6A46F211B949EDC00BA089B /* UIButton+Login.swift in Sources */,
 				E698AD8E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
+				E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */,
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E698AD831B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,

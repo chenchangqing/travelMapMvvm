@@ -146,7 +146,13 @@ class LeftViewController: UITableViewController {
                 println("已经登录")
             } else {
                 
-                println("没有登录")
+                // 跳转至登录页面
+                let loginViewControllerNav = self.getViewController("Login", identifier: "LoginViewControllerNav")
+                if let loginViewControllerNav=loginViewControllerNav {
+                    
+                    sideMenuViewController?.contentViewController?.presentViewController(loginViewControllerNav, animated: true, completion: nil)
+                    sideMenuViewController?.hideMenuViewController()
+                }
             }
             
             break;
