@@ -163,7 +163,14 @@
                             <outlet property="delegate" destination="uIO-7s-XOw" id="XEv-pb-dPS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f4h-OX-zWx"/>
+                    <navigationItem key="navigationItem" id="f4h-OX-zWx">
+                        <barButtonItem key="leftBarButtonItem" image="menu_btn_nor" id="jDv-3D-m1g">
+                            <connections>
+                                <action selector="presentLeftMenuViewController" destination="uIO-7s-XOw" id="fLm-Rg-9Nz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="cXh-NA-6By"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <segue destination="bz7-8v-DKg" kind="presentation" identifier="FromIndexViewControllerToFilterViewController" id="4HT-u1-4ka"/>
@@ -539,4 +546,7 @@
             <point key="canvasLocation" x="1427.5" y="928.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu_btn_nor" width="24" height="25"/>
+    </resources>
 </document>
