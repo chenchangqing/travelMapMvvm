@@ -37,7 +37,6 @@ class LeftViewController: UITableViewController {
     private let kUserHeadCellHeight:CGFloat = 100           // 包含头像的cell高度
     private let kNumberOfCellWithoutHeadCell:CGFloat = 6    // tableView cell个数 - 一个head cell = 6
     private let kSeparatorMargin:CGFloat = 15               // 分割线的左右边距
-    private let kUser:String = "user"                       // 用户key
     
     // MARK: -
 

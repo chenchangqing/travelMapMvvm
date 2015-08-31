@@ -21,6 +21,7 @@ class DesViewController: UIViewController {
     
     // 确定按钮
     @IBOutlet private weak var okBtn: UIButton!
+    
     // MARK: -
     
     override func viewDidLoad() {
