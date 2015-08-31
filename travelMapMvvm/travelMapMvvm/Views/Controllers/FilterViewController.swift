@@ -10,8 +10,8 @@ import UIKit
 
 class FilterViewController: UIViewController {
     
-    // 数据源
-    private var dataSource = OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>()
+    // viewModel
+    private var filterViewModel = FilterViewModel()
     
     // 选择控件
     @IBOutlet private weak var selectionCollectionView : CJSelectionCollectionView!
@@ -35,9 +35,6 @@ class FilterViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        // 初始化数据源
-        setupDataSource()
-        
         // 初始化选择控件
         setupSelectionCollectionView()
         
@@ -46,67 +43,12 @@ class FilterViewController: UIViewController {
     }
     
     /**
-     * 初始化数据源
-     */
-    private func setupDataSource() {
-        
-        // 旅游月份信息
-        let monthHeaderModel    = CJCollectionViewHeaderModel(
-            icon: "home_btn_cosmetic",
-            title: "旅游月份",
-            type: .MultipleChoice,
-            isExpend: true,
-            isShowClearButton: false,
-            height: 38)
-        var monthCellModelArray = [CJCollectionViewCellModel]()
-        
-        for month in MonthEnum.allValues {
-            
-            monthCellModelArray.append(CJCollectionViewCellModel(icon: nil, title: month.rawValue))
-        }
-        
-        // 攻略主题信息
-        let strategyThemeHeaderModel    = CJCollectionViewHeaderModel(
-            icon: "home_btn_cosmetic",
-            title: "主题", type: .MultipleChoice,
-            isExpend: true,
-            isShowClearButton: false,
-            height: 38)
-        var strategyThemeCellModelArray = [CJCollectionViewCellModel]()
-        
-        for strategyTheme in StrategyThemeEnum.allValues {
-            
-            strategyThemeCellModelArray.append(CJCollectionViewCellModel(icon: nil, title: strategyTheme.rawValue))
-        }
-        
-        // 攻略分类信息
-        let strategyTypeHeaderModel    = CJCollectionViewHeaderModel(
-            icon: "home_btn_cosmetic",
-            title: "分类",
-            type: .MultipleChoice,
-            isExpend: true,
-            isShowClearButton: false,
-            height: 38)
-        var strategyTypeCellModelArray = [CJCollectionViewCellModel]()
-        
-        for strategyType in StrategyTypeEnum.allValues {
-            
-            strategyTypeCellModelArray.append(CJCollectionViewCellModel(icon: nil, title: strategyType.rawValue))
-        }
-        
-        // 初始化dataSource
-        dataSource[monthHeaderModel]            = monthCellModelArray
-        dataSource[strategyThemeHeaderModel]    = strategyThemeCellModelArray
-        dataSource[strategyTypeHeaderModel]     = strategyTypeCellModelArray
-    }
-    
-    /**
      * 初始化选择控件
      */
     private func setupSelectionCollectionView() {
         
         // 设置选择控件数据源
-        selectionCollectionView.dataSource = dataSource
+        selectionCollectionView.dataSource = filterViewModel.filterSelectionDic
         
     }
     

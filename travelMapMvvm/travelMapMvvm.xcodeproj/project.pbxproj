@@ -99,6 +99,10 @@
 		E698AD9C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD7C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift */; };
 		E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD7D1B905BA6001B7D71 /* NVActivityIndicatorView.swift */; };
 		E698ADA01B905C23001B7D71 /* UIViewController+IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */; };
+		E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */; };
+		E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */; };
+		E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F131B93F1D700BA089B /* FilterViewModel.swift */; };
+		E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F151B93F1E500BA089B /* DesViewModel.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
@@ -246,6 +250,10 @@
 		E698AD7C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
 		E698AD7D1B905BA6001B7D71 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NVActivityIndicatorView.swift; sourceTree = "<group>"; };
 		E698AD9F1B905C22001B7D71 /* UIViewController+IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+IndicatorView.swift"; sourceTree = "<group>"; };
+		E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewDataSource.swift; sourceTree = "<group>"; };
+		E6A46F131B93F1D700BA089B /* FilterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		E6A46F151B93F1E500BA089B /* DesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesViewModel.swift; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
@@ -328,6 +336,7 @@
 			children = (
 				E659F48E1B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift */,
 				E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */,
+				E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -346,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */,
+				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -453,6 +463,8 @@
 			isa = PBXGroup;
 			children = (
 				E698AD521B8FF356001B7D71 /* IndexViewModel.swift */,
+				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
+				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -956,6 +968,7 @@
 				E68730CC1B91689400F3EA40 /* MJRefreshStateHeader.m in Sources */,
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
+				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
@@ -994,6 +1007,7 @@
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
 				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
 				E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */,
@@ -1047,6 +1061,8 @@
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */,
+				E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */,
 				E698ADA01B905C23001B7D71 /* UIViewController+IndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

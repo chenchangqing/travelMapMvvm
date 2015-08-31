@@ -10,8 +10,8 @@ import UIKit
 
 class DesViewController: UIViewController {
     
-    // 数据源
-    private var dataSource = OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>()
+    // viewModel
+    private var desViewModel : DesViewModel!
     
     // 选择控件
     @IBOutlet private weak var selectionCollectionView : CJSelectionCollectionView!
@@ -35,8 +35,8 @@ class DesViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        // 初始化数据源
-        setupDataSource()
+        // 初始化viewModel
+        desViewModel = DesViewModel(cellWidth: CGRectGetWidth(UIScreen.mainScreen().bounds) - selectionCollectionView.collectionViewLeftMargin - selectionCollectionView.collectionViewRightMargin)
         
         // 初始化选择控件
         setupSelectionCollectionView()
@@ -46,45 +46,18 @@ class DesViewController: UIViewController {
     }
     
     /**
-    * 初始化数据源
-    */
-    private func setupDataSource() {
-        
-        var strategyOrderHeaderModel = CJCollectionViewHeaderModel(icon: nil, title: nil, type: CJCollectionViewHeaderModelTypeEnum.SingleChoice, isExpend: true, isShowClearButton: false, height: 0)
-        var strategyOrderCellModels  = [CJCollectionViewCellModel]()
-        
-        let cellWith = CGRectGetWidth(UIScreen.mainScreen().bounds) - selectionCollectionView.collectionViewLeftMargin - selectionCollectionView.collectionViewRightMargin
-        
-        for strategyOrder in StrategyOrderEnum.allValues {
-            
-            let cellModel   = CJCollectionViewCellModel(icon: nil, title: strategyOrder.rawValue)
-            cellModel.width = cellWith
-            
-            if strategyOrder == .Default {
-                
-                cellModel.selected = true
-            }
-            
-            strategyOrderCellModels.append(cellModel)
-            
-        }
-        
-        dataSource[strategyOrderHeaderModel] = strategyOrderCellModels
-    }
-    
-    /**
-    * 初始化选择控件
-    */
+     * 初始化选择控件
+     */
     private func setupSelectionCollectionView() {
         
         // 设置选择控件数据源
-        selectionCollectionView.dataSource = dataSource
+        selectionCollectionView.dataSource = desViewModel.desSelectionDic
         
     }
     
     /**
-    * 初始化按钮
-    */
+     * 初始化按钮
+     */
     private func setupButtons() {
         
         // 设置按钮边颜色
