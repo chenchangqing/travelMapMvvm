@@ -32,7 +32,16 @@ class FilterViewController: UIViewController {
         filterViewModel.filterSelectionDicSearch.execute(nil)
         
         // 提示动画
-        self.indicatorView.startAnimation()
+        filterViewModel.filterSelectionDicSearch.executing.subscribeNextAs { (enable:Bool) -> () in
+            
+            if enable {
+                
+                self.indicatorView.startAnimation()
+            } else {
+                
+                self.indicatorView.stopAnimation()
+            }
+        }
     }
     
     // MARK: - setup
@@ -54,11 +63,7 @@ class FilterViewController: UIViewController {
     private func setupSelectionCollectionView() {
         
         // 设置选择控件数据源
-        RACObserve(filterViewModel, "dataSource").doNext { (any:AnyObject!) -> Void in
-            
-            // 有数据了就停止动画
-            self.indicatorView.stopAnimation()
-        }.subscribeNextAs { (dataSource:DataSource) -> () in
+        RACObserve(filterViewModel, "dataSource").subscribeNextAs { (dataSource:DataSource) -> () in
             
             self.selectionCollectionView.dataSource = dataSource.dataSource
             self.selectionCollectionView.reloadData()
