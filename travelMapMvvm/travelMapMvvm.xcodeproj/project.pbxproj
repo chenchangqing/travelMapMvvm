@@ -125,6 +125,8 @@
 		E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E531B935FB8009C7DA1 /* DesViewController.swift */; };
 		E6AA5E561B935FB8009C7DA1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */; };
 		E6AA5E591B936050009C7DA1 /* UIView+General.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E581B936050009C7DA1 /* UIView+General.m */; };
+		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
+		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +289,8 @@
 		E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		E6AA5E571B936050009C7DA1 /* UIView+General.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+General.h"; sourceTree = "<group>"; };
 		E6AA5E581B936050009C7DA1 /* UIView+General.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+General.m"; sourceTree = "<group>"; };
+		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD76521B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -708,6 +712,8 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
+				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
 				E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */,
 				E6AA5E531B935FB8009C7DA1 /* DesViewController.swift */,
 				E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */,
@@ -999,6 +1005,7 @@
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
@@ -1083,6 +1090,7 @@
 				E68730C51B91689400F3EA40 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */,
+				E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */,
 				E688EFC31B9200C400C01B23 /* IndexViewFooter.swift in Sources */,
 				E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */,
 				E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */,
