@@ -29,6 +29,21 @@ class DesViewController: UIViewController {
         
         setup()
         
+        // 首次进入提示动画
+        self.indicatorView.startAnimation()
+        
+        // 数据加载HUD
+        desViewModel.desSelectionDicSearch.executing.subscribeNextAs { (isExecuting:Bool) -> () in
+            
+            if isExecuting {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                self.hideHUD()
+            }
+        }
+        
         // 查询数据
         desViewModel.desSelectionDicSearch.execute(nil)
     }
@@ -59,6 +74,7 @@ class DesViewController: UIViewController {
             
             self.selectionCollectionView.dataSource = dataSource.dataSource
             self.selectionCollectionView.reloadData()
+            self.stopIndicatorAnimationAndStartFadeAnimation()
         }
         
     }

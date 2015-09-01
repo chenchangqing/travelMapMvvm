@@ -96,7 +96,13 @@ class IndexViewController: UITableViewController {
                 self.showHUDIndicator()
             } else {
                 
-                self.hideHUD()
+                if !self.viewModel.errorMsg.isEmpty {
+                    
+                    self.showHUDErrorMessage(self.viewModel.errorMsg)
+                } else {
+                    
+                    self.hideHUD()
+                }
             }
         })
         
@@ -107,7 +113,13 @@ class IndexViewController: UITableViewController {
                 self.showHUDIndicator()
             } else {
                 
-                self.hideHUD()
+                if !self.viewModel.errorMsg.isEmpty {
+                    
+                    self.showHUDErrorMessage(self.viewModel.errorMsg)
+                } else {
+                    
+                    self.hideHUD()
+                }
             }
         })
     }
@@ -135,14 +147,6 @@ class IndexViewController: UITableViewController {
      * 初始化属性观察
      */
     private func setupObserve() {
-        
-        // 如果出现错误则提示
-        RACObserve(viewModel, "errorMsg").subscribeNextAs { (errorMsg:String) -> () in
-            if !errorMsg.isEmpty {
-                
-                self.showHUDErrorMessage(errorMsg)
-            }
-        }
         
         // 更新tableView
         bindingHelper = TableViewBindingHelper(

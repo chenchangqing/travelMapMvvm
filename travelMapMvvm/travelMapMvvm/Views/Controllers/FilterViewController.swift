@@ -28,20 +28,23 @@ class FilterViewController: UIViewController {
         
         setup()
         
-        // 查询数据
-        filterViewModel.filterSelectionDicSearch.execute(nil)
+        // 首次进入提示动画
+        self.indicatorView.startAnimation()
         
-        // 提示动画
-        filterViewModel.filterSelectionDicSearch.executing.subscribeNextAs { (enable:Bool) -> () in
+        // 数据加载HUD
+        filterViewModel.filterSelectionDicSearch.executing.subscribeNextAs { (isExecuting:Bool) -> () in
             
-            if enable {
+            if isExecuting {
                 
-                self.indicatorView.startAnimation()
+                self.showHUDIndicator()
             } else {
                 
-                self.indicatorView.stopAnimation()
+                self.hideHUD()
             }
         }
+        
+        // 查询数据
+        filterViewModel.filterSelectionDicSearch.execute(nil)
     }
     
     // MARK: - setup
@@ -67,6 +70,8 @@ class FilterViewController: UIViewController {
             
             self.selectionCollectionView.dataSource = dataSource.dataSource
             self.selectionCollectionView.reloadData()
+            
+            self.stopIndicatorAnimationAndStartFadeAnimation()
         }
     }
     
