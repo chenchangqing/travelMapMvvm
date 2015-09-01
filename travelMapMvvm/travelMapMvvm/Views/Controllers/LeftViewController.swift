@@ -160,7 +160,7 @@ class LeftViewController: UITableViewController {
         // 点击首页所在行
         case 1:
             
-            sideMenuViewController?.contentViewController = getViewController("main", identifier: "IndexViewControllerNav")
+            sideMenuViewController?.contentViewController = getViewController("Main", identifier: "IndexViewControllerNav")
             sideMenuViewController?.hideMenuViewController()
             
             break;
