@@ -9,7 +9,7 @@
 import UIKit
 import MBProgressHUD
 
-class ForgetPwdController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class ForgetPwdController: UIViewController, KeyboardProcessProtocol {
 
     @IBOutlet weak var containerV: UIView!
     @IBOutlet weak var sureBtn: UIButton!
@@ -21,7 +21,14 @@ class ForgetPwdController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     @IBOutlet weak var pwdF2: UITextField!
     
     @IBOutlet weak var scrollV: UIScrollView!
-    var activeF: UITextField?
+    
+    var scrollView:UIScrollView {
+        
+        get {
+            return self.scrollV
+        }
+    }
+    var activeField: UITextField?
     
     // MARK: - 
     
@@ -30,6 +37,18 @@ class ForgetPwdController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
         // 初始化
         setAllUIStyle()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.registerKeyboardNotification()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.cancelKeyboardNotification()
     }
     
     // MARK: -

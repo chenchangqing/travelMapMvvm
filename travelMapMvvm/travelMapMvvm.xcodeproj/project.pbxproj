@@ -125,7 +125,8 @@
 		E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E531B935FB8009C7DA1 /* DesViewController.swift */; };
 		E6AA5E561B935FB8009C7DA1 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */; };
 		E6AA5E591B936050009C7DA1 /* UIView+General.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E581B936050009C7DA1 /* UIView+General.m */; };
-		E6AB392E1B954B67003F88C5 /* ForgetPwdController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB392D1B954B67003F88C5 /* ForgetPwdController+Keyboard.swift */; };
+		E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */; };
+		E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39321B95577F003F88C5 /* UIViewController+Keyboard.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
@@ -290,7 +291,8 @@
 		E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		E6AA5E571B936050009C7DA1 /* UIView+General.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+General.h"; sourceTree = "<group>"; };
 		E6AA5E581B936050009C7DA1 /* UIView+General.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+General.m"; sourceTree = "<group>"; };
-		E6AB392D1B954B67003F88C5 /* ForgetPwdController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ForgetPwdController+Keyboard.swift"; sourceTree = "<group>"; };
+		E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardProcessProtocol.swift; sourceTree = "<group>"; };
+		E6AB39321B95577F003F88C5 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,6 +500,7 @@
 		E659F4A81B8CEFFF005CD9FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E6AB392F1B954EEF003F88C5 /* Protocol */,
 				E6AA5E351B9356D4009C7DA1 /* Controllers */,
 				E688EFC01B9200C400C01B23 /* Footer */,
 				E659F4AD1B8CEFFF005CD9FD /* Cell */,
@@ -702,6 +705,7 @@
 		E698AD9E1B905C15001B7D71 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E6AB39321B95577F003F88C5 /* UIViewController+Keyboard.swift */,
 				E6AA5E571B936050009C7DA1 /* UIView+General.h */,
 				E6AA5E581B936050009C7DA1 /* UIView+General.m */,
 				E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */,
@@ -717,7 +721,6 @@
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
 				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
 				E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */,
-				E6AB392D1B954B67003F88C5 /* ForgetPwdController+Keyboard.swift */,
 				E6AA5E531B935FB8009C7DA1 /* DesViewController.swift */,
 				E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
@@ -775,6 +778,14 @@
 				E6AA5E491B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m */,
 			);
 			path = UICollectionViewLeftAlignedLayout;
+			sourceTree = "<group>";
+		};
+		E6AB392F1B954EEF003F88C5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		E6FD762F1B8C5F1800E527CD = {
@@ -1009,7 +1020,6 @@
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */,
-				E6AB392E1B954B67003F88C5 /* ForgetPwdController+Keyboard.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
@@ -1035,6 +1045,7 @@
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
+				E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */,
 				E698AD501B8FF108001B7D71 /* RACSignal+Extensions.swift in Sources */,
 				E68730C21B91689400F3EA40 /* MJRefreshFooter.m in Sources */,
 				E698AD941B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -1101,6 +1112,7 @@
 				E698AD901B905BA6001B7D71 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,
+				E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */,
 				E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */,
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,
