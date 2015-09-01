@@ -88,6 +88,28 @@ class IndexViewController: UITableViewController {
     private func setupIndexViewModel() {
         
         viewModel = IndexViewModel()
+        
+        self.viewModel.refreshSearch.executing.subscribeNextAs({ (isExecuting:Bool) -> () in
+            
+            if isExecuting {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                self.hideHUD()
+            }
+        })
+        
+        self.viewModel.loadmoreSearch.executing.subscribeNextAs({ (isExecuting:Bool) -> () in
+            
+            if isExecuting {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                self.hideHUD()
+            }
+        })
     }
     
     /**
@@ -132,22 +154,6 @@ class IndexViewController: UITableViewController {
             reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
     }
     
-    // MARK: - 动画
-    
-    /**
-     * 动画
-     */
-    private func executeFadeAnimation() {
-        
-        var animated = CATransition()
-        animated.duration = 1.0
-        animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        animated.type = kCATransitionFade
-        animated.removedOnCompletion = true
-        
-        self.view.layer.addAnimation(animated, forKey: nil)
-    }
-    
     // MARK: - 请求数据之后回调
     
     /**
@@ -155,13 +161,8 @@ class IndexViewController: UITableViewController {
      */
     private func callbackAfterGetData(any:AnyObject!) {
         
-        // 开始动画
-        if !self.indicatorView.hidden {
-            
-            self.executeFadeAnimation()
-            // 停止提示
-            self.indicatorView.stopAnimation()
-        }
+        // 停止提示动画开始渐变动画
+        self.stopIndicatorAnimationAndStartFadeAnimation()
         
         // 拿到当前的下拉刷新控件，结束刷新状态
         self.tableView.header.endRefreshing()

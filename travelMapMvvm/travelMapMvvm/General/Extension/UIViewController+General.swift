@@ -61,5 +61,33 @@ extension UIViewController :UITextFieldDelegate {
     @IBAction func dissSelfAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    /**
+     * 动画
+     */
+    func executeFadeAnimation() {
+        
+        var animated = CATransition()
+        animated.duration = 1.0
+        animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        animated.type = kCATransitionFade
+        animated.removedOnCompletion = true
+        
+        self.view.layer.addAnimation(animated, forKey: nil)
+    }
+    
+    /**
+     * 停止提示动画 开始渐变动画
+     */
+    func stopIndicatorAnimationAndStartFadeAnimation() {
+        
+        // 开始动画
+        if !self.indicatorView.hidden {
+            
+            self.executeFadeAnimation()
+            // 停止提示
+            self.indicatorView.stopAnimation()
+        }
+    }
 
 }
