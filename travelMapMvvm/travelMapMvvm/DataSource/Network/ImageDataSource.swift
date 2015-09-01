@@ -66,7 +66,10 @@ class ImageDataSource: ImageDataSourceProtocol {
             task.resume()
             AFNetworkActivityIndicatorManager.sharedManager().incrementActivityCount()
             
-            return nil
+            return RACDisposable(block: { () -> Void in
+                
+                task.cancel()
+            })
         })
         
 //        let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
