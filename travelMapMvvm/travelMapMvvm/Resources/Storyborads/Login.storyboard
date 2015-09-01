@@ -536,6 +536,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kHc-22-qhW" id="K6b-kw-DuN"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -577,7 +580,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="xLn-8e-dry">
-                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="5dJ-Tr-koS"/>
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="5dJ-Tr-koS">
+                            <connections>
+                                <segue destination="D4i-Ah-1GC" kind="unwind" unwindAction="unwindSegueToLoginViewController:" id="OEJ-rK-yKn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -592,6 +599,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6S-kV-hFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FBT-vC-Cb8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="363.5" y="1367.5"/>
         </scene>
@@ -727,6 +735,7 @@
                         <barButtonItem key="leftBarButtonItem" image="back_btn" id="rEU-D3-ZOF">
                             <connections>
                                 <action selector="leftItemClick:" destination="Jkx-P3-gyg" id="ZY2-zI-g9H"/>
+                                <segue destination="FBT-vC-Cb8" kind="unwind" unwindAction="unwindSegueToRegisterViewController:" id="SH2-0d-95F"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

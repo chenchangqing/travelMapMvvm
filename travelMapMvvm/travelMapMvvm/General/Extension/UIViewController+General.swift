@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIViewController {
+extension UIViewController :UITextFieldDelegate {
     
     var indicatorView: NVActivityIndicatorView {
         
@@ -60,5 +60,19 @@ extension UIViewController {
      */
     @IBAction func dissSelfAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    /**
+     * 取消键盘
+     */
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        view.endEditing(true)
     }
 }
