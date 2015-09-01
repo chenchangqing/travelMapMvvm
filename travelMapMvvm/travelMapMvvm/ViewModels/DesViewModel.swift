@@ -6,17 +6,39 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
+import ReactiveCocoa
 
 class DesViewModel: NSObject {
     
     private var selectionViewDataSourceProtocol:SelectionViewDataSourceProtocol = SelectionViewDataSource.shareInstance()
     
     // 数据源
-    var desSelectionDic :OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>!
+    var dataSource = DataSource(dataSource: OrderedDictionary<CJCollectionViewHeaderModel, [CJCollectionViewCellModel]>())
+    var desSelectionDicSearch : RACCommand!
+    private var cellWidth:CGFloat!
     
     init(cellWidth:CGFloat) {
         
-        desSelectionDic = selectionViewDataSourceProtocol.queryOrderDictionary(cellWidth)
+        super.init()
+        
+        self.cellWidth = cellWidth
+        // 初始化命令
+        setupFilterSelectionDicSearch()
+    }
+    
+    private func setupFilterSelectionDicSearch() {
+        
+        desSelectionDicSearch = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            let signal = self.selectionViewDataSourceProtocol.queryOrderDictionary(self.cellWidth)
+            
+            signal.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (dataSource:DataSource) -> () in
+                
+                self.setValue(dataSource, forKey: "dataSource")
+            })
+            
+            let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
+            return signal.subscribeOn(scheduler)
+        })
     }
 }

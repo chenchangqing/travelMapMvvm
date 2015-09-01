@@ -28,6 +28,9 @@ class DesViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        
+        // 查询数据
+        desViewModel.desSelectionDicSearch.execute(nil)
     }
     
     // MARK: - setup
@@ -52,7 +55,11 @@ class DesViewController: UIViewController {
     private func setupSelectionCollectionView() {
         
         // 设置选择控件数据源
-        selectionCollectionView.dataSource = desViewModel.desSelectionDic
+        RACObserve(desViewModel, "dataSource").subscribeNextAs { (dataSource:DataSource) -> () in
+            
+            self.selectionCollectionView.dataSource = dataSource.dataSource
+            self.selectionCollectionView.reloadData()
+        }
         
     }
     

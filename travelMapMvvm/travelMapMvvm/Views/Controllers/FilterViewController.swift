@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
-import UIKit
+import ReactiveCocoa
 
 class FilterViewController: UIViewController {
     
@@ -27,6 +27,12 @@ class FilterViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        
+        // 查询数据
+        filterViewModel.filterSelectionDicSearch.execute(nil)
+        
+        // 提示动画
+        self.indicatorView.startAnimation()
     }
     
     // MARK: - setup
@@ -48,8 +54,15 @@ class FilterViewController: UIViewController {
     private func setupSelectionCollectionView() {
         
         // 设置选择控件数据源
-        selectionCollectionView.dataSource = filterViewModel.filterSelectionDic
-        
+        RACObserve(filterViewModel, "dataSource").doNext { (any:AnyObject!) -> Void in
+            
+            // 有数据了就停止动画
+            self.indicatorView.stopAnimation()
+        }.subscribeNextAs { (dataSource:DataSource) -> () in
+            
+            self.selectionCollectionView.dataSource = dataSource.dataSource
+            self.selectionCollectionView.reloadData()
+        }
     }
     
     /**

@@ -17,6 +17,8 @@ class CJSelectionCollectionView: UIView, UICollectionViewDataSource, UICollectio
         
         didSet {
             
+            caculate()
+            
             // 保存原始数据
             originalDataSource = OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>()
             for (headerModel,cellModels) in dataSource {

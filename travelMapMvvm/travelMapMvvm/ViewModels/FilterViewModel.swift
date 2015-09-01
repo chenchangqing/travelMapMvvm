@@ -6,17 +6,37 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
-import UIKit
+import ReactiveCocoa
 
 class FilterViewModel: NSObject {
    
     private var selectionViewDataSourceProtocol:SelectionViewDataSourceProtocol = SelectionViewDataSource.shareInstance()
     
-    // 数据源
-    var filterSelectionDic :OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>!
+    // 被观察数据源
+    var dataSource = DataSource(dataSource: OrderedDictionary<CJCollectionViewHeaderModel, [CJCollectionViewCellModel]>())
+    var filterSelectionDicSearch : RACCommand!
     
     override init() {
         
-        filterSelectionDic = selectionViewDataSourceProtocol.queryFilterDictionary()
+        super.init()
+        
+        // 初始化命令
+        setupFilterSelectionDicSearch()
+    }
+    
+    private func setupFilterSelectionDicSearch() {
+        
+        filterSelectionDicSearch = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            let signal = self.selectionViewDataSourceProtocol.queryFilterDictionary()
+            
+            signal.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (dataSource:DataSource) -> () in
+                
+                self.setValue(dataSource, forKey: "dataSource")
+            })
+            
+            let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
+            return signal.subscribeOn(scheduler)
+        })
     }
 }
