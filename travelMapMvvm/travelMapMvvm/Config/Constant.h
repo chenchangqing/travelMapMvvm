@@ -11,9 +11,6 @@
 #define kMsg        @"msg"
 #define kData       @"data"
 
-// test json file name
-#define kQueryStrategyList @"queryStrategyList"
-
 // error
 #define kErrorDomain @"com.city.go"
 

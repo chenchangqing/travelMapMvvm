@@ -44,4 +44,22 @@ enum StrategyTypeEnum: String {
         }
         return nil
     }
+    
+    // 转String
+    static func covertToString(array:[StrategyTypeEnum]) -> String {
+        
+        var result = ""
+        
+        for (var i=0;i<array.count;i++) {
+            
+            if i == array.count - 1 {
+                
+                result += array[i].rawValue
+            } else {
+                
+                result += array[i].rawValue + ","
+            }
+        }
+        return result
+    }
 }

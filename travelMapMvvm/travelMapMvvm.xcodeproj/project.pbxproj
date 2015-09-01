@@ -127,6 +127,9 @@
 		E6AA5E591B936050009C7DA1 /* UIView+General.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E581B936050009C7DA1 /* UIView+General.m */; };
 		E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */; };
 		E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39321B95577F003F88C5 /* UIViewController+Keyboard.swift */; };
+		E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */; };
+		E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */; };
+		E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
@@ -293,6 +296,9 @@
 		E6AA5E581B936050009C7DA1 /* UIView+General.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+General.m"; sourceTree = "<group>"; };
 		E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardProcessProtocol.swift; sourceTree = "<group>"; };
 		E6AB39321B95577F003F88C5 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUserModelDataSource.swift; sourceTree = "<group>"; };
+		E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUserModelDataSource.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +367,7 @@
 				E659F48E1B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift */,
 				E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */,
 				E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */,
+				E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -379,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */,
+				E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */,
 				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
 			);
 			path = Database;
@@ -388,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				E659F48C1B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift */,
+				E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */,
 				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
 			);
 			path = Network;
@@ -1010,6 +1019,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */,
 				E68730CC1B91689400F3EA40 /* MJRefreshStateHeader.m in Sources */,
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -1028,6 +1038,7 @@
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E698AD921B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
+				E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
 				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
@@ -1061,6 +1072,7 @@
 				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
 				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
+				E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */,
 				E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */,
 				E6AA5E4F1B9357CA009C7DA1 /* CJCollectionViewCellModel.swift in Sources */,
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,

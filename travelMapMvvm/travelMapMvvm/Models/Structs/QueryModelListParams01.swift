@@ -1,5 +1,5 @@
 //
-//  QueryModelListPageParams.swift
+//  QueryStrategyListPageParams.swift
 //  travelMapMvvm
 //
 //  Created by green on 15/8/25.
@@ -11,7 +11,7 @@ import Foundation
 /**
 * 查询攻略参数结构体01
 */
-struct QueryModelListParams01 {
+struct QueryStrategyModelListParams01 {
     
     var strategyThemeArray:[StrategyThemeEnum] = StrategyThemeEnum.allValues
     var strategyMonthArray:[MonthEnum] = MonthEnum.allValues

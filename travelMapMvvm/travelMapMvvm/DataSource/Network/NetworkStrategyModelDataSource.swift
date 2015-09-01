@@ -23,26 +23,37 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    func queryModelList(params: QueryModelListParams01) -> RACSignal {
+    func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
+            // 参数
+            let startId = params.startId == nil ? "" : params.startId!
+            let parameters:[String : AnyObject] = [
+                
+                "strategyThemeArray": StrategyThemeEnum.covertToString(params.strategyThemeArray),
+                "strategyMonthArray": MonthEnum.covertToString(params.strategyMonthArray),
+                "strategyTypeArray" : StrategyTypeEnum.covertToString(params.strategyTypeArray),
+                "order"             : params.rowCount,
+                "startId"           : startId
+            ]
                 
             NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
                 
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
+                if error == nil {
                     
-                    if error == nil {
-                        
-                        subscriber.sendNext(data!)
-                        subscriber.sendCompleted()
-                    } else {
-                        
-                        subscriber.sendError(error)
-                        
-                    }
-                })
-            }, requestURlString: "URL")
+                    var strategyList = [StrategyModel]()
+                    
+                    strategyList <-- data!
+                    
+                    subscriber.sendNext(strategyList)
+                    subscriber.sendCompleted()
+                } else {
+                    
+                    subscriber.sendError(error)
+                    
+                }
+            }, requestURlString: "URL", parameters: parameters)
             
             return nil
         })

@@ -23,19 +23,19 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    func queryModelList(params: QueryModelListParams01) -> RACSignal {
+    func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
                 
-                let resultDic = ReadJsonClass.readJsonData(kQueryStrategyList)
+                let resultDic = ReadJsonClass.readJsonData("queryStrategyList")
                 
                 if resultDic.error == nil {
                     
-                    var strategyList = [StrategyModel]()
-                    
                     if let data: AnyObject=resultDic.data {
+                        
+                        var strategyList = [StrategyModel]()
                         
                         strategyList <-- data[kData]
                         

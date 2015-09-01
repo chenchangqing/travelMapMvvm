@@ -25,6 +25,6 @@ protocol StrategyModelDataSourceProtocol {
      *
      * @return RACSignal
      */
-    func queryModelList(params: QueryModelListParams01) -> RACSignal
+    func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal
     
 }

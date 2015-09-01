@@ -44,7 +44,7 @@ class IndexViewModel: NSObject {
         refreshSearch = RACCommand() { (any:AnyObject!) -> RACSignal in
             
             // 查询
-            let singal = self.strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01())
+            let singal = self.strategyModelDataSourceProtocol.queryStrategyList(QueryStrategyModelListParams01())
             
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
@@ -71,7 +71,7 @@ class IndexViewModel: NSObject {
         loadmoreSearch = RACCommand() { (any:AnyObject!) -> RACSignal in
             
             // 查询
-            let singal = self.strategyModelDataSourceProtocol.queryModelList(QueryModelListParams01())
+            let singal = self.strategyModelDataSourceProtocol.queryStrategyList(QueryStrategyModelListParams01())
             
             // 错误处理
             singal.subscribeError({ (error:NSError!) -> Void in
