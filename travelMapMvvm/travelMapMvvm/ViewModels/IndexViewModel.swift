@@ -10,8 +10,8 @@ import ReactiveCocoa
 
 class IndexViewModel: NSObject {
     
-    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
-//    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
+//    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
+    private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
     // 数据源（一直处于被观察状态）
     dynamic var strategyList = [StrategyModel]()
