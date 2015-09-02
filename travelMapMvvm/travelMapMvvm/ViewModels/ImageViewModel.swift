@@ -61,22 +61,20 @@ class ImageViewModel: NSObject {
         // 初始化下载图片命令
         downloadImageCommand = RACCommand(enabled: commandEnabledSignal, signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            // 获得下载信号
-            let signal = self.imageDataSourceProtocol.downloadImageWithUrl(self.url!)
-            
-            // 获得图片
-            signal.subscribeNextAs({ (image:UIImage) -> () in
-                
-                self.setValue(image, forKey: "image")
-            })
-            
-            // 下载图片错误处理
-            signal.subscribeError({ (error:NSError!) -> Void in
-                
-                println(error.localizedDescription)
-            })
-            return signal
+            return self.imageDataSourceProtocol.downloadImageWithUrl(self.url!)
         })
+        
+        // 获得图片
+        downloadImageCommand.executionSignals.switchToLatest().subscribeNextAs { (image:UIImage) -> () in
+           
+            self.setValue(image, forKey: "image")
+        }
+        
+        // 下载图片错误处理
+        downloadImageCommand.errors.subscribeNextAs { (error:NSError!) -> () in
+            
+            println(error.localizedDescription)
+        }
     }
     
     /**

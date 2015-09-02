@@ -30,13 +30,13 @@ class FilterViewModel: NSObject {
             
             let signal = self.selectionViewDataSourceProtocol.queryFilterDictionary()
             
-            signal.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (dataSource:DataSource) -> () in
-                
-                self.setValue(dataSource, forKey: "dataSource")
-            })
-            
             let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
             return signal.subscribeOn(scheduler)
         })
+        
+        filterSelectionDicSearch.executionSignals.switchToLatest().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs { (dataSource:DataSource) -> () in
+            
+            self.setValue(dataSource, forKey: "dataSource")
+        }
     }
 }

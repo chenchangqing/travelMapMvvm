@@ -32,13 +32,13 @@ class DesViewModel: NSObject {
             
             let signal = self.selectionViewDataSourceProtocol.queryOrderDictionary(self.cellWidth)
             
-            signal.deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs({ (dataSource:DataSource) -> () in
-                
-                self.setValue(dataSource, forKey: "dataSource")
-            })
-            
             let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
             return signal.subscribeOn(scheduler)
         })
+        
+        desSelectionDicSearch.executionSignals.switchToLatest().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNextAs { (dataSource:DataSource) -> () in
+            
+            self.setValue(dataSource, forKey: "dataSource")
+        }
     }
 }
