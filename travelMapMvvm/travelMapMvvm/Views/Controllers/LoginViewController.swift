@@ -66,6 +66,7 @@ class LoginViewController: UIViewController {
         // 手机登录event
         loginBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNextAs { (sender:UIButton) -> () in
             
+            self.view.endEditing(true)
             self.loginViewModel.loginCommand.execute(nil)
         }
         
