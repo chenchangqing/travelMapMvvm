@@ -19,35 +19,24 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var telF: UITextField!       // 手机号文本框
     @IBOutlet weak var pwdF: UITextField!       // 密码文本框
+    
+    private let loginViewModel = LoginViewModel()
+    
+    // Contant
+    private let kIsLogined = "用户已经登录"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 初始化
-        setAllUIStyle()
+        setup()
     }
     
     // MARK: - 
     
-    /**
-     * 设置UIStyle
-     */
-    private func setAllUIStyle() {
-       
-        containerV.loginRadiusStyle()
-        loginBtn.loginNoBorderStyle()
-        registerBtn.loginBorderStyle()
-        wbBtn.loginBorderStyle()
-        qqBtn.loginBorderStyle()
+    private func setup() {
         
-        // 校验提示
-        setTextFieldVaild()
-    }
-    
-    /**
-     * 设置校验提示
-     */
-    private func setTextFieldVaild() {
+        setAllUIStyle()
         
         // 手机号校验信号
         let isValidTelephoneSignal = self.telF.rac_textSignal().mapAs {
@@ -62,32 +51,131 @@ class LoginViewController: UIViewController {
             return self.isValidPassword(password)
         }
         
-        // 绑定手机号校验信号
+        // setup
+        
+        // 设置错误输入提示背景
+        setupTextFieldBgColor(isValidTelephoneSignal,isValidPasswordSignal: isValidPasswordSignal)
+        
+        // 设置手机登录按钮是否可以点击以及不可点击时的颜色
+        setupTelLoginBtnBgColor(isValidTelephoneSignal,isValidPasswordSignal: isValidPasswordSignal)
+        
+        setupdateViewModelLoginInfo()   // 时时更新loginViewModel的登录信息
+        setupProcessLoginSuccess()      // 处理登录成功
+        setupLoginMessage()             // 登录提示
+        
+        // 手机登录event
+        loginBtn.rac_command = loginViewModel.loginCommand
+        
+        // 默认手机号码
+        RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
+    }
+    
+    /**
+     * 设置UIStyle
+     */
+    private func setAllUIStyle() {
+       
+        // ui style
+        containerV.loginRadiusStyle()
+        loginBtn.loginNoBorderStyle()
+        registerBtn.loginBorderStyle()
+        wbBtn.loginBorderStyle()
+        qqBtn.loginBorderStyle()
+    }
+    
+    /**
+     * 设置错误输入提示背景
+     */
+    private func setupTextFieldBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
+        
+        // 手机号输入框
         isValidTelephoneSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.telF,"backgroundColor")
         
-        // 绑定密码校验信号
+        // 密码输入框
         isValidPasswordSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.pwdF,"backgroundColor")
+    }
+    
+    /** 
+     * 设置手机登录按钮是否可以点击以及不可点击时的颜色
+     */
+    private func setupTelLoginBtnBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
         
-        // 登录按钮校验信号
-        let signUpActiveSignal = RACSignalEx.combineLatestAs([isValidTelephoneSignal,isValidPasswordSignal], reduce: { (isTelephoneVaild:NSNumber, isPasswordVaild:NSNumber) -> NSNumber in
+        // bind登录按钮校验信号
+        
+        RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
+            (tuple: RACTuple) -> NSNumber in
             
-            return isTelephoneVaild.boolValue && isPasswordVaild.boolValue
-        })
-        
-        // 绑定登录按钮校验信号
-        signUpActiveSignal.mapAs { (isValid:NSNumber) -> UIColor in
+            return (tuple.first as! Bool) && (tuple.second as! Bool) && !(tuple.third as! Bool)
+        }.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
         } ~> RAC(loginBtn,"backgroundColor")
-        signUpActiveSignal ~> RAC(loginBtn,"enabled")
     }
     
+    /**
+     * 时时更新loginViewModel的登录信息
+     */
+    private func setupdateViewModelLoginInfo() {
+        
+        telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
+        pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
+    }
+    
+    /**
+     * 处理登录成功
+     */
+    private func setupProcessLoginSuccess() {
+        
+        RACObserve(loginViewModel, "user").ignore(nil).subscribeNextAs { (user:UserModel!) -> () in
+            
+            println(user)
+        }
+    }
+    
+    /**
+     * 登录提示
+     */
+    private func setupLoginMessage() {
+        
+        loginViewModel.loginCommand.executing.subscribeNextAs { (isExecuting:Bool) -> () in
+            
+            if isExecuting {
+                
+                self.showHUDIndicator()
+                
+                // 正在执行时按钮不可点击
+                self.loginBtn.enabled = false
+            } else {
+                
+                // 执行完成时按钮可点击
+                self.loginBtn.enabled = true
+                if !self.loginViewModel.errorMsg.isEmpty {
+                    
+                    self.showHUDErrorMessage(self.loginViewModel.errorMsg)
+                } else {
+                    
+                    self.hideHUD()
+                }
+            }
+        }
+        
+        RACSignalEx.combineLatestAs([loginViewModel.loginCommand.enabled.skip(1),loginBtn.rac_signalForControlEvents( UIControlEvents.TouchUpInside)], reduce: { (canExecute:Bool, sender:UIButton) -> NSNumber in
+            
+            return !canExecute
+        }).subscribeNextAs { (canShowError:Bool) -> () in
+            
+            if canShowError {
+                self.showHUDErrorMessage(self.kIsLogined)
+            }
+        }
+    }
+
     // MARK: - Valid
     
     /**

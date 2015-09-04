@@ -55,6 +55,7 @@
 		E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E68763191B996F990006DD3D /* telephoneLogin.json */; };
 		E687631D1B9971220006DD3D /* qqLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631B1B9971220006DD3D /* qqLogin.json */; };
 		E687631E1B9971220006DD3D /* sinaLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631C1B9971220006DD3D /* sinaLogin.json */; };
+		E68763201B99724D0006DD3D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E687631F1B99724D0006DD3D /* LoginViewModel.swift */; };
 		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
 		E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */; };
 		E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */; };
@@ -222,6 +223,7 @@
 		E68763191B996F990006DD3D /* telephoneLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telephoneLogin.json; sourceTree = "<group>"; };
 		E687631B1B9971220006DD3D /* qqLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qqLogin.json; sourceTree = "<group>"; };
 		E687631C1B9971220006DD3D /* sinaLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sinaLogin.json; sourceTree = "<group>"; };
+		E687631F1B99724D0006DD3D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark.png"; sourceTree = "<group>"; };
 		E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark@2x.png"; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
 				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
 				E6A46F191B94405E00BA089B /* ImageViewModel.swift */,
+				E687631F1B99724D0006DD3D /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1145,6 +1148,7 @@
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,
 				E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */,
+				E68763201B99724D0006DD3D /* LoginViewModel.swift in Sources */,
 				E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */,
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,

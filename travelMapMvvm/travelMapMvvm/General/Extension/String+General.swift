@@ -22,4 +22,9 @@ extension String {
         
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
+    
+    func nsString() -> NSString {
+        
+        return self as! NSString
+    }
 }
