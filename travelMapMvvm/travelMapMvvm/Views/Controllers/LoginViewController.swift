@@ -65,13 +65,13 @@ class LoginViewController: UIViewController {
         // 绑定手机号校验信号
         isValidTelephoneSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
-            return isValid.boolValue ? UIColor.clearColor() : UIColor.yellowColor()
+            return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.telF,"backgroundColor")
         
         // 绑定密码校验信号
         isValidPasswordSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
-            return isValid.boolValue ? UIColor.clearColor() : UIColor.yellowColor()
+            return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.pwdF,"backgroundColor")
         
         // 登录按钮校验信号

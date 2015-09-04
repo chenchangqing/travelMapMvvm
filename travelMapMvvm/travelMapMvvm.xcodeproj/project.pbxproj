@@ -51,6 +51,7 @@
 		E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BC1B91689400F3EA40 /* UIScrollView+MJRefresh.m */; };
 		E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */; };
 		E68763151B994B0D0006DD3D /* String+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68763141B994B0D0006DD3D /* String+General.swift */; };
+		E68763181B9964320006DD3D /* UITextField+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68763171B9964320006DD3D /* UITextField+General.swift */; };
 		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
 		E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */; };
 		E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */; };
@@ -214,6 +215,7 @@
 		E68730BD1B91689400F3EA40 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		E68763141B994B0D0006DD3D /* String+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+General.swift"; sourceTree = "<group>"; };
+		E68763171B9964320006DD3D /* UITextField+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+General.swift"; sourceTree = "<group>"; };
 		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark.png"; sourceTree = "<group>"; };
 		E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark@2x.png"; sourceTree = "<group>"; };
@@ -723,6 +725,7 @@
 				E698AD9F1B905C22001B7D71 /* UIViewController+General.swift */,
 				E6A46F201B949EDC00BA089B /* UIButton+Login.swift */,
 				E6A46F221B94A00000BA089B /* UIView+Login.swift */,
+				E68763171B9964320006DD3D /* UITextField+General.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1089,6 +1092,7 @@
 				E6A46F211B949EDC00BA089B /* UIButton+Login.swift in Sources */,
 				E698AD8E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				E68763181B9964320006DD3D /* UITextField+General.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
