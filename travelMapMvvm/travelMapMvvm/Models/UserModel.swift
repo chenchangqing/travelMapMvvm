@@ -17,43 +17,6 @@ class UserModel: NSObject, NSCoding, Deserializable {
     var telephone   :Int?           // 手机号
     var email       :String?        // 邮箱
     
-    private var imageDataSourceProtocol = ImageDataSource.shareInstance()
-    
-    var requestUserPic  : NSURLRequest? {
-        get {
-            let url = isValidStrategyPicUrl()
-            return url == nil ? nil : NSURLRequest(URL: url!)
-        }
-    }
-    
-    /**
-     * 用户头像图片是否有效
-     */
-    private func isValidStrategyPicUrl() -> NSURL? {
-        
-        if let picUrl=userPicUrl {
-            
-            if let url=NSURL(string: picUrl) {
-                
-                return url
-            }
-        }
-        return nil
-    }
-    
-    /**
-     * 下载用户头像图片
-     */
-    func downloadUserPicImageWithUrl() -> RACSignal? {
-        
-        if let url = isValidStrategyPicUrl() {
-            
-            return imageDataSourceProtocol.downloadImageWithUrl(url)
-        }
-        
-        return nil
-    }
-    
     override init() { }
     
     required init(data : [String:AnyObject]) {

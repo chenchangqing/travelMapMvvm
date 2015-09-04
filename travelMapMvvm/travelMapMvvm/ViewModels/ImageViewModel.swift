@@ -7,8 +7,9 @@
 //
 
 import ReactiveCocoa
+import ReactiveViewModel
 
-class ImageViewModel: NSObject {
+class ImageViewModel: RVMViewModel {
    
     var urlString : String?         // 图片路径
     {
@@ -25,19 +26,21 @@ class ImageViewModel: NSObject {
     
     // 被观察的图片，一旦变更及时更新视图
     dynamic var image:UIImage = UIImage()
+    var isNeedCompress = true
     
     private var imageDataSourceProtocol = ImageDataSource.shareInstance()
-    private var downloadImageCommand : RACCommand!
+    var downloadImageCommand : RACCommand!
 
     /**
      * 初始化 
      */
-    init(urlString:String?,defaultImage:UIImage = UIImage()) {
+    init(urlString:String?,defaultImage:UIImage = UIImage(),isNeedCompress:Bool = true) {
         
         super.init()
         
         self.urlString  = urlString
         self.image      = defaultImage
+        self.isNeedCompress = isNeedCompress
         
         // 初始化下载命令
         setupCommand()
@@ -61,7 +64,11 @@ class ImageViewModel: NSObject {
         // 初始化下载图片命令
         downloadImageCommand = RACCommand(enabled: commandEnabledSignal, signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            return self.imageDataSourceProtocol.downloadImageWithUrl(self.url!)
+            if self.isCached() {
+                
+                return RACSignal.empty()
+            }
+            return self.imageDataSourceProtocol.downloadImageWithUrl(self.url!, isNeedCompress: self.isNeedCompress)
         })
         
         // 获得图片
@@ -95,26 +102,18 @@ class ImageViewModel: NSObject {
     // MARK: - load image
     
     /**
-     * 从缓存加载
+     * 是否已经缓存
      */
-    func loadImageWithCache() -> UIImage? {
+    private func isCached() -> Bool {
         
         if let request=request {
             
             if let image=UIImageView.sharedImageCache().cachedImageForRequest(request) {
                 
                 self.setValue(image, forKey: "image")
-                return image
+                return true
             }
         }
-        return nil
-    }
-    
-    /**
-     * 从网络加载
-     */
-    func loadImageWithNetwork() {
-        
-        self.downloadImageCommand.execute(nil)
+        return false
     }
 }

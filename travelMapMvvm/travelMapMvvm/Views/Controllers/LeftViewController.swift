@@ -112,13 +112,7 @@ class LeftViewController: UITableViewController {
     private func setupHeadC() {
         
         headC.enabled = false
-        if let image = userHeaderViewModel.loadImageWithCache() {
-            
-            headC.image = image
-        } else {
-            
-            RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
-        }
+        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
     }
     
     // MARK: - UITableView

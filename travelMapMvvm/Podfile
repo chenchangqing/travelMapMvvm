@@ -3,4 +3,6 @@ platform :ios, '7.0'
 pod 'AFNetworking', '~>2.5.4'
 pod 'RBStoryboardLink', '~> 0.1.4'
 pod 'ReactiveCocoa', '~> 2.5'
+pod 'ReactiveViewModel', '~> 0.3'
+pod 'AFImageDownloader', '~> 1.0.0'
 use_frameworks!

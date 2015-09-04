@@ -1,4 +1,6 @@
 PODS:
+  - AFImageDownloader (1.0.0):
+    - Kiwi (~> 1.1.1)
   - AFNetworking (2.5.4):
     - AFNetworking/NSURLConnection (= 2.5.4)
     - AFNetworking/NSURLSession (= 2.5.4)
@@ -20,6 +22,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Kiwi (1.1.1)
   - RBStoryboardLink (0.1.4)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -28,15 +31,22 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
 
 DEPENDENCIES:
+  - AFImageDownloader (~> 1.0.0)
   - AFNetworking (~> 2.5.4)
   - RBStoryboardLink (~> 0.1.4)
   - ReactiveCocoa (~> 2.5)
+  - ReactiveViewModel (~> 0.3)
 
 SPEC CHECKSUMS:
+  AFImageDownloader: 90fe0794cc3577ff30ca7fbbab8cf19235578aa3
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Kiwi: 4e1a4bcc164fa7c8de649fe545c6d681c01b441c
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
 
 COCOAPODS: 0.37.2

@@ -6,6 +6,12 @@
 // project.
 
 
+// AFImageDownloader
+#define COCOAPODS_POD_AVAILABLE_AFImageDownloader
+#define COCOAPODS_VERSION_MAJOR_AFImageDownloader 1
+#define COCOAPODS_VERSION_MINOR_AFImageDownloader 0
+#define COCOAPODS_VERSION_PATCH_AFImageDownloader 0
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2
@@ -48,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// Kiwi
+#define COCOAPODS_POD_AVAILABLE_Kiwi
+#define COCOAPODS_VERSION_MAJOR_Kiwi 1
+#define COCOAPODS_VERSION_MINOR_Kiwi 1
+#define COCOAPODS_VERSION_PATCH_Kiwi 1
+
 // RBStoryboardLink
 #define COCOAPODS_POD_AVAILABLE_RBStoryboardLink
 #define COCOAPODS_VERSION_MAJOR_RBStoryboardLink 0
@@ -77,4 +89,10 @@
 #define COCOAPODS_VERSION_MAJOR_ReactiveCocoa_no_arc 2
 #define COCOAPODS_VERSION_MINOR_ReactiveCocoa_no_arc 5
 #define COCOAPODS_VERSION_PATCH_ReactiveCocoa_no_arc 0
+
+// ReactiveViewModel
+#define COCOAPODS_POD_AVAILABLE_ReactiveViewModel
+#define COCOAPODS_VERSION_MAJOR_ReactiveViewModel 0
+#define COCOAPODS_VERSION_MINOR_ReactiveViewModel 3
+#define COCOAPODS_VERSION_PATCH_ReactiveViewModel 0
 

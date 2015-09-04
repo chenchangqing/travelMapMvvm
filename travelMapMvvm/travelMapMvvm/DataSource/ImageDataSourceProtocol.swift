@@ -20,5 +20,5 @@ protocol ImageDataSourceProtocol {
      *
      * @return RACSingal 信号
      */
-    func downloadImageWithUrl(url: NSURL) -> RACSignal
+    func downloadImageWithUrl(url: NSURL,isNeedCompress:Bool) -> RACSignal
 }

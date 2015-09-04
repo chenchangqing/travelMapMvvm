@@ -8,6 +8,7 @@
 
 import ReactiveCocoa
 import AFNetworking
+import AFImageDownloader
 
 class ImageDataSource: ImageDataSourceProtocol {
     
@@ -24,12 +25,17 @@ class ImageDataSource: ImageDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    func downloadImageWithUrl(url: NSURL) -> RACSignal {
+    func downloadImageWithUrl(url: NSURL,isNeedCompress:Bool) -> RACSignal {
+        
+        let request = NSMutableURLRequest(URL: url)
+        
+        let downloadImageError = NSError(
+            domain: kErrorDomain,
+            code: ErrorEnum.ImageDownloadError.errorCode,
+            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue + "(" + url.description + ")"])
         
         let signal = RACSignal.createSignal({
             (subscriber: RACSubscriber!) -> RACDisposable! in
-            
-            let request = NSMutableURLRequest(URL: url)
             
             // 网络下载
             let session = NSURLSession.sharedSession()
@@ -38,25 +44,12 @@ class ImageDataSource: ImageDataSourceProtocol {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     AFNetworkActivityIndicatorManager.sharedManager().decrementActivityCount()
                 })
-                let downloadImageError = NSError(
-                    domain: kErrorDomain,
-                    code: ErrorEnum.ImageDownloadError.errorCode,
-                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue + "(" + url.description + ")"])
                 
                 if (error == nil) {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
-                        let image = UIImage(data: data)
-                        
-                        if let image=image {
-                            
-                            UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
-                            subscriber.sendNext(image)
-                            subscriber.sendCompleted()
-                        } else {
-                            
-                            subscriber.sendError(downloadImageError)
-                        }
+                        subscriber.sendNext(data)
+                        subscriber.sendCompleted()
                     })
                 } else {
                     
@@ -72,8 +65,32 @@ class ImageDataSource: ImageDataSourceProtocol {
             })
         })
         
-//        let scheduler = RACScheduler(priority: RACSchedulerPriorityBackground)
-//        return signal.subscribeOn(scheduler)
-        return signal
+        // 压缩
+        if isNeedCompress {
+            
+            return signal.flattenMap { (any:AnyObject!) -> RACStream! in
+                
+                return RACSignal.createSignal({ (subcriber:RACSubscriber!) -> RACDisposable! in
+                    
+                    (any as! NSData).af_decompressedImageFromJPEGDataWithCallback { (image:UIImage!) -> Void in
+                        
+                        UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
+                        subcriber.sendNext(image)
+                        subcriber.sendCompleted()
+                    }
+                    return nil
+                })
+            }
+        } else {
+            
+            return signal.map({ (any:AnyObject!) -> AnyObject! in
+                
+                let image = UIImage(data: any as! NSData)
+                UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
+                
+                return image
+            })
+        }
+        
     }
 }

@@ -43,6 +43,16 @@ class StrategyCell: UITableViewCell, ReactiveView  {
         selectionStyle = UITableViewCellSelectionStyle.None
         strategyPic.layer.masksToBounds = true
         strategyPic.layer.cornerRadius = 8
+        
+        // Observe
+        RACObserve(authorImageViewModel, "image") ~> RAC(authorHeadC,"image")
+        RACObserve(strategyImageViewModel, "image") ~> RAC(strategyPic,"image")
+        
+        self.rac_prepareForReuseSignal.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.authorHeadC.image = UIImage()
+            self.strategyPic.image = nil
+        }
     }
     
     // MARK: - ReactiveView
@@ -51,48 +61,18 @@ class StrategyCell: UITableViewCell, ReactiveView  {
         
         if let viewModel = viewModel as? StrategyModel {
             
-            // 重用时重置图片
-            self.rac_prepareForReuseSignal.subscribeNext {
-                (next: AnyObject!) -> () in
-                
-                self.authorHeadC.image = UIImage()
-                self.strategyPic.image = nil
-            }
-            
             strategyNameL.text = viewModel.title
             dateL.text         = viewModel.createTime
             visiteNumL.text    = viewModel.visitNumber == nil ? "" : "\(viewModel.visitNumber!)"
             authorNameL.text   = viewModel.author
             
-            // 加载小编头像
-            authorImageViewModel.urlString = viewModel.authorPicUrl
-            
-            if let image = authorImageViewModel.loadImageWithCache() {
-                
-                authorHeadC.image = image
-            } else {
-                
-                RACObserve(authorImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
-                    
-                    self.authorHeadC.image = image
-                })
-                authorImageViewModel.loadImageWithNetwork()
-            }
-            
             // 加载攻略图片
             strategyImageViewModel.urlString = viewModel.picUrl
+            strategyImageViewModel.downloadImageCommand.execute(nil)
             
-            if let image = strategyImageViewModel.loadImageWithCache() {
-                
-                strategyPic.image = image
-            } else {
-                
-                RACObserve(strategyImageViewModel, "image").distinctUntilChanged().subscribeNextAs({ (image:UIImage!) -> () in
-                    
-                    self.strategyPic.image = image
-                })
-                strategyImageViewModel.loadImageWithNetwork()
-            }
+            // 加载小编头像图片
+            authorImageViewModel.urlString = viewModel.authorPicUrl
+            authorImageViewModel.downloadImageCommand.execute(nil)
         }
     }
 }

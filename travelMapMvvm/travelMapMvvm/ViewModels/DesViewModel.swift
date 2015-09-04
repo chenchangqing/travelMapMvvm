@@ -7,8 +7,9 @@
 //
 
 import ReactiveCocoa
+import ReactiveViewModel
 
-class DesViewModel: NSObject {
+class DesViewModel: RVMViewModel {
     
     private var selectionViewDataSourceProtocol:SelectionViewDataSourceProtocol = SelectionViewDataSource.shareInstance()
     

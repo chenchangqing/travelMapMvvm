@@ -7,8 +7,9 @@
 //
 
 import ReactiveCocoa
+import ReactiveViewModel
 
-class IndexViewModel: NSObject {
+class IndexViewModel: RVMViewModel {
     
 //    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
     private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
