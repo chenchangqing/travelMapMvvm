@@ -52,6 +52,9 @@
 		E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */; };
 		E68763151B994B0D0006DD3D /* String+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68763141B994B0D0006DD3D /* String+General.swift */; };
 		E68763181B9964320006DD3D /* UITextField+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68763171B9964320006DD3D /* UITextField+General.swift */; };
+		E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E68763191B996F990006DD3D /* telephoneLogin.json */; };
+		E687631D1B9971220006DD3D /* qqLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631B1B9971220006DD3D /* qqLogin.json */; };
+		E687631E1B9971220006DD3D /* sinaLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631C1B9971220006DD3D /* sinaLogin.json */; };
 		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
 		E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */; };
 		E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */; };
@@ -216,6 +219,9 @@
 		E68730BE1B91689400F3EA40 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		E68763141B994B0D0006DD3D /* String+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+General.swift"; sourceTree = "<group>"; };
 		E68763171B9964320006DD3D /* UITextField+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+General.swift"; sourceTree = "<group>"; };
+		E68763191B996F990006DD3D /* telephoneLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telephoneLogin.json; sourceTree = "<group>"; };
+		E687631B1B9971220006DD3D /* qqLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qqLogin.json; sourceTree = "<group>"; };
+		E687631C1B9971220006DD3D /* sinaLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sinaLogin.json; sourceTree = "<group>"; };
 		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark.png"; sourceTree = "<group>"; };
 		E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark@2x.png"; sourceTree = "<group>"; };
@@ -485,7 +491,10 @@
 		E659F49F1B8CEFFF005CD9FD /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				E687631B1B9971220006DD3D /* qqLogin.json */,
+				E687631C1B9971220006DD3D /* sinaLogin.json */,
 				E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */,
+				E68763191B996F990006DD3D /* telephoneLogin.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -949,10 +958,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
 				E688EFC41B9200C400C01B23 /* IndexViewFooter.xib in Resources */,
 				E688EFC61B92015D00C01B23 /* Images.xcassets in Resources */,
 				E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */,
+				E687631D1B9971220006DD3D /* qqLogin.json in Resources */,
 				E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */,
+				E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */,
 				E6A46F1D1B94994A00BA089B /* Login.storyboard in Resources */,
 				E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */,
 				E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */,

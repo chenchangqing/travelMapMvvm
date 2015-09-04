@@ -1,0 +1,12 @@
+{
+    "success":true,
+    "msg":"恭喜，查询攻略成功",
+    "data": {
+        
+        "userId":"003",
+        "userName":"Red",
+        "userPicUrl":"http://imgsrc.baidu.com/forum/w=580/sign=b45b85fdba3eb13544c7b7b3961ea8cb/88164a90f603738d9d26a537b51bb051f819ec4a.jpg",
+        "telephone":"13917470147",
+        "email":"chenchangqing120@126.com"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "success":true,
+    "msg":"恭喜，查询攻略成功",
+    "data": {
+        
+        "userId":"001",
+        "userName":"Green",
+        "userPicUrl":"http://cdn.duitang.com/uploads/item/201205/07/20120507172458_VWLEh.jpeg",
+        "telephone":"13917470145",
+        "email":"chenchangqing198@126.com"
+    }
+}

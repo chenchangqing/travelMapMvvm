@@ -1,0 +1,12 @@
+{
+    "success":true,
+    "msg":"恭喜，查询攻略成功",
+    "data": {
+        
+        "userId":"002",
+        "userName":"Blue",
+        "userPicUrl":"http://p3.gexing.com/G1/M00/C0/F7/rBACE1Ojp7iDJJzTAAAWMzSlqR0708_200x200_3.jpg?recache=20131108",
+        "telephone":"13917470146",
+        "email":"chenchangqing199@126.com"
+    }
+}
