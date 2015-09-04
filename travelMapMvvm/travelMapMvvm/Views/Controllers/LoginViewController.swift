@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class LoginViewController: UIViewController {
     
@@ -38,6 +39,71 @@ class LoginViewController: UIViewController {
         registerBtn.loginBorderStyle()
         wbBtn.loginBorderStyle()
         qqBtn.loginBorderStyle()
+        
+        // 校验提示
+        setTextFieldVaild()
+    }
+    
+    /**
+     * 设置校验提示
+     */
+    private func setTextFieldVaild() {
+        
+        // 手机号校验信号
+        let isValidTelephoneSignal = self.telF.rac_textSignal().mapAs {
+            (text: NSString) -> NSNumber in
+            
+            return self.isValidTelephone(text)
+        }
+        
+        // 密码校验信号
+        let isValidPasswordSignal = pwdF.rac_textSignal().mapAs { (password:NSString) -> NSNumber in
+            
+            return self.isValidPassword(password)
+        }
+        
+        // 绑定手机号校验信号
+        isValidTelephoneSignal.mapAs { (isValid:NSNumber) -> UIColor in
+            
+            return isValid.boolValue ? UIColor.clearColor() : UIColor.yellowColor()
+        }.skip(1) ~> RAC(self.telF,"backgroundColor")
+        
+        // 绑定密码校验信号
+        isValidPasswordSignal.mapAs { (isValid:NSNumber) -> UIColor in
+            
+            return isValid.boolValue ? UIColor.clearColor() : UIColor.yellowColor()
+        }.skip(1) ~> RAC(self.pwdF,"backgroundColor")
+        
+        // 登录按钮校验信号
+        let signUpActiveSignal = RACSignalEx.combineLatestAs([isValidTelephoneSignal,isValidPasswordSignal], reduce: { (isTelephoneVaild:NSNumber, isPasswordVaild:NSNumber) -> NSNumber in
+            
+            return isTelephoneVaild.boolValue && isPasswordVaild.boolValue
+        })
+        
+        // 绑定登录按钮校验信号
+        signUpActiveSignal.mapAs { (isValid:NSNumber) -> UIColor in
+            
+            return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        } ~> RAC(loginBtn,"backgroundColor")
+        signUpActiveSignal ~> RAC(loginBtn,"enabled")
+    }
+    
+    // MARK: - Valid
+    
+    /**
+     * 校验手机号
+     */
+    private func isValidTelephone(telephoneStr:NSString) -> Bool {
+        
+        return telephoneStr.length == 11
+    }
+    
+    /**
+     * 校验密码
+     */
+    private func isValidPassword(password:NSString) -> Bool {
+        
+        return password.length > 0
     }
     
     // MARK: - Navigation
