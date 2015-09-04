@@ -64,7 +64,10 @@ class LoginViewController: UIViewController {
         setupLoginMessage()             // 登录提示
         
         // 手机登录event
-        loginBtn.rac_command = loginViewModel.loginCommand
+        loginBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNextAs { (sender:UIButton) -> () in
+            
+            self.loginViewModel.loginCommand.execute(nil)
+        }
         
         // 默认手机号码
         RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
@@ -108,14 +111,18 @@ class LoginViewController: UIViewController {
         
         // bind登录按钮校验信号
         
-        RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
+        let signUpActiveSignal = RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
             (tuple: RACTuple) -> NSNumber in
             
             return (tuple.first as! Bool) && (tuple.second as! Bool) && !(tuple.third as! Bool)
-        }.mapAs { (isValid:NSNumber) -> UIColor in
+        }
+            
+        signUpActiveSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
         } ~> RAC(loginBtn,"backgroundColor")
+        
+        signUpActiveSignal ~> RAC(loginBtn,"enabled")
     }
     
     /**
@@ -149,12 +156,8 @@ class LoginViewController: UIViewController {
                 
                 self.showHUDIndicator()
                 
-                // 正在执行时按钮不可点击
-                self.loginBtn.enabled = false
             } else {
                 
-                // 执行完成时按钮可点击
-                self.loginBtn.enabled = true
                 if !self.loginViewModel.errorMsg.isEmpty {
                     
                     self.showHUDErrorMessage(self.loginViewModel.errorMsg)
