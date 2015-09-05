@@ -53,9 +53,6 @@ class LeftViewController: UITableViewController {
         // binding 头像
         headC.enabled = false
         RACObserve(leftViewModel, "image") ~> RAC(headC,"image")
-        
-        // 下载头像
-        leftViewModel.downloadImageCommand.execute(nil)
     }
     
     // MARK: - setup

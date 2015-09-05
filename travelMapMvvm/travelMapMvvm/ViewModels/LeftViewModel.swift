@@ -26,27 +26,32 @@ class LeftViewModel: ImageViewModel {
     // Mark: - init
     
     init() {
-    
-        // 初始化用户登录信息
-        loginUser = userModelDataSourceProtocol.queryUser()
         
-        super.init(urlString: loginUser?.userPicUrl, defaultImage: UIImage(named: "userHeader.jpg")!, isNeedCompress: true)
+        let defaultImage = UIImage(named: "userHeader.jpg")!
         
-        // 设置头像
-        self.urlString = loginUser?.userPicUrl
+        super.init(urlString: nil, defaultImage: defaultImage, isNeedCompress: true)
         
         // binding 
         RACObserve(self, "loginUser").subscribeNext { (user:AnyObject?) -> () in
             
+            // 一旦更新用户信息，则更新侧边栏信息
             if let user=user as? UserModel {
                 
                 self.userName = user.userName == nil ? kTextNoLoginUserName : user.userName!
                 self.loginStatus = kTextExitAccount
+                self.urlString = user.userPicUrl
+                self.downloadImageCommand.execute(nil)
             } else {
                 
                 self.userName = kTextLoginAccount
+                self.loginStatus = kTextLoginAccount
+                self.urlString = nil
+                self.image = defaultImage
             }
         }
+        
+        // 初始化用户登录信息
+        loginUser = userModelDataSourceProtocol.queryUser()
         
         // 更新用户信息
         NSNotificationCenter.defaultCenter().rac_addObserverForName(kUserNotificationName, object: nil).subscribeNextAs { (notification:NSNotification) -> () in

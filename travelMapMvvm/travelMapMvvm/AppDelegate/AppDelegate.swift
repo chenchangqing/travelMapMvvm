@@ -26,17 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 同意通过系统通知弹出登录页面
         NSNotificationCenter.defaultCenter().rac_addObserverForName(kPresentLoginPageActionNotificationName, object: nil).subscribeNextAs { (notification:NSNotification) -> () in
             
+            // 通知参数
             if let loginPageParam = notification.object as? LoginPageParamModel {
                 
                 if let loginUser = self.userModelDataSourceProtocol.queryUser() {
                     
+                    // 已经登录，执行登录成功回调
                     loginPageParam.loginSuccessCompletionCallback()
                 } else {
                     
+                    // 没有登录，呈现登录页面
                     let loginViewControllerNav = UIViewController.getViewController("Login", identifier: "LoginViewControllerNav")!
                     
                     self.window?.rootViewController?.presentViewController(loginViewControllerNav, animated: true, completion: { () -> Void in
                         
+                        // 呈现登录页面后，执行呈现登录页面回调
                         loginPageParam.presentLoginPageCompletionCallback()
                     })
                 }
