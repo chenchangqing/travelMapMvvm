@@ -36,6 +36,9 @@ class LoginViewModel: RVMViewModel {
     override init() {
         super.init()
         
+        // 查询登录页面默认显示的手机号码
+        telephone = userModelDataSourceProtocol.queryLoginPageDefaultTelephone()
+        
         setupLoginCommand()
     }
     
@@ -69,6 +72,12 @@ class LoginViewModel: RVMViewModel {
         loginCommand.executionSignals.switchToLatest().subscribeNextAs { (user:UserModel) -> () in
             
             self.user = user
+            
+            // 保存登录用户信息
+            self.userModelDataSourceProtocol.saveUser(user)
+            
+            // 发出登录成功通知
+            NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
         }
     }
 }

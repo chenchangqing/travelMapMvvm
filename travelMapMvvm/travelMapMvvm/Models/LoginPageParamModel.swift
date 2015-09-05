@@ -16,9 +16,13 @@ class LoginPageParamModel: NSObject {
     // 登录成功后回调
     var loginSuccessCompletionCallback: () -> Void = {}
     
-    init(presentLoginPageCompletionCallback:()->Void = {},loginSuccessCompletionCallback: () -> Void = {}) {
+    // 退出登录
+    var exitLoginSuccessCompletionCallback: () -> Void = {}
+    
+    init(presentLoginPageCompletionCallback:()->Void = {},loginSuccessCompletionCallback: () -> Void = {}, exitLoginSuccessCompletionCallback: () -> Void = {}) {
         
         self.presentLoginPageCompletionCallback = presentLoginPageCompletionCallback
         self.loginSuccessCompletionCallback = loginSuccessCompletionCallback
+        self.exitLoginSuccessCompletionCallback = exitLoginSuccessCompletionCallback
     }
 }

@@ -56,19 +56,15 @@ protocol UserModelDataSourceProtocol {
     func clearUser()
     
     /**
-     * 修改登录用户信息
-     *
-     * @param user 用户信息
-     *
-     * @return
-     */
-    func modifyUser(user:UserModel)
-    
-    /**
      * 查询登录用户信息
      *
      * @return 登录用户信息
      */
     func queryUser() -> UserModel?
+    
+    /**
+     * 查询登录页面默认显示的手机号
+     */
+    func queryLoginPageDefaultTelephone() -> String
     
 }

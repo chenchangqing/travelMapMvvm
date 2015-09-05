@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
     
     private let loginViewModel = LoginViewModel()
     
-    // Contant
-    private let kIsLogined = "用户已经登录"
+    // 登录成功后回调
+    var loginSuccessCompletionCallback: () -> Void = {}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,6 +133,7 @@ class LoginViewController: UIViewController {
         
         telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
         pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
+        RACObserve(telF, "text").takeUntil(telF.rac_textSignal()) ~> RAC(self.loginViewModel, "telephone")
     }
     
     /**
@@ -142,7 +143,9 @@ class LoginViewController: UIViewController {
         
         RACObserve(loginViewModel, "user").ignore(nil).subscribeNextAs { (user:UserModel!) -> () in
             
-            println(user)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            UIApplication.sharedApplication().delegate?.window?!.rootViewController?.showHUDMessage(kMsgLoginSuccess)
+            self.loginSuccessCompletionCallback()
         }
     }
     
@@ -175,7 +178,7 @@ class LoginViewController: UIViewController {
         }).subscribeNextAs { (canShowError:Bool) -> () in
             
             if canShowError {
-                self.showHUDErrorMessage(self.kIsLogined)
+                self.showHUDErrorMessage(kMsgLogined)
             }
         }
     }

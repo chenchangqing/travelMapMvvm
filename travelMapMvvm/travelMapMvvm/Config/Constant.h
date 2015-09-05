@@ -21,14 +21,18 @@
 #define kSegueFromDesViewControllerToIndexViewController    @"FromDesViewControllerToIndexViewController"
 
 // user operation key
-#define kLoginUserKey @"loginUserKey"
-#define kUserNotificationName @"userNotificationName"
-#define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"
-#define kPresentLoginPageActionNotificationName @"presentLoginPageAction"
+#define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)
+#define kUpdateUserCompletionNotificationName @"updateUserCompletionNotificationName"           // 登录成功通知(比如侧边栏信息需要登录后刷新)
+#define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"                                 // 登录页面默认显示的手机号码
+#define kPresentLoginPageActionNotificationName @"presentLoginPageNotificationName"             // 呈现登录页面通知
+#define kExitLoginNotificationName @"exitLoginNotificationName"                                 // 退出登录通知
 
 // text constant
-#define kTextNoLoginUserName @"未登录"
-#define kTextLoginAccount @"登录帐号"
-#define kTextExitAccount @"退出帐号"
+#define kTextLoginAccount @"    登录帐号"
+#define kTextExitAccount @"    退出帐号"
+
+// msg
+#define kMsgLogined @"用户已经登录"
+#define kMsgLoginSuccess @"登录成功"
 
 

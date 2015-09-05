@@ -116,18 +116,40 @@ class NetworkUserModelDataSource: UserModelDataSourceProtocol {
     
     func saveUser(user: UserModel) {
         
+        NSUserDefaults.standardUserDefaults().setObject(NSKeyedArchiver.archivedDataWithRootObject(user),forKey:kLoginUserKey)
+        
+        // 设置登录页面默认显示的手机号码
+        if let tel = user.telephone {
+            
+            NSUserDefaults.standardUserDefaults().setObject(tel, forKey: kLoginPageDefaultTelephone)
+        }
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func clearUser() {
         
-    }
-    
-    func modifyUser(user: UserModel) {
-        
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(kLoginUserKey)
     }
     
     func queryUser() -> UserModel? {
         
-        return nil
+        var loginUser: UserModel?
+        var loginUserData = NSUserDefaults.standardUserDefaults().objectForKey(kLoginUserKey) as? NSData
+        if let loginUserData=loginUserData {
+            loginUser = NSKeyedUnarchiver.unarchiveObjectWithData(loginUserData) as? UserModel
+        }
+        return loginUser
+    }
+    
+    func queryLoginPageDefaultTelephone() -> String {
+        
+        if let defaultTel = NSUserDefaults.standardUserDefaults().objectForKey(kLoginPageDefaultTelephone) as? String {
+            
+            return defaultTel
+        } else {
+            
+            return ""
+        }
+        
     }
 }

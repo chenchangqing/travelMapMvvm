@@ -117,10 +117,9 @@ class LeftViewController: UITableViewController {
             // 发出统一登录通知
             let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
                 
-                self.sideMenuViewController?.hideMenuViewController()
+                // self.sideMenuViewController?.hideMenuViewController()
             }, loginSuccessCompletionCallback: { () -> Void in
                 
-                println("登录成功")
             })
             NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionNotificationName, object: paramObj, userInfo: nil)
             
@@ -157,13 +156,12 @@ class LeftViewController: UITableViewController {
         // 点击登录帐号/登出帐号所在行
         case 6:
             
-            if let loginUser = leftViewModel.loginUser {
+            // 发出统一退出通知
+            let paramObj = LoginPageParamModel(exitLoginSuccessCompletionCallback: { () -> Void in
                 
-                println("已经登录")
-            } else {
-                
-                println("没有登录")
-            }
+                // 退出登录后回调
+            })
+            NSNotificationCenter.defaultCenter().postNotificationName(kExitLoginNotificationName, object: paramObj, userInfo: nil)
             
             break;
 
