@@ -127,4 +127,21 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
             return nil
         })
     }
+    
+    func saveUser(user: UserModel) {
+        
+    }
+    
+    func clearUser() {
+        
+    }
+    
+    func modifyUser(user: UserModel) {
+        
+    }
+    
+    func queryUser() -> UserModel? {
+        
+        return nil
+    }
 }

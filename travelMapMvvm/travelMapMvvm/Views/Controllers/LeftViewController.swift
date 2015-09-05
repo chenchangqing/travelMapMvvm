@@ -21,10 +21,8 @@ class LeftViewController: UITableViewController {
     
     @IBOutlet private weak var loginStatusL: UILabel!   // 登录状态
     
-    var userHeaderViewModel = ImageViewModel(urlString: nil,defaultImage:UIImage(named: "userHeader.jpg")!)
-    
-    // 当前用户
-    var currentUser:UserModel?
+    // viewModel
+    var leftViewModel = LeftViewModel()
     
     // 内容视图在 left view中上下等间距
     private lazy var contentViewMargin:CGFloat = {
@@ -43,16 +41,21 @@ class LeftViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 初始化
+        // 初始化View frames
         setupTopView()
         setupBottomView()
         setupTableViewSeparatorInset()
-        setupCurrentUser()
-        setupHeadC()
         
-        // 设置用户名称 登入状态
-        nameL.text = currentUser?.userName == nil ? "未登录" : currentUser?.userName
-        loginStatusL.text = currentUser == nil ? "    登录账号" : "    退出账号"
+        // binding用户名称 登入状态
+        RACObserve(leftViewModel, "userName") ~> RAC(nameL,"text")
+        RACObserve(leftViewModel, "loginStatus") ~> RAC(loginStatusL,"text")
+        
+        // binding 头像
+        headC.enabled = false
+        RACObserve(leftViewModel, "image") ~> RAC(headC,"image")
+        
+        // 下载头像
+        leftViewModel.downloadImageCommand.execute(nil)
     }
     
     // MARK: - setup
@@ -94,27 +97,6 @@ class LeftViewController: UITableViewController {
         tableView.separatorInset = insets
     }
     
-    /**
-     * 查询当前登录用户
-     */
-    private func setupCurrentUser() {
-        
-        var uData = NSUserDefaults.standardUserDefaults().objectForKey(kUser) as? NSData
-        
-        if let ud=uData {
-            currentUser = NSKeyedUnarchiver.unarchiveObjectWithData(ud) as? UserModel
-        }
-    }
-    
-    /**
-     * 初始化头像circle控件
-     */
-    private func setupHeadC() {
-        
-        headC.enabled = false
-        RACObserve(userHeaderViewModel, "image") ~> RAC(headC, "image")
-    }
-    
     // MARK: - UITableView
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -135,7 +117,7 @@ class LeftViewController: UITableViewController {
         // 点击头像所在行
         case 0:
             
-            if let currentUser=currentUser {
+            if let loginUser = leftViewModel.loginUser {
                 
                 println("已经登录")
             } else {
@@ -182,7 +164,7 @@ class LeftViewController: UITableViewController {
         // 点击登录帐号/登出帐号所在行
         case 6:
             
-            if let currentUser=currentUser {
+            if let loginUser = leftViewModel.loginUser {
                 
                 println("已经登录")
             } else {

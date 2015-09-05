@@ -40,4 +40,35 @@ protocol UserModelDataSourceProtocol {
      * @return 登录信号
      */
     func qqLogin(qqOpenId:String) -> RACSignal
+
+    /**
+     * 保存登录用户信息
+     *
+     * @param user 用户信息
+     *
+     * @return
+     */
+    func saveUser(user:UserModel)
+    
+    /**
+     * 清除登录用户信息
+     */
+    func clearUser()
+    
+    /**
+     * 修改登录用户信息
+     *
+     * @param user 用户信息
+     *
+     * @return
+     */
+    func modifyUser(user:UserModel)
+    
+    /**
+     * 查询登录用户信息
+     *
+     * @return 登录用户信息
+     */
+    func queryUser() -> UserModel?
+    
 }

@@ -20,7 +20,14 @@
 #define kSegueFromFilterViewControllerToIndexViewController @"FromFilterViewControllerToIndexViewController"
 #define kSegueFromDesViewControllerToIndexViewController    @"FromDesViewControllerToIndexViewController"
 
-// userkey
-#define kUser @"user"
+// user operation key
+#define kLoginUserKey @"loginUserKey"
+#define kUserNotificationName @"userNotificationName"
+#define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"
+
+// text constant
+#define kTextNoLoginUserName @"未登录"
+#define kTextLoginAccount @"登录帐号"
+#define kTextExitAccount @"退出帐号"
 
 
