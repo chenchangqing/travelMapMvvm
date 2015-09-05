@@ -117,26 +117,22 @@ class LeftViewController: UITableViewController {
         // 点击头像所在行
         case 0:
             
-            if let loginUser = leftViewModel.loginUser {
+            // 发出统一登录通知
+            let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
                 
-                println("已经登录")
-            } else {
+                self.sideMenuViewController?.hideMenuViewController()
+            }, loginSuccessCompletionCallback: { () -> Void in
                 
-                // 跳转至登录页面
-                let loginViewControllerNav = self.getViewController("Login", identifier: "LoginViewControllerNav")
-                if let loginViewControllerNav=loginViewControllerNav {
-                    
-                    sideMenuViewController?.contentViewController?.presentViewController(loginViewControllerNav, animated: true, completion: nil)
-                    sideMenuViewController?.hideMenuViewController()
-                }
-            }
+                println("登录成功")
+            })
+            NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionNotificationName, object: paramObj, userInfo: nil)
             
             break;
             
         // 点击首页所在行
         case 1:
             
-            sideMenuViewController?.contentViewController = getViewController("Main", identifier: "IndexViewControllerNav")
+            sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "IndexViewControllerNav")
             sideMenuViewController?.hideMenuViewController()
             
             break;

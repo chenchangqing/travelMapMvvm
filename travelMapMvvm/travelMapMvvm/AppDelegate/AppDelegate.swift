@@ -13,12 +13,36 @@ import AFNetworking
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // 用户操作类
+    private let userModelDataSourceProtocol = JSONUserModelDataSource.shareInstance()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // 如果需要显示网络活动指示器，可以用下面方法
         AFNetworkActivityIndicatorManager.sharedManager().enabled = true
+        
+        // 同意通过系统通知弹出登录页面
+        NSNotificationCenter.defaultCenter().rac_addObserverForName(kPresentLoginPageActionNotificationName, object: nil).subscribeNextAs { (notification:NSNotification) -> () in
+            
+            if let loginPageParam = notification.object as? LoginPageParamModel {
+                
+                if let loginUser = self.userModelDataSourceProtocol.queryUser() {
+                    
+                    loginPageParam.loginSuccessCompletionCallback()
+                } else {
+                    
+                    let loginViewControllerNav = UIViewController.getViewController("Login", identifier: "LoginViewControllerNav")!
+                    
+                    self.window?.rootViewController?.presentViewController(loginViewControllerNav, animated: true, completion: { () -> Void in
+                        
+                        loginPageParam.presentLoginPageCompletionCallback()
+                    })
+                }
+            }
+        }
+        
         return true
     }
 

@@ -30,6 +30,7 @@
 		E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */; };
 		E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* Main.storyboard */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
+		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
 		E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
@@ -180,6 +181,7 @@
 		E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryStrategyList.json; sourceTree = "<group>"; };
 		E659F4A21B8CEFFF005CD9FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageParamModel.swift; sourceTree = "<group>"; };
 		E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdController.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				E659F49C1B8CEFFF005CD9FD /* Structs */,
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
 				E6A46F171B943B6400BA089B /* UserModel.swift */,
+				E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E698AD921B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
 				E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */,
+				E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
 				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,

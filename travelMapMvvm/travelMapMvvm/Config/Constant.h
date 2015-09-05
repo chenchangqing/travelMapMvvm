@@ -24,6 +24,7 @@
 #define kLoginUserKey @"loginUserKey"
 #define kUserNotificationName @"userNotificationName"
 #define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"
+#define kPresentLoginPageActionNotificationName @"presentLoginPageAction"
 
 // text constant
 #define kTextNoLoginUserName @"未登录"
