@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         
         setupdateViewModelLoginInfo()   // 时时更新loginViewModel的登录信息
         setupProcessLoginSuccess()      // 处理登录成功
-        setupLoginMessage()             // 登录提示
+        setupMessage()                  // 登录提示
         
         // 手机登录event
         loginBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNextAs { (sender:UIButton) -> () in
@@ -138,7 +138,6 @@ class LoginViewController: UIViewController {
         
         telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
         pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
-//        RACObserve(telF, "text").takeUntil(telF.rac_textSignal()) ~> RAC(self.loginViewModel, "telephone")
     }
     
     /**
@@ -157,30 +156,43 @@ class LoginViewController: UIViewController {
     /**
      * 登录提示
      */
-    private func setupLoginMessage() {
+    private func setupMessage() {
         
-        RACSignal.merge([
+        // loading and errorMsg
+        RACSignal.combineLatest([
             loginViewModel.loginCommand.executing
             ,loginViewModel.qqBtnClickedCommand.executing
             ,loginViewModel.qqTencentDidLoginCommand.executing
-        ]).subscribeNextAs { (isExecuting:Bool) -> () in
+            ,RACObserve(loginViewModel, "errorMsg")
+        ]).subscribeNext { (tuple:AnyObject!) -> Void in
             
-            if isExecuting {
+            let tuple = tuple as! RACTuple
+            
+            let first = tuple.first as! Bool
+            let second = tuple.second as! Bool
+            let third = tuple.third as! Bool
+            let fourth = tuple.fourth as! String
+            
+            let isLoading = first || second || third
+            
+            if isLoading {
                 
                 self.showHUDIndicator()
-                
             } else {
                 
-                if !self.loginViewModel.errorMsg.isEmpty {
-                    
-                    self.showHUDErrorMessage(self.loginViewModel.errorMsg)
-                } else {
+                if fourth.isEmpty {
                     
                     self.hideHUD()
                 }
             }
+            
+            if !fourth.isEmpty {
+                
+                self.showHUDErrorMessage(fourth)
+            }
         }
         
+        // 已经登录提示
         RACSignalEx.combineLatestAs([loginViewModel.loginCommand.enabled.skip(1),loginBtn.rac_signalForControlEvents( UIControlEvents.TouchUpInside)], reduce: { (canExecute:Bool, sender:UIButton) -> NSNumber in
             
             return !canExecute
@@ -188,14 +200,6 @@ class LoginViewController: UIViewController {
             
             if canShowError {
                 self.showHUDErrorMessage(kMsgLogined)
-            }
-        }
-        
-        loginViewModel.qqTencentDidLoginCommand.enabled.subscribeNextAs { (canExecute:Bool) -> () in
-            
-            if !canExecute {
-                
-                self.showHUDErrorMessage(kMsgQQAuthFailure)
             }
         }
     }

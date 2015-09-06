@@ -14,17 +14,11 @@ class IndexViewModel: RVMViewModel {
 //    private var strategyModelDataSourceProtocol = NetworkStrategyModelDataSource.shareInstance()
     private var strategyModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance()
     
-    // 数据源（一直处于被观察状态）
-    dynamic var strategyList = [StrategyModel]()
+    dynamic var strategyList = [StrategyModel]()    // 数据源（一直处于被观察状态）
+    dynamic var errorMsg: String = ""               // 错误信息
     
-    // 下拉刷新操作
-    var refreshSearch : RACCommand!
-    
-    // 上拉加载更多操作
-    var loadmoreSearch : RACCommand!
-    
-    // 错误信息
-    dynamic var errorMsg: String = ""
+    var refreshSearch : RACCommand!     // 下拉刷新操作
+    var loadmoreSearch : RACCommand!    // 上拉加载更多操作
     
     override init() {
         
@@ -56,9 +50,6 @@ class IndexViewModel: RVMViewModel {
         refreshSearch.executionSignals.switchToLatest().subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
             
             self.setValue(strategyList, forKey: "strategyList")
-            
-            // 没有错误
-            self.errorMsg = ""
         })
     }
     
@@ -80,9 +71,6 @@ class IndexViewModel: RVMViewModel {
         loadmoreSearch.executionSignals.switchToLatest().subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
             
             self.strategyList += strategyList
-            
-            // 没有错误
-            self.errorMsg = ""
         })
     }
     

@@ -20,7 +20,6 @@ class LoginViewModel: RVMViewModel {
     dynamic var errorMsg        : String = ""   // 错误信息
     
     var loginCommand            : RACCommand!   // 手机号码登录命令
-    
     var qqBtnClickedCommand     : RACCommand!   // qq登录按钮点击后执行的命令
     var qqTencentDidLoginCommand: RACCommand!   // qq登录授权完成后执行的命令
     
@@ -87,9 +86,6 @@ class LoginViewModel: RVMViewModel {
             
             // 发出登录成功通知
             NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
-            
-            // 没有错误
-            self.errorMsg = ""
         }
     }
     
@@ -118,6 +114,15 @@ class LoginViewModel: RVMViewModel {
             return any != nil
         }
         
+        // 授权失败提示
+        enabledSignal.skip(1).subscribeNextAs { (enabled:Bool) -> () in
+            
+            if !enabled {
+                
+                self.errorMsg = kMsgQQAuthFailure
+            }
+        }
+        
         // 初始化命令
         qqTencentDidLoginCommand = RACCommand(enabled: enabledSignal, signalBlock: { (any:AnyObject!) -> RACSignal! in
             
@@ -140,9 +145,6 @@ class LoginViewModel: RVMViewModel {
             
             // 发出登录成功通知
             NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
-            
-            // 没有错误
-            self.errorMsg = ""
         }
     }
 }

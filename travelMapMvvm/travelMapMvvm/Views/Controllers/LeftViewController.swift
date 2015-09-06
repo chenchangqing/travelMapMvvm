@@ -158,6 +158,7 @@ class LeftViewController: UITableViewController {
         // 点击登录帐号/登出帐号所在行
         case 6:
             
+            // 未解决bug: 登录后马上退出还在继续加载头像
             // 发出统一登录退出通知
             let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
                 

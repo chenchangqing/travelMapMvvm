@@ -25,8 +25,9 @@ class IndexViewController: UITableViewController {
         super.viewDidLoad()
         
         // 初始化
+        viewModel = IndexViewModel()
         setupFooter()
-        setupIndexViewModel()
+        setupMessage()
         setupMJRefresh()
         setupObserve()
         
@@ -83,11 +84,9 @@ class IndexViewController: UITableViewController {
     }
     
     /**
-     * 初始化viewModel
+     * 提示信息
      */
-    private func setupIndexViewModel() {
-        
-        viewModel = IndexViewModel()
+    private func setupMessage() {
         
         RACSignal.combineLatest([self.viewModel.refreshSearch.executing,self.viewModel.loadmoreSearch.executing,RACObserve(viewModel, "errorMsg")]).subscribeNext { (tuple:AnyObject!) -> Void in
             

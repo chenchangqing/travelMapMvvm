@@ -709,9 +709,9 @@
 				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
 				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
 				E6A46F191B94405E00BA089B /* ImageViewModel.swift */,
+				E68F6B8F1B9A8FAD00AB2C72 /* LeftViewModel.swift */,
 				E687631F1B99724D0006DD3D /* LoginViewModel.swift */,
 				E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */,
-				E68F6B8F1B9A8FAD00AB2C72 /* LeftViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -939,12 +939,12 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
 				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
 				E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */,
 				E6AA5E531B935FB8009C7DA1 /* DesViewController.swift */,
 				E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */,
-				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 			);
