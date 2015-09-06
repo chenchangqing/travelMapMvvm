@@ -25,7 +25,7 @@
 #define kUpdateUserCompletionNotificationName @"updateUserCompletionNotificationName"           // 登录成功通知(比如侧边栏信息需要登录后刷新)
 #define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"                                 // 登录页面默认显示的手机号码
 #define kPresentLoginPageActionNotificationName @"presentLoginPageNotificationName"             // 呈现登录页面通知
-#define kExitLoginNotificationName @"exitLoginNotificationName"                                 // 退出登录通知
+#define kPresentLoginPageActionExitLoginNotificationName @"presentLoginPageActionExitLoginNotificationName"           // 登录或退出通知
 
 // text constant
 #define kTextLoginAccount @"    登录帐号"

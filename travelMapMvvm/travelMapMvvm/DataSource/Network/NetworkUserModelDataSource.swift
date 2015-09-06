@@ -121,7 +121,7 @@ class NetworkUserModelDataSource: UserModelDataSourceProtocol {
         // 设置登录页面默认显示的手机号码
         if let tel = user.telephone {
             
-            NSUserDefaults.standardUserDefaults().setObject(tel, forKey: kLoginPageDefaultTelephone)
+            NSUserDefaults.standardUserDefaults().setObject("\(tel)", forKey: kLoginPageDefaultTelephone)
         }
         NSUserDefaults.standardUserDefaults().synchronize()
     }

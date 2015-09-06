@@ -1,6 +1,6 @@
 {
     "success":true,
-    "msg":"恭喜，查询攻略成功",
+    "msg":"登录成功",
     "data": {
         
         "userId":"001",

@@ -111,7 +111,6 @@ class LoginViewController: UIViewController {
     private func setupTelLoginBtnBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
         
         // bind登录按钮校验信号
-        
         let signUpActiveSignal = RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
             (tuple: RACTuple) -> NSNumber in
             
@@ -124,6 +123,9 @@ class LoginViewController: UIViewController {
         } ~> RAC(loginBtn,"backgroundColor")
         
         signUpActiveSignal ~> RAC(loginBtn,"enabled")
+        
+        // 聚焦手机号输入
+        telF.becomeFirstResponder()
     }
     
     /**
@@ -133,7 +135,7 @@ class LoginViewController: UIViewController {
         
         telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
         pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
-        RACObserve(telF, "text").takeUntil(telF.rac_textSignal()) ~> RAC(self.loginViewModel, "telephone")
+//        RACObserve(telF, "text").takeUntil(telF.rac_textSignal()) ~> RAC(self.loginViewModel, "telephone")
     }
     
     /**

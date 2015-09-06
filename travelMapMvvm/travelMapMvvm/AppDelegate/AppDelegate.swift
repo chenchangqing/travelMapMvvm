@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 注册登录、退出通知
         registerPresentLoginPageActionNotification()
-        registerExitLoginNotification()
+        registerPresentLoginPageActionExitLoginNotification()
         
         return true
     }
@@ -87,24 +87,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     /**
-     * 通过系统通知退出登录
+     * 通过系统通知登录或退出
      */
-    func registerExitLoginNotification() {
+    func registerPresentLoginPageActionExitLoginNotification() {
         
-        // 通过系统通知退出登录
-        NSNotificationCenter.defaultCenter().rac_addObserverForName(kExitLoginNotificationName, object: nil).subscribeNextAs { (notification:NSNotification) -> () in
-            
-            // 注销登录
-            self.userModelDataSourceProtocol.clearUser()
-            
-            // 发出退出登录通知（比如可以更新侧边栏信息）
-            NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: nil, userInfo: nil)
+        // 通过系统通知弹出登录页面
+        NSNotificationCenter.defaultCenter().rac_addObserverForName(kPresentLoginPageActionExitLoginNotificationName, object: nil).subscribeNextAs { (notification:NSNotification) -> () in
             
             // 通知参数
-            if let loginPageParam = notification.object as? LoginPageParamModel {
+            let loginPageParam = notification.object as? LoginPageParamModel == nil ? LoginPageParamModel() :  notification.object as! LoginPageParamModel
+            
+            if let loginUser = self.userModelDataSourceProtocol.queryUser() {
+                
+                // 已经登录，直接退出
+                self.userModelDataSourceProtocol.clearUser()
+                
+                // 发出退出登录通知（比如可以更新侧边栏信息）
+                NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: nil, userInfo: nil)
                 
                 // 注销登录后回调
                 loginPageParam.exitLoginSuccessCompletionCallback()
+                
+            } else {
+                
+                // 没有登录，呈现登录页面
+                let loginViewControllerNav = UIViewController.getViewController("Login", identifier: "LoginViewControllerNav") as! UINavigationController
+                
+                // 设置登录成功回调
+                (loginViewControllerNav.topViewController as! LoginViewController).loginSuccessCompletionCallback = loginPageParam.loginSuccessCompletionCallback
+                
+                self.window?.rootViewController?.presentViewController(loginViewControllerNav, animated: true, completion: { () -> Void in
+                    
+                    // 呈现登录页面后，执行呈现登录页面回调
+                    loginPageParam.presentLoginPageCompletionCallback()
+                })
             }
         }
     }

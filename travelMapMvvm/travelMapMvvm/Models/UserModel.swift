@@ -14,7 +14,7 @@ class UserModel: NSObject, NSCoding, Deserializable {
     var userId      :String?        // ID
     var userName    :String?        // 用户名
     var userPicUrl  :String?        // 头像地址
-    var telephone   :Int?           // 手机号
+    var telephone   :String?           // 手机号
     var email       :String?        // 邮箱
     
     override init() { }
@@ -33,7 +33,7 @@ class UserModel: NSObject, NSCoding, Deserializable {
         self.userId     = decoder.decodeObjectForKey("userId") as? String
         self.userName   = decoder.decodeObjectForKey("userName") as? String
         self.userPicUrl = decoder.decodeObjectForKey("userPicUrl") as? String
-        self.telephone  = decoder.decodeObjectForKey("telephone") as? Int
+        self.telephone  = decoder.decodeObjectForKey("telephone") as? String
         self.email      = decoder.decodeObjectForKey("email") as? String
     }
     
