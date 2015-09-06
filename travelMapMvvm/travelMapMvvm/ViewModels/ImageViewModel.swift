@@ -30,6 +30,7 @@ class ImageViewModel: RVMViewModel {
     
     private var imageDataSourceProtocol = ImageDataSource.shareInstance()
     var downloadImageCommand : RACCommand!
+    var loadingImageDispose:RACDisposable!
 
     /**
      * 初始化 
@@ -72,8 +73,10 @@ class ImageViewModel: RVMViewModel {
         })
         
         // 获得图片
-        downloadImageCommand.executionSignals.switchToLatest().subscribeNextAs { (image:UIImage) -> () in
-           
+        loadingImageDispose = downloadImageCommand.executionSignals.switchToLatest().subscribeNext { (image:AnyObject!) -> Void in
+            
+            let image = image as! UIImage
+            
             self.setValue(image, forKey: "image")
         }
         
