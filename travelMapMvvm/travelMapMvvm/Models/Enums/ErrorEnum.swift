@@ -13,6 +13,7 @@ enum ErrorEnum : String {
     case ServerError = "服务器错误"
     case JSONError = "JSON转换错误"
     case ImageDownloadError = "图片下载失败"
+    case SinaAuthError = "新浪登录授权失败"
     
     static let allValues = [ServerError,JSONError,ImageDownloadError]
     

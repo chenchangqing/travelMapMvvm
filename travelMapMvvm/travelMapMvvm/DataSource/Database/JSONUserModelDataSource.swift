@@ -58,37 +58,77 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
         })
     }
     
-    func sinaLogin(sinaOpenId: String) -> RACSignal {
+    func sinaLogin() -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
+            ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil) { (result, userInfo, error) -> Void in
                 
-                let resultDic = ReadJsonClass.readJsonData("sinaLogin")
-                
-                if resultDic.error == nil {
+                if result {
                     
-                    if let data: AnyObject=resultDic.data {
+//                    DDLogDebug("uid = \(userInfo.uid())")
+//                    DDLogDebug("name = \(userInfo.nickname())")
+//                    DDLogDebug("icon = \(userInfo.profileImage())")
+                    
+                    let paramters: [String:AnyObject] = [
                         
-                        var user = UserModel()
+                        "sinaOpenId" : userInfo.uid()
+                    ]
+                    
+//                    NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
+//                        
+//                        if error == nil {
+//                            
+//                            var user = UserModel()
+//                            
+//                            user <-- data!
+//                            
+//                            subscriber.sendNext(user)
+//                            subscriber.sendCompleted()
+//                        } else {
+//                            
+//                            subscriber.sendError(error)
+//                            
+//                        }
+//                    }, requestURlString: "URL", parameters: paramters)
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
                         
-                        user <-- data[kData]
+                        let resultDic = ReadJsonClass.readJsonData("sinaLogin")
                         
-                        subscriber.sendNext(user)
-                        subscriber.sendCompleted()
-                    } else {
-                        
-                        subscriber.sendError(NSError(
-                            domain:kErrorDomain,
-                            code: ErrorEnum.JSONError.errorCode,
-                            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
-                            ))
-                    }
+                        if resultDic.error == nil {
+                            
+                            if let data: AnyObject=resultDic.data {
+                                
+                                var user = UserModel()
+                                
+                                user <-- data[kData]
+                                
+                                subscriber.sendNext(user)
+                                subscriber.sendCompleted()
+                            } else {
+                                
+                                subscriber.sendError(NSError(
+                                    domain:kErrorDomain,
+                                    code: ErrorEnum.JSONError.errorCode,
+                                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
+                                    ))
+                            }
+                        } else {
+                            
+                            subscriber.sendError(resultDic.error!)
+                        }
+                    })
+                    
                 } else {
                     
-                    subscriber.sendError(resultDic.error!)
+                    subscriber.sendError(NSError(
+                        domain:kErrorDomain,
+                        code: ErrorEnum.SinaAuthError.errorCode,
+                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.SinaAuthError.rawValue]))
                 }
-            })
+            }
+            
             return nil
         })
     }

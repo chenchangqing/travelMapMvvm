@@ -25,12 +25,10 @@ protocol UserModelDataSourceProtocol {
     
     /**
      * 新浪登录
-     * 
-     * @param sinaOpenId 新浪开放平台ID
      *
      * @return 登录信号
      */
-    func sinaLogin(sinaOpenId:String) -> RACSignal
+    func sinaLogin() -> RACSignal
     
     /**
      * QQ登录

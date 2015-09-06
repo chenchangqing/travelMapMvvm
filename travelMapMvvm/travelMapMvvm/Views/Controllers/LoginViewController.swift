@@ -75,6 +75,9 @@ class LoginViewController: UIViewController {
         
         // qq登录设置
         setupQQ()
+        
+        // sina登录设置
+        setSina()
     }
     
     /**
@@ -167,6 +170,7 @@ class LoginViewController: UIViewController {
             loginViewModel.loginCommand.executing
             ,loginViewModel.qqBtnClickedCommand.executing
             ,loginViewModel.qqTencentDidLoginCommand.executing
+            ,loginViewModel.sinaBtnClickedCommand.executing
             ,RACObserve(loginViewModel, "errorMsg")
         ]).subscribeNext { (tuple:AnyObject!) -> Void in
             
@@ -175,24 +179,25 @@ class LoginViewController: UIViewController {
             let first = tuple.first as! Bool
             let second = tuple.second as! Bool
             let third = tuple.third as! Bool
-            let fourth = tuple.fourth as! String
+            let fourth = tuple.fourth as! Bool
+            let fifth = tuple.fifth as! String
             
-            let isLoading = first || second || third
+            let isLoading = first || second || third || fourth
             
             if isLoading {
                 
                 self.showHUDIndicator()
             } else {
                 
-                if fourth.isEmpty {
+                if fifth.isEmpty {
                     
                     self.hideHUD()
                 }
             }
             
-            if !fourth.isEmpty {
+            if !fifth.isEmpty {
                 
-                self.showHUDErrorMessage(fourth)
+                self.showHUDErrorMessage(fifth)
             }
         }
         
@@ -242,6 +247,24 @@ class LoginViewController: UIViewController {
             
             self.view.endEditing(true)
             self.loginViewModel.qqBtnClickedCommand.execute(nil)
+        }
+    }
+    
+    /**
+     * sina登录设置
+     */
+    private func setSina() {
+        
+        loginViewModel.sinaBtnClickedCommand.executing.skip(1).mapAs { (isCanClick:NSNumber) -> UIColor in
+            
+            return isCanClick.boolValue ? UIButton.enabledBackgroundColor : UIButton.defaultBackgroundColor
+        } ~> RAC(wbBtn,"backgroundColor")
+        
+        loginViewModel.sinaBtnClickedCommand.executing.skip(1) ~> RAC(self.wbBtn,"enabled")
+        wbBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.view.endEditing(true)
+            self.loginViewModel.sinaBtnClickedCommand.execute(nil)
         }
     }
 

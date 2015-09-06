@@ -22,6 +22,7 @@ class LoginViewModel: RVMViewModel {
     var loginCommand            : RACCommand!   // 手机号码登录命令
     var qqBtnClickedCommand     : RACCommand!   // qq登录按钮点击后执行的命令
     var qqTencentDidLoginCommand: RACCommand!   // qq登录授权完成后执行的命令
+    var sinaBtnClickedCommand   : RACCommand!   // 新浪登录按钮点击后执行的命令
     
     // 登录信息(根据用户输入时时更新)
     var loginTel: String = ""
@@ -48,6 +49,9 @@ class LoginViewModel: RVMViewModel {
         
         // 初始化qq登录授权完成后执行的命令
         setupQQTencentDidLoginCommand()
+        
+        // 初始化新浪登录按钮点击后执行的命令
+        setSinaBtnClickedCommand()
     }
     
     // MARK: - setup
@@ -137,6 +141,36 @@ class LoginViewModel: RVMViewModel {
         
         // 执行登录后，更新登录用户信息
         qqTencentDidLoginCommand.executionSignals.switchToLatest().subscribeNextAs { (user:UserModel) -> () in
+            
+            self.user = user
+            
+            // 保存登录用户信息
+            self.userModelDataSourceProtocol.saveUser(user)
+            
+            // 发出登录成功通知
+            NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
+        }
+    }
+    
+    /**
+     * 新浪登录按钮点击后执行的命令
+     */
+    private func setSinaBtnClickedCommand() {
+        
+        // 初始化命令
+        sinaBtnClickedCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+        
+            return self.userModelDataSourceProtocol.sinaLogin()
+        })
+        
+        // 错误处理
+        sinaBtnClickedCommand.errors.subscribeNextAs { (error:NSError) -> () in
+            
+            self.errorMsg = error.localizedDescription
+        }
+        
+        // 执行登录后，更新登录用户信息
+        sinaBtnClickedCommand.executionSignals.switchToLatest().subscribeNextAs { (user:UserModel) -> () in
             
             self.user = user
             

@@ -41,7 +41,7 @@ extension UIButton {
         
         self.layer.borderColor = UIButton.defaultBorderColor.CGColor
         self.layer.borderWidth = 1.0
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIButton.defaultBackgroundColor
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
     }

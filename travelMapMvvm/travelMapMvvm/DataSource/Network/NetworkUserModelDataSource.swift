@@ -54,31 +54,48 @@ class NetworkUserModelDataSource: UserModelDataSourceProtocol {
         })
     }
     
-    func sinaLogin(sinaOpenId: String) -> RACSignal {
+    func sinaLogin() -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            let paramters: [String:AnyObject] = [
+            ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil) { (result, userInfo, error) -> Void in
                 
-                "sinaOpenId" : sinaOpenId
-            ]
-            
-            NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
-                
-                if error == nil {
+                if result {
                     
-                    var user = UserModel()
+//                    DDLogDebug("uid = \(userInfo.uid())")
+//                    DDLogDebug("name = \(userInfo.nickname())")
+//                    DDLogDebug("icon = \(userInfo.profileImage())")
                     
-                    user <-- data!
+                    let paramters: [String:AnyObject] = [
+                        
+                        "sinaOpenId" : userInfo.uid()
+                    ]
                     
-                    subscriber.sendNext(user)
-                    subscriber.sendCompleted()
+                    NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
+                        
+                        if error == nil {
+                            
+                            var user = UserModel()
+                            
+                            user <-- data!
+                            
+                            subscriber.sendNext(user)
+                            subscriber.sendCompleted()
+                        } else {
+                            
+                            subscriber.sendError(error)
+                            
+                        }
+                    }, requestURlString: "URL", parameters: paramters)
+                    
                 } else {
                     
-                    subscriber.sendError(error)
-                    
+                    subscriber.sendError(NSError(
+                        domain:kErrorDomain,
+                        code: ErrorEnum.SinaAuthError.errorCode,
+                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.SinaAuthError.rawValue]))
                 }
-            }, requestURlString: "URL", parameters: paramters)
+            }
             
             return nil
         })

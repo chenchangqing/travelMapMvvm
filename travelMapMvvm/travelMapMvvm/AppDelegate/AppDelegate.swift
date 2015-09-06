@@ -143,6 +143,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     func registerMob() {
         
+        //添加新浪微博应用
+        ShareSDK.connectSinaWeiboWithAppKey(SINA_APPKEY, appSecret: SINA_APPSECRET, redirectUri: SINA_REDIRECTURL)
+        
         // 添加QQ应用
         ShareSDK.connectQQWithQZoneAppKey(QQ_APPKEY, qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
     }

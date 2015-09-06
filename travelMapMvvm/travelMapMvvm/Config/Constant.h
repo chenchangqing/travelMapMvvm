@@ -48,6 +48,7 @@
 // msg
 #define kMsgLogined @"用户已经登录"
 #define kMsgQQAuthFailure @"腾讯登录授权失败"
+#define kMsgSinaAuthFailure @"新浪登录授权失败"
 #define kMsgLoginSuccess @"登录成功"
 
 
