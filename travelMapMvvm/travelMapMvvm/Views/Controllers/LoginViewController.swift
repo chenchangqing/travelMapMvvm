@@ -53,6 +53,9 @@ class LoginViewController: UIViewController {
         
         // setup
         
+        // 默认手机号码
+        RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
+        
         // 设置错误输入提示背景
         setupTextFieldBgColor(isValidTelephoneSignal,isValidPasswordSignal: isValidPasswordSignal)
         
@@ -69,9 +72,6 @@ class LoginViewController: UIViewController {
             self.view.endEditing(true)
             self.loginViewModel.loginCommand.execute(nil)
         }
-        
-        // 默认手机号码
-        RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
         
         // qq登录设置
         setupQQ()
@@ -113,6 +113,13 @@ class LoginViewController: UIViewController {
      */
     private func setupTelLoginBtnBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
         
+        let subscriber = RACSubject()
+        isValidTelephoneSignal.subscribe(subscriber)
+        if isValidTelephone(telF.text) {
+            
+            subscriber.sendNext(true)
+        }
+        
         // bind登录按钮校验信号
         let signUpActiveSignal = RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
             (tuple: RACTuple) -> NSNumber in
@@ -126,9 +133,6 @@ class LoginViewController: UIViewController {
         } ~> RAC(loginBtn,"backgroundColor")
         
         signUpActiveSignal ~> RAC(loginBtn,"enabled")
-        
-        // 聚焦手机号输入
-        telF.becomeFirstResponder()
     }
     
     /**

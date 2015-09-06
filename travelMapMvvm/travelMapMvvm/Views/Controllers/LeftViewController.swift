@@ -118,7 +118,7 @@ class LeftViewController: UITableViewController {
             let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
                 
                 // 登录页面呈现后回调
-                // self.sideMenuViewController?.hideMenuViewController()
+                self.sideMenuViewController?.hideMenuViewController()
             }, loginSuccessCompletionCallback: { () -> Void in
                 
                 // 登录完成后回调
@@ -163,7 +163,7 @@ class LeftViewController: UITableViewController {
             let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
                 
                 // 登录页面呈现后回调
-                // self.sideMenuViewController?.hideMenuViewController()
+                self.sideMenuViewController?.hideMenuViewController()
             }, loginSuccessCompletionCallback: { () -> Void in
                 
                 // 登录完成后回调
