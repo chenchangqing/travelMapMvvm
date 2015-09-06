@@ -89,39 +89,33 @@ class IndexViewController: UITableViewController {
         
         viewModel = IndexViewModel()
         
-        self.viewModel.refreshSearch.executing.subscribeNextAs({ (isExecuting:Bool) -> () in
+        RACSignal.combineLatest([self.viewModel.refreshSearch.executing,self.viewModel.loadmoreSearch.executing,RACObserve(viewModel, "errorMsg")]).subscribeNext { (tuple:AnyObject!) -> Void in
             
-            if isExecuting {
+            let tuple = tuple as! RACTuple
+            
+            let first = tuple.first as! Bool
+            let second = tuple.second as! Bool
+            let third = tuple.third as! String
+            
+            let isLoading = first || second
+            
+            if isLoading {
                 
                 self.showHUDIndicator()
             } else {
                 
-                if !self.viewModel.errorMsg.isEmpty {
-                    
-                    self.showHUDErrorMessage(self.viewModel.errorMsg)
-                } else {
+                if third.isEmpty {
                     
                     self.hideHUD()
                 }
             }
-        })
-        
-        self.viewModel.loadmoreSearch.executing.subscribeNextAs({ (isExecuting:Bool) -> () in
             
-            if isExecuting {
+            if !third.isEmpty {
                 
-                self.showHUDIndicator()
-            } else {
-                
-                if !self.viewModel.errorMsg.isEmpty {
-                    
-                    self.showHUDErrorMessage(self.viewModel.errorMsg)
-                } else {
-                    
-                    self.hideHUD()
-                }
+                self.showHUDErrorMessage(third)
             }
-        })
+            
+        }
     }
     
     /**
