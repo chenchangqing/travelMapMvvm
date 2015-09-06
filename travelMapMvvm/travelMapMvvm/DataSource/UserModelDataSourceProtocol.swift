@@ -39,7 +39,7 @@ protocol UserModelDataSourceProtocol {
      *
      * @return 登录信号
      */
-    func qqLogin(qqOpenId:String) -> RACSignal
+    func qqLogin(appKey:String, accessToken:String, qqOpenId:String) -> RACSignal
 
     /**
      * 保存登录用户信息

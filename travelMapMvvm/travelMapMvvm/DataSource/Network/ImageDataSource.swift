@@ -48,8 +48,13 @@ class ImageDataSource: ImageDataSourceProtocol {
                 if (error == nil) {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
-                        subscriber.sendNext(data)
-                        subscriber.sendCompleted()
+                        if let image = UIImage(data: data) {
+                            subscriber.sendNext(data)
+                            subscriber.sendCompleted()
+                        } else {
+                            
+                            subscriber.sendError(downloadImageError)
+                        }
                     })
                 } else {
                     
@@ -70,13 +75,20 @@ class ImageDataSource: ImageDataSourceProtocol {
             
             return signal.flattenMap { (any:AnyObject!) -> RACStream! in
                 
-                return RACSignal.createSignal({ (subcriber:RACSubscriber!) -> RACDisposable! in
+                return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
                     
-                    (any as! NSData).af_decompressedImageFromJPEGDataWithCallback { (image:UIImage!) -> Void in
+                    let data = (any as! NSData)
+                    if let image = UIImage(data: data) {
                         
-                        UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
-                        subcriber.sendNext(image)
-                        subcriber.sendCompleted()
+                        data.af_decompressedImageFromJPEGDataWithCallback { (image:UIImage!) -> Void in
+                            
+                            UIImageView.sharedImageCache().cacheImage(image, forRequest: request)
+                            subscriber.sendNext(image)
+                            subscriber.sendCompleted()
+                        }
+                    } else {
+                        
+                        subscriber.sendError(downloadImageError)
                     }
                     return nil
                 })

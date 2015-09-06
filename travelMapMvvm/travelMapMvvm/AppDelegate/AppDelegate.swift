@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerPresentLoginPageActionNotification()
         registerPresentLoginPageActionExitLoginNotification()
         
+        // 集成Mob
+        registerMob()
+        
         return true
     }
     
@@ -49,6 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        
+        return TencentOAuth.HandleOpenURL(url)
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        
+        return TencentOAuth.HandleOpenURL(url)
     }
     
     // MARK: - notification
@@ -125,6 +138,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    /**
+     * 集成Mob
+     */
+    func registerMob() {
+        
+        // 添加QQ应用
+        ShareSDK.connectQQWithQZoneAppKey(QQ_APPKEY, qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
+    }
 
 }
 

@@ -93,7 +93,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
         })
     }
     
-    func qqLogin(qqOpenId: String) -> RACSignal {
+    func qqLogin(appKey:String, accessToken:String, qqOpenId: String) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             

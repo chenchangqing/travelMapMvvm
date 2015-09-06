@@ -72,6 +72,9 @@ class LoginViewController: UIViewController {
         
         // 默认手机号码
         RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
+        
+        // qq登录设置
+        setupQQ()
     }
     
     /**
@@ -156,7 +159,11 @@ class LoginViewController: UIViewController {
      */
     private func setupLoginMessage() {
         
-        loginViewModel.loginCommand.executing.subscribeNextAs { (isExecuting:Bool) -> () in
+        RACSignal.merge([
+            loginViewModel.loginCommand.executing
+            ,loginViewModel.qqBtnClickedCommand.executing
+            ,loginViewModel.qqTencentDidLoginCommand.executing
+        ]).subscribeNextAs { (isExecuting:Bool) -> () in
             
             if isExecuting {
                 
@@ -182,6 +189,51 @@ class LoginViewController: UIViewController {
             if canShowError {
                 self.showHUDErrorMessage(kMsgLogined)
             }
+        }
+        
+        loginViewModel.qqTencentDidLoginCommand.enabled.subscribeNextAs { (canExecute:Bool) -> () in
+            
+            if !canExecute {
+                
+                self.showHUDErrorMessage(kMsgQQAuthFailure)
+            }
+        }
+    }
+    
+    /**
+     * qq登录设置
+     */
+    private func setupQQ() {
+        
+        // 是否安装了QQ的信号
+        let iphoneQQInstalledSignal = RACSignal.createSignal { (subscriber:RACSubscriber!) -> RACDisposable! in
+            
+            subscriber.sendNext(TencentOAuth.iphoneQQInstalled())
+            subscriber.sendCompleted()
+            return nil
+        }
+        
+        // bind登录按钮校验信号
+        let qqSignUpActiveSignal = RACSignal.combineLatest([iphoneQQInstalledSignal,loginViewModel.qqBtnClickedCommand.executing,loginViewModel.qqTencentDidLoginCommand.executing]).mapAs {
+            (tuple: RACTuple) -> NSNumber in
+            
+            return (tuple.first as! Bool) && !(tuple.second as! Bool) && !(tuple.third as! Bool)
+        }
+        
+        // 绑定QQ登录按钮背景色
+        qqSignUpActiveSignal.mapAs { (isCanClick:NSNumber) -> UIColor in
+            
+            return isCanClick.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        } ~> RAC(qqBtn,"backgroundColor")
+        
+        // 绑定QQ登录按钮是否可用
+        qqSignUpActiveSignal ~> RAC(self.qqBtn,"enabled")
+        
+        // 事件
+        qqBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.view.endEditing(true)
+            self.loginViewModel.qqBtnClickedCommand.execute(nil)
         }
     }
 

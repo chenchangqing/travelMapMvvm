@@ -24,7 +24,7 @@ class IndexViewModel: RVMViewModel {
     var loadmoreSearch : RACCommand!
     
     // 错误信息
-    var errorMsg: String = ""
+    dynamic var errorMsg: String = ""
     
     override init() {
         
@@ -56,6 +56,9 @@ class IndexViewModel: RVMViewModel {
         refreshSearch.executionSignals.switchToLatest().subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
             
             self.setValue(strategyList, forKey: "strategyList")
+            
+            // 没有错误
+            self.errorMsg = ""
         })
     }
     
@@ -77,6 +80,9 @@ class IndexViewModel: RVMViewModel {
         loadmoreSearch.executionSignals.switchToLatest().subscribeNextAs({ (strategyList:[StrategyModel]!) -> Void in
             
             self.strategyList += strategyList
+            
+            // 没有错误
+            self.errorMsg = ""
         })
     }
     

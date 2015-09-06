@@ -6,6 +6,20 @@
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
+
+// 第三方
+#define MOB_SMSSDK_APPKEY           @"82972bfafffe"
+#define MOB_SMSSDK_APPSECRET        @"ef9f8dd9a44c94028de083a240585170"
+
+#define SINA_APPKEY                 @"2150907278"
+#define SINA_APPSECRET              @"cae8002730cc0c051f5ff87857980476"
+#define SINA_REDIRECTURL            @"http://sns.whalecloud.com/sina2/callback"
+
+#define QQ_APPKEY                   @"1104658111"
+#define QQ_APPSECRET                @"pE1PIpyahSa4tBrl"
+
+#define MOB_SHARESDK_APPKEY         @"86c8483eac7e"
+
 // sever json key
 #define kSuccess    @"success"
 #define kMsg        @"msg"
@@ -33,6 +47,7 @@
 
 // msg
 #define kMsgLogined @"用户已经登录"
+#define kMsgQQAuthFailure @"腾讯登录授权失败"
 #define kMsgLoginSuccess @"登录成功"
 
 

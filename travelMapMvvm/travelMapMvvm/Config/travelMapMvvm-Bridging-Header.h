@@ -16,3 +16,6 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <AFImageDownloader/AFImageDownloader.h>
 #import <ReactiveViewModel/ReactiveViewModel.h>
+#import <ShareSDK/ShareSDK.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
