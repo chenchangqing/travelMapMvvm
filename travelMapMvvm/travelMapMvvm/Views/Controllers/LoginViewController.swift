@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var telF: UITextField!       // 手机号文本框
     @IBOutlet weak var pwdF: UITextField!       // 密码文本框
     
+    var isValidTelSignal:RACSignal!             // 手机号校验信号
+    var isValidPwdSignal :RACSignal!            // 密码校验信号
+    var commandExecutingSignal: RACSignal!      // 组合命令正在执行信号
+    
     private let loginViewModel = LoginViewModel()
     
     // 登录成功后回调
@@ -32,59 +36,29 @@ class LoginViewController: UIViewController {
         setup()
     }
     
-    // MARK: - 
+    // MARK: - setup
     
     private func setup() {
         
         setAllUIStyle()
+        setupValids()
+        setupTextFields()
+        setupTelephoneLoginBtn()
+        setupRegisterBtn()
+        setupSinaLoginBtn()
+        setupQQLoginBtn()
+        setupMessage()
+        setupProcessLoginSuccess()
         
-        // 手机号校验信号
-        let isValidTelephoneSignal = self.telF.rac_textSignal().mapAs {
-            (text: NSString) -> NSNumber in
-            
-            return self.isValidTelephone(text)
-        }
-        
-        // 密码校验信号
-        let isValidPasswordSignal = pwdF.rac_textSignal().mapAs { (password:NSString) -> NSNumber in
-            
-            return self.isValidPassword(password)
-        }
-        
-        // setup
-        
-        // 默认手机号码
-        RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
-        
-        // 设置错误输入提示背景
-        setupTextFieldBgColor(isValidTelephoneSignal,isValidPasswordSignal: isValidPasswordSignal)
-        
-        // 设置手机登录按钮是否可以点击以及不可点击时的颜色
-        setupTelLoginBtnBgColor(isValidTelephoneSignal,isValidPasswordSignal: isValidPasswordSignal)
-        
-        setupdateViewModelLoginInfo()   // 时时更新loginViewModel的登录信息
-        setupProcessLoginSuccess()      // 处理登录成功
-        setupMessage()                  // 登录提示
-        
-        // 手机登录event
-        loginBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNextAs { (sender:UIButton) -> () in
-            
-            self.view.endEditing(true)
-            self.loginViewModel.loginCommand.execute(nil)
-        }
-        
-        // qq登录设置
-        setupQQ()
-        
-        // sina登录设置
-        setSina()
     }
+    
+    // ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
     
     /**
      * 设置UIStyle
      */
     private func setAllUIStyle() {
-       
+        
         // ui style
         containerV.loginRadiusStyle()
         loginBtn.loginNoBorderStyle()
@@ -94,57 +68,212 @@ class LoginViewController: UIViewController {
     }
     
     /**
-     * 设置错误输入提示背景
+     * 校验信号设置
      */
-    private func setupTextFieldBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
+    private func setupValids() {
         
-        // 手机号输入框
-        isValidTelephoneSignal.mapAs { (isValid:NSNumber) -> UIColor in
+        // 手机号校验信号
+        isValidTelSignal = self.telF.rac_textSignal().mapAs {
+            (text: NSString) -> NSNumber in
+            
+            return self.isValidTelephone(text)
+        }
+        
+        // 密码校验信号
+        isValidPwdSignal = pwdF.rac_textSignal().mapAs { (password:NSString) -> NSNumber in
+            
+            return self.isValidPassword(password)
+        }
+        
+        // 组合命令正在执行信号
+        commandExecutingSignal = RACSignal.combineLatest([
+            loginViewModel.loginCommand.executing
+            ,loginViewModel.qqBtnClickedCommand.executing
+            ,loginViewModel.qqTencentDidLoginCommand.executing
+            ,loginViewModel.sinaBtnClickedCommand.executing
+        ]).mapAs({ (tuple: RACTuple) -> NSNumber in
+            
+            let first   = tuple.first as! Bool
+            let second  = tuple.second as! Bool
+            let third   = tuple.third as! Bool
+            let fourth  = tuple.fourth as! Bool
+            
+            let isLoading = first || second || third || fourth
+            
+            return isLoading
+        })
+    }
+
+    /**
+     * 文本框设置
+     */
+    private func setupTextFields() {
+        
+        // 默认手机号码
+        RACObserve(loginViewModel, "telephone") ~> RAC(telF,"text")
+        
+        // 绑定手机号输入框背景色
+        isValidTelSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.telF,"backgroundColor")
         
-        // 密码输入框
-        isValidPasswordSignal.mapAs { (isValid:NSNumber) -> UIColor in
+        // 绑定密码输入框背景色
+        isValidPwdSignal.mapAs { (isValid:NSNumber) -> UIColor in
             
             return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }.skip(1) ~> RAC(self.pwdF,"backgroundColor")
+        
+        //时时更新loginViewModel的登录信息
+        telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
+        pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
     }
     
-    /** 
-     * 设置手机登录按钮是否可以点击以及不可点击时的颜色
+    /**
+     * 手机登录按钮设置
      */
-    private func setupTelLoginBtnBgColor(isValidTelephoneSignal:RACSignal,isValidPasswordSignal:RACSignal) {
+    private func setupTelephoneLoginBtn() {
         
+        // 如果有默认手机号，设置手机号文本框没有背景色
         let subscriber = RACSubject()
-        isValidTelephoneSignal.subscribe(subscriber)
+        isValidTelSignal.subscribe(subscriber)
         if isValidTelephone(telF.text) {
             
             subscriber.sendNext(true)
         }
         
-        // bind登录按钮校验信号
-        let signUpActiveSignal = RACSignal.combineLatest([isValidTelephoneSignal,isValidPasswordSignal,loginViewModel.loginCommand.executing]).mapAs {
-            (tuple: RACTuple) -> NSNumber in
+        // 临时信号
+        let tempSignal = RACSignal.combineLatest([isValidTelSignal,isValidPwdSignal,commandExecutingSignal]).mapAs { (tuple: RACTuple) -> NSNumber in
             
             return (tuple.first as! Bool) && (tuple.second as! Bool) && !(tuple.third as! Bool)
         }
+        
+        // 绑定按钮enabled
+        tempSignal ~> RAC(loginBtn,"enabled")
+        
+        // 绑定按钮backgroundColor
+        tempSignal.mapAs { (enabled:NSNumber) -> UIColor in
             
-        signUpActiveSignal.mapAs { (isValid:NSNumber) -> UIColor in
-            
-            return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+            return enabled.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
         } ~> RAC(loginBtn,"backgroundColor")
         
-        signUpActiveSignal ~> RAC(loginBtn,"enabled")
+        // 绑定事件
+        loginBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNextAs { (sender:UIButton) -> () in
+            
+            self.view.endEditing(true)
+            self.loginViewModel.loginCommand.execute(nil)
+        }
     }
     
     /**
-     * 时时更新loginViewModel的登录信息
+     * 注册按钮登录设置
      */
-    private func setupdateViewModelLoginInfo() {
+    private func setupRegisterBtn() {
         
-        telF.rac_textSignal() ~> RAC(self.loginViewModel, "loginTel")
-        pwdF.rac_textSignal() ~> RAC(self.loginViewModel, "loginPwd")
+        // 绑定按钮enabled
+        
+        // 绑定按钮backgroundColor
+        
+        // 绑定事件
+    }
+    
+    /**
+     * 新浪登录按钮设置
+     */
+    private func setupSinaLoginBtn() {
+        
+        // 绑定按钮enabled
+        commandExecutingSignal.mapAs({ (isExecuting:NSNumber) -> NSNumber in
+            return !isExecuting.boolValue
+        }) ~> RAC(wbBtn,"enabled")
+        
+        // 绑定按钮backgroundColor
+        commandExecutingSignal.mapAs { (isExecuting:NSNumber) -> UIColor in
+            
+            return !isExecuting.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        } ~> RAC(wbBtn,"backgroundColor")
+        
+        // 绑定事件
+        wbBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.view.endEditing(true)
+            self.loginViewModel.sinaBtnClickedCommand.execute(nil)
+        }
+    }
+    
+    /**
+     * 腾讯登录按钮设置
+     */
+    private func setupQQLoginBtn() {
+        
+        // 是否安装了QQ的信号
+        let iphoneQQInstalledSignal = RACSignal.createSignal { (subscriber:RACSubscriber!) -> RACDisposable! in
+            
+            subscriber.sendNext(TencentOAuth.iphoneQQInstalled())
+            subscriber.sendCompleted()
+            return nil
+        }
+        
+        // 临时信号
+        let tempSignal = RACSignal.combineLatest([iphoneQQInstalledSignal,commandExecutingSignal]).mapAs { (tuple: RACTuple) -> NSNumber in
+            
+            return (tuple.first as! Bool) && !(tuple.second as! Bool)
+        }
+        
+        // 绑定按钮enabled
+        tempSignal ~> RAC(qqBtn,"enabled")
+        
+        // 绑定按钮backgroundColor
+        tempSignal.mapAs { (enabled:NSNumber) -> UIColor in
+            
+            return enabled.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        } ~> RAC(qqBtn,"backgroundColor")
+        
+        // 绑定事件
+        qqBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.view.endEditing(true)
+            self.loginViewModel.qqBtnClickedCommand.execute(nil)
+        }
+    }
+    
+    /**
+     * 提示设置
+     */
+    private func setupMessage() {
+        
+        // 已经登录提示
+        RACSignalEx.combineLatestAs([loginViewModel.loginCommand.enabled.skip(1),loginBtn.rac_signalForControlEvents( UIControlEvents.TouchUpInside)], reduce: { (canExecute:Bool, sender:UIButton) -> NSNumber in
+
+            return !canExecute
+        }).subscribeNextAs { (canShowError:Bool) -> () in
+
+            if canShowError {
+                self.showHUDErrorMessage(kMsgLogined)
+            }
+        }
+
+        RACSignal.combineLatest([commandExecutingSignal,RACObserve(loginViewModel, "errorMsg")]).subscribeNextAs { (tuple: RACTuple) -> () in
+
+            let isLoading = tuple.first as! Bool
+            let errorMsg  = tuple.second as! String
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if errorMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
+            
+            if !errorMsg.isEmpty {
+                
+                self.showHUDErrorMessage(errorMsg)
+            }
+        }
     }
     
     /**
@@ -159,118 +288,9 @@ class LoginViewController: UIViewController {
             self.loginSuccessCompletionCallback()
         }
     }
-    
-    /**
-     * 登录提示
-     */
-    private func setupMessage() {
-        
-        // loading and errorMsg
-        RACSignal.combineLatest([
-            loginViewModel.loginCommand.executing
-            ,loginViewModel.qqBtnClickedCommand.executing
-            ,loginViewModel.qqTencentDidLoginCommand.executing
-            ,loginViewModel.sinaBtnClickedCommand.executing
-            ,RACObserve(loginViewModel, "errorMsg")
-        ]).subscribeNext { (tuple:AnyObject!) -> Void in
-            
-            let tuple = tuple as! RACTuple
-            
-            let first = tuple.first as! Bool
-            let second = tuple.second as! Bool
-            let third = tuple.third as! Bool
-            let fourth = tuple.fourth as! Bool
-            let fifth = tuple.fifth as! String
-            
-            let isLoading = first || second || third || fourth
-            
-            if isLoading {
-                
-                self.showHUDIndicator()
-            } else {
-                
-                if fifth.isEmpty {
-                    
-                    self.hideHUD()
-                }
-            }
-            
-            if !fifth.isEmpty {
-                
-                self.showHUDErrorMessage(fifth)
-            }
-        }
-        
-        // 已经登录提示
-        RACSignalEx.combineLatestAs([loginViewModel.loginCommand.enabled.skip(1),loginBtn.rac_signalForControlEvents( UIControlEvents.TouchUpInside)], reduce: { (canExecute:Bool, sender:UIButton) -> NSNumber in
-            
-            return !canExecute
-        }).subscribeNextAs { (canShowError:Bool) -> () in
-            
-            if canShowError {
-                self.showHUDErrorMessage(kMsgLogined)
-            }
-        }
-    }
-    
-    /**
-     * qq登录设置
-     */
-    private func setupQQ() {
-        
-        // 是否安装了QQ的信号
-        let iphoneQQInstalledSignal = RACSignal.createSignal { (subscriber:RACSubscriber!) -> RACDisposable! in
-            
-            subscriber.sendNext(TencentOAuth.iphoneQQInstalled())
-            subscriber.sendCompleted()
-            return nil
-        }
-        
-        // bind登录按钮校验信号
-        let qqSignUpActiveSignal = RACSignal.combineLatest([iphoneQQInstalledSignal,loginViewModel.qqBtnClickedCommand.executing,loginViewModel.qqTencentDidLoginCommand.executing]).mapAs {
-            (tuple: RACTuple) -> NSNumber in
-            
-            return (tuple.first as! Bool) && !(tuple.second as! Bool) && !(tuple.third as! Bool)
-        }
-        
-        // 绑定QQ登录按钮背景色
-        qqSignUpActiveSignal.mapAs { (isCanClick:NSNumber) -> UIColor in
-            
-            return isCanClick.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
-        } ~> RAC(qqBtn,"backgroundColor")
-        
-        // 绑定QQ登录按钮是否可用
-        qqSignUpActiveSignal ~> RAC(self.qqBtn,"enabled")
-        
-        // 事件
-        qqBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
-            
-            self.view.endEditing(true)
-            self.loginViewModel.qqBtnClickedCommand.execute(nil)
-        }
-    }
-    
-    /**
-     * sina登录设置
-     */
-    private func setSina() {
-        
-        loginViewModel.sinaBtnClickedCommand.executing.skip(1).mapAs { (isCanClick:NSNumber) -> UIColor in
-            
-            return isCanClick.boolValue ? UIButton.enabledBackgroundColor : UIButton.defaultBackgroundColor
-        } ~> RAC(wbBtn,"backgroundColor")
-        
-        loginViewModel.sinaBtnClickedCommand.executing.skip(1).mapAs({ (flag:NSNumber) -> NSNumber in
-            
-            return !flag.boolValue
-        }) ~> RAC(self.wbBtn,"enabled")
-        wbBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
-            
-            self.view.endEditing(true)
-            self.loginViewModel.sinaBtnClickedCommand.execute(nil)
-        }
-    }
 
+    // ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
+    
     // MARK: - Valid
     
     /**

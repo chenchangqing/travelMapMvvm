@@ -64,7 +64,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
             
             ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil) { (result, userInfo, error) -> Void in
                 
-                if true {
+                if result {
                     
 //                    DDLogDebug("uid = \(userInfo.uid())")
 //                    DDLogDebug("name = \(userInfo.nickname())")
@@ -72,53 +72,25 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                     
                     let paramters: [String:AnyObject] = [
                         
-                        "sinaOpenId" : ""//userInfo.uid()
+                        "sinaOpenId" : userInfo.uid()
                     ]
                     
-//                    NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
-//                        
-//                        if error == nil {
-//                            
-//                            var user = UserModel()
-//                            
-//                            user <-- data!
-//                            
-//                            subscriber.sendNext(user)
-//                            subscriber.sendCompleted()
-//                        } else {
-//                            
-//                            subscriber.sendError(error)
-//                            
-//                        }
-//                    }, requestURlString: "URL", parameters: paramters)
-                    
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
+                    NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
                         
-                        let resultDic = ReadJsonClass.readJsonData("sinaLogin")
-                        
-                        if resultDic.error == nil {
+                        if error == nil {
                             
-                            if let data: AnyObject=resultDic.data {
-                                
-                                var user = UserModel()
-                                
-                                user <-- data[kData]
-                                
-                                subscriber.sendNext(user)
-                                subscriber.sendCompleted()
-                            } else {
-                                
-                                subscriber.sendError(NSError(
-                                    domain:kErrorDomain,
-                                    code: ErrorEnum.JSONError.errorCode,
-                                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
-                                    ))
-                            }
+                            var user = UserModel()
+                            
+                            user <-- data!
+                            
+                            subscriber.sendNext(user)
+                            subscriber.sendCompleted()
                         } else {
                             
-                            subscriber.sendError(resultDic.error!)
+                            subscriber.sendError(error)
+                            
                         }
-                    })
+                    }, requestURlString: "URL", parameters: paramters)
                     
                 } else {
                     
