@@ -260,7 +260,10 @@ class LoginViewController: UIViewController {
             return isCanClick.boolValue ? UIButton.enabledBackgroundColor : UIButton.defaultBackgroundColor
         } ~> RAC(wbBtn,"backgroundColor")
         
-        loginViewModel.sinaBtnClickedCommand.executing.skip(1) ~> RAC(self.wbBtn,"enabled")
+        loginViewModel.sinaBtnClickedCommand.executing.skip(1).mapAs({ (flag:NSNumber) -> NSNumber in
+            
+            return !flag.boolValue
+        }) ~> RAC(self.wbBtn,"enabled")
         wbBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
             
             self.view.endEditing(true)
