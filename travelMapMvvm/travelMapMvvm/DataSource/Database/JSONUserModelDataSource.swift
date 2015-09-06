@@ -64,7 +64,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
             
             ShareSDK.getUserInfoWithType(ShareTypeSinaWeibo, authOptions: nil) { (result, userInfo, error) -> Void in
                 
-                if result {
+                if true {
                     
 //                    DDLogDebug("uid = \(userInfo.uid())")
 //                    DDLogDebug("name = \(userInfo.nickname())")
@@ -72,7 +72,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                     
                     let paramters: [String:AnyObject] = [
                         
-                        "sinaOpenId" : userInfo.uid()
+                        "sinaOpenId" : ""//userInfo.uid()
                     ]
                     
 //                    NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
