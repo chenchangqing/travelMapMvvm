@@ -67,6 +67,7 @@
 		E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */; };
 		E67B28221B9D37CB0070E3AD /* SMSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */; };
 		E67B28251B9D3A900070E3AD /* LocalAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */; };
+		E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B28261B9D43330070E3AD /* RegisterViewModel.swift */; };
 		E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
@@ -260,6 +261,7 @@
 		E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSDataSource.swift; sourceTree = "<group>"; };
 		E67B28231B9D3A900070E3AD /* LocalAreaHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalAreaHelper.h; sourceTree = "<group>"; };
 		E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalAreaHelper.m; sourceTree = "<group>"; };
+		E67B28261B9D43330070E3AD /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdController.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				E68F6B8F1B9A8FAD00AB2C72 /* LeftViewModel.swift */,
 				E687631F1B99724D0006DD3D /* LoginViewModel.swift */,
 				E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */,
+				E67B28261B9D43330070E3AD /* RegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1285,6 +1288,7 @@
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E698AD921B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,

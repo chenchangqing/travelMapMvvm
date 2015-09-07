@@ -10,6 +10,19 @@ import ReactiveCocoa
 
 class SMSDataSource: SMSDataSourceProtocol {
     
+    // MARK: - 单例
+    
+    class func shareInstance()->SMSDataSourceProtocol{
+        struct YRSingleton{
+            static var predicate:dispatch_once_t = 0
+            static var instance:SMSDataSource? = nil
+        }
+        dispatch_once(&YRSingleton.predicate,{
+            YRSingleton.instance=SMSDataSource()
+        })
+        return YRSingleton.instance!
+    }
+    
     func queryCountryAndAreaCode() -> CountryAndAreaCode {
         
         let result = CountryAndAreaCode()
