@@ -31,9 +31,6 @@ class IndexViewController: UITableViewController {
         setupMJRefresh()
         setupObserve()
         
-        // 提示动画
-        self.indicatorView.startAnimation()
-        
         // 马上进入刷新状态
         tableView.header.beginRefreshing()
 
@@ -113,8 +110,19 @@ class IndexViewController: UITableViewController {
                 
                 self.showHUDErrorMessage(third)
             }
-            
         }
+        
+        self.startIndicatorAnimation()
+        self.viewModel.refreshSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            self.stopIndicatorAnimation()
+        })
     }
     
     /**
@@ -157,9 +165,6 @@ class IndexViewController: UITableViewController {
      * 请求数据之后回调
      */
     private func callbackAfterGetData(any:AnyObject!) {
-        
-        // 停止提示动画开始渐变动画
-        self.stopIndicatorAnimationAndStartFadeAnimation()
         
         // 拿到当前的下拉刷新控件，结束刷新状态
         self.tableView.header.endRefreshing()

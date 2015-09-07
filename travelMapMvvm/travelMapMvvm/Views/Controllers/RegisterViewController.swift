@@ -70,17 +70,27 @@ class RegisterViewController: UIViewController {
                 
                 if errorMsg.isEmpty {
                     
-                    self.stopIndicatorAnimationAndStartFadeAnimation()
                     self.hideHUD()
                 }
             }
             
             if !errorMsg.isEmpty {
                 
-                self.stopIndicatorAnimationAndStartFadeAnimation()
                 self.showHUDErrorMessage(errorMsg)
             }
         }
+        
+        self.startIndicatorAnimation()
+        self.registerViewModel.searchZonesArrayCommand.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            self.stopIndicatorAnimation()
+        })
     }
     
     // MARK: - Navigation

@@ -38,6 +38,8 @@ extension UIViewController :UITextFieldDelegate {
             
             indicatorView = NVActivityIndicatorView(frame: indicatorViewRect, type: NVActivityIndicatorType.LineScalePulseOutRapid, color: UIColor.blueColor(), size: CGSizeMake(40, 40))
             indicatorView.backgroundColor = UIColor.whiteColor()
+            indicatorView.hidesWhenStopped = false
+            indicatorView.hidden = true
             
             parentView.addSubview(indicatorView)
             
@@ -68,7 +70,7 @@ extension UIViewController :UITextFieldDelegate {
     func executeFadeAnimation() {
         
         var animated = CATransition()
-        animated.duration = 1.0
+        animated.duration = 5.0
         animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         animated.type = kCATransitionFade
         animated.removedOnCompletion = true
@@ -77,16 +79,38 @@ extension UIViewController :UITextFieldDelegate {
     }
     
     /**
-     * 停止提示动画 开始渐变动画
+     * 开始提示动画
      */
-    func stopIndicatorAnimationAndStartFadeAnimation() {
+    func startIndicatorAnimation() {
         
-        // 开始动画
+        if self.indicatorView.hidden {
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+
+                self.indicatorView.alpha = 1
+            }, completion: { (isfinished:Bool) -> Void in
+                
+                self.indicatorView.startAnimation()
+            })
+        }
+    }
+    
+    /**
+     * 停止提示动画
+     */
+    func stopIndicatorAnimation() {
+        
         if !self.indicatorView.hidden {
             
-            self.executeFadeAnimation()
-            // 停止提示
-            self.indicatorView.stopAnimation()
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                
+                self.indicatorView.alpha = 0
+            }, completion: { (isfinished:Bool) -> Void in
+                
+                self.indicatorView.hidden = true
+                self.indicatorView.stopAnimation()
+                self.executeFadeAnimation()
+            })
         }
     }
 

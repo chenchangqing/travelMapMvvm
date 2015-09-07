@@ -28,9 +28,6 @@ class FilterViewController: UIViewController {
         
         setup()
         
-        // 首次进入提示动画
-        self.indicatorView.startAnimation()
-        
         // 数据加载HUD
         filterViewModel.filterSelectionDicSearch.executing.subscribeNextAs { (isExecuting:Bool) -> () in
             
@@ -70,8 +67,6 @@ class FilterViewController: UIViewController {
             
             self.selectionCollectionView.dataSource = dataSource.dataSource
             self.selectionCollectionView.reloadData()
-            
-            self.stopIndicatorAnimationAndStartFadeAnimation()
         }
     }
     
