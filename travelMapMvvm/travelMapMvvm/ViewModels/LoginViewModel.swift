@@ -91,6 +91,11 @@ class LoginViewModel: RVMViewModel {
             // 发出登录成功通知
             NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
         }
+        
+        loginCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.errorMsg = ""
+        }
     }
     
     /**
@@ -105,6 +110,11 @@ class LoginViewModel: RVMViewModel {
             
             return RACSignal.empty()
         })
+        
+        qqBtnClickedCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.errorMsg = ""
+        }
     }
     
     /**
@@ -150,6 +160,11 @@ class LoginViewModel: RVMViewModel {
             // 发出登录成功通知
             NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
         }
+        
+        qqTencentDidLoginCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.errorMsg = ""
+        }
     }
     
     /**
@@ -179,6 +194,11 @@ class LoginViewModel: RVMViewModel {
             
             // 发出登录成功通知
             NSNotificationCenter.defaultCenter().postNotificationName(kUpdateUserCompletionNotificationName, object: user, userInfo: nil)
+        }
+        
+        sinaBtnClickedCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.errorMsg = ""
         }
     }
 }
