@@ -14,8 +14,10 @@ enum ErrorEnum : String {
     case JSONError = "JSON转换错误"
     case ImageDownloadError = "图片下载失败"
     case SinaAuthError = "新浪登录授权失败"
+    case GetZonesError = "获取支持区号失败"
+    case VerityCodeError = "手机验证码错误"
     
-    static let allValues = [ServerError,JSONError,ImageDownloadError]
+    static let allValues = [ServerError,JSONError,ImageDownloadError,SinaAuthError,GetZonesError,VerityCodeError]
     
     // 位置
     var index : Int {
@@ -49,6 +51,14 @@ enum ErrorEnum : String {
         get {
             
             return -1000 - index
+        }
+    }
+    
+    var error: NSError {
+        
+        get {
+            
+            return NSError(domain: kErrorDomain, code: self.errorCode, userInfo: [NSLocalizedDescriptionKey:self.rawValue])
         }
     }
 }

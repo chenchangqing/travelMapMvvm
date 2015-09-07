@@ -19,3 +19,10 @@
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiInterface.h>
+#import <SMS_SDK/SMS_SDK.h>
+#import <SMS_SDK/CountryAndAreaCode.h>
+#import <SMS_SDK/SMS_AddressBook.h>
+#import <SMS_SDK/SMS_SDKError.h>
+#import <SMS_SDK/SMS_SDKResultHanderDef.h>
+#import <SMS_SDK/SMS_UserInfo.h>
+#import "LocalAreaHelper.h"

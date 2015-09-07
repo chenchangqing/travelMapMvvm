@@ -29,10 +29,7 @@ class ImageDataSource: ImageDataSourceProtocol {
         
         let request = NSMutableURLRequest(URL: url)
         
-        let downloadImageError = NSError(
-            domain: kErrorDomain,
-            code: ErrorEnum.ImageDownloadError.errorCode,
-            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ImageDownloadError.rawValue + "(" + url.description + ")"])
+        let downloadImageError = ErrorEnum.ImageDownloadError.error
         
         let signal = RACSignal.createSignal({
             (subscriber: RACSubscriber!) -> RACDisposable! in

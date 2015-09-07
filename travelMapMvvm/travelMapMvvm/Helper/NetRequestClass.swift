@@ -70,10 +70,7 @@ class NetRequestClass {
                 callback(error: nil, data: data)
             } else {
                 
-                callback(error:NSError(
-                    domain: kErrorDomain,
-                    code: ErrorEnum.ServerError.errorCode,
-                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
+                callback(error:ErrorEnum.ServerError.error, data: nil)
             }
             
             }) { (operation, error) -> Void in
@@ -107,10 +104,7 @@ class NetRequestClass {
             } else {
                 
                 
-                callback(error:NSError(
-                    domain: kErrorDomain,
-                    code: ErrorEnum.ServerError.errorCode,
-                    userInfo: [NSLocalizedDescriptionKey:ErrorEnum.ServerError.rawValue + msg]),data:nil)
+                callback(error:ErrorEnum.ServerError.error,data:nil)
             }
             
         }) { (operation, error) -> Void in

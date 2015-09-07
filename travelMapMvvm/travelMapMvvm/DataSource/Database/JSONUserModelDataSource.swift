@@ -43,11 +43,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                         subscriber.sendCompleted()
                     } else {
                         
-                        subscriber.sendError(NSError(
-                            domain:kErrorDomain,
-                            code: ErrorEnum.JSONError.errorCode,
-                            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
-                            ))
+                        subscriber.sendError(ErrorEnum.JSONError.error)
                     }
                 } else {
                     
@@ -94,10 +90,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                     
                 } else {
                     
-                    subscriber.sendError(NSError(
-                        domain:kErrorDomain,
-                        code: ErrorEnum.SinaAuthError.errorCode,
-                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.SinaAuthError.rawValue]))
+                    subscriber.sendError(ErrorEnum.SinaAuthError.error)
                 }
             }
             
@@ -125,11 +118,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                         subscriber.sendCompleted()
                     } else {
                         
-                        subscriber.sendError(NSError(
-                            domain:kErrorDomain,
-                            code: ErrorEnum.JSONError.errorCode,
-                            userInfo: [NSLocalizedDescriptionKey:ErrorEnum.JSONError.rawValue]
-                            ))
+                        subscriber.sendError(ErrorEnum.JSONError.error)
                     }
                 } else {
                     

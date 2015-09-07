@@ -90,10 +90,7 @@ class NetworkUserModelDataSource: UserModelDataSourceProtocol {
                     
                 } else {
                     
-                    subscriber.sendError(NSError(
-                        domain:kErrorDomain,
-                        code: ErrorEnum.SinaAuthError.errorCode,
-                        userInfo: [NSLocalizedDescriptionKey:ErrorEnum.SinaAuthError.rawValue]))
+                    subscriber.sendError(ErrorEnum.SinaAuthError.error)
                 }
             }
             

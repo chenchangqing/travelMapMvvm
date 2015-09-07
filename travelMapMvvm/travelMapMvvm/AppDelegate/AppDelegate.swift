@@ -143,11 +143,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     func registerMob() {
         
-        //添加新浪微博应用
+        // 添加新浪微博应用
         ShareSDK.connectSinaWeiboWithAppKey(SINA_APPKEY, appSecret: SINA_APPSECRET, redirectUri: SINA_REDIRECTURL)
         
         // 添加QQ应用
         ShareSDK.connectQQWithQZoneAppKey(QQ_APPKEY, qqApiInterfaceCls: QQApiInterface.self, tencentOAuthCls: TencentOAuth.self)
+        
+        // 添加短信
+        SMS_SDK.registerApp(MOB_SMSSDK_APPKEY, withSecret: MOB_SMSSDK_APPSECRET)
+        SMS_SDK.enableAppContactFriends(false) // 不启用访问通讯录好友
     }
 
 }

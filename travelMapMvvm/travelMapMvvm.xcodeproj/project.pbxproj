@@ -62,6 +62,11 @@
 		E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* Main.storyboard */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
 		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
+		E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */; };
+		E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */; };
+		E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */; };
+		E67B28221B9D37CB0070E3AD /* SMSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */; };
+		E67B28251B9D3A900070E3AD /* LocalAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */; };
 		E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
@@ -248,6 +253,13 @@
 		E659F4A21B8CEFFF005CD9FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageParamModel.swift; sourceTree = "<group>"; };
+		E67B281A1B9D279D0070E3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		E67B281C1B9D279D0070E3AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSDataSource.swift; sourceTree = "<group>"; };
+		E67B28231B9D3A900070E3AD /* LocalAreaHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalAreaHelper.h; sourceTree = "<group>"; };
+		E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalAreaHelper.m; sourceTree = "<group>"; };
 		E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdController.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
@@ -409,6 +421,7 @@
 				E60400381B9BE29900C3C0A8 /* SystemConfiguration.framework in Frameworks */,
 				E60400251B9BE0A300C3C0A8 /* QQConnection.framework in Frameworks */,
 				E60400331B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
+				E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */,
 				E60400281B9BE0A400C3C0A8 /* AGCommon.framework in Frameworks */,
 				E60400301B9BE0A400C3C0A8 /* libWeChatSDK.a in Frameworks */,
 				E60400261B9BE0A400C3C0A8 /* SinaWeiboConnection.framework in Frameworks */,
@@ -570,6 +583,7 @@
 				E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */,
 				E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */,
 				E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */,
+				E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -600,6 +614,7 @@
 				E659F48C1B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift */,
 				E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */,
 				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
+				E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -607,6 +622,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E67B28181B9D279D0070E3AD /* SMS_SDK */,
 				E60400081B9BE0A300C3C0A8 /* ShareSDK */,
 				E6AA5E3A1B9357CA009C7DA1 /* SelectionCollectionView */,
 				E688EFA91B91D52E00C01B23 /* MBProgressHUD */,
@@ -742,6 +758,17 @@
 				E611B39C1B8D916F0034B267 /* GCircleControl.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E67B28181B9D279D0070E3AD /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				E67B28231B9D3A900070E3AD /* LocalAreaHelper.h */,
+				E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */,
+				E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */,
+				E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
 		E68730921B91689300F3EA40 /* MJRefresh2.4.7 */ = {
@@ -1157,6 +1184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E604002D1B9BE0A400C3C0A8 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */,
 				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
 				E60400321B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				E688EFC41B9200C400C01B23 /* IndexViewFooter.xib in Resources */,
@@ -1263,6 +1291,7 @@
 				E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */,
 				E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */,
 				E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */,
+				E67B28221B9D37CB0070E3AD /* SMSDataSource.swift in Sources */,
 				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
@@ -1279,6 +1308,7 @@
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
+				E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */,
 				E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */,
 				E698AD501B8FF108001B7D71 /* RACSignal+Extensions.swift in Sources */,
 				E68763151B994B0D0006DD3D /* String+General.swift in Sources */,
@@ -1303,6 +1333,7 @@
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				E68730C41B91689400F3EA40 /* MJRefreshAutoGifFooter.m in Sources */,
 				E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */,
+				E67B28251B9D3A900070E3AD /* LocalAreaHelper.m in Sources */,
 				E698AD881B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
 				E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */,
 				E6AA5E4D1B9357CA009C7DA1 /* CJCollectionViewHeader.swift in Sources */,
@@ -1389,6 +1420,15 @@
 				E60400131B9BE0A300C3C0A8 /* zh-Hans */,
 			);
 			name = ShareSDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E67B281A1B9D279D0070E3AD /* en */,
+				E67B281C1B9D279D0070E3AD /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1489,6 +1529,7 @@
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK",
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK/UI",
+					"$(PROJECT_DIR)/travelMapMvvm/General/SMS_SDK",
 				);
 				INFOPLIST_FILE = travelMapMvvm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1518,6 +1559,7 @@
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK",
 					"$(PROJECT_DIR)/travelMapMvvm/General/ShareSDK/UI",
+					"$(PROJECT_DIR)/travelMapMvvm/General/SMS_SDK",
 				);
 				INFOPLIST_FILE = travelMapMvvm/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
