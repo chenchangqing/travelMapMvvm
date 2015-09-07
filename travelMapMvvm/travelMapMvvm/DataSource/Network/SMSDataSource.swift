@@ -38,14 +38,24 @@ class SMSDataSource: SMSDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
+            var isTimeout = true
             SMS_SDK.getZone({ (state:SMS_ResponseState, zonesArray:[AnyObject]!) -> Void in
                 
+                isTimeout = false
                 if 1 == state.value {
                     
                     subscriber.sendNext(zonesArray)
                     subscriber.sendCompleted()
                     
                 } else {
+                    
+                    subscriber.sendError(ErrorEnum.GetZonesError.error)
+                }
+            })
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 10)), dispatch_get_main_queue(), { () -> Void in
+                
+                if isTimeout {
                     
                     subscriber.sendError(ErrorEnum.GetZonesError.error)
                 }
