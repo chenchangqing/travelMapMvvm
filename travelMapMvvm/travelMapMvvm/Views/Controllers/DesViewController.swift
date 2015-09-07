@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
+import ReactiveCocoa
 import UIKit
 
 class DesViewController: UIViewController {
@@ -40,6 +41,18 @@ class DesViewController: UIViewController {
                 self.hideHUD()
             }
         }
+
+        self.startIndicatorAnimation()
+        self.desViewModel.desSelectionDicSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            self.stopIndicatorAnimation()
+        })
         
         // 查询数据
         desViewModel.desSelectionDicSearch.execute(nil)

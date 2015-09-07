@@ -121,7 +121,31 @@ class IndexViewController: UITableViewController {
             })
         }.subscribeNextAs({ (completed:RACEvent!) -> () in
             
+            // 拿到当前的下拉刷新控件，结束刷新状态
+            self.tableView.header.endRefreshing()
             self.stopIndicatorAnimation()
+        })
+        
+        self.viewModel.loadmoreSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            // 拿到当前的下拉刷新控件，结束刷新状态
+            self.tableView.footer.endRefreshing()
+            self.stopIndicatorAnimation()
+            
+            // set table status
+            if self.viewModel.strategyList.count > 20 {
+                
+                self.tableView.footer.noticeNoMoreData()
+            } else {
+                
+                self.tableView.footer.resetNoMoreData()
+            }
         })
     }
     
@@ -152,10 +176,7 @@ class IndexViewController: UITableViewController {
         // 更新tableView
         bindingHelper = TableViewBindingHelper(
             tableView: tableView,
-            sourceSignal: RACObserve(viewModel, "strategyList").doNext { (any:AnyObject!) -> Void in
-                
-                self.callbackAfterGetData(any)
-            },
+            sourceSignal: RACObserve(viewModel, "strategyList"),
             reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
     }
     
@@ -166,23 +187,6 @@ class IndexViewController: UITableViewController {
      */
     private func callbackAfterGetData(any:AnyObject!) {
         
-        // 拿到当前的下拉刷新控件，结束刷新状态
-        self.tableView.header.endRefreshing()
-        
-        // 拿到当前的上拉刷新控件，结束刷新状态
-        self.tableView.footer.endRefreshing()
-        
-        // set table status
-        if let strategyList=any as? [StrategyModel] {
-            
-            if strategyList.count > 20 {
-                
-                self.tableView.footer.noticeNoMoreData()
-            } else {
-                
-                self.tableView.footer.resetNoMoreData()
-            }
-        }
     }
     
     // MARK: - Navigation

@@ -40,6 +40,18 @@ class FilterViewController: UIViewController {
             }
         }
         
+        self.startIndicatorAnimation()
+        self.filterViewModel.filterSelectionDicSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            self.stopIndicatorAnimation()
+        })
+        
         // 查询数据
         filterViewModel.filterSelectionDicSearch.execute(nil)
     }
@@ -86,7 +98,6 @@ class FilterViewController: UIViewController {
         // ok event
         okBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
             
-            println(self.selectionCollectionView.resultDictionary)
             self.performSegueWithIdentifier(kSegueFromFilterViewControllerToIndexViewController, sender: nil)
         }
         

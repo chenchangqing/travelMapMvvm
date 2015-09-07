@@ -14,19 +14,9 @@ extension UIViewController :UITextFieldDelegate {
         
         get {
             
-            var indicatorViewRect:CGRect!
+            var indicatorViewRect = CGRectMake(0, 64, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds) - 64)
             var indicatorView:NVActivityIndicatorView!
-            var parentView:UIView!
-            
-            if let navigationController=self.navigationController {
-                
-                indicatorViewRect = CGRectMake(0, 64, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetHeight(UIScreen.mainScreen().bounds) - 64)
-                parentView = navigationController.view
-            } else {
-                
-                indicatorViewRect = CGRectMake(0, 20, CGRectGetWidth(UIScreen.mainScreen().bounds), CGRectGetWidth(UIScreen.mainScreen().bounds) - 20)
-                parentView = self.view
-            }
+            var parentView:UIView = UIApplication.sharedApplication().delegate!.window!!.rootViewController!.view
             
             for subview in parentView.subviews {
                 
@@ -38,8 +28,6 @@ extension UIViewController :UITextFieldDelegate {
             
             indicatorView = NVActivityIndicatorView(frame: indicatorViewRect, type: NVActivityIndicatorType.LineScalePulseOutRapid, color: UIColor.blueColor(), size: CGSizeMake(40, 40))
             indicatorView.backgroundColor = UIColor.whiteColor()
-//            indicatorView.hidesWhenStopped = false
-//            indicatorView.hidden = true
             
             parentView.addSubview(indicatorView)
             
