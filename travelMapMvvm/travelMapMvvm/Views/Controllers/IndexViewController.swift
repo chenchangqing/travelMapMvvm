@@ -127,9 +127,6 @@ class IndexViewController: UITableViewController {
             if self.viewModel.strategyList.count > 20 {
                 
                 self.tableView.footer.noticeNoMoreData()
-            } else {
-                
-                self.tableView.footer.resetNoMoreData()
             }
         })
         
@@ -143,6 +140,7 @@ class IndexViewController: UITableViewController {
             
             // 拿到当前的下拉刷新控件，结束刷新状态
             self.tableView.header.endRefreshing()
+            self.tableView.footer.resetNoMoreData()
         })
     }
     
