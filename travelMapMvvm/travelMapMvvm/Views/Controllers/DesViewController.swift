@@ -41,18 +41,6 @@ class DesViewController: UIViewController {
                 self.hideHUD()
             }
         }
-
-        self.startIndicatorAnimation()
-        self.desViewModel.desSelectionDicSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
-            
-            return any.materialize().filter({ (any:AnyObject!) -> Bool in
-                
-                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
-            })
-        }.subscribeNextAs({ (completed:RACEvent!) -> () in
-            
-            self.stopIndicatorAnimation()
-        })
         
         // 查询数据
         desViewModel.desSelectionDicSearch.execute(nil)

@@ -55,39 +55,39 @@ extension UIViewController :UITextFieldDelegate {
     /**
      * 动画
      */
-    func executeFadeAnimation() {
-        
-        var animated = CATransition()
-        animated.duration = 1.0
-        animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        animated.type = kCATransitionFade
-        animated.removedOnCompletion = true
-        animated.beginTime = CACurrentMediaTime() + 1
-        
-        self.view.layer.addAnimation(animated, forKey: nil)
-    }
-    
-    /**
-     * 开始提示动画
-     */
-    func startIndicatorAnimation() {
-        
-        self.indicatorView.alpha = 1
-        self.indicatorView.startAnimation()
-    }
-    
-    /**
-     * 停止提示动画
-     */
-    func stopIndicatorAnimation() {
-        
-        UIView.animateWithDuration(1, animations: { () -> Void in
-            
-            self.indicatorView.alpha = 0
-        }, completion: { (isfinished:Bool) -> Void in
-            
-            self.indicatorView.stopAnimation()
-        })
-    }
+//    func executeFadeAnimation() {
+//        
+//        var animated = CATransition()
+//        animated.duration = 1.0
+//        animated.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+//        animated.type = kCATransitionFade
+//        animated.removedOnCompletion = true
+//        animated.beginTime = CACurrentMediaTime() + 1
+//        
+//        self.view.layer.addAnimation(animated, forKey: nil)
+//    }
+//    
+//    /**
+//     * 开始提示动画
+//     */
+//    func startIndicatorAnimation() {
+//        
+//        self.indicatorView.alpha = 1
+//        self.indicatorView.startAnimation()
+//    }
+//    
+//    /**
+//     * 停止提示动画
+//     */
+//    func stopIndicatorAnimation() {
+//        
+//        UIView.animateWithDuration(1, animations: { () -> Void in
+//            
+//            self.indicatorView.alpha = 0
+//        }, completion: { (isfinished:Bool) -> Void in
+//            
+//            self.indicatorView.stopAnimation()
+//        })
+//    }
 
 }

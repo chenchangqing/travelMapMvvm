@@ -112,20 +112,6 @@ class IndexViewController: UITableViewController {
             }
         }
         
-        self.startIndicatorAnimation()
-        self.viewModel.refreshSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
-            
-            return any.materialize().filter({ (any:AnyObject!) -> Bool in
-                
-                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
-            })
-        }.subscribeNextAs({ (completed:RACEvent!) -> () in
-            
-            // 拿到当前的下拉刷新控件，结束刷新状态
-            self.tableView.header.endRefreshing()
-            self.stopIndicatorAnimation()
-        })
-        
         self.viewModel.loadmoreSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
             
             return any.materialize().filter({ (any:AnyObject!) -> Bool in
@@ -136,7 +122,6 @@ class IndexViewController: UITableViewController {
             
             // 拿到当前的下拉刷新控件，结束刷新状态
             self.tableView.footer.endRefreshing()
-            self.stopIndicatorAnimation()
             
             // set table status
             if self.viewModel.strategyList.count > 20 {
@@ -146,6 +131,18 @@ class IndexViewController: UITableViewController {
                 
                 self.tableView.footer.resetNoMoreData()
             }
+        })
+        
+        self.viewModel.refreshSearch.executionSignals.flattenMap { (any:AnyObject!) -> RACStream! in
+            
+            return any.materialize().filter({ (any:AnyObject!) -> Bool in
+                
+                return (any as! RACEvent).eventType.value == RACEventTypeCompleted.value
+            })
+        }.subscribeNextAs({ (completed:RACEvent!) -> () in
+            
+            // 拿到当前的下拉刷新控件，结束刷新状态
+            self.tableView.header.endRefreshing()
         })
     }
     
@@ -181,13 +178,6 @@ class IndexViewController: UITableViewController {
     }
     
     // MARK: - 请求数据之后回调
-    
-    /**
-     * 请求数据之后回调
-     */
-    private func callbackAfterGetData(any:AnyObject!) {
-        
-    }
     
     // MARK: - Navigation
     
