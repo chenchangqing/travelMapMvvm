@@ -36,9 +36,7 @@ class RegisterViewController: UIViewController {
         
         setupAllUIStyle()
         setupMessages()
-        
-        // 激活 view model
-        registerViewModel.active = true
+        setupBindViewModel()
     }
     
     /**
@@ -81,6 +79,34 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    /**
+     * 绑定viewModel
+     */
+    private func setupBindViewModel() {
+        
+        // 激活 view model
+        registerViewModel.active = true
+        
+        // 绑定tableView
+        RACObserve(registerViewModel, "countryAndAreaCode").subscribeNextAs { (result:CountryAndAreaCode) -> () in
+            
+            self.tableView.reloadData()
+        }
+        
+        // 绑定区号
+        RACObserve(registerViewModel, "countryAndAreaCode.areaCode") ~> RAC(areaCodeL,"text")
+        
+        // 绑定按钮
+        RACObserve(registerViewModel, "isValidTelephone") ~> RAC(btn,"enabled")
+        RACObserve(registerViewModel, "isValidTelephone").mapAs { (isValid:NSNumber) -> UIColor in
+            
+            return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        } ~> RAC(btn,"backgroundColor")
+        
+        // 绑定输入事件
+        self.telField.rac_textSignal() ~> RAC(registerViewModel, "telephone")
+    }
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -89,5 +115,45 @@ class RegisterViewController: UIViewController {
     
     @IBAction func unwindSegueToRegisterViewController(segue: UIStoryboardSegue) {
         
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        
+        if cell == nil {
+            
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "cell")
+        }
+        
+        cell!.detailTextLabel?.text = self.registerViewModel.countryAndAreaCode.countryName
+        cell!.detailTextLabel?.textColor = UIColor.blackColor()
+        cell!.textLabel?.text = "国家和地区"
+        cell!.textLabel?.textColor = UIColor.darkGrayColor()
+        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+        return cell!
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 50
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+//        let countryVc = SectionsViewController()
+//        countryVc.delegate = self
+//        countryVc.setAreaArray(areaArray)
+//        self.navigationController?.pushViewController(countryVc, animated: true)
     }
 }

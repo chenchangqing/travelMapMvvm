@@ -28,8 +28,8 @@ class SMSDataSource: SMSDataSourceProtocol {
         let result = CountryAndAreaCode()
         
         let diccodes = LocalAreaHelper.queryAreaCode() as! [String:String]
-        result.countryName = diccodes["defaultCode"]
-        result.areaCode = diccodes["defaultCountryName"]
+        result.countryName = diccodes["defaultCountryName"]
+        result.areaCode = diccodes["defaultCode"] == nil ? "" : ("+" + diccodes["defaultCode"]!)
         
         return result
     }
@@ -93,14 +93,24 @@ class SMSDataSource: SMSDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
+            var isTimeout = true
             SMS_SDK.getVerificationCodeBySMSWithPhone(phoneNumber, zone: zone, result: { (error:SMS_SDKError!) -> Void in
                 
+                isTimeout = false
                 if error != nil {
                     
                     subscriber.sendCompleted()
                 } else {
                     
                     subscriber.sendError(error)
+                }
+            })
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 10)), dispatch_get_main_queue(), { () -> Void in
+                
+                if isTimeout {
+                    
+                    subscriber.sendError(ErrorEnum.GetZonesError.error)
                 }
             })
             
@@ -112,14 +122,24 @@ class SMSDataSource: SMSDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
+            var isTimeout = true
             SMS_SDK.commitVerifyCode(code, result: { (state:SMS_ResponseState) -> Void in
                 
+                isTimeout = false
                 if state.value == 1 {
                     
                     subscriber.sendCompleted()
                 } else {
                     
                     subscriber.sendError(ErrorEnum.VerityCodeError.error)
+                }
+            })
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 10)), dispatch_get_main_queue(), { () -> Void in
+                
+                if isTimeout {
+                    
+                    subscriber.sendError(ErrorEnum.GetZonesError.error)
                 }
             })
             
