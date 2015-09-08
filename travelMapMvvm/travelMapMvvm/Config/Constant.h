@@ -34,6 +34,7 @@
 #define kSegueFromFilterViewControllerToIndexViewController @"FromFilterViewControllerToIndexViewController"
 #define kSegueFromDesViewControllerToIndexViewController    @"FromDesViewControllerToIndexViewController"
 #define kSegueFromRegisterViewControllerToVerifyViewController @"FromRegisterViewControllerToVerifyViewController"
+#define kSegueFromVerifyViewControllerToLoginViewController @"FromVerifyViewControllerToLoginViewController"
 
 // user operation key
 #define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)
@@ -51,5 +52,8 @@
 #define kMsgQQAuthFailure @"腾讯登录授权失败"
 #define kMsgSinaAuthFailure @"新浪登录授权失败"
 #define kMsgLoginSuccess @"登录成功"
+#define kMsgSendVerifyCodeSuccess @"发送验证码成功"
+#define kMsgCheckVerifyCodeSuccess @"校验验证码成功"
+#define kMsgRegisterSucess @"注册成功"
 
 

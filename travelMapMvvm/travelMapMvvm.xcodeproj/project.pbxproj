@@ -179,6 +179,7 @@
 		E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */; };
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
 		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
+		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
@@ -405,6 +406,7 @@
 		E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary-DeepMutableCopy.m"; sourceTree = "<group>"; };
 		E6B04FF01B9E869000B3415B /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
 		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -741,6 +743,7 @@
 				E687631F1B99724D0006DD3D /* LoginViewModel.swift */,
 				E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */,
 				E67B28261B9D43330070E3AD /* RegisterViewModel.swift */,
+				E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1369,6 +1372,7 @@
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
 				E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */,
+				E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */,
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,
 				E659F4CA1B8CEFFF005CD9FD /* MonthEnum.swift in Sources */,
 				E698AD831B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,

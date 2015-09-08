@@ -11,7 +11,7 @@ import ReactiveViewModel
 
 class RegisterViewModel: RVMViewModel,SecondViewControllerDelegate {
    
-    private let smsDataSourceProtocol = SMSDataSource.shareInstance()
+    let smsDataSourceProtocol = SMSDataSource.shareInstance()
     
     dynamic var countryAndAreaCode:CountryAndAreaCode!  // 国家名称、国家码
     dynamic var zonesArray = NSMutableArray()                  // 支持的区号数组

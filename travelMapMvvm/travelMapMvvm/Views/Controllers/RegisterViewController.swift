@@ -30,6 +30,23 @@ class RegisterViewController: UIViewController {
         setup()
     }
     
+    
+    // MARK: - Navigation
+    
+    @IBAction func unwindSegueToRegisterViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == kSegueFromRegisterViewControllerToVerifyViewController {
+            
+            let verifyViewController = segue.destinationViewController as! VerifyViewController
+            
+            verifyViewController.verifyViewModel = VerifyViewModel(registerViewModel: self.registerViewModel)
+        }
+    }
+    
     // MARK: -
     
     private func setup() {
@@ -171,16 +188,6 @@ class RegisterViewController: UIViewController {
                 self.performSegueWithIdentifier(kSegueFromRegisterViewControllerToVerifyViewController, sender: nil)
             })
         }
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
-    
-    @IBAction func unwindSegueToRegisterViewController(segue: UIStoryboardSegue) {
-        
     }
     
     // MARK: - UITableViewDataSource

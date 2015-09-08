@@ -65,4 +65,14 @@ protocol UserModelDataSourceProtocol {
      */
     func queryLoginPageDefaultTelephone() -> String
     
+    /**
+     * 手机注册
+     *
+     * @param telephone 手机号码
+     * @param password 用户密码
+     *
+     * @return  手机注册信号
+     */
+    func register(telephone:String, password: String) -> RACSignal
+    
 }

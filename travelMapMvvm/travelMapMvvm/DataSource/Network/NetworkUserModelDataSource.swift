@@ -166,4 +166,17 @@ class NetworkUserModelDataSource: UserModelDataSourceProtocol {
         }
         
     }
+    
+    func register(telephone: String, password: String) -> RACSignal {
+        
+        return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 3)), dispatch_get_main_queue(), { () -> Void in
+                
+                subscriber.sendCompleted()
+            })
+            
+            return nil
+        })
+    }
 }
