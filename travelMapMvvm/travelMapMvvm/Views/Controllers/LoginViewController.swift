@@ -76,13 +76,13 @@ class LoginViewController: UIViewController {
         isValidTelSignal = self.telF.rac_textSignal().mapAs {
             (text: NSString) -> NSNumber in
             
-            return self.isValidTelephone(text)
+            return ValidHelper.isValidTelephone(text)
         }
         
         // 密码校验信号
         isValidPwdSignal = pwdF.rac_textSignal().mapAs { (password:NSString) -> NSNumber in
             
-            return self.isValidPassword(password)
+            return ValidHelper.isValidPassword(password)
         }
         
         // 组合命令正在执行信号
@@ -137,7 +137,7 @@ class LoginViewController: UIViewController {
         // 如果有默认手机号，设置手机号文本框没有背景色
         let subscriber = RACSubject()
         isValidTelSignal.subscribe(subscriber)
-        if isValidTelephone(telF.text) {
+        if ValidHelper.isValidTelephone(telF.text) {
             
             subscriber.sendNext(true)
         }
@@ -290,24 +290,6 @@ class LoginViewController: UIViewController {
     }
 
     // ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
-    
-    // MARK: - Valid
-    
-    /**
-     * 校验手机号
-     */
-    private func isValidTelephone(telephoneStr:NSString) -> Bool {
-        
-        return telephoneStr.length == 11
-    }
-    
-    /**
-     * 校验密码
-     */
-    private func isValidPassword(password:NSString) -> Bool {
-        
-        return password.length > 0
-    }
     
     // MARK: - Navigation
 

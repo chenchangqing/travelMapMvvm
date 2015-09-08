@@ -75,4 +75,14 @@ protocol UserModelDataSourceProtocol {
      */
     func register(telephone:String, password: String) -> RACSignal
     
+    /**
+     * 修改密码
+     *
+     * @param telephone 手机号码
+     * @param password 用户密码
+     *
+     * @return  修改密码信号
+     */
+    func modifyPwd(telephone: String, password: String) -> RACSignal
+    
 }

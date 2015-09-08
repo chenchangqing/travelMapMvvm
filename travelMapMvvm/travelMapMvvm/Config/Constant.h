@@ -54,6 +54,7 @@
 #define kMsgLoginSuccess @"登录成功"
 #define kMsgSendVerifyCodeSuccess @"发送验证码成功"
 #define kMsgCheckVerifyCodeSuccess @"校验验证码成功"
-#define kMsgRegisterSucess @"注册成功"
+#define kMsgRegisterSuccess @"注册成功"
+#define kMsgModifyPwdSuccess @"密码修改成功"
 
 

@@ -61,6 +61,8 @@
 		E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */; };
 		E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* Main.storyboard */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
+		E66575F51B9F147F00C44CAC /* ValidHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F41B9F147F00C44CAC /* ValidHelper.swift */; };
+		E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */; };
 		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
 		E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */; };
 		E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */; };
@@ -258,6 +260,8 @@
 		E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryStrategyList.json; sourceTree = "<group>"; };
 		E659F4A21B8CEFFF005CD9FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E66575F41B9F147F00C44CAC /* ValidHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidHelper.swift; sourceTree = "<group>"; };
+		E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewModel.swift; sourceTree = "<group>"; };
 		E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageParamModel.swift; sourceTree = "<group>"; };
 		E67B281A1B9D279D0070E3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -665,6 +669,7 @@
 				E698AD471B8FEF94001B7D71 /* JSONHelper.swift */,
 				E659F4931B8CEFFF005CD9FD /* NetRequestClass.swift */,
 				E659F4941B8CEFFF005CD9FD /* ReadJsonClass.swift */,
+				E66575F41B9F147F00C44CAC /* ValidHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */,
 				E67B28261B9D43330070E3AD /* RegisterViewModel.swift */,
 				E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */,
+				E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1310,6 +1316,7 @@
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -1336,6 +1343,7 @@
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
 				E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */,
 				E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */,
+				E66575F51B9F147F00C44CAC /* ValidHelper.swift in Sources */,
 				E698AD501B8FF108001B7D71 /* RACSignal+Extensions.swift in Sources */,
 				E68763151B994B0D0006DD3D /* String+General.swift in Sources */,
 				E68730C21B91689400F3EA40 /* MJRefreshFooter.m in Sources */,

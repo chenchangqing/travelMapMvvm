@@ -70,13 +70,13 @@ class VerifyViewController: UIViewController, UITextFieldDelegate {
         isValidVerifyCodeSignal = verifyCodeF.rac_textSignal().mapAs {
             (text: NSString) -> NSNumber in
             
-            return self.isValidVerifyCode(text)
+            return ValidHelper.isValidVerifyCode(text)
         }
         
         // 密码是否有效信号
         isValidPwdSignal = passwordF.rac_textSignal().mapAs({ (text:NSString) -> NSNumber in
             
-            return self.isValidPassword(text)
+            return ValidHelper.isValidPassword(text)
         })
     }
     
@@ -223,7 +223,7 @@ class VerifyViewController: UIViewController, UITextFieldDelegate {
             }, completed: { () -> Void in
                 
                 // 执行跳转
-                self.verifyViewModel.msg = kMsgRegisterSucess
+                self.verifyViewModel.msg = kMsgRegisterSuccess
                 self.performSegueWithIdentifier(kSegueFromVerifyViewControllerToLoginViewController, sender: nil)
             })
         }
@@ -248,23 +248,5 @@ class VerifyViewController: UIViewController, UITextFieldDelegate {
                 self.verifyViewModel.msg = kMsgSendVerifyCodeSuccess
             })
         }
-    }
-    
-    // MARK: - valid
-    
-    /**
-     * 校验验证码
-     */
-    private func isValidVerifyCode(verifyCode:NSString) -> Bool {
-        
-        return verifyCode.length == 4
-    }
-    
-    /**
-     * 校验密码
-     */
-    private func isValidPassword(password:NSString) -> Bool {
-        
-        return password.length > 0
     }
 }
