@@ -73,6 +73,12 @@ class RegisterViewModel: RVMViewModel,SecondViewControllerDelegate {
             
             self.zonesArray = zonesArray
         }
+        
+        // 重置错误
+        searchZonesArrayCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.errorMsg = ""
+        }
     }
     
     /**
@@ -90,10 +96,10 @@ class RegisterViewModel: RVMViewModel,SecondViewControllerDelegate {
             return self.smsDataSourceProtocol.getVerificationCodeBySMS(self.telephone, zone: zoneCode)
         })
         
-        // 处理错误
-        sendVerityCodeCommand.errors.subscribeNextAs { (error:NSError!) -> () in
+        // 重置错误
+        sendVerityCodeCommand.executionSignals.subscribeNext { (any:AnyObject!) -> Void in
             
-            self.errorMsg = error.localizedDescription
+            self.errorMsg = ""
         }
     }
     

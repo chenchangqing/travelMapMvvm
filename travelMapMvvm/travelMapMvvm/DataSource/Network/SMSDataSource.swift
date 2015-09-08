@@ -62,7 +62,7 @@ class SMSDataSource: SMSDataSourceProtocol {
             })
             
             return nil
-        })
+        })//.subscribeOn(RACScheduler(priority: RACSchedulerPriorityBackground))
     }
     
     func isValidTelephone(telephone:String,zoneCode:String,zonesArray: NSArray) -> Bool {
@@ -102,7 +102,7 @@ class SMSDataSource: SMSDataSourceProtocol {
             SMS_SDK.getVerificationCodeBySMSWithPhone(phoneNumber, zone: zone, result: { (error:SMS_SDKError!) -> Void in
                 
                 isTimeout = false
-                if error != nil {
+                if error == nil {
                     
                     subscriber.sendCompleted()
                 } else {
@@ -120,7 +120,7 @@ class SMSDataSource: SMSDataSourceProtocol {
             })
             
             return nil
-        })
+        }).materialize()
     }
     
     func commitVerityCode(code: String) -> RACSignal {
