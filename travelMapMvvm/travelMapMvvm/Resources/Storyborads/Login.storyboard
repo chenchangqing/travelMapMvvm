@@ -599,7 +599,7 @@
                         <outlet property="view1" destination="dfJ-qk-hSl" id="XeI-Bp-97N"/>
                         <outlet property="view2" destination="MbS-fj-DVj" id="3Ww-D2-XIg"/>
                         <outlet property="view3" destination="67f-g5-tCR" id="NvT-Nc-5n7"/>
-                        <segue destination="Jkx-P3-gyg" kind="show" identifier="goVerifyVc" id="fa8-QV-hkw"/>
+                        <segue destination="Jkx-P3-gyg" kind="show" identifier="FromRegisterViewControllerToVerityViewController" id="fa8-QV-hkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6S-kV-hFw" userLabel="First Responder" sceneMemberID="firstResponder"/>

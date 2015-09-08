@@ -120,7 +120,7 @@ class SMSDataSource: SMSDataSourceProtocol {
             })
             
             return nil
-        }).materialize()
+        })
     }
     
     func commitVerityCode(code: String) -> RACSignal {

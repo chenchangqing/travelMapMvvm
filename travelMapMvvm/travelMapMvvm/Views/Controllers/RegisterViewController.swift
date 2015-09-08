@@ -168,6 +168,7 @@ class RegisterViewController: UIViewController {
             }, completed: { () -> Void in
                 
                 // 跳转
+                self.performSegueWithIdentifier(kSegueFromRegisterViewControllerToVerityViewController, sender: nil)
             })
         }
     }

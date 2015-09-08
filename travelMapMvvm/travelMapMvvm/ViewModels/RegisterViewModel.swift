@@ -93,7 +93,7 @@ class RegisterViewModel: RVMViewModel,SecondViewControllerDelegate {
         sendVerityCodeCommand = RACCommand(enabled: enabledSignal,signalBlock: { (any:AnyObject!) -> RACSignal! in
             
             let zoneCode = self.countryAndAreaCode.areaCode.stringByReplacingOccurrencesOfString("+", withString: "")
-            return self.smsDataSourceProtocol.getVerificationCodeBySMS(self.telephone, zone: zoneCode)
+            return self.smsDataSourceProtocol.getVerificationCodeBySMS(self.telephone, zone: zoneCode).materialize()
         })
         
         // 重置错误
