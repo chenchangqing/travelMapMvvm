@@ -24,6 +24,7 @@ class ForgetPwdViewModel: RVMViewModel {
     
     // 修改密码按钮背景色 textField背景色
     dynamic var submitBtnBgColor        = UIButton.enabledBackgroundColor
+    
     dynamic var telephoneFieldBgColor   = UIColor.clearColor()
     dynamic var passwordFieldBgColor    = UIColor.clearColor()
     dynamic var password2FieldBgColor   = UIColor.clearColor()
@@ -37,9 +38,6 @@ class ForgetPwdViewModel: RVMViewModel {
     var passwordSignal: RACSignal!      // 第一个密码校验信号
     var password2Signal: RACSignal!     // 第二个密码校验信号
     var verifyCodeSignal: RACSignal!    // 验证码校验信号
-    
-    var zoneCode:String!                   // 默认区号
-    
     
     private let userModelDataSourceProtocol = NetworkUserModelDataSource.shareInstance()
     private let smsDataSourceProtocol       = SMSDataSource.shareInstance()

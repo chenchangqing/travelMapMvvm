@@ -117,7 +117,7 @@ class ForgetPwdController: UIViewController, KeyboardProcessProtocol {
                 self.showHUDIndicator()
             } else {
                 
-                if !failureMsg.isEmpty || !successMsg.isEmpty {
+                if failureMsg.isEmpty && successMsg.isEmpty {
                     
                     self.hideHUD()
                 }
