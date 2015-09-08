@@ -104,6 +104,7 @@ class SMSDataSource: SMSDataSourceProtocol {
                 isTimeout = false
                 if error == nil {
                     
+                    subscriber.sendNext("该值是为了是跳转")
                     subscriber.sendCompleted()
                 } else {
                     

@@ -235,8 +235,13 @@ class VerifyViewController: UIViewController, UITextFieldDelegate {
                 
             }, error: { (error:NSError!) -> Void in
                 
-                let error = error as! SMS_SDKError
-                self.verifyViewModel.msg = "\(error.code),\(error.errorDescription)"
+                if let error = error as? SMS_SDKError {
+                    
+                    self.verifyViewModel.msg = "\(error.code),\(error.errorDescription)"
+                } else {
+                    
+                    self.verifyViewModel.msg = error.localizedDescription
+                }
             }, completed: { () -> Void in
                 
                 // 提示发送成功

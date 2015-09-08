@@ -176,16 +176,24 @@ class RegisterViewController: UIViewController {
         // 发送成功则跳转页面
         self.registerViewModel.sendVerityCodeCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
             
-            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).skipUntilBlock({ (any:AnyObject!) -> Bool in
                 
-            }, error: { (error:NSError!) -> Void in
-                
-                let error = error as! SMS_SDKError
-                self.registerViewModel.errorMsg = "\(error.code),\(error.errorDescription)"
-            }, completed: { () -> Void in
+                return self == self.navigationController?.topViewController
+            }).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 跳转
                 self.performSegueWithIdentifier(kSegueFromRegisterViewControllerToVerifyViewController, sender: nil)
+            }, error: { (error:NSError!) -> Void in
+                
+                if let error = error as? SMS_SDKError {
+                    
+                    self.registerViewModel.errorMsg = "\(error.code),\(error.errorDescription)"
+                } else {
+                    
+                    self.registerViewModel.errorMsg = error.localizedDescription
+                }
+            }, completed: { () -> Void in
+                
             })
         }
     }
