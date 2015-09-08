@@ -55,6 +55,7 @@ class RegisterViewController: UIViewController {
         setupMessages()
         setupBindViewModel()
         setupGetVerityCode()
+        setupTextFields()
     }
     
     /**
@@ -139,9 +140,6 @@ class RegisterViewController: UIViewController {
             
             return enabled.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
         } ~> RAC(btn,"backgroundColor")
-        
-        // 绑定输入事件
-        self.telField.rac_textSignal() ~> RAC(registerViewModel, "telephone")
     }
     
     /**
@@ -196,6 +194,18 @@ class RegisterViewController: UIViewController {
                 
             })
         }
+    }
+    
+    private func setupTextFields() {
+        
+        // 绑定输入事件
+        self.telField.rac_textSignal() ~> RAC(registerViewModel, "telephone")
+        
+        // 绑定手机号输入框背景色
+        RACObserve(self.registerViewModel, "isValidTelephone").skip(1).mapAs({ (enabled:NSNumber) -> UIColor in
+            
+            return enabled.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
+        }) ~> RAC(self.telField,"backgroundColor")
     }
     
     // MARK: - UITableViewDataSource
