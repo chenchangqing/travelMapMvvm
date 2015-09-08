@@ -44,7 +44,7 @@ class SMSDataSource: SMSDataSourceProtocol {
                 isTimeout = false
                 if 1 == state.value {
                     
-                    subscriber.sendNext(zonesArray)
+                    subscriber.sendNext(NSMutableArray(array: zonesArray))
                     subscriber.sendCompleted()
                     
                 } else {
@@ -68,6 +68,11 @@ class SMSDataSource: SMSDataSourceProtocol {
     func isValidTelephone(telephone:String,zoneCode:String,zonesArray: NSArray) -> Bool {
         
         var isValid = false
+        
+        if telephone.length != 11 {
+            
+            return isValid
+        }
         
         for(var i = 0; i < zonesArray.count ; i++) {
             

@@ -9,12 +9,12 @@
 import ReactiveCocoa
 import ReactiveViewModel
 
-class RegisterViewModel: RVMViewModel {
+class RegisterViewModel: RVMViewModel,SecondViewControllerDelegate {
    
     private let smsDataSourceProtocol = SMSDataSource.shareInstance()
     
     dynamic var countryAndAreaCode:CountryAndAreaCode!  // 国家名称、国家码
-    dynamic var zonesArray = NSArray()                  // 支持的区号数组
+    dynamic var zonesArray = NSMutableArray()                  // 支持的区号数组
     dynamic var errorMsg = ""                           // 错误提示信息
     dynamic var telephone = ""                          // 手机号
     dynamic var isValidTelephone = false                // 手机号是否有效
@@ -33,11 +33,11 @@ class RegisterViewModel: RVMViewModel {
         setupSendVerityCodeCommand()      // 初始化发送验证码命令
         
         // 手机号是否有效
-        RACObserve(self, "telephone").mapAs { (telephone:NSString) -> NSNumber in
+        RACSignalEx.combineLatestAs([RACObserve(self, "telephone"),RACObserve(self, "countryAndAreaCode")], reduce: { (telephone:NSString, cac:CountryAndAreaCode) -> NSNumber in
             
-            let zoneCode = self.countryAndAreaCode.areaCode.stringByReplacingOccurrencesOfString("+", withString: "")
+            let zoneCode = cac.areaCode.stringByReplacingOccurrencesOfString("+", withString: "")
             return self.smsDataSourceProtocol.isValidTelephone(telephone as String, zoneCode: zoneCode, zonesArray: self.zonesArray)
-        } ~> RAC(self,"isValidTelephone")
+        }) ~> RAC(self,"isValidTelephone")
         
         // 激活后开始更新数据
         didBecomeActiveSignal.subscribeNext { (any:AnyObject!) -> Void in
@@ -69,7 +69,7 @@ class RegisterViewModel: RVMViewModel {
         }
         
         // 更新支持的区号数组
-        searchZonesArrayCommand.executionSignals.switchToLatest().subscribeNextAs { (zonesArray:NSArray) -> () in
+        searchZonesArrayCommand.executionSignals.switchToLatest().subscribeNextAs { (zonesArray:NSMutableArray) -> () in
             
             self.zonesArray = zonesArray
         }
@@ -95,5 +95,13 @@ class RegisterViewModel: RVMViewModel {
             
             self.errorMsg = error.localizedDescription
         }
+    }
+    
+    // MARK: - SecondViewControllerDelegate
+    
+    func setSecondData(data: CountryAndAreaCode!) {
+        
+        data.areaCode = data.areaCode != nil ? ("+"+data.areaCode) : ""
+        self.countryAndAreaCode = data
     }
 }

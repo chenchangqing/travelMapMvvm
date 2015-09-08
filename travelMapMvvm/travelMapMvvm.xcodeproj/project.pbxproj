@@ -175,6 +175,10 @@
 		E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */; };
 		E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */; };
 		E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */; };
+		E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */; };
+		E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */; };
+		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
+		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
@@ -395,6 +399,12 @@
 		E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUserModelDataSource.swift; sourceTree = "<group>"; };
 		E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUserModelDataSource.swift; sourceTree = "<group>"; };
+		E6B04FEA1B9E83DA00B3415B /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
+		E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
+		E6B04FED1B9E854000B3415B /* NSDictionary-DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-DeepMutableCopy.h"; sourceTree = "<group>"; };
+		E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary-DeepMutableCopy.m"; sourceTree = "<group>"; };
+		E6B04FF01B9E869000B3415B /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
+		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,7 +776,13 @@
 		E67B28181B9D279D0070E3AD /* SMS_SDK */ = {
 			isa = PBXGroup;
 			children = (
+				E6B04FF21B9E86A700B3415B /* Localizable.strings */,
+				E6B04FF01B9E869000B3415B /* country.plist */,
+				E6B04FED1B9E854000B3415B /* NSDictionary-DeepMutableCopy.h */,
+				E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */,
 				E67B28231B9D3A900070E3AD /* LocalAreaHelper.h */,
+				E6B04FEA1B9E83DA00B3415B /* SectionsViewController.h */,
+				E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */,
 				E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */,
 				E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */,
 				E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */,
@@ -1188,6 +1204,7 @@
 			files = (
 				E604002D1B9BE0A400C3C0A8 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */,
+				E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */,
 				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
 				E60400321B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				E688EFC41B9200C400C01B23 /* IndexViewFooter.xib in Resources */,
@@ -1197,6 +1214,7 @@
 				E687631D1B9971220006DD3D /* qqLogin.json in Resources */,
 				E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */,
 				E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */,
+				E6B04FF11B9E869000B3415B /* country.plist in Resources */,
 				E60400361B9BE25600C3C0A8 /* readme.txt in Resources */,
 				E6A46F1D1B94994A00BA089B /* Login.storyboard in Resources */,
 				E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */,
@@ -1278,6 +1296,7 @@
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
+				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
@@ -1394,6 +1413,7 @@
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */,
 				E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */,
+				E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */,
 				E698ADA01B905C23001B7D71 /* UIViewController+General.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

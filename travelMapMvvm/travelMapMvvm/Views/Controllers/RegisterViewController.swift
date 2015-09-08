@@ -151,9 +151,9 @@ class RegisterViewController: UIViewController {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-//        let countryVc = SectionsViewController()
-//        countryVc.delegate = self
-//        countryVc.setAreaArray(areaArray)
-//        self.navigationController?.pushViewController(countryVc, animated: true)
+        let countryVc = SectionsViewController()
+        countryVc.delegate = registerViewModel
+        countryVc.setAreaArray(registerViewModel.zonesArray)
+        self.navigationController?.pushViewController(countryVc, animated: true)
     }
 }
