@@ -165,11 +165,9 @@ class RegisterViewController: UIViewController {
                 
                 let error = error as! SMS_SDKError
                 self.registerViewModel.errorMsg = "\(error.code),\(error.errorDescription)"
-                println(self.registerViewModel.errorMsg)
             }, completed: { () -> Void in
                 
                 // 跳转
-                println("completed")
             })
         }
     }
