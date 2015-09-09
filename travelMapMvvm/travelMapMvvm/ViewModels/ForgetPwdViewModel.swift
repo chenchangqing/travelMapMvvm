@@ -12,13 +12,19 @@ import ReactiveViewModel
 
 class ForgetPwdViewModel: RVMViewModel {
     
+    // MARK: - 提示信息
+    
     dynamic var failureMsg: String = ""     // 操作失败提示
     dynamic var successMsg: String = ""     // 操作失败提示
+    
+    // MARK: - 文本输入内容
     
     dynamic var telephone   : String = ""   // 手机号输入框文本
     dynamic var password    : String = ""   // 第一个密码输入框文本
     dynamic var password2   : String = ""   // 第二个密码输入框文本
     dynamic var verifyCode  : String = ""   // 验证码输入框文本
+    
+    // MARK: - 被UI绑定的属性
     
     dynamic var submitBtnEnabled = false    // 修改密码按钮是否可以点击
     dynamic var sendVerifyCodeBtnEnabled = false // 发送验证码短信按钮是否可以点击
@@ -33,17 +39,25 @@ class ForgetPwdViewModel: RVMViewModel {
     dynamic var password2FieldBgColor   = UIColor.clearColor()
     dynamic var verifyCodeFieldBgColor  = UIColor.clearColor()
     
+    // MARK: - 命令
+    
     var sendVerityCodeCommand:RACCommand!       // 发送验证码命令
     var modifyPwdCommand: RACCommand!           // 修改密码命令
     var commitVerifyCodeCommand: RACCommand!    // 验证验证码命令
+    
+    // MARK: - 文本校验信号
     
     var telephoneSignal: RACSignal!     // 手机校验信号
     var passwordSignal: RACSignal!      // 第一个密码校验信号
     var password2Signal: RACSignal!     // 第二个密码校验信号
     var verifyCodeSignal: RACSignal!    // 验证码校验信号
     
+    // MARK: - 数据操作类
+    
     private let userModelDataSourceProtocol = NetworkUserModelDataSource.shareInstance()
     private let smsDataSourceProtocol       = SMSDataSource.shareInstance()
+    
+    // MARK: - INIT
     
     override init() {
         
@@ -89,6 +103,8 @@ class ForgetPwdViewModel: RVMViewModel {
         updateUI()
     }
     
+    // MARK: - 初始化文本校验信号
+    
     /**
      * 初始化信号
      */
@@ -118,6 +134,8 @@ class ForgetPwdViewModel: RVMViewModel {
             return ValidHelper.isValidPassword(password)
         })
     }
+    
+    // MARK: - 更新UI
     
     /**
      * 更新UI
@@ -159,6 +177,8 @@ class ForgetPwdViewModel: RVMViewModel {
         
     }
     
+    // MARK: - 得到修改密码按钮是否可以点击信号
+    
     /**
      * 修改密码按钮是否可以点击
      */
@@ -182,6 +202,8 @@ class ForgetPwdViewModel: RVMViewModel {
         })
 
     }
+    
+    // MARK: - 得到修改密码按钮背景色信号
     
     /**
      * 修改密码按钮背景色信号

@@ -85,4 +85,25 @@ protocol UserModelDataSourceProtocol {
      */
     func modifyPwd(telephone: String, password: String) -> RACSignal
     
+    /** 
+     * 修改邮箱、昵称
+     *
+     * @param userId    用户ID
+     * @param userName  用户昵称
+     * @param email     用户邮箱
+     * 
+     * @return 修改邮箱、昵称信号
+     */
+    func modifyUInfo(userId:String, userName:String,email:String) -> RACSignal
+    
+    /*
+     * 上传头像
+     *
+     * @param userId 用户ID
+     * @param headImage 用户头像图片
+     *
+     * @return 上传头像信号
+     */
+    func uploadHeadImage(userId:String, headImage:UIImage) -> RACSignal
+    
 }

@@ -188,6 +188,7 @@
 		E6EB101C1B9FCB38009FA27F /* ModifyUInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */; };
 		E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */; };
 		E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */; };
+		E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB10211B9FDF80009FA27F /* ModifyUInfoViewModel.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -421,6 +422,7 @@
 		E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewController.swift; sourceTree = "<group>"; };
 		E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLineCell.swift; sourceTree = "<group>"; };
 		E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+General.swift"; sourceTree = "<group>"; };
+		E6EB10211B9FDF80009FA27F /* ModifyUInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewModel.swift; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD76521B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -759,6 +761,7 @@
 				E67B28261B9D43330070E3AD /* RegisterViewModel.swift */,
 				E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */,
 				E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */,
+				E6EB10211B9FDF80009FA27F /* ModifyUInfoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1350,6 +1353,7 @@
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
+				E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
