@@ -168,14 +168,21 @@ class IndexViewController: UITableViewController {
      */
     private func setupObserve() {
         
+        // 点击攻略命令
+        let cellClickedCommand = RACCommand { (any:AnyObject!) -> RACSignal! in
+            
+            let strategyModel = any as! StrategyModel
+            
+            self.performSegueWithIdentifier(kSegueFromIndexViewControllerToStrategyDetailViewController, sender: strategyModel)
+            return RACSignal.empty()
+        }
+        
         // 更新tableView
         bindingHelper = TableViewBindingHelper(
             tableView: tableView,
             sourceSignal: RACObserve(viewModel, "strategyList"),
-            reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: nil)
+            reuseIdentifier: kCellIdentifier, cellHeight: 200, selectionCommand: cellClickedCommand)
     }
-    
-    // MARK: - 请求数据之后回调
     
     // MARK: - Navigation
     
@@ -187,6 +194,17 @@ class IndexViewController: UITableViewController {
         
         if segue.identifier == kSegueFromDesViewControllerToIndexViewController {
             
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // 跳转至攻略详情页面
+        if segue.identifier == kSegueFromIndexViewControllerToStrategyDetailViewController {
+            
+            let strategyViewController = segue.destinationViewController as! StrategyDetailViewController
+            
+            strategyViewController.strategyModel = sender as! StrategyModel
         }
     }
 }

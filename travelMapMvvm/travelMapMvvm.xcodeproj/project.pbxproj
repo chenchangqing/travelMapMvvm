@@ -184,6 +184,8 @@
 		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
 		E6BCCC2F1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */; };
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
+		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
+		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
@@ -420,6 +422,8 @@
 		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
 		E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifyUInfoViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
+		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
+		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
@@ -749,6 +753,7 @@
 				E659F4A21B8CEFFF005CD9FD /* Main.storyboard */,
 				E6A46F1C1B94994A00BA089B /* Login.storyboard */,
 				E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */,
+				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -1023,6 +1028,7 @@
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */,
 				E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */,
+				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1237,6 +1243,7 @@
 				E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */,
 				E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */,
 				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
+				E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */,
 				E60400321B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				E688EFC41B9200C400C01B23 /* IndexViewFooter.xib in Resources */,
 				E688EFC61B92015D00C01B23 /* Images.xcassets in Resources */,
@@ -1392,6 +1399,7 @@
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				E68730C41B91689400F3EA40 /* MJRefreshAutoGifFooter.m in Sources */,
+				E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */,
 				E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */,
 				E67B28251B9D3A900070E3AD /* LocalAreaHelper.m in Sources */,
 				E698AD881B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,

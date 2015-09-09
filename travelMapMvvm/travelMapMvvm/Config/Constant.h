@@ -35,6 +35,7 @@
 #define kSegueFromDesViewControllerToIndexViewController    @"FromDesViewControllerToIndexViewController"
 #define kSegueFromRegisterViewControllerToVerifyViewController @"FromRegisterViewControllerToVerifyViewController"
 #define kSegueFromVerifyViewControllerToLoginViewController @"FromVerifyViewControllerToLoginViewController"
+#define kSegueFromIndexViewControllerToStrategyDetailViewController @"FromIndexViewControllerToStrategyDetailViewController"
 
 // user operation key
 #define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)
