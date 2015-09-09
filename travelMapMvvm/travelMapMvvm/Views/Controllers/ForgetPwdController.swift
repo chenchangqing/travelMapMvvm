@@ -85,6 +85,8 @@ class ForgetPwdController: UIViewController, KeyboardProcessProtocol {
         pwdF2.rac_textSignal()  ~> RAC(forgetPwdViewModel,"password2")
         codeF.rac_textSignal()  ~> RAC(forgetPwdViewModel,"verifyCode")
         
+        RACObserve(forgetPwdViewModel, "sendVerifyCodeBtnEnabled") ~> RAC(sendVerifyCodeBtn,"enabled")
+        RACObserve(forgetPwdViewModel, "sendVerifyCodeBtnBgColor") ~> RAC(sendVerifyCodeBtn,"backgroundColor")
         RACObserve(forgetPwdViewModel, "submitBtnEnabled") ~> RAC(sureBtn,"enabled")
         RACObserve(forgetPwdViewModel, "submitBtnBgColor") ~> RAC(sureBtn,"backgroundColor")
         
@@ -197,7 +199,7 @@ class ForgetPwdController: UIViewController, KeyboardProcessProtocol {
                 // 开始修改密码
                 self.forgetPwdViewModel.modifyPwdCommand.execute(nil)
             })
-        }
+        }   
         
         // 修改密码命令设置
         self.forgetPwdViewModel.modifyPwdCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in

@@ -21,10 +21,13 @@ class ForgetPwdViewModel: RVMViewModel {
     dynamic var verifyCode  : String = ""   // 验证码输入框文本
     
     dynamic var submitBtnEnabled = false    // 修改密码按钮是否可以点击
+    dynamic var sendVerifyCodeBtnEnabled = false // 发送验证码短信按钮是否可以点击
     
-    // 修改密码按钮背景色 textField背景色
-    dynamic var submitBtnBgColor        = UIButton.enabledBackgroundColor
+    // buttons背景色
+    dynamic var submitBtnBgColor            = UIButton.enabledBackgroundColor
+    dynamic var sendVerifyCodeBtnBgColor    = UIButton.enabledBackgroundColor
     
+    // textFields背景色
     dynamic var telephoneFieldBgColor   = UIColor.clearColor()
     dynamic var passwordFieldBgColor    = UIColor.clearColor()
     dynamic var password2FieldBgColor   = UIColor.clearColor()
@@ -121,6 +124,12 @@ class ForgetPwdViewModel: RVMViewModel {
      */
     private func updateUI() {
         
+        // 发送验证码按钮
+        telephoneSignal ~> RAC(self,"sendVerifyCodeBtnEnabled")
+        telephoneSignal.mapAs({ (isValid:NSNumber) -> UIColor in
+            
+            return isValid.boolValue ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
+        }) ~> RAC(self,"sendVerifyCodeBtnBgColor")
         
         // 修改密码按钮是否可以点击信号
         let submitBtnEnabledSignal = getSubmitBtnEnabledSignal()
