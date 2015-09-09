@@ -38,6 +38,7 @@ class ModifyUInfoViewController: UITableViewController {
         bindViewModel()
         setupMessage()
         setupEvent()
+        setupCommand()
     }
     
     /**
@@ -45,12 +46,13 @@ class ModifyUInfoViewController: UITableViewController {
      */
     private func bindViewModel() {
         
-        nameF.rac_textSignal()   ~> RAC(modifyUInfoViewModel,"userName")
-        emailF.rac_textSignal()  ~> RAC(modifyUInfoViewModel,"email")
+        nameF.rac_textSignal().skip(1)   ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.userName")
+        emailF.rac_textSignal().skip(1)  ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.email")
+        telF.rac_textSignal().skip(1)    ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.telephone")
         
-        RACObserve(modifyUInfoViewModel,"telephone").take(2)   ~> RAC(telF,  "text")
-        RACObserve(modifyUInfoViewModel,"email").take(2)       ~> RAC(emailF, "text")
-        RACObserve(modifyUInfoViewModel,"userName").take(2)    ~> RAC(nameF, "text")
+        RACObserve(modifyUInfoViewModel.leftViewModel.loginUser,"telephone")   ~> RAC(telF,  "text")
+        RACObserve(modifyUInfoViewModel.leftViewModel.loginUser,"email")       ~> RAC(emailF, "text")
+        RACObserve(modifyUInfoViewModel.leftViewModel.loginUser,"userName")    ~> RAC(nameF, "text")
         
         RACObserve(modifyUInfoViewModel, "submitBtnEnabled") ~> RAC(modifyBtn,"enabled")
         RACObserve(modifyUInfoViewModel, "submitBtnBgColor") ~> RAC(modifyBtn,"backgroundColor")
@@ -110,5 +112,26 @@ class ModifyUInfoViewController: UITableViewController {
             self.modifyUInfoViewModel.modifyUInfoCommand.execute(nil)
         }
     }
-
+    
+    /**
+     * 命令设置
+     */
+    private func setupCommand() {
+        
+        modifyUInfoViewModel.modifyUInfoCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新view model
+                self.modifyUInfoViewModel.leftViewModel.loginUser = any as? UserModel
+            }, error: { (error:NSError!) -> Void in
+                
+                self.modifyUInfoViewModel.failureMsg = error.localizedDescription
+            }, completed: { () -> Void in
+                
+                // 提示密码修改成功
+                self.modifyUInfoViewModel.successMsg = kMsgModifyUInfoSuccess
+            })
+        }
+    }
 }

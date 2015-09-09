@@ -18,10 +18,6 @@ class ModifyUInfoViewModel: RVMViewModel {
     
     // MARK: - 文本输入内容
     
-    dynamic var telephone   : String = ""   // 手机号输入框文本
-    dynamic var userName    : String = ""   // 昵称输入框文本
-    dynamic var email       : String = ""   // 邮箱输入框文本
-    
     // MARK: - 文本输入内容校验信号
     
     var userNameValidSignal : RACSignal!    // 昵称文本校验信号
@@ -65,9 +61,6 @@ class ModifyUInfoViewModel: RVMViewModel {
         
         // 重置提示信息
         resetMessages()
-        
-        // 初始化文本内容
-        setupFieldValues()
     }
     
     // MARK: - 初始化
@@ -77,12 +70,13 @@ class ModifyUInfoViewModel: RVMViewModel {
      */
     private func setupSignals() {
         
-        userNameValidSignal = RACObserve(self, "userName").mapAs { (userName:NSString) -> NSNumber in
+        // ignore(nil) 防止mapAs的时候 泛型报错
+        userNameValidSignal = RACObserve(self, "leftViewModel.loginUser.userName").ignore(nil).mapAs { (userName:NSString) -> NSNumber in
             
             return ValidHelper.isValidUsername(userName)
         }
-        
-        emailValidSignal = RACObserve(self, "email").mapAs { (email:NSString) -> NSNumber in
+
+        emailValidSignal = RACObserve(self, "leftViewModel.loginUser.email").ignore(nil).mapAs { (email:NSString) -> NSNumber in
             
             return ValidHelper.isValidEmail(email)
         }
@@ -99,7 +93,7 @@ class ModifyUInfoViewModel: RVMViewModel {
                 
                 if let headImage = any as? UIImage {
                     
-                    return self.leftViewModel.userModelDataSourceProtocol.uploadHeadImage(userId, headImage: headImage)
+                    return self.leftViewModel.userModelDataSourceProtocol.uploadHeadImage(userId, headImage: headImage).materialize()
                 }
             }
             
@@ -110,7 +104,13 @@ class ModifyUInfoViewModel: RVMViewModel {
             
             if let userId = self.leftViewModel.loginUser?.userId {
                 
-                return self.leftViewModel.userModelDataSourceProtocol.modifyUInfo(userId, userName: self.userName, email: self.email)
+                if let userName = self.leftViewModel.loginUser?.userName {
+                    
+                    if let email = self.leftViewModel.loginUser?.email {
+                        
+                        return self.leftViewModel.userModelDataSourceProtocol.modifyUInfo(userId, userName: userName, email: email).materialize()
+                    }
+                }
             }
             
             return RACSignal.empty()
@@ -132,7 +132,7 @@ class ModifyUInfoViewModel: RVMViewModel {
             
             return isValid.boolValue ? UIColor.clearColor() : UITextField.warningBackgroundColor
         }) ~> RAC(self,"emailFieldBgColor")
-        
+
         // 修改按钮
         let submitBtnEnabledSignal = RACSignalEx.combineLatestAs([userNameValidSignal,emailValidSignal], reduce: { (userNameValid:NSNumber, emailValid:NSNumber) -> NSNumber in
             
@@ -158,30 +158,6 @@ class ModifyUInfoViewModel: RVMViewModel {
             
             self.failureMsg = ""
             self.successMsg = ""
-        }
-    }
-    
-    /**
-     * 初始化文本内容
-     */
-    private func setupFieldValues() {
-        
-        if let loginUser = leftViewModel.loginUser {
-            
-            if let userName = loginUser.userName {
-                
-                self.userName = userName
-            }
-            
-            if let email = loginUser.email {
-                
-                self.email = email
-            }
-            
-            if let telephone = loginUser.telephone {
-                
-                self.telephone = telephone
-            }
         }
     }
 }

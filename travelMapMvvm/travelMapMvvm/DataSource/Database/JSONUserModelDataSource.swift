@@ -204,6 +204,9 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
                  
                     loginUser.email = email
                     loginUser.userName = userName
+                    
+                    self.saveUser(loginUser)
+                    
                     subscriber.sendNext(loginUser)
                 }
                 
