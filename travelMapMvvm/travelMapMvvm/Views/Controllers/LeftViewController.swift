@@ -170,7 +170,7 @@ class LeftViewController: UITableViewController {
     // MARK: -
     
     /**
-     * 登录进入个人资料
+     * 登录
      */
     private func login(loginSuccessCompletionCallback:()->Void) {
         

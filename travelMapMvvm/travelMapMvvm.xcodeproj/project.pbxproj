@@ -186,6 +186,8 @@
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
 		E6EB101C1B9FCB38009FA27F /* ModifyUInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */; };
+		E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */; };
+		E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */; };
 		E6FD76541B8C5F1800E527CD /* travelMapMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD76531B8C5F1800E527CD /* travelMapMvvmTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -417,6 +419,8 @@
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
 		E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewController.swift; sourceTree = "<group>"; };
+		E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLineCell.swift; sourceTree = "<group>"; };
+		E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+General.swift"; sourceTree = "<group>"; };
 		E6FD76381B8C5F1800E527CD /* travelMapMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelMapMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD764D1B8C5F1800E527CD /* travelMapMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelMapMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD76521B8C5F1800E527CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -774,6 +778,7 @@
 		E659F4AD1B8CEFFF005CD9FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */,
 				E611B3A91B8DB9080034B267 /* StrategyCell.swift */,
 			);
 			path = Cell;
@@ -992,6 +997,7 @@
 				E6A46F201B949EDC00BA089B /* UIButton+Login.swift */,
 				E6A46F221B94A00000BA089B /* UIView+Login.swift */,
 				E68763171B9964320006DD3D /* UITextField+General.swift */,
+				E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1335,6 +1341,7 @@
 				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
+				E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
 				E698AD551B8FF356001B7D71 /* IndexViewModel.swift in Sources */,
 				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
@@ -1397,6 +1404,7 @@
 				E68730CE1B91689400F3EA40 /* MJRefreshConst.m in Sources */,
 				E6AA5E521B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,
+				E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */,
 				E698AD511B8FF108001B7D71 /* TableViewBindingHelper.swift in Sources */,
 				E698AD991B905BA6001B7D71 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				E6AA5E501B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift in Sources */,

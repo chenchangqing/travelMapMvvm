@@ -8,7 +8,7 @@
         <!--修改资料-->
         <scene sceneID="fNe-Wv-HhW">
             <objects>
-                <tableViewController id="0lT-lT-DvL" customClass="ModifyuinfoViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0lT-lT-DvL" customClass="ModifyUInfoViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="n3J-yt-8Y9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                         <sections>
                             <tableViewSection id="mbD-Vn-XAo">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="DWD-fC-CB9" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="DWD-fC-CB9" customClass="BottomLineCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DWD-fC-CB9" id="4Bf-jz-ntQ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -70,7 +70,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GFE-1e-etm" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GFE-1e-etm" customClass="BottomLineCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFE-1e-etm" id="Rax-rh-1DB">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -103,7 +103,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ahe-CL-3D1" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ahe-CL-3D1" customClass="BottomLineCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ahe-CL-3D1" id="nJU-rF-GsV">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -148,7 +148,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fpk-3h-Alw" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fpk-3h-Alw" customClass="BottomLineCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fpk-3h-Alw" id="ag2-gc-B2D">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -200,11 +200,18 @@
                     <navigationItem key="navigationItem" title="修改资料" id="ePa-UM-6rx">
                         <barButtonItem key="leftBarButtonItem" image="menu_btn_nor" id="P7L-X4-inZ">
                             <connections>
-                                <action selector="presentLeftMenuViewController" destination="0lT-lT-DvL" id="nhd-nS-7Ih"/>
+                                <action selector="presentLeftMenuViewController" destination="0lT-lT-DvL" id="xH2-Rb-kvO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailF" destination="mrA-Pu-m3D" id="b2H-9j-f6H"/>
+                        <outlet property="headC" destination="Eiw-P5-zjn" id="r8M-ls-YcA"/>
+                        <outlet property="modifyBtn" destination="yfG-a2-khe" id="Uju-hP-e1P"/>
+                        <outlet property="nameF" destination="DJh-Pn-WY3" id="ShW-lU-obS"/>
+                        <outlet property="telF" destination="JJZ-De-fdV" id="lpi-HW-ycr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2p-ga-Zef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
