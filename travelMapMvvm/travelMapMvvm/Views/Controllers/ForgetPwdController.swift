@@ -199,7 +199,7 @@ class ForgetPwdController: UIViewController, KeyboardProcessProtocol {
                 // 开始修改密码
                 self.forgetPwdViewModel.modifyPwdCommand.execute(nil)
             })
-        }   
+        }
         
         // 修改密码命令设置
         self.forgetPwdViewModel.modifyPwdCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
