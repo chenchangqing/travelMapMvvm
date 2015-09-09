@@ -116,11 +116,7 @@ class LeftViewController: UITableViewController {
             login({ () -> Void in
                 
                 // 登录完成后回调
-                let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
-                modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
-                
-                self.sideMenuViewController?.contentViewController = modifyUInfoViewController
-                self.sideMenuViewController?.hideMenuViewController()
+                self.showUserInfoPage()
             })
             
             break;
@@ -148,11 +144,7 @@ class LeftViewController: UITableViewController {
             login({ () -> Void in
                 
                 // 登录完成后回调
-                let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
-                modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
-                
-                self.sideMenuViewController?.contentViewController = modifyUInfoViewController
-                self.sideMenuViewController?.hideMenuViewController()
+                self.showUserInfoPage()
             })
             
             break;
@@ -203,11 +195,7 @@ class LeftViewController: UITableViewController {
         }, loginSuccessCompletionCallback: { () -> Void in
             
             // 登录完成后回调
-            let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
-            modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
-            
-            self.sideMenuViewController?.contentViewController = modifyUInfoViewController
-            self.sideMenuViewController?.hideMenuViewController()
+            self.showUserInfoPage()
         }, exitLoginSuccessCompletionCallback: { () -> Void in
             
             // 退出登录后回调
@@ -215,6 +203,21 @@ class LeftViewController: UITableViewController {
             self.sideMenuViewController?.hideMenuViewController()
         })
         NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionExitLoginNotificationName, object: paramObj, userInfo: nil)
+    }
+    
+    /**
+     * 现实个人资料页面
+     */
+    private func showUserInfoPage() {
+        
+        let modifyUInfoViewControllerNav
+        = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController
+        
+        let modifyUInfoViewController = modifyUInfoViewControllerNav.topViewController as! ModifyUInfoViewController
+        modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
+        
+        self.sideMenuViewController?.contentViewController = modifyUInfoViewControllerNav
+        self.sideMenuViewController?.hideMenuViewController()
     }
 
 }
