@@ -116,7 +116,10 @@ class LeftViewController: UITableViewController {
             login({ () -> Void in
                 
                 // 登录完成后回调
-                self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+                let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
+                modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
+                
+                self.sideMenuViewController?.contentViewController = modifyUInfoViewController
                 self.sideMenuViewController?.hideMenuViewController()
             })
             
@@ -145,7 +148,10 @@ class LeftViewController: UITableViewController {
             login({ () -> Void in
                 
                 // 登录完成后回调
-                self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+                let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
+                modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
+                
+                self.sideMenuViewController?.contentViewController = modifyUInfoViewController
                 self.sideMenuViewController?.hideMenuViewController()
             })
             
@@ -197,7 +203,10 @@ class LeftViewController: UITableViewController {
         }, loginSuccessCompletionCallback: { () -> Void in
             
             // 登录完成后回调
-            self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+            let modifyUInfoViewController = (UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav") as! UINavigationController).topViewController as! ModifyUInfoViewController
+            modifyUInfoViewController.modifyUInfoViewModel = ModifyUInfoViewModel(leftViewModel: self.leftViewModel)
+            
+            self.sideMenuViewController?.contentViewController = modifyUInfoViewController
             self.sideMenuViewController?.hideMenuViewController()
         }, exitLoginSuccessCompletionCallback: { () -> Void in
             

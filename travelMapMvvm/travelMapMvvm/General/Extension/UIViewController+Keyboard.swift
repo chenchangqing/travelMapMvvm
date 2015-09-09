@@ -91,11 +91,12 @@ extension UIViewController:UIScrollViewDelegate {
     
     // MARK: - UIScrollViewDelegate
     
-    public func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        if scrollView.contentOffset.y < 0 {
-            
-            view.endEditing(true)
-        }
-    }
+    /** 避免使用tableView 出错 待解决**/
+//    public func scrollViewDidScroll(scrollView: UIScrollView) {
+//        
+//        if scrollView.contentOffset.y < 0 {
+//            
+//            view.endEditing(true)
+//        }
+//    }
 }

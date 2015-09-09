@@ -16,7 +16,7 @@ class ValidHelper: NSObject {
      */
     class func isValidTelephone(telephoneStr:NSString) -> Bool {
         
-        return telephoneStr.length == 11
+        return String(telephoneStr).length == 11
     }
     
     /**
@@ -24,7 +24,7 @@ class ValidHelper: NSObject {
      */
     class func isValidPassword(password:NSString) -> Bool {
         
-        return password.length > 0
+        return String(password).length > 0
     }
     
     /**
@@ -32,6 +32,23 @@ class ValidHelper: NSObject {
      */
     class func isValidVerifyCode(verifyCode:NSString) -> Bool {
         
-        return verifyCode.length == 4
+        return String(verifyCode).length == 4
+    }
+    
+    /**
+     * 校验用户名
+     */
+    class func isValidUsername(userName:NSString) -> Bool {
+        
+        return String(userName).length > 0
+    }
+    
+    /**
+     * 校验邮箱
+     */
+    class func isValidEmail(email:NSString) -> Bool {
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}")
+        return predicate.evaluateWithObject(email)
     }
 }

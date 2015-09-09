@@ -21,7 +21,7 @@ class LeftViewModel: ImageViewModel {
     dynamic var loginStatus: String = kTextLoginAccount
     
     // 操作用户数据协议
-    private let userModelDataSourceProtocol = JSONUserModelDataSource.shareInstance()
+    let userModelDataSourceProtocol = JSONUserModelDataSource.shareInstance()
     
     // Mark: - init
     

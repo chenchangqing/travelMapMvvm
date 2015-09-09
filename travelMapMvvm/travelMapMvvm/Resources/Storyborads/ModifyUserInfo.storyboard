@@ -163,7 +163,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="不可以修改" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JJZ-De-fdV">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="不可以修改" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JJZ-De-fdV">
                                                     <rect key="frame" x="56" y="10" width="303" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="4BW-fq-3B3"/>
@@ -196,6 +196,10 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0lT-lT-DvL" id="04V-AK-jMW"/>
+                            <outlet property="delegate" destination="0lT-lT-DvL" id="Mqo-mQ-L5M"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="修改资料" id="ePa-UM-6rx">
                         <barButtonItem key="leftBarButtonItem" image="menu_btn_nor" id="P7L-X4-inZ">
