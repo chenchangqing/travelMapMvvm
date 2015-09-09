@@ -8,7 +8,7 @@
         <!--修改资料-->
         <scene sceneID="fNe-Wv-HhW">
             <objects>
-                <tableViewController storyboardIdentifier="ModifyuinfoViewController" id="0lT-lT-DvL" customClass="ModifyuinfoViewController" customModule="travelMap" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0lT-lT-DvL" customClass="ModifyuinfoViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="n3J-yt-8Y9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,12 +38,12 @@
                         <sections>
                             <tableViewSection id="mbD-Vn-XAo">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="DWD-fC-CB9" customClass="BorderCell" customModule="travelMap" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="DWD-fC-CB9" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DWD-fC-CB9" id="4Bf-jz-ntQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eiw-P5-zjn" customClass="GCircleControl" customModule="travelMap" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eiw-P5-zjn" customClass="GCircleControl" customModule="travelMapMvvm" customModuleProvider="target">
                                                     <rect key="frame" x="145" y="23" width="85" height="85"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -70,7 +70,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GFE-1e-etm" customClass="BorderCell" customModule="travelMap" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GFE-1e-etm" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFE-1e-etm" id="Rax-rh-1DB">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -92,9 +92,6 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="0lT-lT-DvL" id="Yp4-cF-nNu"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -106,7 +103,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ahe-CL-3D1" customClass="BorderCell" customModule="travelMap" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ahe-CL-3D1" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ahe-CL-3D1" id="nJU-rF-GsV">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -134,9 +131,6 @@
                                                             <exclude reference="qge-ct-Dgm"/>
                                                         </mask>
                                                     </variation>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="0lT-lT-DvL" id="Ycc-oQ-gjp"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -154,7 +148,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fpk-3h-Alw" customClass="BorderCell" customModule="travelMap" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fpk-3h-Alw" customClass="BorderCell" customModule="travelMapMvvm" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fpk-3h-Alw" id="ag2-gc-B2D">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -182,9 +176,6 @@
                                                             <exclude reference="Njj-kd-hQA"/>
                                                         </mask>
                                                     </variation>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="0lT-lT-DvL" id="Z1V-ts-GV3"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -205,10 +196,6 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="0lT-lT-DvL" id="X5C-xz-DWA"/>
-                            <outlet property="delegate" destination="0lT-lT-DvL" id="olM-yk-UVu"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="修改资料" id="ePa-UM-6rx">
                         <barButtonItem key="leftBarButtonItem" image="menu_btn_nor" id="P7L-X4-inZ">
@@ -218,13 +205,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="emailF" destination="mrA-Pu-m3D" id="8DS-we-Kdr"/>
-                        <outlet property="headC" destination="Eiw-P5-zjn" id="IU8-b8-XcR"/>
-                        <outlet property="modifyBtn" destination="yfG-a2-khe" id="bra-Iy-l0l"/>
-                        <outlet property="nameF" destination="DJh-Pn-WY3" id="tZg-A6-g3c"/>
-                        <outlet property="telF" destination="JJZ-De-fdV" id="yK4-QW-eud"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2p-ga-Zef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +213,7 @@
         <!--UserInfo Navigation Controller-->
         <scene sceneID="uMC-b6-rIO">
             <objects>
-                <navigationController storyboardIdentifier="ModifyuinfoViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="Gp8-0T-5Um" userLabel="UserInfo Navigation Controller" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ModifyUInfoViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="Gp8-0T-5Um" userLabel="UserInfo Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ab-td-6jX">

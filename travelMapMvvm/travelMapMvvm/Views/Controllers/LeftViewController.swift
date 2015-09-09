@@ -113,17 +113,12 @@ class LeftViewController: UITableViewController {
             
         // 点击头像所在行
         case 0:
-            
-            // 发出统一登录通知
-            let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
-                
-                // 登录页面呈现后回调
-                self.sideMenuViewController?.hideMenuViewController()
-            }, loginSuccessCompletionCallback: { () -> Void in
+            login({ () -> Void in
                 
                 // 登录完成后回调
+                self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+                self.sideMenuViewController?.hideMenuViewController()
             })
-            NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionNotificationName, object: paramObj, userInfo: nil)
             
             break;
             
@@ -147,6 +142,12 @@ class LeftViewController: UITableViewController {
             
         // 点击修改资料所在行
         case 4:
+            login({ () -> Void in
+                
+                // 登录完成后回调
+                self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+                self.sideMenuViewController?.hideMenuViewController()
+            })
             
             break;
             
@@ -157,27 +158,54 @@ class LeftViewController: UITableViewController {
             
         // 点击登录帐号/登出帐号所在行
         case 6:
-            
-            // 未解决bug: 登录后马上退出还在继续加载头像
-            // 发出统一登录退出通知
-            let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
-                
-                // 登录页面呈现后回调
-                self.sideMenuViewController?.hideMenuViewController()
-            }, loginSuccessCompletionCallback: { () -> Void in
-                
-                // 登录完成后回调
-            }, exitLoginSuccessCompletionCallback: { () -> Void in
-                
-                // 退出登录后回调
-            })
-            NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionExitLoginNotificationName, object: paramObj, userInfo: nil)
+            loginOrLogout()
             
             break;
 
         default:
             break;
         }
+    }
+    
+    // MARK: -
+    
+    /**
+     * 登录进入个人资料
+     */
+    private func login(loginSuccessCompletionCallback:()->Void) {
+        
+        // 发出统一登录通知
+        let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
+            
+            // 登录页面呈现后回调
+            self.sideMenuViewController?.hideMenuViewController()
+        }, loginSuccessCompletionCallback: loginSuccessCompletionCallback)
+        NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionNotificationName, object: paramObj, userInfo: nil)
+    }
+    
+    /**
+     * 登录或退出
+     */
+    private func loginOrLogout() {
+        
+        // 未解决bug: 登录后马上退出还在继续加载头像
+        // 发出统一登录退出通知
+        let paramObj = LoginPageParamModel(presentLoginPageCompletionCallback: { () -> Void in
+            
+            // 登录页面呈现后回调
+            self.sideMenuViewController?.hideMenuViewController()
+        }, loginSuccessCompletionCallback: { () -> Void in
+            
+            // 登录完成后回调
+            self.sideMenuViewController?.contentViewController = UIViewController.getViewController("ModifyUserInfo", identifier: "ModifyUInfoViewControllerNav")
+            self.sideMenuViewController?.hideMenuViewController()
+        }, exitLoginSuccessCompletionCallback: { () -> Void in
+            
+            // 退出登录后回调
+            self.sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "IndexViewControllerNav")
+            self.sideMenuViewController?.hideMenuViewController()
+        })
+        NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionExitLoginNotificationName, object: paramObj, userInfo: nil)
     }
 
 }
