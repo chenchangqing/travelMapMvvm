@@ -31,6 +31,13 @@ class ModifyUInfoViewController: UITableViewController {
         setup()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // 查询最终登录用户
+        self.modifyUInfoViewModel.leftViewModel.queryLoginUser()
+    }
+    
     // MARK: - setup
     
     private func setup() {
@@ -46,9 +53,9 @@ class ModifyUInfoViewController: UITableViewController {
      */
     private func bindViewModel() {
         
-        nameF.rac_textSignal().skip(1)   ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.userName")
+        nameF.rac_textSignal().skip(1) ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.userName")
         emailF.rac_textSignal().skip(1)  ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.email")
-        telF.rac_textSignal().skip(1)    ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.telephone")
+        telF.rac_textSignal().skip(1)  ~> RAC(modifyUInfoViewModel,"leftViewModel.loginUser.telephone")
         
         RACObserve(modifyUInfoViewModel.leftViewModel.loginUser,"telephone")   ~> RAC(telF,  "text")
         RACObserve(modifyUInfoViewModel.leftViewModel.loginUser,"email")       ~> RAC(emailF, "text")

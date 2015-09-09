@@ -59,4 +59,12 @@ class LeftViewModel: ImageViewModel {
             self.loginUser = notification.object as? UserModel
         }
     }
+    
+    /**
+     * 重新查询登录用户(当修改资料页面消失的时候调用)
+     */
+    func queryLoginUser() {
+        
+        loginUser = userModelDataSourceProtocol.queryUser()
+    }
 }
