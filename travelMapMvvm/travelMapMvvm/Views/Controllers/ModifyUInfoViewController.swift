@@ -13,15 +13,16 @@ class ModifyUInfoViewController: UITableViewController {
     
     // MARK: - UI
     
-    @IBOutlet private weak var headC: GCircleControl!
-    @IBOutlet private weak var nameF: UITextField!
-    @IBOutlet private weak var emailF: UITextField!
-    @IBOutlet private weak var telF: UITextField!
+    @IBOutlet private weak var headC    : GCircleControl!
+    @IBOutlet private weak var nameF    : UITextField!
+    @IBOutlet private weak var emailF   : UITextField!
+    @IBOutlet private weak var telF     : UITextField!
     @IBOutlet private weak var modifyBtn: UIButton!
     
-    // MARK: - view model
+    // MARK: -
     
-    var modifyUInfoViewModel : ModifyUInfoViewModel!
+    var modifyUInfoViewModel    : ModifyUInfoViewModel!     // view model
+    var imagePickerVC           : UIImagePickerController!  // 图片选择器
 
     // MARK: - life cycle
     
@@ -46,6 +47,7 @@ class ModifyUInfoViewController: UITableViewController {
         setupMessage()
         setupEvent()
         setupCommand()
+        setupImagePickerVC()
     }
     
     /**
@@ -66,6 +68,8 @@ class ModifyUInfoViewController: UITableViewController {
         
         RACObserve(modifyUInfoViewModel,"userNameFieldBgColor")    ~> RAC(nameF,  "backgroundColor")
         RACObserve(modifyUInfoViewModel,"emailFieldBgColor")       ~> RAC(emailF, "backgroundColor")
+        
+        RACObserve(modifyUInfoViewModel.leftViewModel, "image") ~> RAC(headC,"image")
     }
     
     /**
@@ -118,6 +122,28 @@ class ModifyUInfoViewController: UITableViewController {
             self.view.endEditing(true)
             self.modifyUInfoViewModel.modifyUInfoCommand.execute(nil)
         }
+        
+        headC.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            let actionSheet = UIActionSheet(title: nil, delegate: nil, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "相册","拍照")
+            
+            actionSheet.rac_buttonClickedSignal().subscribeNextAs({ (index:NSNumber) -> () in
+                
+                if index.integerValue == 1 {
+                    
+                    // 相册
+                    self.openPhotoLibrary()
+                }
+                
+                if index.integerValue == 2 {
+                    
+                    // 拍照
+                    self.openCamera()
+                }
+            })
+            
+            actionSheet.showInView(self.view)
+        }
     }
     
     /**
@@ -138,6 +164,22 @@ class ModifyUInfoViewController: UITableViewController {
                 
                 // 提示密码修改成功
                 self.modifyUInfoViewModel.successMsg = kMsgModifyUInfoSuccess
+            })
+        }
+        
+        modifyUInfoViewModel.uploadHeadImageCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新view model
+                self.modifyUInfoViewModel.leftViewModel.loginUser = any as? UserModel
+            }, error: { (error:NSError!) -> Void in
+                
+                self.modifyUInfoViewModel.failureMsg = error.localizedDescription
+            }, completed: { () -> Void in
+                
+                // 提示上传头像成功
+                self.modifyUInfoViewModel.successMsg = kMsgUploadHeadImageSuccess
             })
         }
     }

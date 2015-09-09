@@ -182,6 +182,8 @@
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
 		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
 		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
+		E6BCCC2F1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */; };
+		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
@@ -416,6 +418,8 @@
 		E6B04FF01B9E869000B3415B /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
 		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
+		E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifyUInfoViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
@@ -674,6 +678,7 @@
 		E659F4921B8CEFFF005CD9FD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */,
 				E6A46F1E1B949E5A00BA089B /* ColorHelper.swift */,
 				E698AD461B8FEF94001B7D71 /* JSONHelper.h */,
 				E698AD471B8FEF94001B7D71 /* JSONHelper.swift */,
@@ -1017,6 +1022,7 @@
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */,
+				E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1325,6 +1331,7 @@
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
+				E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
@@ -1396,6 +1403,7 @@
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E68763181B9964320006DD3D /* UITextField+General.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				E6BCCC2F1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
 				E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */,

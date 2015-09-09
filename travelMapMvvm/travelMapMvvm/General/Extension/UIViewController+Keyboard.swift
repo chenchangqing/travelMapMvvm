@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UIViewController:UIScrollViewDelegate {
+extension UIViewController:UIScrollViewDelegate,UITextFieldDelegate {
     
     func registerKeyboardNotification() {
         

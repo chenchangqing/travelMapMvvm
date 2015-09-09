@@ -222,6 +222,14 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 3)), dispatch_get_main_queue(), { () -> Void in
                 
+                if let loginUser = self.queryUser() {
+                    
+                    loginUser.userPicUrl = "http://www.qqbody.com/uploads/allimg/201409/10-160540_880.jpg"
+                    
+                    self.saveUser(loginUser)
+                    
+                    subscriber.sendNext(loginUser)
+                }
                 subscriber.sendCompleted()
             })
             return nil
