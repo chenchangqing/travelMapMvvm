@@ -53,6 +53,14 @@ extension UIViewController :UITextFieldDelegate {
     }
     
     /**
+     * back
+     */
+    @IBAction func back(sender: AnyObject) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    /**
      * 动画
      */
 //    func executeFadeAnimation() {
