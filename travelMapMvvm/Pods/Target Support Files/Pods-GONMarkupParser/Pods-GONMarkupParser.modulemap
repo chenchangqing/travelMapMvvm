@@ -1,0 +1,6 @@
+framework module GONMarkupParser {
+  umbrella header "Pods-GONMarkupParser-umbrella.h"
+
+  export *
+  module * { export * }
+}

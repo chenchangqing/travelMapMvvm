@@ -54,11 +54,23 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// GONMarkupParser
+#define COCOAPODS_POD_AVAILABLE_GONMarkupParser
+#define COCOAPODS_VERSION_MAJOR_GONMarkupParser 0
+#define COCOAPODS_VERSION_MINOR_GONMarkupParser 6
+#define COCOAPODS_VERSION_PATCH_GONMarkupParser 6
+
 // Kiwi
 #define COCOAPODS_POD_AVAILABLE_Kiwi
 #define COCOAPODS_VERSION_MAJOR_Kiwi 1
 #define COCOAPODS_VERSION_MINOR_Kiwi 1
 #define COCOAPODS_VERSION_PATCH_Kiwi 1
+
+// NSString+Color
+#define COCOAPODS_POD_AVAILABLE_NSString_Color
+#define COCOAPODS_VERSION_MAJOR_NSString_Color 1
+#define COCOAPODS_VERSION_MINOR_NSString_Color 1
+#define COCOAPODS_VERSION_PATCH_NSString_Color 3
 
 // RBStoryboardLink
 #define COCOAPODS_POD_AVAILABLE_RBStoryboardLink

@@ -5,4 +5,5 @@ pod 'RBStoryboardLink', '~> 0.1.4'
 pod 'ReactiveCocoa', '~> 2.5'
 pod 'ReactiveViewModel', '~> 0.3'
 pod 'AFImageDownloader', '~> 1.0.0'
+pod 'GONMarkupParser', '~> 0.6.6'
 use_frameworks!

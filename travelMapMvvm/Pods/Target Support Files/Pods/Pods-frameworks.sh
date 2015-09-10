@@ -17,8 +17,8 @@ install_framework()
   fi
 
   # use filter instead of exclude so missing patterns dont' throw errors
-  echo "rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" --filter "- Modules/" ${source} ${destination}"
-  rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" --filter "- Modules/" "${source}" "${destination}"
+  echo "rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" ${source} ${destination}"
+  rsync -av --filter "- CVS/" --filter "- .svn/" --filter "- .git/" --filter "- .hg/" --filter "- Headers/" --filter "- PrivateHeaders/" "${source}" "${destination}"
   # Resign the code if required by the build settings to avoid unstable apps
   if [ "${CODE_SIGNING_REQUIRED}" == "YES" ]; then
       code_sign "${destination}/$1"
@@ -50,7 +50,9 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'AFImageDownloader.framework'
   install_framework 'AFNetworking.framework'
+  install_framework 'GONMarkupParser.framework'
   install_framework 'Kiwi.framework'
+  install_framework 'NSString_Color.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
   install_framework 'ReactiveViewModel.framework'
@@ -58,7 +60,9 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'AFImageDownloader.framework'
   install_framework 'AFNetworking.framework'
+  install_framework 'GONMarkupParser.framework'
   install_framework 'Kiwi.framework'
+  install_framework 'NSString_Color.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'ReactiveCocoa.framework'
   install_framework 'ReactiveViewModel.framework'

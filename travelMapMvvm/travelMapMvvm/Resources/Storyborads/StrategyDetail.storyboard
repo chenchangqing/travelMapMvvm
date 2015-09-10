@@ -8,7 +8,7 @@
         <!--攻略-->
         <scene sceneID="XX0-1l-bX9">
             <objects>
-                <viewController id="VZE-ig-Ov7" customClass="StrategyDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VZE-ig-Ov7" customClass="StrategyDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VOI-Nt-jyR"/>
                         <viewControllerLayoutGuide type="bottom" id="xj1-IP-ut0"/>
@@ -16,7 +16,47 @@
                     <view key="view" contentMode="scaleToFill" id="a4U-7g-3h3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qoa-Bn-r0i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="356"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0k-XF-qWf">
+                                        <rect key="frame" x="8" y="8" width="359" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="I6E-bm-8fe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nY-af-3HE">
+                                        <rect key="frame" x="8" y="316" width="359" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="457-Pp-lmN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4nY-af-3HE" firstAttribute="leading" secondItem="Qoa-Bn-r0i" secondAttribute="leading" constant="8" id="5SQ-q3-Eka"/>
+                                    <constraint firstItem="W0k-XF-qWf" firstAttribute="leading" secondItem="Qoa-Bn-r0i" secondAttribute="leading" constant="8" id="LFX-WB-mZP"/>
+                                    <constraint firstAttribute="trailing" secondItem="4nY-af-3HE" secondAttribute="trailing" constant="8" id="RMS-4i-4bC"/>
+                                    <constraint firstItem="W0k-XF-qWf" firstAttribute="top" secondItem="Qoa-Bn-r0i" secondAttribute="top" constant="8" id="kyt-x0-L4d"/>
+                                    <constraint firstItem="4nY-af-3HE" firstAttribute="top" secondItem="W0k-XF-qWf" secondAttribute="bottom" constant="8" id="mI7-OP-9C0"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0k-XF-qWf" secondAttribute="trailing" constant="8" id="ozZ-6A-bQk"/>
+                                    <constraint firstAttribute="bottom" secondItem="4nY-af-3HE" secondAttribute="bottom" id="q2m-6R-CqG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qoa-Bn-r0i" firstAttribute="leading" secondItem="a4U-7g-3h3" secondAttribute="leading" id="VhG-1f-TlI"/>
+                            <constraint firstItem="Qoa-Bn-r0i" firstAttribute="top" secondItem="a4U-7g-3h3" secondAttribute="top" constant="64" id="ovO-1Q-juS"/>
+                            <constraint firstAttribute="trailing" secondItem="Qoa-Bn-r0i" secondAttribute="trailing" id="vrm-G9-hH8"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="攻略" id="f66-yv-ysx">
@@ -26,8 +66,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="strategyDetailView" destination="W0k-XF-qWf" id="LFD-1p-08q"/>
+                        <outlet property="textHeightConstraint" destination="I6E-bm-8fe" id="XZJ-N6-tXR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbM-rj-x3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
