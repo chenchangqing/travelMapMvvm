@@ -197,6 +197,9 @@
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
 		E6D6B88D1BA1A84800A715CF /* StrategyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B88C1BA1A84800A715CF /* StrategyDetailViewModel.swift */; };
+		E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8901BA1C8CB00A715CF /* POIModel.swift */; };
+		E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */; };
+		E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
@@ -448,6 +451,9 @@
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
 		E6D6B88C1BA1A84800A715CF /* StrategyDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewModel.swift; sourceTree = "<group>"; };
+		E6D6B8901BA1C8CB00A715CF /* POIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIModel.swift; sourceTree = "<group>"; };
+		E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POILevelEnum.swift; sourceTree = "<group>"; };
+		E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITypeEnum.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
@@ -726,6 +732,7 @@
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
 				E6A46F171B943B6400BA089B /* UserModel.swift */,
 				E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */,
+				E6D6B8901BA1C8CB00A715CF /* POIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -733,6 +740,8 @@
 		E659F4961B8CEFFF005CD9FD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */,
+				E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */,
 				E659F4971B8CEFFF005CD9FD /* MonthEnum.swift */,
 				E659F4981B8CEFFF005CD9FD /* StrategyOrderEnum.swift */,
 				E659F4991B8CEFFF005CD9FD /* StrategyThemeEnum.swift */,
@@ -1395,6 +1404,7 @@
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
+				E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */,
 				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
@@ -1413,6 +1423,7 @@
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
+				E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */,
 				E698AD921B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
 				E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */,
 				E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */,
@@ -1505,6 +1516,7 @@
 				E698AD911B905BA6001B7D71 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */,
 				E69DCD761BA142F1000A9344 /* CTFrameParserCAPI.m in Sources */,
+				E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */,
 				E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,
