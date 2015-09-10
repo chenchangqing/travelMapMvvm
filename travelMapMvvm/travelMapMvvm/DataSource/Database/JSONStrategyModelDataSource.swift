@@ -55,4 +55,9 @@ class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
             return nil
         })
     }
+    
+    func queryStrategyList(strategyId: String) -> RACSignal {
+        
+        return queryStrategyList(QueryStrategyModelListParams01())
+    }
 }

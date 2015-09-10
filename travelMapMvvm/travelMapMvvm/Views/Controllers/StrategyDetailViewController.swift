@@ -45,6 +45,8 @@ class StrategyDetailViewController: UIViewController {
         setupRightButtons()         // 初始化详情、收藏按钮
         setupStrategyDetailView()   // 初始化攻略文本
         setupEvent()                // 初始化按钮事件
+        setupCommand()              // 监视命令执行设置
+        setupMessage()              // 监视提示信息
     }
     
     /**
@@ -100,5 +102,66 @@ class StrategyDetailViewController: UIViewController {
         })
     }
     
+    /**
+     * 命令设置
+     */
+    private func setupCommand() {
+        
+        strategyDetailViewModel.active = true
+        
+        strategyDetailViewModel.searchStrategyListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 处理POI列表
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.strategyDetailViewModel.failureMsg = error.localizedDescription
+            }, completed: { () -> Void in
+                
+                
+            })
+        }
+    }
+    
+    /**
+     * 成功失败提示
+     */
+    private func setupMessage() {
+        
+        RACSignal.combineLatest([
+            RACObserve(strategyDetailViewModel, "failureMsg"),
+            RACObserve(strategyDetailViewModel, "successMsg"),
+            strategyDetailViewModel.searchStrategyListCommand.executing
+        ]).subscribeNextAs { (tuple: RACTuple) -> () in
+            
+            let failureMsg  = tuple.first as! String
+            let successMsg  = tuple.second as! String
+            
+            let isLoading   = tuple.third as! Bool
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if failureMsg.isEmpty && successMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
+            
+            if !failureMsg.isEmpty {
+                
+                self.showHUDErrorMessage(failureMsg)
+            }
+            
+            if !successMsg.isEmpty {
+                
+                self.showHUDMessage(successMsg)
+            }
+        }
+    }
     
 }

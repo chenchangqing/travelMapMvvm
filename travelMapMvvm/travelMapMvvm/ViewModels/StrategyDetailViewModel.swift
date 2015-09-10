@@ -13,17 +13,55 @@ import GONMarkupParser
 
 class StrategyDetailViewModel: RVMViewModel {
     
-    var strategyModel: StrategyModel!
+    // MARK: - 提示信息
+    
+    dynamic var failureMsg  : String = ""   // 操作失败提示
+    dynamic var successMsg  : String = ""   // 操作失败提示
+    
+    var strategyModel               : StrategyModel!    // 攻略model
+    var searchStrategyListCommand   : RACCommand!       // 查询攻略列表命令
+    
+    var strategModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance() // 查询攻略类
     
     // MARK: - init
     
     init(strategyModel: StrategyModel) {
         
+        super.init()
+        
         self.strategyModel = strategyModel
+        
+        // 初始化命令
+        setupCommands()
+        
+        // 响应active
+        self.didBecomeActiveSignal.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.searchStrategyListCommand.execute(nil)
+        }
+    
     }
     
-    // MARK: - 
+    // MARK: - SETUP
     
+    private func setupCommands() {
+        
+        // 初始化攻略列表命令
+        searchStrategyListCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            if let strategyId=self.strategyModel.strategyId {
+                
+                return self.strategModelDataSourceProtocol.queryStrategyList(strategyId)
+            }
+            return RACSignal.empty()
+        })
+    }
+    
+    // MARK: -
+    
+    /**
+     * 排版攻略详情数据
+     */
     func getStrategyTextViewData() -> NSMutableAttributedString {
         
         // 标题
