@@ -204,7 +204,7 @@ class IndexViewController: UITableViewController {
             
             let strategyViewController = segue.destinationViewController as! StrategyDetailViewController
             
-            strategyViewController.strategyModel = sender as! StrategyModel
+            strategyViewController.strategyDetailViewModel = StrategyDetailViewModel(strategyModel: sender as! StrategyModel)
         }
     }
 }

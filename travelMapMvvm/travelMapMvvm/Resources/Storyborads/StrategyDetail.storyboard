@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VZE-ig-Ov7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VZE-ig-Ov7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -34,7 +34,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="457-Pp-lmN"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="收起">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -68,8 +68,10 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="hideTextViewButton" destination="4nY-af-3HE" id="9Vv-xl-tKI"/>
                         <outlet property="strategyDetailView" destination="W0k-XF-qWf" id="LFD-1p-08q"/>
-                        <outlet property="textHeightConstraint" destination="I6E-bm-8fe" id="XZJ-N6-tXR"/>
+                        <outlet property="textHeightConstraint" destination="I6E-bm-8fe" id="okW-NC-UFc"/>
+                        <outlet property="textVerticalConstraint" destination="ovO-1Q-juS" id="JLB-Uo-V5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbM-rj-x3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
