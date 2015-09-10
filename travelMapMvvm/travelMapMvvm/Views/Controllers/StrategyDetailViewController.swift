@@ -12,26 +12,30 @@ class StrategyDetailViewController: UIViewController {
     
     var strategyModel : StrategyModel!  // 攻略实体
 
+    // MARK: - LIFE CYCLE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setup()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - SETUP
+    
+    private func setup() {
+        
+        setupRightButtons() // 初始化详情、收藏按钮
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /**
+     * 初始化详情、收藏按钮
+     */
+    private func setupRightButtons() {
+        
+        let detailButton = UIBarButtonItem(title: "详情", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        
+        let collectButton = UIBarButtonItem(title: "收藏", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
+        
+        self.navigationItem.rightBarButtonItems = [detailButton,collectButton]
     }
-    */
-
 }
