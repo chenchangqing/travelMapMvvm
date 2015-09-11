@@ -8,28 +8,18 @@
 
 import UIKit
 
-class BasicMapAnnotationView2: MKAnnotationView {
-        
-    var circleV: GCircleControl!
+class BasicMapAnnotationView: MKAnnotationView {
+    
     var indexL: UILabel!
-    
-    var preventSelectionChange = false
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        
-        if !preventSelectionChange {
-            
-            super.setSelected(selected, animated: animated)
-        }
-    }
     
     override init!(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
-        self.frame = CGRectMake(0, 0, 16, 16)
-        circleV = GCircleControl(frame: CGRectMake(0, 0, 16, 16))
-        circleV.fillColor = UIColor.yellowColor()
+        self.frame          = CGRectMake(0, 0, 16, 16)
+        let circleV         = GCircleControl(frame: CGRectMake(0, 0, 16, 16))
+        circleV.fillColor   = UIColor.yellowColor()
         circleV.borderWidth = 0
+        
         indexL = UILabel(frame: CGRectMake(0, 0, 16, 16))
         indexL.textAlignment = NSTextAlignment.Center
         indexL.font = UIFont.systemFontOfSize(14)

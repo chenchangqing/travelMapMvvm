@@ -84,16 +84,6 @@
 		E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */; };
 		E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */; };
 		E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */; };
-		E6849EB71BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA91BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E6849EB81BA2CB4500A5631B /* BasicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6849EAB1BA2CB4500A5631B /* BasicMapAnnotation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E6849EB91BA2CB4500A5631B /* BasicMapAnnotation2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EAC1BA2CB4500A5631B /* BasicMapAnnotation2.swift */; };
-		E6849EBA1BA2CB4500A5631B /* BasicMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6849EAE1BA2CB4500A5631B /* BasicMapAnnotationView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E6849EBB1BA2CB4500A5631B /* BasicMapAnnotationView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EAF1BA2CB4500A5631B /* BasicMapAnnotationView2.swift */; };
-		E6849EBC1BA2CB4500A5631B /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E6849EB11BA2CB4500A5631B /* CalloutMapAnnotation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E6849EBD1BA2CB4500A5631B /* CalloutMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6849EB31BA2CB4500A5631B /* CalloutMapAnnotationView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E6849EBE1BA2CB4500A5631B /* DistanceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EB41BA2CB4500A5631B /* DistanceAnnotation.swift */; };
-		E6849EBF1BA2CB4500A5631B /* DistanceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EB51BA2CB4500A5631B /* DistanceAnnotationView.swift */; };
-		E6849EC01BA2CB4500A5631B /* POICallOutAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EB61BA2CB4500A5631B /* POICallOutAnnotation.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -217,6 +207,11 @@
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
+		E6BFCADB1BA3219F0019FB07 /* BasicMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */; };
+		E6BFCADC1BA3219F0019FB07 /* BasicMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */; };
+		E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */; };
+		E6BFCADE1BA3219F0019FB07 /* DistanceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCADA1BA3219F0019FB07 /* DistanceAnnotationView.swift */; };
+		E6BFCAE01BA33D420019FB07 /* POIMapViewController+MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCADF1BA33D420019FB07 /* POIMapViewController+MapView.swift */; };
 		E6D6B88D1BA1A84800A715CF /* StrategyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B88C1BA1A84800A715CF /* StrategyDetailViewModel.swift */; };
 		E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8901BA1C8CB00A715CF /* POIModel.swift */; };
 		E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */; };
@@ -328,21 +323,6 @@
 		E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+QQ.swift"; sourceTree = "<group>"; };
 		E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
-		E6849EA81BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessorizedCalloutMapAnnotationView.h; sourceTree = "<group>"; };
-		E6849EA91BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessorizedCalloutMapAnnotationView.m; sourceTree = "<group>"; };
-		E6849EAA1BA2CB4500A5631B /* BasicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotation.h; sourceTree = "<group>"; };
-		E6849EAB1BA2CB4500A5631B /* BasicMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicMapAnnotation.m; sourceTree = "<group>"; };
-		E6849EAC1BA2CB4500A5631B /* BasicMapAnnotation2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotation2.swift; sourceTree = "<group>"; };
-		E6849EAD1BA2CB4500A5631B /* BasicMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotationView.h; sourceTree = "<group>"; };
-		E6849EAE1BA2CB4500A5631B /* BasicMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicMapAnnotationView.m; sourceTree = "<group>"; };
-		E6849EAF1BA2CB4500A5631B /* BasicMapAnnotationView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotationView2.swift; sourceTree = "<group>"; };
-		E6849EB01BA2CB4500A5631B /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
-		E6849EB11BA2CB4500A5631B /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
-		E6849EB21BA2CB4500A5631B /* CalloutMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotationView.h; sourceTree = "<group>"; };
-		E6849EB31BA2CB4500A5631B /* CalloutMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotationView.m; sourceTree = "<group>"; };
-		E6849EB41BA2CB4500A5631B /* DistanceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceAnnotation.swift; sourceTree = "<group>"; };
-		E6849EB51BA2CB4500A5631B /* DistanceAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceAnnotationView.swift; sourceTree = "<group>"; };
-		E6849EB61BA2CB4500A5631B /* POICallOutAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POICallOutAnnotation.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -496,6 +476,11 @@
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
+		E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotation.swift; sourceTree = "<group>"; };
+		E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotationView.swift; sourceTree = "<group>"; };
+		E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceAnnotation.swift; sourceTree = "<group>"; };
+		E6BFCADA1BA3219F0019FB07 /* DistanceAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceAnnotationView.swift; sourceTree = "<group>"; };
+		E6BFCADF1BA33D420019FB07 /* POIMapViewController+MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIMapViewController+MapView.swift"; sourceTree = "<group>"; };
 		E6D6B88C1BA1A84800A715CF /* StrategyDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewModel.swift; sourceTree = "<group>"; };
 		E6D6B8901BA1C8CB00A715CF /* POIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIModel.swift; sourceTree = "<group>"; };
 		E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POILevelEnum.swift; sourceTree = "<group>"; };
@@ -941,6 +926,7 @@
 			isa = PBXGroup;
 			children = (
 				E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */,
+				E6BFCADF1BA33D420019FB07 /* POIMapViewController+MapView.swift */,
 			);
 			path = POIMapViewController;
 			sourceTree = "<group>";
@@ -948,21 +934,10 @@
 		E6849EA71BA2CB4500A5631B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				E6849EA81BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.h */,
-				E6849EA91BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.m */,
-				E6849EAA1BA2CB4500A5631B /* BasicMapAnnotation.h */,
-				E6849EAB1BA2CB4500A5631B /* BasicMapAnnotation.m */,
-				E6849EAC1BA2CB4500A5631B /* BasicMapAnnotation2.swift */,
-				E6849EAD1BA2CB4500A5631B /* BasicMapAnnotationView.h */,
-				E6849EAE1BA2CB4500A5631B /* BasicMapAnnotationView.m */,
-				E6849EAF1BA2CB4500A5631B /* BasicMapAnnotationView2.swift */,
-				E6849EB01BA2CB4500A5631B /* CalloutMapAnnotation.h */,
-				E6849EB11BA2CB4500A5631B /* CalloutMapAnnotation.m */,
-				E6849EB21BA2CB4500A5631B /* CalloutMapAnnotationView.h */,
-				E6849EB31BA2CB4500A5631B /* CalloutMapAnnotationView.m */,
-				E6849EB41BA2CB4500A5631B /* DistanceAnnotation.swift */,
-				E6849EB51BA2CB4500A5631B /* DistanceAnnotationView.swift */,
-				E6849EB61BA2CB4500A5631B /* POICallOutAnnotation.swift */,
+				E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */,
+				E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */,
+				E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */,
+				E6BFCADA1BA3219F0019FB07 /* DistanceAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1520,7 +1495,6 @@
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
 				E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */,
 				E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */,
-				E6849EBA1BA2CB4500A5631B /* BasicMapAnnotationView.m in Sources */,
 				E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */,
 				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
@@ -1530,7 +1504,6 @@
 				E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E69DCD731BA142F1000A9344 /* CoreTextLinkData.swift in Sources */,
-				E6849EB81BA2CB4500A5631B /* BasicMapAnnotation.m in Sources */,
 				E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
@@ -1540,7 +1513,6 @@
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
-				E6849EB91BA2CB4500A5631B /* BasicMapAnnotation2.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */,
@@ -1551,6 +1523,7 @@
 				E67B28221B9D37CB0070E3AD /* SMSDataSource.swift in Sources */,
 				E6A46F1A1B94405E00BA089B /* ImageViewModel.swift in Sources */,
 				E698AD801B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				E6BFCADB1BA3219F0019FB07 /* BasicMapAnnotation.swift in Sources */,
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
@@ -1558,8 +1531,8 @@
 				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
 				E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */,
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
+				E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
-				E6849EBF1BA2CB4500A5631B /* DistanceAnnotationView.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
@@ -1569,7 +1542,6 @@
 				E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
-				E6849EBB1BA2CB4500A5631B /* BasicMapAnnotationView2.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
 				E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */,
 				E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */,
@@ -1596,14 +1568,14 @@
 				E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */,
 				E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */,
 				E6AA5E4F1B9357CA009C7DA1 /* CJCollectionViewCellModel.swift in Sources */,
-				E6849EB71BA2CB4500A5631B /* AccessorizedCalloutMapAnnotationView.m in Sources */,
-				E6849EBE1BA2CB4500A5631B /* DistanceAnnotation.swift in Sources */,
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
 				E69DCD711BA142F1000A9344 /* CoreTextData.swift in Sources */,
+				E6BFCAE01BA33D420019FB07 /* POIMapViewController+MapView.swift in Sources */,
 				E6D6B88D1BA1A84800A715CF /* StrategyDetailViewModel.swift in Sources */,
 				E69DCD791BA142F1000A9344 /* UIView+frameAdjust.m in Sources */,
 				E69DCD751BA142F1000A9344 /* CTFrameParser.swift in Sources */,
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				E6BFCADE1BA3219F0019FB07 /* DistanceAnnotationView.swift in Sources */,
 				E68730C41B91689400F3EA40 /* MJRefreshAutoGifFooter.m in Sources */,
 				E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */,
 				E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */,
@@ -1633,7 +1605,6 @@
 				E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */,
 				E698AD511B8FF108001B7D71 /* TableViewBindingHelper.swift in Sources */,
 				E698AD991B905BA6001B7D71 /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
-				E6849EC01BA2CB4500A5631B /* POICallOutAnnotation.swift in Sources */,
 				E6AA5E501B9357CA009C7DA1 /* CJCollectionViewHeaderModel.swift in Sources */,
 				E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */,
 				E698AD891B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
@@ -1653,7 +1624,6 @@
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
 				E6849E9D1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
 				E68730CF1B91689400F3EA40 /* UIScrollView+MJExtension.m in Sources */,
-				E6849EBD1BA2CB4500A5631B /* CalloutMapAnnotationView.m in Sources */,
 				E68730C51B91689400F3EA40 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */,
@@ -1661,7 +1631,6 @@
 				E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */,
 				E688EFC31B9200C400C01B23 /* IndexViewFooter.swift in Sources */,
 				E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */,
-				E6849EBC1BA2CB4500A5631B /* CalloutMapAnnotation.m in Sources */,
 				E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */,
 				E698AD901B905BA6001B7D71 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				E69DCD781BA142F1000A9344 /* CTDisplayView.swift in Sources */,
@@ -1672,6 +1641,7 @@
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,
 				E6849E9E1BA2BBF000A5631B /* ModifyUInfoViewController.swift in Sources */,
+				E6BFCADC1BA3219F0019FB07 /* BasicMapAnnotationView.swift in Sources */,
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */,
 				E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */,

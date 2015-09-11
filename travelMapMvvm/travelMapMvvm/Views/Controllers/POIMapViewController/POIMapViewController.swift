@@ -21,6 +21,10 @@ class POIMapViewController: UIViewController {
     
     var poiMapViewModel: POIMapViewModel = POIMapViewModel()
     
+    // MARK: - reuseIdentifier
+    let kBasicMapAnnotationView = "BasicMapAnnotationView"
+    let kDistanceAnnotationView = "DistanceAnnotationView"
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -33,7 +37,7 @@ class POIMapViewController: UIViewController {
     
     private func setup() {
         
-        bindView()
+        bindViewModel()
         setupEvents()
         setupMap()
     }
@@ -41,7 +45,7 @@ class POIMapViewController: UIViewController {
     /**
      * 绑定view model
      */
-    private func bindView() {
+    private func bindViewModel() {
         
         RACObserve(self, "poiMapViewModel.poiList").subscribeNextAs { (poiList:[POIModel]!) -> () in
             
@@ -49,6 +53,35 @@ class POIMapViewController: UIViewController {
             self.scrollView.dataSource = poiList
             
             // 更新地图
+            // 删除标注
+            self.mapView.removeAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys.array)
+            self.mapView.removeAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys.array)
+            
+            // 组织标注dic
+            for poiTuple in enumerate(poiList) {
+                
+                let annotationTuple = self.poiMapViewModel.getAnnotationTuple(poiTuple.element, i: poiTuple.index)
+                
+                if let basicMapAnnotation=annotationTuple.basicMapAnnotation {
+                    
+                    self.poiMapViewModel.basicMapAnnotationDic[basicMapAnnotation] = self.getBasicAnnotationView(basicMapAnnotation)
+                    
+                    // 地图区域设置
+                    if poiTuple.index == 0 {
+                        
+                        self.setupMapRegion(basicMapAnnotation)
+                    }
+                }
+                
+                if let distanceAnnotation=annotationTuple.distanceAnnotation {
+                    
+                    self.poiMapViewModel.distanceAnnotationDic[distanceAnnotation] = self.getDistanceAnnotationView(distanceAnnotation)
+                }
+            }
+            
+            // 增加标注
+            self.mapView.addAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys.array)
+            self.mapView.addAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys.array)
         }
     }
     
@@ -77,6 +110,7 @@ class POIMapViewController: UIViewController {
      */
     private func setupMap() {
         
+        self.mapView.delegate = self
     }
 
 }

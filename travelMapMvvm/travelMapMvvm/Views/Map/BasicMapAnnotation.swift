@@ -1,30 +1,29 @@
 //
-//  DistanceAnnotation.swift
+//  BasicMapAnnotation2.swift
 //  travelMap
 //
-//  Created by green on 15/7/23.
+//  Created by green on 15/7/22.
 //  Copyright (c) 2015年 com.city8. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class DistanceAnnotation: MKPointAnnotation {
+class BasicMapAnnotation: MKPointAnnotation {
+
+    var index: Int = 0
     
-    var distance: String!
-    
-    init(latitude:CLLocationDegrees, longitude: CLLocationDegrees, distance: String) {
+    init(latitude:CLLocationDegrees, longitude: CLLocationDegrees, index: Int) {
         
         super.init()
         super.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        self.distance = distance
+        self.index = index
     }
     
     // MARK: - 重写比较方法
     
     override func isEqual(object: AnyObject?) -> Bool {
         
-        if let object=object as? DistanceAnnotation {
+        if let object=object as? BasicMapAnnotation {
             
             if object.coordinate.latitude == self.coordinate.latitude && object.coordinate.longitude == self.coordinate.longitude {
                 
