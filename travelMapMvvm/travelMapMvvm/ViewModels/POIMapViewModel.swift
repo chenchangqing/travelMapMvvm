@@ -7,14 +7,18 @@
 //
 
 import ReactiveViewModel
+import ReactiveCocoa
 
 class POIMapViewModel: RVMViewModel {
    
-    dynamic var poiList:[POIModel]!
+    dynamic var poiList = [POIModel]()
     
-    init(poiList:[POIModel]) {
+    override init() {
         super.init()
         
-        self.poiList = poiList
+        RACObserve(self, "poiList").skip(1).subscribeNext { (any:AnyObject!) -> Void in
+            
+            println(any)
+        }
     }
 }

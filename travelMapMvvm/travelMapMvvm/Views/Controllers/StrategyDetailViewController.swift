@@ -23,8 +23,6 @@ class StrategyDetailViewController: UIViewController {
     
     var strategyDetailViewModel : StrategyDetailViewModel!  // 攻略view model
     var textViewHeight          : CGFloat!                  // 攻略详情文本实际高度
-    
-    var poiMapViewController    : POIMapViewController!     // POI 地图控制器
 
     // MARK: - LIFE CYCLE
     
@@ -48,11 +46,14 @@ class StrategyDetailViewController: UIViewController {
         // POI 地图
         if segue.identifier == kSegueFromStrategyDetailViewControllerToPOIMapViewController {
             
-            poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
+            let poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
+            
+            // bind
+            RACObserve(self, "strategyDetailViewModel.poiList") ~> RAC(poiMapViewController, "poiMapViewModel.poiList")
             
             // 查询POI列表
-            strategyDetailViewModel.active = true
             setupCommand()              // 监视命令执行设置
+            strategyDetailViewModel.active = true
         }
     }
 
@@ -129,16 +130,14 @@ class StrategyDetailViewController: UIViewController {
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 处理POI列表
-                let poiList = any as! [POIModel]
-                self.poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: poiList)
+                self.strategyDetailViewModel.poiList = any as! [POIModel]
                 
             }, error: { (error:NSError!) -> Void in
                 
                 self.strategyDetailViewModel.failureMsg = error.localizedDescription
                 
                 // 处理POI列表
-                let poiList = [POIModel]()
-                self.poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: poiList)
+                self.strategyDetailViewModel.poiList = [POIModel]()
                 
             }, completed: { () -> Void in
                 

@@ -11,12 +11,10 @@ import ReactiveCocoa
 
 class POIMapViewController: UIViewController {
     
-    var poiMapViewModel: POIMapViewModel!   // view model
+    var poiMapViewModel: POIMapViewModel = POIMapViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(poiMapViewModel)
     }
 
 }
