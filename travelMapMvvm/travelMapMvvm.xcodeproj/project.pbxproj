@@ -75,7 +75,6 @@
 		E6849E881BA26A6D00A5631B /* JSONPOIModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */; };
 		E6849E8A1BA26B4700A5631B /* NetworkPOIModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */; };
 		E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6849E8B1BA29AC400A5631B /* POIMap.storyboard */; };
-		E6849E8E1BA29C1800A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */; };
 		E6849E901BA2A18400A5631B /* POIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E8F1BA2A18400A5631B /* POIMapViewModel.swift */; };
 		E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E941BA2B9EB00A5631B /* GScrollView.swift */; };
 		E6849E981BA2B9EB00A5631B /* ScrollSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6849E951BA2B9EB00A5631B /* ScrollSubView.xib */; };
@@ -84,6 +83,7 @@
 		E6849E9E1BA2BBF000A5631B /* ModifyUInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E9C1BA2BBF000A5631B /* ModifyUInfoViewController.swift */; };
 		E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */; };
 		E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */; };
+		E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -309,7 +309,6 @@
 		E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPOIModelDataSource.swift; sourceTree = "<group>"; };
 		E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPOIModelDataSource.swift; sourceTree = "<group>"; };
 		E6849E8B1BA29AC400A5631B /* POIMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIMap.storyboard; sourceTree = "<group>"; };
-		E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
 		E6849E8F1BA2A18400A5631B /* POIMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewModel.swift; sourceTree = "<group>"; };
 		E6849E941BA2B9EB00A5631B /* GScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GScrollView.swift; sourceTree = "<group>"; };
 		E6849E951BA2B9EB00A5631B /* ScrollSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollSubView.xib; sourceTree = "<group>"; };
@@ -318,6 +317,7 @@
 		E6849E9C1BA2BBF000A5631B /* ModifyUInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewController.swift; sourceTree = "<group>"; };
 		E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+QQ.swift"; sourceTree = "<group>"; };
 		E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -911,6 +911,14 @@
 			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
+		E6849EA41BA2C47F00A5631B /* POIMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */,
+			);
+			path = POIMapViewController;
+			sourceTree = "<group>";
+		};
 		E68730921B91689300F3EA40 /* MJRefresh2.4.7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,6 +1150,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
@@ -1152,7 +1161,6 @@
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
-				E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1462,7 +1470,6 @@
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
-				E6849E8E1BA29C1800A5631B /* POIMapViewController.swift in Sources */,
 				E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */,
 				E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */,
 				E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */,
@@ -1502,6 +1509,7 @@
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
 				E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */,

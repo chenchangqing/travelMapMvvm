@@ -141,7 +141,7 @@ class StrategyDetailViewController: UIViewController {
                 
             }, completed: { () -> Void in
                 
-                println("completed")
+//                println("completed")
             })
         }
     }
