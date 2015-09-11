@@ -9,6 +9,7 @@
 import UIKit
 import GONMarkupParser
 import ReactiveCocoa
+import RBStoryboardLink
 
 class StrategyDetailViewController: UIViewController {
     
@@ -22,6 +23,8 @@ class StrategyDetailViewController: UIViewController {
     
     var strategyDetailViewModel : StrategyDetailViewModel!  // 攻略view model
     var textViewHeight          : CGFloat!                  // 攻略详情文本实际高度
+    
+    var poiMapViewController    : POIMapViewController!     // POI 地图控制器
 
     // MARK: - LIFE CYCLE
     
@@ -37,6 +40,21 @@ class StrategyDetailViewController: UIViewController {
         // 默认隐藏攻略详情文本
         self.textVerticalConstraint.constant = -UIScreen.mainScreen().bounds.height
     }
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // POI 地图
+        if segue.identifier == kSegueFromStrategyDetailViewControllerToPOIMapViewController {
+            
+            poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
+            
+            // 查询POI列表
+            strategyDetailViewModel.active = true
+            setupCommand()              // 监视命令执行设置
+        }
+    }
 
     // MARK: - SETUP
     
@@ -45,7 +63,6 @@ class StrategyDetailViewController: UIViewController {
         setupRightButtons()         // 初始化详情、收藏按钮
         setupStrategyDetailView()   // 初始化攻略文本
         setupEvent()                // 初始化按钮事件
-        setupCommand()              // 监视命令执行设置
         setupMessage()              // 监视提示信息
     }
     
@@ -112,18 +129,22 @@ class StrategyDetailViewController: UIViewController {
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 处理POI列表
-                println(any)
+                let poiList = any as! [POIModel]
+                self.poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: poiList)
                 
             }, error: { (error:NSError!) -> Void in
                 
                 self.strategyDetailViewModel.failureMsg = error.localizedDescription
+                
+                // 处理POI列表
+                let poiList = [POIModel]()
+                self.poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: poiList)
+                
             }, completed: { () -> Void in
                 
                 println("completed")
             })
         }
-        
-        strategyDetailViewModel.active = true
     }
     
     /**
