@@ -54,6 +54,8 @@ class IndexUITapGestureRecognizer:UITapGestureRecognizer{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.backgroundColor = UIColor.yellowColor()
     }
     
     override func drawRect(rect: CGRect) {

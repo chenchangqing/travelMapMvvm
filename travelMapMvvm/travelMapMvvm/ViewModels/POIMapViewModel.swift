@@ -15,10 +15,5 @@ class POIMapViewModel: RVMViewModel {
     
     override init() {
         super.init()
-        
-        RACObserve(self, "poiList").subscribeNext { (any:AnyObject!) -> Void in
-            
-            println(any)
-        }
     }
 }

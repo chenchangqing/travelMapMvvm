@@ -51,6 +51,11 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="locationBtn" destination="Y4w-xp-Tul" id="Xqo-fD-nX8"/>
+                        <outlet property="mapView" destination="2Sz-pj-laJ" id="uiF-hT-JOh"/>
+                        <outlet property="scrollView" destination="Xgi-Ub-ehX" id="4JV-cD-gcB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gj-tV-DNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
