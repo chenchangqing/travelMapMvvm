@@ -30,3 +30,8 @@
 #import "CTFrameParserCAPI.h"
 #import "UIView+frameAdjust.h"
 #import <GONMarkupParser/GONMarkupParser.h>
+#import "AccessorizedCalloutMapAnnotationView.h"
+#import "BasicMapAnnotation.h"
+#import "BasicMapAnnotationView.h"
+#import "CalloutMapAnnotation.h"
+#import "CalloutMapAnnotationView.h"
