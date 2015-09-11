@@ -17,7 +17,7 @@ class StrategyDetailViewModel: RVMViewModel {
     
     dynamic var failureMsg  : String = ""   // 操作失败提示
     dynamic var successMsg  : String = ""   // 操作失败提示
-    dynamic var poiList     = [POIModel]()
+    dynamic var poiList     = [POIModel]()  // POI列表
     
     var strategyModel               : StrategyModel!    // 攻略model
     var searchStrategyListCommand   : RACCommand!       // 查询攻略列表命令

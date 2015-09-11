@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p22-kT-3GQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ola-zI-zMc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
-        <scene sceneID="bfa-Hz-Tzn">
+        <scene sceneID="Y42-Ft-G1p">
             <objects>
-                <viewController id="p22-kT-3GQ" customClass="POIMapViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ola-zI-zMc" customClass="POIMapViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="baU-bs-qso"/>
-                        <viewControllerLayoutGuide type="bottom" id="RA2-7Q-INl"/>
+                        <viewControllerLayoutGuide type="top" id="3Je-Gb-FJG"/>
+                        <viewControllerLayoutGuide type="bottom" id="yBg-id-UES"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6iK-lJ-zNc">
+                    <view key="view" contentMode="scaleToFill" id="4GQ-xB-PdX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Sz-pj-laJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4w-xp-Tul">
+                                <rect key="frame" x="16" y="569" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="PcC-Vg-WyV"/>
+                                    <constraint firstAttribute="height" constant="22" id="dd0-QS-aNM"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgi-Ub-ehX" customClass="GScrollView" customModule="travelMapMvvm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="sGa-61-sgG"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xgi-Ub-ehX" secondAttribute="trailing" id="BFv-Xv-hJV"/>
+                            <constraint firstItem="2Sz-pj-laJ" firstAttribute="leading" secondItem="4GQ-xB-PdX" secondAttribute="leading" id="I9c-m0-n6a"/>
+                            <constraint firstItem="yBg-id-UES" firstAttribute="top" secondItem="Xgi-Ub-ehX" secondAttribute="bottom" id="JnE-9a-JoX"/>
+                            <constraint firstItem="Y4w-xp-Tul" firstAttribute="leading" secondItem="4GQ-xB-PdX" secondAttribute="leading" constant="16" id="Tnq-Pr-4pK"/>
+                            <constraint firstItem="Xgi-Ub-ehX" firstAttribute="top" secondItem="2Sz-pj-laJ" secondAttribute="bottom" id="VtJ-wS-IhC"/>
+                            <constraint firstItem="2Sz-pj-laJ" firstAttribute="top" secondItem="4GQ-xB-PdX" secondAttribute="top" id="e4d-4j-SbL"/>
+                            <constraint firstItem="Xgi-Ub-ehX" firstAttribute="top" secondItem="Y4w-xp-Tul" secondAttribute="bottom" constant="16" id="g48-01-HQd"/>
+                            <constraint firstAttribute="trailing" secondItem="2Sz-pj-laJ" secondAttribute="trailing" id="lnO-p0-iqh"/>
+                            <constraint firstItem="Xgi-Ub-ehX" firstAttribute="leading" secondItem="4GQ-xB-PdX" secondAttribute="leading" id="r88-xX-sZu"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lz8-O4-CNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gj-tV-DNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="404"/>
+            <point key="canvasLocation" x="298.5" y="465.5"/>
         </scene>
     </scenes>
 </document>

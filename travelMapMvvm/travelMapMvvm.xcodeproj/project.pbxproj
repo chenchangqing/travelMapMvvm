@@ -38,7 +38,6 @@
 		E604004C1B9BE30300C3C0A8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604004B1B9BE30300C3C0A8 /* Accounts.framework */; };
 		E604004E1B9BE31B00C3C0A8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E604004D1B9BE31B00C3C0A8 /* libsqlite3.dylib */; };
 		E60400501B9BE3BD00C3C0A8 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */; };
-		E60400541B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */; };
 		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
 		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
@@ -78,6 +77,13 @@
 		E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6849E8B1BA29AC400A5631B /* POIMap.storyboard */; };
 		E6849E8E1BA29C1800A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */; };
 		E6849E901BA2A18400A5631B /* POIMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E8F1BA2A18400A5631B /* POIMapViewModel.swift */; };
+		E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E941BA2B9EB00A5631B /* GScrollView.swift */; };
+		E6849E981BA2B9EB00A5631B /* ScrollSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6849E951BA2B9EB00A5631B /* ScrollSubView.xib */; };
+		E6849E991BA2B9EB00A5631B /* ScrollSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E961BA2B9EB00A5631B /* ScrollSubView.swift */; };
+		E6849E9D1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E9B1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift */; };
+		E6849E9E1BA2BBF000A5631B /* ModifyUInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E9C1BA2BBF000A5631B /* ModifyUInfoViewController.swift */; };
+		E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */; };
+		E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -102,7 +108,6 @@
 		E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E68763191B996F990006DD3D /* telephoneLogin.json */; };
 		E687631D1B9971220006DD3D /* qqLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631B1B9971220006DD3D /* qqLogin.json */; };
 		E687631E1B9971220006DD3D /* sinaLogin.json in Resources */ = {isa = PBXBuildFile; fileRef = E687631C1B9971220006DD3D /* sinaLogin.json */; };
-		E68763201B99724D0006DD3D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E687631F1B99724D0006DD3D /* LoginViewModel.swift */; };
 		E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E688EFA51B919B5200C01B23 /* ErrorEnum.swift */; };
 		E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */; };
 		E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */; };
@@ -199,7 +204,6 @@
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
 		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
 		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
-		E6BCCC2F1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */; };
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
@@ -210,7 +214,6 @@
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
-		E6EB101C1B9FCB38009FA27F /* ModifyUInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */; };
 		E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */; };
 		E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */; };
 		E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB10211B9FDF80009FA27F /* ModifyUInfoViewModel.swift */; };
@@ -265,7 +268,6 @@
 		E604004B1B9BE30300C3C0A8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E604004D1B9BE31B00C3C0A8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+QQ.swift"; sourceTree = "<group>"; };
 		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
@@ -309,6 +311,13 @@
 		E6849E8B1BA29AC400A5631B /* POIMap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIMap.storyboard; sourceTree = "<group>"; };
 		E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
 		E6849E8F1BA2A18400A5631B /* POIMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewModel.swift; sourceTree = "<group>"; };
+		E6849E941BA2B9EB00A5631B /* GScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GScrollView.swift; sourceTree = "<group>"; };
+		E6849E951BA2B9EB00A5631B /* ScrollSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollSubView.xib; sourceTree = "<group>"; };
+		E6849E961BA2B9EB00A5631B /* ScrollSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollSubView.swift; sourceTree = "<group>"; };
+		E6849E9B1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifyUInfoViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		E6849E9C1BA2BBF000A5631B /* ModifyUInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewController.swift; sourceTree = "<group>"; };
+		E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+QQ.swift"; sourceTree = "<group>"; };
+		E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -352,7 +361,6 @@
 		E68763191B996F990006DD3D /* telephoneLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = telephoneLogin.json; sourceTree = "<group>"; };
 		E687631B1B9971220006DD3D /* qqLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = qqLogin.json; sourceTree = "<group>"; };
 		E687631C1B9971220006DD3D /* sinaLogin.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sinaLogin.json; sourceTree = "<group>"; };
-		E687631F1B99724D0006DD3D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E688EFA51B919B5200C01B23 /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		E688EFAA1B91D52E00C01B23 /* MB-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark.png"; sourceTree = "<group>"; };
 		E688EFAB1B91D52E00C01B23 /* MB-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MB-Checkmark@2x.png"; sourceTree = "<group>"; };
@@ -460,7 +468,6 @@
 		E6B04FF01B9E869000B3415B /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
 		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
-		E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModifyUInfoViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
@@ -471,7 +478,6 @@
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
-		E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewController.swift; sourceTree = "<group>"; };
 		E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLineCell.swift; sourceTree = "<group>"; };
 		E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+General.swift"; sourceTree = "<group>"; };
 		E6EB10211B9FDF80009FA27F /* ModifyUInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyUInfoViewModel.swift; sourceTree = "<group>"; };
@@ -814,13 +820,12 @@
 		E659F4A31B8CEFFF005CD9FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E6849E9F1BA2BBF900A5631B /* LoginViewModel */,
 				E698AD521B8FF356001B7D71 /* IndexViewModel.swift */,
 				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
 				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
 				E6A46F191B94405E00BA089B /* ImageViewModel.swift */,
 				E68F6B8F1B9A8FAD00AB2C72 /* LeftViewModel.swift */,
-				E687631F1B99724D0006DD3D /* LoginViewModel.swift */,
-				E60400531B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift */,
 				E67B28261B9D43330070E3AD /* RegisterViewModel.swift */,
 				E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */,
 				E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */,
@@ -855,6 +860,7 @@
 		E659F4B51B8CEFFF005CD9FD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6849E931BA2B9CC00A5631B /* GScrollView */,
 				E611B39C1B8D916F0034B267 /* GCircleControl.swift */,
 			);
 			path = View;
@@ -875,6 +881,34 @@
 				E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */,
 			);
 			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		E6849E931BA2B9CC00A5631B /* GScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E6849E941BA2B9EB00A5631B /* GScrollView.swift */,
+				E6849E951BA2B9EB00A5631B /* ScrollSubView.xib */,
+				E6849E961BA2B9EB00A5631B /* ScrollSubView.swift */,
+			);
+			path = GScrollView;
+			sourceTree = "<group>";
+		};
+		E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6849E9B1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift */,
+				E6849E9C1BA2BBF000A5631B /* ModifyUInfoViewController.swift */,
+			);
+			path = ModifyUInfoViewController;
+			sourceTree = "<group>";
+		};
+		E6849E9F1BA2BBF900A5631B /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */,
+				E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */,
+			);
+			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
 		E68730921B91689300F3EA40 /* MJRefresh2.4.7 */ = {
@@ -1108,6 +1142,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
 				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
@@ -1116,8 +1151,6 @@
 				E6AA5E541B935FB8009C7DA1 /* FilterViewController.swift */,
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
-				E6EB101B1B9FCB38009FA27F /* ModifyUInfoViewController.swift */,
-				E6BCCC2E1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 				E6849E8D1BA29C1800A5631B /* POIMapViewController.swift */,
 			);
@@ -1335,6 +1368,7 @@
 				E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */,
 				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
 				E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */,
+				E6849E981BA2B9EB00A5631B /* ScrollSubView.xib in Resources */,
 				E60400321B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				E688EFC41B9200C400C01B23 /* IndexViewFooter.xib in Resources */,
 				E688EFC61B92015D00C01B23 /* Images.xcassets in Resources */,
@@ -1429,6 +1463,8 @@
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
 				E6849E8E1BA29C1800A5631B /* POIMapViewController.swift in Sources */,
+				E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */,
+				E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */,
 				E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */,
 				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
@@ -1443,6 +1479,7 @@
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */,
+				E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
@@ -1486,10 +1523,10 @@
 				E69DCD7D1BA1680C000A9344 /* UITextView+General.swift in Sources */,
 				E6AA5E591B936050009C7DA1 /* UIView+General.m in Sources */,
 				E698AD4E1B8FF108001B7D71 /* RAC.swift in Sources */,
-				E6EB101C1B9FCB38009FA27F /* ModifyUInfoViewController.swift in Sources */,
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				E6849E991BA2B9EB00A5631B /* ScrollSubView.swift in Sources */,
 				E6A46F1F1B949E5A00BA089B /* ColorHelper.swift in Sources */,
 				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
@@ -1513,12 +1550,10 @@
 				E6AA5E4D1B9357CA009C7DA1 /* CJCollectionViewHeader.swift in Sources */,
 				E6A46F211B949EDC00BA089B /* UIButton+Login.swift in Sources */,
 				E698AD8E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
-				E60400541B9BEDF700C3C0A8 /* LoginViewModel+QQ.swift in Sources */,
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E68763181B9964320006DD3D /* UITextField+General.swift in Sources */,
 				E69DCD771BA142F1000A9344 /* CTFrameParserConfig.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
-				E6BCCC2F1BA05B4000238124 /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
 				E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */,
@@ -1552,6 +1587,7 @@
 				E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */,
 				E68730C91B91689400F3EA40 /* MJRefreshBackStateFooter.m in Sources */,
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
+				E6849E9D1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
 				E68730CF1B91689400F3EA40 /* UIScrollView+MJExtension.m in Sources */,
 				E68730C51B91689400F3EA40 /* MJRefreshAutoNormalFooter.m in Sources */,
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
@@ -1566,10 +1602,10 @@
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,
 				E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */,
-				E68763201B99724D0006DD3D /* LoginViewModel.swift in Sources */,
 				E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */,
 				E659F4C91B8CEFFF005CD9FD /* ReadJsonClass.swift in Sources */,
 				E68730C81B91689400F3EA40 /* MJRefreshBackNormalFooter.m in Sources */,
+				E6849E9E1BA2BBF000A5631B /* ModifyUInfoViewController.swift in Sources */,
 				E698AD851B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				E6A46F101B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift in Sources */,
 				E6A46F121B93EF6300BA089B /* SelectionViewDataSource.swift in Sources */,

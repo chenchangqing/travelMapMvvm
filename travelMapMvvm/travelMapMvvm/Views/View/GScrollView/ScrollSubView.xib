@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ScrollSubView" customModule="travelMap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="183" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-SD-ihE">
+                    <rect key="frame" x="4" y="4" width="175" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="5gK-Wd-2fN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvg-tU-Kl5">
+                    <rect key="frame" x="4" y="68" width="175" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dfd-SD-ihE" secondAttribute="trailing" constant="4" id="H3c-tQ-eju"/>
+                <constraint firstAttribute="trailing" secondItem="rvg-tU-Kl5" secondAttribute="trailing" constant="4" id="IYa-pE-oQD"/>
+                <constraint firstItem="rvg-tU-Kl5" firstAttribute="top" secondItem="dfd-SD-ihE" secondAttribute="bottom" constant="4" id="QLc-h1-7vq"/>
+                <constraint firstItem="dfd-SD-ihE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="cDF-4c-9h5"/>
+                <constraint firstItem="rvg-tU-Kl5" firstAttribute="top" secondItem="dfd-SD-ihE" secondAttribute="bottom" constant="4" id="cam-Vz-La1"/>
+                <constraint firstItem="dfd-SD-ihE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="eqo-1z-w7K"/>
+                <constraint firstAttribute="bottom" secondItem="rvg-tU-Kl5" secondAttribute="bottom" constant="4" id="vC9-Al-Wav"/>
+                <constraint firstItem="rvg-tU-Kl5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="zMQ-iR-lqN"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="QLc-h1-7vq"/>
+                    <exclude reference="cam-Vz-La1"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="indexL" destination="dfd-SD-ihE" id="vXu-ER-djm"/>
+                <outlet property="nameL" destination="rvg-tU-Kl5" id="kXN-CW-fSf"/>
+            </connections>
+            <point key="canvasLocation" x="320.5" y="369"/>
+        </view>
+    </objects>
+</document>
