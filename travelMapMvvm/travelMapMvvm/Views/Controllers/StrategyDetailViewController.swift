@@ -107,22 +107,23 @@ class StrategyDetailViewController: UIViewController {
      */
     private func setupCommand() {
         
-        strategyDetailViewModel.active = true
-        
         strategyDetailViewModel.searchStrategyListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
             
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 处理POI列表
+                println(any)
                 
             }, error: { (error:NSError!) -> Void in
                 
                 self.strategyDetailViewModel.failureMsg = error.localizedDescription
             }, completed: { () -> Void in
                 
-                
+                println("completed")
             })
         }
+        
+        strategyDetailViewModel.active = true
     }
     
     /**

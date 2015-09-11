@@ -27,13 +27,4 @@ protocol StrategyModelDataSourceProtocol {
      */
     func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal
     
-    /**
-     * 查询攻略列表
-     * 
-     * @param strategyId 攻略ID
-     *
-     * @return RACSignal 攻略列表
-     */
-    func queryStrategyList(strategyId: String) -> RACSignal
-    
 }

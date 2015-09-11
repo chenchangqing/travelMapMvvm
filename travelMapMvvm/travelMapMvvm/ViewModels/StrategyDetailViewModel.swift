@@ -21,7 +21,7 @@ class StrategyDetailViewModel: RVMViewModel {
     var strategyModel               : StrategyModel!    // 攻略model
     var searchStrategyListCommand   : RACCommand!       // 查询攻略列表命令
     
-    var strategModelDataSourceProtocol = JSONStrategyModelDataSource.shareInstance() // 查询攻略类
+    var poiModelDataSourceProtocol = JSONPOIModelDataSource.shareInstance() // 查询攻略类
     
     // MARK: - init
     
@@ -51,7 +51,7 @@ class StrategyDetailViewModel: RVMViewModel {
             
             if let strategyId=self.strategyModel.strategyId {
                 
-                return self.strategModelDataSourceProtocol.queryStrategyList(strategyId)
+                return self.poiModelDataSourceProtocol.queryPOIList(strategyId, rows: 5, startId: nil).materialize()
             }
             return RACSignal.empty()
         })

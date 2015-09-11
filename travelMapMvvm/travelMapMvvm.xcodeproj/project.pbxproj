@@ -71,6 +71,10 @@
 		E67B28251B9D3A900070E3AD /* LocalAreaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */; };
 		E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B28261B9D43330070E3AD /* RegisterViewModel.swift */; };
 		E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */; };
+		E6849E841BA2687900A5631B /* queryPOIList.json in Resources */ = {isa = PBXBuildFile; fileRef = E6849E831BA2687900A5631B /* queryPOIList.json */; };
+		E6849E861BA2692400A5631B /* POIModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */; };
+		E6849E881BA26A6D00A5631B /* JSONPOIModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */; };
+		E6849E8A1BA26B4700A5631B /* NetworkPOIModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -295,6 +299,10 @@
 		E67B28241B9D3A900070E3AD /* LocalAreaHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalAreaHelper.m; sourceTree = "<group>"; };
 		E67B28261B9D43330070E3AD /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdController.swift; sourceTree = "<group>"; };
+		E6849E831BA2687900A5631B /* queryPOIList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryPOIList.json; sourceTree = "<group>"; };
+		E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIModelDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPOIModelDataSource.swift; sourceTree = "<group>"; };
+		E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPOIModelDataSource.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -650,6 +658,7 @@
 				E6A46F0F1B93EDC100BA089B /* SelectionViewDataSourceProtocol.swift */,
 				E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */,
 				E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */,
+				E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -669,6 +678,7 @@
 			children = (
 				E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */,
 				E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */,
+				E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */,
 				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
 			);
 			path = Database;
@@ -679,6 +689,7 @@
 			children = (
 				E659F48C1B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift */,
 				E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */,
+				E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */,
 				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
 				E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */,
 			);
@@ -773,6 +784,7 @@
 		E659F49F1B8CEFFF005CD9FD /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				E6849E831BA2687900A5631B /* queryPOIList.json */,
 				E687631B1B9971220006DD3D /* qqLogin.json */,
 				E687631C1B9971220006DD3D /* sinaLogin.json */,
 				E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */,
@@ -1331,6 +1343,7 @@
 				E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
+				E6849E841BA2687900A5631B /* queryPOIList.json in Resources */,
 				E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */,
 				E604002A1B9BE0A400C3C0A8 /* Resource.bundle in Resources */,
 			);
@@ -1398,6 +1411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6849E8A1BA26B4700A5631B /* NetworkPOIModelDataSource.swift in Sources */,
 				E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */,
 				E68730CC1B91689400F3EA40 /* MJRefreshStateHeader.m in Sources */,
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
@@ -1468,6 +1482,7 @@
 				E6A46F1F1B949E5A00BA089B /* ColorHelper.swift in Sources */,
 				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
 				E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */,
+				E6849E861BA2692400A5631B /* POIModelDataSourceProtocol.swift in Sources */,
 				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
 				E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */,
 				E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */,
@@ -1502,6 +1517,7 @@
 				E698AD831B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				E698AD9C1B905BA6001B7D71 /* NVActivityIndicatorShape.swift in Sources */,
 				E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */,
+				E6849E881BA26A6D00A5631B /* JSONPOIModelDataSource.swift in Sources */,
 				E68730CE1B91689400F3EA40 /* MJRefreshConst.m in Sources */,
 				E6AA5E521B9357CA009C7DA1 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				E659F4C71B8CEFFF005CD9FD /* SSASideMenu.swift in Sources */,

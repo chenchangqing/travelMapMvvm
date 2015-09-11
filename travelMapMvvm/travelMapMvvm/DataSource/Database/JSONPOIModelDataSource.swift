@@ -1,45 +1,46 @@
 //
-//  CacheStrategyModelDataSource.swift
+//  POIModelDataSource.swift
 //  travelMapMvvm
 //
-//  Created by green on 15/8/26.
+//  Created by green on 15/9/11.
 //  Copyright (c) 2015年 travelMapMvvm. All rights reserved.
 //
 
+import Foundation
 import ReactiveCocoa
 
-class JSONStrategyModelDataSource: StrategyModelDataSourceProtocol {
-    
+class JSONPOIModelDataSource: POIModelDataSourceProtocol {
+
     // MARK: - 单例
     
-    class func shareInstance()->StrategyModelDataSourceProtocol{
+    class func shareInstance()->POIModelDataSourceProtocol{
         struct YRSingleton{
             static var predicate:dispatch_once_t = 0
-            static var instance:JSONStrategyModelDataSource? = nil
+            static var instance:JSONPOIModelDataSource? = nil
         }
         dispatch_once(&YRSingleton.predicate,{
-            YRSingleton.instance=JSONStrategyModelDataSource()
+            YRSingleton.instance=JSONPOIModelDataSource()
         })
         return YRSingleton.instance!
     }
     
-    func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal {
+    func queryPOIList(strategyId: String, rows: Int, startId: String?) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(NSEC_PER_SEC * 1)), dispatch_get_main_queue(), { () -> Void in
                 
-                let resultDic = ReadJsonClass.readJsonData("queryStrategyList")
+                let resultDic = ReadJsonClass.readJsonData("queryPOIList")
                 
                 if resultDic.error == nil {
                     
                     if let data: AnyObject=resultDic.data {
                         
-                        var strategyList = [StrategyModel]()
+                        var list = [POIModel]()
                         
-                        strategyList <-- data[kData]
+                        list <-- data[kData]
                         
-                        subscriber.sendNext(strategyList)
+                        subscriber.sendNext(list)
                         subscriber.sendCompleted()
                     } else {
                         
