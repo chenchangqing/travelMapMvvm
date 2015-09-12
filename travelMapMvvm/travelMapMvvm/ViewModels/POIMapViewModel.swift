@@ -8,10 +8,18 @@
 
 import ReactiveViewModel
 import ReactiveCocoa
+import MapKit
 
 class POIMapViewModel: RVMViewModel {
-   
-    dynamic var poiList = [POIModel]()  // POI列表
+    
+    // MARK: - 提示信息
+    
+    dynamic var failureMsg  : String = ""   // 操作失败提示
+    dynamic var successMsg  : String = ""   // 操作失败提示
+    
+    // MARK: - POI列表
+    
+    dynamic var poiList = [POIModel]()
     
     // MARK: - 标注
     
@@ -20,8 +28,50 @@ class POIMapViewModel: RVMViewModel {
     
     var selectedBasicMapAnnotation : BasicMapAnnotation!
     
+    // MARK: - 定位类
+    
+    let locationManager = LocationManager.sharedInstance
+    
+    dynamic var lastCoordinate: CLLocationCoordinate2DModel?
+    dynamic var lastUserAnnotation: MKAnnotation?
+    
+    // MARK: - Commands
+    
+    var updatingLocationPlacemarkCommand: RACCommand!
+    
+    
     override init() {
         super.init()
+        
+        locationManager.showVerboseMessage = true
+        locationManager.autoUpdate = true // 标准定位
+        
+        updatingLocationPlacemarkCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            if let coordinateModel = any as? CLLocationCoordinate2DModel {
+                
+                return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
+                    
+                    self.locationManager.reverseGeocodeLocationWithLatLon(latitude: coordinateModel.latitude, longitude: coordinateModel.longitude) { (reverseGecodeInfo, placemark, error) -> Void in
+                        
+                        if error != nil {
+                            
+                            subscriber.sendError(ErrorEnum.GeocodeLocationError.error)
+                        } else {
+                            
+                            subscriber.sendNext(placemark)
+                            subscriber.sendCompleted()
+                        }
+                    }
+                    
+                    return nil
+                }).materialize()
+            } else {
+                
+                return RACSignal.empty()
+            }
+        })
+        
     }
     
     /**
@@ -53,5 +103,20 @@ class POIMapViewModel: RVMViewModel {
         }
         
         return (basicAnnotation,distanceAnnotation)
+    }
+    
+    
+    /**
+     * 计算距离
+     */
+    func caculateDistance(fromCoordinate:CLLocationCoordinate2D,toCoordinate:CLLocationCoordinate2D) -> String {
+        
+        let fromLocation    = CLLocation(latitude: fromCoordinate.latitude, longitude: fromCoordinate.longitude)
+        let toLocation      = CLLocation(latitude: toCoordinate.latitude, longitude: toCoordinate.longitude)
+        let distance        = fromLocation.distanceFromLocation(toLocation)
+        let doubleDistance  = distance/1000
+        let b               = doubleDistance * 100
+        let c               = Double(Int(b)) / 100
+        return "\(c)km"
     }
 }

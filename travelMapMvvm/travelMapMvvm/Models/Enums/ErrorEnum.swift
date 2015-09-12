@@ -16,8 +16,10 @@ enum ErrorEnum : String {
     case SinaAuthError = "新浪登录授权失败"
     case GetZonesError = "获取支持区号失败"
     case VerityCodeError = "手机验证码错误"
+    case LocationError = "定位失败"
+    case GeocodeLocationError = "反编码地理位置失败"
     
-    static let allValues = [ServerError,JSONError,ImageDownloadError,SinaAuthError,GetZonesError,VerityCodeError]
+    static let allValues = [ServerError,JSONError,ImageDownloadError,SinaAuthError,GetZonesError,VerityCodeError,LocationError,GeocodeLocationError]
     
     // 位置
     var index : Int {

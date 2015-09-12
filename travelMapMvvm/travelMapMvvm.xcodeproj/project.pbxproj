@@ -44,6 +44,7 @@
 		E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A71B8DB01B0034B267 /* OperationEnum.swift */; };
 		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
 		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
+		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */; };
@@ -280,6 +281,7 @@
 		E611B3A71B8DB01B0034B267 /* OperationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationEnum.swift; sourceTree = "<group>"; };
 		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
 		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 				E6A46F171B943B6400BA089B /* UserModel.swift */,
 				E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */,
 				E6D6B8901BA1C8CB00A715CF /* POIModel.swift */,
+				E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1184,7 +1187,6 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
@@ -1195,6 +1197,7 @@
 				E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */,
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
+				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1540,6 +1543,7 @@
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
 				E698AD551B8FF356001B7D71 /* IndexViewModel.swift in Sources */,
 				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
+				E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */,
 				E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */,
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
 				E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */,
