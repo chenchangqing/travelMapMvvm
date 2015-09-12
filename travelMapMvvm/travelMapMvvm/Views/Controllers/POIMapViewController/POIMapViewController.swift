@@ -66,12 +66,6 @@ class POIMapViewController: UIViewController {
                     
                     self.poiMapViewModel.basicMapAnnotationDic[basicMapAnnotation] = self.getBasicAnnotationView(basicMapAnnotation)
                     
-                    // 地图区域设置
-                    if poiTuple.index == 0 {
-                        
-                        self.setupMapRegion(basicMapAnnotation)
-                    }
-                    
                     // callout
                     basicMapAnnotation.title = poiTuple.element.poiName
                     basicMapAnnotation.subtitle = poiTuple.element.address

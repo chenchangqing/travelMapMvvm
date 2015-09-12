@@ -95,17 +95,29 @@ extension POIMapViewController: MKMapViewDelegate {
         
         if let basicMapAnnotation = view.annotation as? BasicMapAnnotation {
             
+            self.poiMapViewModel.selectedBasicMapAnnotation = basicMapAnnotation
             self.scrollView.focus(basicMapAnnotation.index)
         }
     }
     
     func mapView(mapView: MKMapView!, didAddAnnotationViews views: [AnyObject]!) {
         
-        // POI水平显示控件 默认选中第一个
+        // POI水平显示控件 默认选中
         
-        if 0 < self.poiMapViewModel.basicMapAnnotationDic.count {
+        if self.poiMapViewModel.selectedBasicMapAnnotation == nil {
             
-            self.mapView.selectAnnotation(self.poiMapViewModel.basicMapAnnotationDic.keys[0], animated: true)
+            if 0 < self.poiMapViewModel.basicMapAnnotationDic.count {
+                
+                self.mapView.selectAnnotation(self.poiMapViewModel.basicMapAnnotationDic.keys[0], animated: true)
+                // 地图区域设置
+                self.setupMapRegion(self.poiMapViewModel.basicMapAnnotationDic.keys[0])
+            }
+        } else {
+            
+            self.mapView.selectAnnotation(self.poiMapViewModel.selectedBasicMapAnnotation, animated: true)
+            // 地图区域设置
+            self.setupMapRegion(self.poiMapViewModel.selectedBasicMapAnnotation)
         }
+        
     }
 }

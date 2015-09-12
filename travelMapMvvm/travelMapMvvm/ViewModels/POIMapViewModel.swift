@@ -18,6 +18,8 @@ class POIMapViewModel: RVMViewModel {
     var basicMapAnnotationDic = OrderedDictionary<BasicMapAnnotation,BasicMapAnnotationView>()
     var distanceAnnotationDic = OrderedDictionary<DistanceAnnotation,DistanceAnnotationView>()
     
+    var selectedBasicMapAnnotation : BasicMapAnnotation!
+    
     override init() {
         super.init()
     }
