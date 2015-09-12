@@ -654,6 +654,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		E649B4321BA4046600B99A2F /* callout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = callout;
+			sourceTree = "<group>";
+		};
 		E659F4761B8CEFFF005CD9FD /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +941,7 @@
 		E6849EA71BA2CB4500A5631B /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E649B4321BA4046600B99A2F /* callout */,
 				E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */,
 				E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */,
 				E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */,

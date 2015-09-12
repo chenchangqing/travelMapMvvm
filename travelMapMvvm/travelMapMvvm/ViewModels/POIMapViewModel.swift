@@ -15,8 +15,8 @@ class POIMapViewModel: RVMViewModel {
     
     // MARK: - 标注
     
-    var basicMapAnnotationDic = [BasicMapAnnotation:BasicMapAnnotationView]()
-    var distanceAnnotationDic = [DistanceAnnotation:DistanceAnnotationView]()
+    var basicMapAnnotationDic = OrderedDictionary<BasicMapAnnotation,BasicMapAnnotationView>()
+    var distanceAnnotationDic = OrderedDictionary<DistanceAnnotation,DistanceAnnotationView>()
     
     override init() {
         super.init()

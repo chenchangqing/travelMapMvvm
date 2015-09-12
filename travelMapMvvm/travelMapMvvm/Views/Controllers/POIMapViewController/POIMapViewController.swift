@@ -38,8 +38,8 @@ class POIMapViewController: UIViewController {
     private func setup() {
         
         bindViewModel()
-        setupEvents()
         setupMap()
+        setupEvents()
     }
     
     /**
@@ -54,8 +54,8 @@ class POIMapViewController: UIViewController {
             
             // 更新地图
             // 删除标注
-            self.mapView.removeAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys.array)
-            self.mapView.removeAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys.array)
+            self.mapView.removeAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys)
+            self.mapView.removeAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys)
             
             // 组织标注dic
             for poiTuple in enumerate(poiList) {
@@ -71,6 +71,10 @@ class POIMapViewController: UIViewController {
                         
                         self.setupMapRegion(basicMapAnnotation)
                     }
+                    
+                    // callout
+                    basicMapAnnotation.title = poiTuple.element.poiName
+                    basicMapAnnotation.subtitle = poiTuple.element.address
                 }
                 
                 if let distanceAnnotation=annotationTuple.distanceAnnotation {
@@ -80,8 +84,8 @@ class POIMapViewController: UIViewController {
             }
             
             // 增加标注
-            self.mapView.addAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys.array)
-            self.mapView.addAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys.array)
+            self.mapView.addAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys)
+            self.mapView.addAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys)
         }
     }
     
@@ -93,10 +97,18 @@ class POIMapViewController: UIViewController {
         // POI水平显示控件
         self.scrollView.selectFunc = { index in
             
+            if index < self.poiMapViewModel.basicMapAnnotationDic.count {
+                
+                self.mapView.selectAnnotation(self.poiMapViewModel.basicMapAnnotationDic.keys[index], animated: true)
+            }
         }
         
         self.scrollView.unselectFunc = { index in
             
+            if index < self.poiMapViewModel.basicMapAnnotationDic.count {
+                
+                self.mapView.deselectAnnotation(self.poiMapViewModel.basicMapAnnotationDic.keys[index], animated: true)
+            }
         }
         
         // 点击定位按钮

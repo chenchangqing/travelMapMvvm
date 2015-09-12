@@ -42,7 +42,8 @@ extension POIMapViewController: MKMapViewDelegate {
         
         let text                            = basicMapAnnotation.index + 1
         annotationView!.indexL.text         = "\(text)"
-        annotationView!.canShowCallout      = false
+        annotationView?.canShowCallout      = true
+        annotationView?.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as! UIView
         
         return annotationView!
     }
@@ -80,5 +81,31 @@ extension POIMapViewController: MKMapViewDelegate {
         }
         
         return nil
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        let annotationView  = annotationView as! BasicMapAnnotationView
+        let annotation      = annotationView.annotation as! BasicMapAnnotation
+        let poi             = self.poiMapViewModel.poiList[annotation.index]
+        println(poi)
+    }
+    
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        
+        if let basicMapAnnotation = view.annotation as? BasicMapAnnotation {
+            
+            self.scrollView.focus(basicMapAnnotation.index)
+        }
+    }
+    
+    func mapView(mapView: MKMapView!, didAddAnnotationViews views: [AnyObject]!) {
+        
+        // POI水平显示控件 默认选中第一个
+        
+        if 0 < self.poiMapViewModel.basicMapAnnotationDic.count {
+            
+            self.mapView.selectAnnotation(self.poiMapViewModel.basicMapAnnotationDic.keys[0], animated: true)
+        }
     }
 }
