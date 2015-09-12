@@ -43,6 +43,7 @@
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
 		E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A71B8DB01B0034B267 /* OperationEnum.swift */; };
 		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
+		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */; };
@@ -278,6 +279,7 @@
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
 		E611B3A71B8DB01B0034B267 /* OperationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationEnum.swift; sourceTree = "<group>"; };
 		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
+		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -654,11 +656,12 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		E649B4321BA4046600B99A2F /* callout */ = {
+		E649B4331BA4622600B99A2F /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
+				E649B4341BA4623D00B99A2F /* LocationManager.swift */,
 			);
-			path = callout;
+			path = LocationManager;
 			sourceTree = "<group>";
 		};
 		E659F4761B8CEFFF005CD9FD /* AppDelegate */ = {
@@ -728,6 +731,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E649B4331BA4622600B99A2F /* LocationManager */,
 				E69DCD631BA142F1000A9344 /* CTDisplayView */,
 				E67B28181B9D279D0070E3AD /* SMS_SDK */,
 				E60400081B9BE0A300C3C0A8 /* ShareSDK */,
@@ -941,7 +945,6 @@
 		E6849EA71BA2CB4500A5631B /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				E649B4321BA4046600B99A2F /* callout */,
 				E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */,
 				E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */,
 				E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */,
@@ -1628,6 +1631,7 @@
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,
 				E698AD811B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */,
+				E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */,
 				E68730C91B91689400F3EA40 /* MJRefreshBackStateFooter.m in Sources */,
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
 				E6849E9D1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
