@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93529958199999996" green="0.38352157279999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="g6U-K1-WWx">
                             <rect key="frame" x="0.0" y="64" width="375" height="400"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -201,21 +201,77 @@
                             <rect key="frame" x="0.0" y="400" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-B4-Jci">
-                                    <rect key="frame" x="16" y="0.0" width="343" height="200"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-B4-Jci">
+                                    <rect key="frame" x="10" y="0.0" width="355" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="eGd-ka-3Pl"/>
+                                    </constraints>
                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WZ-rg-Bfd">
+                                    <rect key="frame" x="10" y="48" width="321.5" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="UZI-I1-Gwu"/>
+                                    </constraints>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN5-1I-ild">
+                                    <rect key="frame" x="10" y="96" width="355" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="7Rj-EA-lyP"/>
+                                    </constraints>
+                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGR-Tq-VqU">
+                                    <rect key="frame" x="10" y="144" width="355" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="XMa-ra-LyR"/>
+                                    </constraints>
+                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVF-4I-3re">
+                                    <rect key="frame" x="331.5" y="48" width="27.5" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="CVF-4I-3re" secondAttribute="height" multiplier="131:189" id="oEM-Bk-qh4"/>
+                                    </constraints>
+                                    <state key="normal" image="u188">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="AN5-1I-ild" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="10" id="39K-0e-vGG"/>
+                                <constraint firstItem="7WZ-rg-Bfd" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="10" id="9xv-Ck-xir"/>
+                                <constraint firstItem="7WZ-rg-Bfd" firstAttribute="height" secondItem="CVF-4I-3re" secondAttribute="height" id="FHj-7S-rWK"/>
+                                <constraint firstAttribute="trailing" secondItem="7WZ-rg-Bfd" secondAttribute="trailing" constant="10" id="Jn5-s7-dXf"/>
                                 <constraint firstAttribute="bottom" secondItem="U9W-B4-Jci" secondAttribute="bottom" id="MFJ-ct-hdM"/>
-                                <constraint firstAttribute="trailing" secondItem="U9W-B4-Jci" secondAttribute="trailing" constant="16" id="Upc-QG-lJ9"/>
+                                <constraint firstItem="7WZ-rg-Bfd" firstAttribute="top" secondItem="U9W-B4-Jci" secondAttribute="bottom" constant="8" id="Mkt-za-Jrx"/>
+                                <constraint firstAttribute="trailing" secondItem="AN5-1I-ild" secondAttribute="trailing" constant="10" id="T91-gF-eXo"/>
+                                <constraint firstItem="AN5-1I-ild" firstAttribute="top" secondItem="7WZ-rg-Bfd" secondAttribute="bottom" constant="8" id="TJN-bt-naD"/>
+                                <constraint firstAttribute="trailing" secondItem="U9W-B4-Jci" secondAttribute="trailing" constant="10" id="Upc-QG-lJ9"/>
+                                <constraint firstItem="xGR-Tq-VqU" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="10" id="Uwx-ni-qom"/>
+                                <constraint firstItem="7WZ-rg-Bfd" firstAttribute="centerY" secondItem="CVF-4I-3re" secondAttribute="centerY" id="XxU-MC-xGv"/>
                                 <constraint firstItem="U9W-B4-Jci" firstAttribute="top" secondItem="25y-gd-v5g" secondAttribute="top" id="Yba-fX-c9G"/>
-                                <constraint firstItem="U9W-B4-Jci" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="16" id="mmQ-3q-fKR"/>
+                                <constraint firstItem="CVF-4I-3re" firstAttribute="leading" secondItem="7WZ-rg-Bfd" secondAttribute="trailing" id="ZMF-AQ-6ZP"/>
+                                <constraint firstItem="xGR-Tq-VqU" firstAttribute="top" secondItem="AN5-1I-ild" secondAttribute="bottom" constant="8" id="ag1-2n-lJp"/>
+                                <constraint firstItem="U9W-B4-Jci" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="10" id="mmQ-3q-fKR"/>
+                                <constraint firstAttribute="trailing" secondItem="xGR-Tq-VqU" secondAttribute="trailing" constant="10" id="r1v-A5-t3Y"/>
+                                <constraint firstAttribute="trailing" secondItem="CVF-4I-3re" secondAttribute="trailing" constant="16" id="xrp-ur-T5A"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="MFJ-ct-hdM"/>
+                                    <exclude reference="Jn5-s7-dXf"/>
+                                </mask>
+                            </variation>
                         </view>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
@@ -228,9 +284,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="levelV" destination="jEh-fP-fPy" id="1h3-ex-Dzh"/>
+                        <outlet property="poiAddressTextView" destination="7WZ-rg-Bfd" id="heB-xB-Rar"/>
+                        <outlet property="poiAddressTextViewHeightConstraint" destination="UZI-I1-Gwu" id="MzA-eP-Jmj"/>
+                        <outlet property="poiDescTextView" destination="U9W-B4-Jci" id="cq2-4Y-N7V"/>
+                        <outlet property="poiDescTextViewHeightConstraint" destination="eGd-ka-3Pl" id="qdY-n8-xGj"/>
                         <outlet property="poiNameL" destination="pOq-41-xyO" id="F2B-dI-CEV"/>
+                        <outlet property="poiOpenTimeTextView" destination="AN5-1I-ild" id="OWR-i1-Ndh"/>
+                        <outlet property="poiOpenTimeTextViewHeightConstraint" destination="7Rj-EA-lyP" id="UxJ-dn-ILm"/>
                         <outlet property="poiPicV" destination="esa-LL-r19" id="tdk-VH-FbU"/>
-                        <outlet property="textView" destination="U9W-B4-Jci" id="h9O-la-W0Y"/>
+                        <outlet property="poiTiketTextView" destination="xGR-Tq-VqU" id="4Yv-Uu-cZg"/>
+                        <outlet property="poiTiketTextViewHeightConstraint" destination="XMa-ra-LyR" id="m2v-u7-za2"/>
                         <outlet property="textViewContainer" destination="25y-gd-v5g" id="cwg-bh-oEO"/>
                     </connections>
                 </tableViewController>
@@ -241,6 +304,7 @@
     </scenes>
     <resources>
         <image name="back_btn" width="15" height="15"/>
+        <image name="u188" width="131" height="189"/>
         <image name="u690" width="42" height="41"/>
         <image name="u692" width="44" height="39"/>
     </resources>
