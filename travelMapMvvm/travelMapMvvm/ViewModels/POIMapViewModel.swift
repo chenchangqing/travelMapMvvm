@@ -104,19 +104,4 @@ class POIMapViewModel: RVMViewModel {
         
         return (basicAnnotation,distanceAnnotation)
     }
-    
-    
-    /**
-     * 计算距离
-     */
-    func caculateDistance(fromCoordinate:CLLocationCoordinate2D,toCoordinate:CLLocationCoordinate2D) -> String {
-        
-        let fromLocation    = CLLocation(latitude: fromCoordinate.latitude, longitude: fromCoordinate.longitude)
-        let toLocation      = CLLocation(latitude: toCoordinate.latitude, longitude: toCoordinate.longitude)
-        let distance        = fromLocation.distanceFromLocation(toLocation)
-        let doubleDistance  = distance/1000
-        let b               = doubleDistance * 100
-        let c               = Double(Int(b)) / 100
-        return "\(c)km"
-    }
 }

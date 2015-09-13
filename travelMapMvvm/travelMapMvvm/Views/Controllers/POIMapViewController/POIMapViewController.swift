@@ -95,6 +95,23 @@ class POIMapViewController: UIViewController {
             self.mapView.addAnnotations(self.poiMapViewModel.basicMapAnnotationDic.keys)
             self.mapView.addAnnotations(self.poiMapViewModel.distanceAnnotationDic.keys)
         }
+        
+        RACObserve(self, "poiMapViewModel.lastCoordinate").subscribeNext { (lastCoordinate:AnyObject?) -> () in
+            
+            if let lastCoordinate=lastCoordinate as? CLLocationCoordinate2DModel {
+                
+                // 查询位置信息
+                self.poiMapViewModel.updatingLocationPlacemarkCommand.execute(lastCoordinate)
+                // 显示距离
+                self.showDistances(lastCoordinate.latitude, longitude: lastCoordinate.longitude)
+            }
+        }
+        
+        RACObserve(self, "poiMapViewModel.lastUserAnnotation").subscribeNext { (currentUserAnnotation:AnyObject?) -> () in
+            
+            // 更新标注
+            self.updateLastUserAnnotation(currentUserAnnotation as? MKPlacemark)
+        }
     }
     
     /**
@@ -127,50 +144,14 @@ class POIMapViewController: UIViewController {
                 self.showHUDMessage(kMsgStopLocation)
                 self.poiMapViewModel.locationManager.stopUpdatingLocation()
                 
-                if let lastUserAnnotation = self.poiMapViewModel.lastUserAnnotation {
-                    
-                    self.mapView.removeAnnotation(lastUserAnnotation)
-                }
-                self.poiMapViewModel.lastCoordinate = nil
-                
-                for (key,value) in self.poiMapViewModel.distanceAnnotationDic {
-                    
-                    UIView.animateWithDuration(0.3, animations: { () -> Void in
-                        
-                        value.distanceL.alpha = 0
-                    })
-                }
+                self.resetUserPositionInfo()    // 重置坐标及标注
+                self.hideDistances()            // 隐藏距离
             } else {
                 
                 self.showHUDMessage(kMsgStartLocation)
                 
                 // 开始定位
-                self.poiMapViewModel.locationManager.startUpdatingLocationWithCompletionHandler(completionHandler: { (latitude, longitude, status, verboseMessage, error) -> () in
-                    
-                    if error != nil {
-                        
-                        self.poiMapViewModel.failureMsg = ErrorEnum.LocationError.rawValue
-                    } else {
-                        
-                        
-                        // 处理定位
-                        let currentCoordinate = CLLocationCoordinate2DModel(latitude: latitude, longitude: longitude)
-                        
-                        // 查询位置
-                        if let lastCoordinate = self.poiMapViewModel.lastCoordinate {
-                            
-                            if !currentCoordinate.isEqual(lastCoordinate) {
-                                
-                                self.poiMapViewModel.lastCoordinate = currentCoordinate
-                                self.poiMapViewModel.updatingLocationPlacemarkCommand.execute(currentCoordinate)
-                            }
-                        } else {
-                            
-                            self.poiMapViewModel.lastCoordinate = currentCoordinate
-                            self.poiMapViewModel.updatingLocationPlacemarkCommand.execute(currentCoordinate)
-                        }
-                    }
-                })
+                self.startUpdatingLocation()
             }
             
             btn.selected = !btn.selected
@@ -221,32 +202,7 @@ class POIMapViewController: UIViewController {
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 处理定位地址
-                let locationPlaceMark = any as! CLPlacemark
-                
-//                println(locationPlaceMark)
-                
-                let currentUserAnnotation = MKPlacemark(placemark: locationPlaceMark)
-                
-                if let lastUserAnnotation = self.poiMapViewModel.lastUserAnnotation {
-                    
-                    self.mapView.removeAnnotation(lastUserAnnotation)
-                }
-                
-                self.poiMapViewModel.lastUserAnnotation = currentUserAnnotation
-                self.setupMapRegion(currentUserAnnotation)
-                self.mapView.addAnnotation(currentUserAnnotation)
-                self.mapView.selectAnnotation(currentUserAnnotation, animated: true)
-                
-                for (key,value) in self.poiMapViewModel.distanceAnnotationDic {
-                    
-                    let distanceStr = self.poiMapViewModel.caculateDistance(currentUserAnnotation.coordinate, toCoordinate: key.coordinate)
-                    value.distanceL.text = distanceStr
-                    
-                    UIView.animateWithDuration(0.3, animations: { () -> Void in
-                        
-                        value.distanceL.alpha = 1
-                    })
-                }
+                self.poiMapViewModel.lastUserAnnotation = MKPlacemark(placemark: any as! CLPlacemark)
             
             }, error: { (error:NSError!) -> Void in
                 

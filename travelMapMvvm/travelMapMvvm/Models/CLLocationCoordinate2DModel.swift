@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CLLocationCoordinate2DModel: NSObject {
     
@@ -25,7 +26,13 @@ class CLLocationCoordinate2DModel: NSObject {
         
         if let object=object as? CLLocationCoordinate2DModel {
             
-            if object.latitude == self.latitude && object.longitude == self.longitude {
+            let selfCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let objCoordinate = CLLocationCoordinate2D(latitude: object.latitude, longitude: object.longitude)
+            
+            let distance = CaculateDistanceHelper.caculateDistance(selfCoordinate, toCoordinate: objCoordinate).double
+            
+            // 距离小于1米则相等
+            if distance < 0.001 {
                 
                 return true
             }
