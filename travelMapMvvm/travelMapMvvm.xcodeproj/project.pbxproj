@@ -222,6 +222,9 @@
 		E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
+		E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E094BA1BA595E600B874CE /* POIDetail.storyboard */; };
+		E6E094BD1BA5A62100B874CE /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */; };
+		E6E094C01BA5A6CE00B874CE /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
 		E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */; };
 		E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */; };
@@ -495,6 +498,9 @@
 		E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITypeEnum.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
+		E6E094BA1BA595E600B874CE /* POIDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIDetail.storyboard; sourceTree = "<group>"; };
+		E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
+		E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
 		E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLineCell.swift; sourceTree = "<group>"; };
 		E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+General.swift"; sourceTree = "<group>"; };
@@ -737,6 +743,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E6E094BE1BA5A6CE00B874CE /* RatingBar */,
 				E649B4331BA4622600B99A2F /* LocationManager */,
 				E69DCD631BA142F1000A9344 /* CTDisplayView */,
 				E67B28181B9D279D0070E3AD /* SMS_SDK */,
@@ -842,6 +849,7 @@
 				E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */,
 				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
 				E6849E8B1BA29AC400A5631B /* POIMap.storyboard */,
+				E6E094BA1BA595E600B874CE /* POIDetail.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -1204,6 +1212,7 @@
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
+				E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1264,6 +1273,14 @@
 				E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E6E094BE1BA5A6CE00B874CE /* RatingBar */ = {
+			isa = PBXGroup;
+			children = (
+				E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */,
+			);
+			path = RatingBar;
 			sourceTree = "<group>";
 		};
 		E6FD762F1B8C5F1800E527CD = {
@@ -1438,6 +1455,7 @@
 				E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
+				E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */,
 				E6849E841BA2687900A5631B /* queryPOIList.json in Resources */,
 				E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */,
 				E604002A1B9BE0A400C3C0A8 /* Resource.bundle in Resources */,
@@ -1556,6 +1574,7 @@
 				E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				E6E094BD1BA5A62100B874CE /* POIDetailViewController.swift in Sources */,
 				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
@@ -1614,6 +1633,7 @@
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E6A46F181B943B6400BA089B /* UserModel.swift in Sources */,
+				E6E094C01BA5A6CE00B874CE /* RatingBar.swift in Sources */,
 				E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */,
 				E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */,
 				E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */,

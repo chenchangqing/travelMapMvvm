@@ -37,6 +37,7 @@
 #define kSegueFromVerifyViewControllerToLoginViewController @"FromVerifyViewControllerToLoginViewController"
 #define kSegueFromIndexViewControllerToStrategyDetailViewController @"FromIndexViewControllerToStrategyDetailViewController"
 #define kSegueFromStrategyDetailViewControllerToPOIMapViewController @"FromStrategyDetailViewControllerToPOIMapViewController"
+#define kSegueFromPOIMapViewControllerToPOIDetailViewController @"FromPOIMapViewControllerToPOIDetailViewController"
 
 // user operation key
 #define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)

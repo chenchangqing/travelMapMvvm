@@ -55,11 +55,34 @@
                         <outlet property="locationBtn" destination="Y4w-xp-Tul" id="Xqo-fD-nX8"/>
                         <outlet property="mapView" destination="2Sz-pj-laJ" id="uiF-hT-JOh"/>
                         <outlet property="scrollView" destination="Xgi-Ub-ehX" id="4JV-cD-gcB"/>
+                        <segue destination="DsD-Zq-zjh" kind="custom" identifier="FromPOIMapViewControllerToPOIDetailViewController" customClass="RBStoryboardPushSegue" id="yni-hS-XNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gj-tV-DNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.5" y="465.5"/>
+            <point key="canvasLocation" x="84.5" y="465.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="VTy-mD-nY9">
+            <objects>
+                <viewController id="DsD-Zq-zjh" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TnQ-g8-9sn"/>
+                        <viewControllerLayoutGuide type="bottom" id="LxF-XU-Jz3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jN2-1G-Iae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="POIDetail"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92e-Iw-zuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554.5" y="465.5"/>
         </scene>
     </scenes>
 </document>
