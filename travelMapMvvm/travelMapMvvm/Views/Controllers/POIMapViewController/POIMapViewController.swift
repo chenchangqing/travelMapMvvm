@@ -45,6 +45,18 @@ class POIMapViewController: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == kSegueFromPOIMapViewControllerToPOIDetailViewController {
+            
+            let poiDetailViewModel = POIDetailViewModel(poiModel: sender as! POIModel)
+            let poiDetailViewController = segue.destinationViewController as! POIDetailViewController
+            poiDetailViewController.poiDetailViewModel = poiDetailViewModel
+        }
+    }
+    
     // MARK: - setup
     
     private func setup() {

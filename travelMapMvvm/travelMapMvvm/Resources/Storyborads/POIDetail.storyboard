@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93529958199999996" green="0.38352157279999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="g6U-K1-WWx">
                             <rect key="frame" x="0.0" y="64" width="375" height="400"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,6 +186,7 @@
                                     </variation>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" red="0.1301994521" green="0.71436381950000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="esa-LL-r19" firstAttribute="leading" secondItem="g6U-K1-WWx" secondAttribute="leading" id="6g1-8i-hX0"/>
                                 <constraint firstItem="UFf-Fx-Auh" firstAttribute="top" secondItem="esa-LL-r19" secondAttribute="bottom" id="KLU-6r-3hk"/>
@@ -196,11 +197,42 @@
                                 <constraint firstItem="UFf-Fx-Auh" firstAttribute="leading" secondItem="g6U-K1-WWx" secondAttribute="leading" id="yPC-lT-H4b"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="25y-gd-v5g">
+                            <rect key="frame" x="0.0" y="400" width="375" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9W-B4-Jci">
+                                    <rect key="frame" x="16" y="0.0" width="343" height="200"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="U9W-B4-Jci" secondAttribute="bottom" id="MFJ-ct-hdM"/>
+                                <constraint firstAttribute="trailing" secondItem="U9W-B4-Jci" secondAttribute="trailing" constant="16" id="Upc-QG-lJ9"/>
+                                <constraint firstItem="U9W-B4-Jci" firstAttribute="top" secondItem="25y-gd-v5g" secondAttribute="top" id="Yba-fX-c9G"/>
+                                <constraint firstItem="U9W-B4-Jci" firstAttribute="leading" secondItem="25y-gd-v5g" secondAttribute="leading" constant="16" id="mmQ-3q-fKR"/>
+                            </constraints>
+                        </view>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
-                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn"/>
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn">
+                            <connections>
+                                <action selector="back:" destination="dK2-yV-I4G" id="wAp-jI-6Uc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="levelV" destination="jEh-fP-fPy" id="1h3-ex-Dzh"/>
+                        <outlet property="poiNameL" destination="pOq-41-xyO" id="F2B-dI-CEV"/>
+                        <outlet property="poiPicV" destination="esa-LL-r19" id="tdk-VH-FbU"/>
+                        <outlet property="textView" destination="U9W-B4-Jci" id="h9O-la-W0Y"/>
+                        <outlet property="textViewContainer" destination="25y-gd-v5g" id="cwg-bh-oEO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-Ie-dwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
