@@ -23,7 +23,7 @@ extension POIDetailViewController : UITableViewDataSource {
         // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
         if indexPath.row < self.poiDetailViewModel.comments.count {
             
-            let item: AnyObject = self.poiDetailViewModel.comments[indexPath.row]
+            let item: AnyObject = self.poiDetailViewModel.comments.keys[indexPath.row]
             if let reactiveView = cell as? ReactiveView {
                 reactiveView.bindViewModel(item)
             }
@@ -42,9 +42,6 @@ extension POIDetailViewController: UITableViewDelegate {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let comment = self.poiDetailViewModel.comments[indexPath.row]
-        let tempTextView = UITextView()
-        tempTextView.attributedText = GONMarkupParserManager.sharedParser().attributedStringFromString("<font size=\"14\">" + (comment.content == nil ? "" : "\(comment.content!)") + "</>")
-        return tempTextView.height(UIScreen.mainScreen().bounds.width - 32) + 60
+        return CGFloat(self.poiDetailViewModel.comments[self.poiDetailViewModel.comments.keys[indexPath.row]]!.integerValue)
     }
 }

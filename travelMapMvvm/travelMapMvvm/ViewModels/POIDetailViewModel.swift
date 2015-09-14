@@ -24,7 +24,7 @@ class POIDetailViewModel: RVMViewModel {
     // MARK: - POI Model / Comment Model
     
     dynamic var poiModel : POIModel!
-    dynamic var comments = [CommentModel]()
+    var comments = OrderedDictionary<CommentModel,NSNumber>()
     
     // MARK: - Search Comments Command
 

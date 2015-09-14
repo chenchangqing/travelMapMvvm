@@ -33,4 +33,27 @@ class CommentModel: NSObject, Deserializable {
             self.level = POILevelEnum(rawValue: level)
         }
     }
+    
+    // MARK: - 重写比较方法
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        
+        if let object=object as? CommentModel {
+            
+            if object.commentId == self.commentId {
+                
+                return true
+            }
+        }
+        return false
+    }
+    
+    override var hash: Int {
+        
+        get {
+            
+            return (self.commentId == nil ? "" :self.commentId!).hash
+        }
+    }
+    
 }

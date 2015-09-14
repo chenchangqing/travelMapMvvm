@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import GONMarkupParser
 
 class POIDetailViewController: UITableViewController {
     
@@ -120,7 +121,18 @@ class POIDetailViewController: UITableViewController {
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
             
                 // 处理POI评论列表
-                self.poiDetailViewModel.comments = any as! [CommentModel]
+                var commentsDic = OrderedDictionary<CommentModel,NSNumber>()
+                
+                // 计算高度
+                let tempTextView = UITextView()
+                for tuple in enumerate(any as! [CommentModel]) {
+                    
+                    tempTextView.attributedText = GONMarkupParserManager.sharedParser().attributedStringFromString("<font size=\"14\">" + (tuple.element.content == nil ? "" : "\(tuple.element.content!)") + "</>")
+                    let height = NSNumber(float: Float(tempTextView.height(UIScreen.mainScreen().bounds.width - 32) + 60))
+                    commentsDic[tuple.element] = height
+                }
+                self.poiDetailViewModel.comments = commentsDic
+                
                 self.tableView.reloadData()
             
             }, error: { (error:NSError!) -> Void in
