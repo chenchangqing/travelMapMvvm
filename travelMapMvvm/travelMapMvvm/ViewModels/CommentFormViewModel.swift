@@ -14,6 +14,19 @@ class CommentFormViewModel: RVMViewModel {
     // MARK: - View Model
     
     var moreCommentsViewModel:MoreCommentsViewModel!
+    
+    // MARK: - DataSource Protocol
+    
+    private let commentModelDataSourceProtocol = JSONCommentModelDataSource.shareInstance()
+    
+    // MARK: - Data From UI
+    
+    dynamic var content : String!    // 评论内容
+    dynamic var rating  : NSNumber!  // 评分
+    
+    // MARK: - 新增评论命令
+    
+    var addCommentCommand: RACCommand!
    
     // MARK: - Init
     
@@ -21,5 +34,25 @@ class CommentFormViewModel: RVMViewModel {
         super.init()
         
         self.moreCommentsViewModel = moreCommentsViewModel
+        
+        setup()
+    }
+    
+    // MARK: - Set Up
+    
+    private func setup() {
+        
+        setupCommands()
+    }
+    
+    // MARK: - Set Up Commands
+    
+    private func setupCommands() {
+        
+        self.addCommentCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            let level = POILevelEnum.instance(self.rating.integerValue - 1)!
+            return self.commentModelDataSourceProtocol.addPOIComment(self.content, level: level, poiId: self.moreCommentsViewModel.poiDetailViewModel.poiModel.poiId!).materialize()
+        })
     }
 }

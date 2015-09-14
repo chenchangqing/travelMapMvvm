@@ -65,5 +65,7 @@ class CommentFormController: UIViewController {
             }
             return nil
         }.ignore(nil) ~> RAC(levelV,"rating")
+        
+        //
     }
 }
