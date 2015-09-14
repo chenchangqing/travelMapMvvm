@@ -591,7 +591,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
-                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn"/>
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn">
+                            <connections>
+                                <action selector="back:" destination="dK2-yV-I4G" id="mjH-Gd-iyQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
