@@ -20,12 +20,15 @@ class POIDetailViewController: UITableViewController {
     @IBOutlet weak var poiAddressTextView   : UITextView!   // POI 地址
     @IBOutlet weak var poiOpenTimeTextView  : UITextView!   // POI 开放时间
     @IBOutlet weak var poiTiketTextView     : UITextView!   // POI 票价
-    @IBOutlet weak var textViewContainer    : UIView!
+    
+    @IBOutlet weak var topViewContainer     : UIView!
+    @IBOutlet weak var headerViewContainer  : UIView!
     
     @IBOutlet weak var poiDescTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var poiAddressTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var poiOpenTimeTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var poiTiketTextViewHeightConstraint: NSLayoutConstraint!
+    
     // MARK: - View Model
     
     var poiDetailViewModel:POIDetailViewModel!
@@ -89,9 +92,9 @@ class POIDetailViewController: UITableViewController {
             self.poiTiketTextViewHeightConstraint.constant = self.poiTiketTextView.height(textViewWidth)
             
             // textViewContainer Height
-            let textViewContainerHeight = self.poiDescTextViewHeightConstraint.constant + self.poiAddressTextViewHeightConstraint.constant + self.poiOpenTimeTextViewHeightConstraint.constant + self.poiTiketTextViewHeightConstraint.constant + 32
+            let textViewContainerHeight = self.poiDescTextViewHeightConstraint.constant + self.poiAddressTextViewHeightConstraint.constant + self.poiOpenTimeTextViewHeightConstraint.constant + self.poiTiketTextViewHeightConstraint.constant + 32 + 33
             
-            self.textViewContainer.setHeight(textViewContainerHeight)
+            self.headerViewContainer.setHeight(self.topViewContainer.height() + textViewContainerHeight)
             self.view.layoutIfNeeded()
         }
     }
