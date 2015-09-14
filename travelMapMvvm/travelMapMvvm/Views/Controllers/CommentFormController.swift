@@ -38,6 +38,14 @@ class CommentFormController: UIViewController {
         setupMessage()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let level:Int = self.commentFormViewModel.moreCommentsViewModel.poiDetailViewModel.poiModel.level?.index == nil ? 0 : self.commentFormViewModel.moreCommentsViewModel.poiDetailViewModel.poiModel.level!.index
+        self.levelV.rating = CGFloat(level + 1)
+        self.commentTextArea.text = ""
+    }
+    
     // MARK: - 命令设置
     
     private func setupCommands() {
@@ -81,7 +89,7 @@ class CommentFormController: UIViewController {
                 // 登录之后新增
                 self.commentFormViewModel.rating = self.levelV.rating
                 self.commentFormViewModel.addCommentCommand.execute(nil)
-                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController!.showHUDMessage(kMsgAddedComment)
+                self.commentFormViewModel.successMsg = kMsgAddedComment
             })
             NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionNotificationName, object: paramObj, userInfo: nil)
         }
@@ -156,23 +164,23 @@ class CommentFormController: UIViewController {
             
             if isLoading {
                 
-                self.showHUDIndicator()
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController!.showHUDIndicator()
             } else {
                 
                 if failureMsg.isEmpty && successMsg.isEmpty {
                     
-                    self.hideHUD()
+                    (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController!.hideHUD()
                 }
             }
             
             if !failureMsg.isEmpty {
                 
-                self.showHUDErrorMessage(failureMsg)
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController!.showHUDErrorMessage(failureMsg)
             }
             
             if !successMsg.isEmpty {
                 
-                self.showHUDMessage(successMsg)
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController!.showHUDMessage(successMsg)
             }
         }
     }
