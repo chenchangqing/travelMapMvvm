@@ -21,6 +21,8 @@ class MoreCommentsViewModel: RVMViewModel {
     var comments = OrderedDictionary<CommentModel,NSNumber>()
     var poiDetailViewModel:POIDetailViewModel!
     
+    dynamic var addedCommentModel: CommentModel?
+    
     // MARK: - 上拉加载命令/下拉刷新命令
     
     var refreshCommand: RACCommand!

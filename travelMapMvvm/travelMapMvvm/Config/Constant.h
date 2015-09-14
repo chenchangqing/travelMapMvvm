@@ -64,5 +64,6 @@
 #define kMsgUploadHeadImageSuccess @"上传头像成功"
 #define kMsgStartLocation @"开始定位"
 #define kMsgStopLocation @"停止定位"
+#define kMsgAddedComment @"增加评论成功"
 
 

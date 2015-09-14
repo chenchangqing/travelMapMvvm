@@ -29,11 +29,24 @@ class MoreCommentsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindViewModel()
         setupMJRefresh()
         setupCommands()
         setupMessage()
         
         self.tableView.header.beginRefreshing()
+    }
+    
+    // MARK: - Bind View Model
+    
+    private func bindViewModel() {
+        
+        RACObserve(self.moreCommentViewModel, "addedCommentModel").ignore(nil).subscribeNextAs { (addedCommentModel:CommentModel) -> () in
+            
+            let commentsDic = CommentCell.caculateCellHeight([addedCommentModel])
+            self.moreCommentViewModel.comments[addedCommentModel] = commentsDic[addedCommentModel]
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - 初始化MJRefresh

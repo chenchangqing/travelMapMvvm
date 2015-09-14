@@ -11,6 +11,11 @@ import ReactiveViewModel
 
 class CommentFormViewModel: RVMViewModel {
     
+    // MARK: - 提示信息
+    
+    dynamic var failureMsg  : String = ""   // 操作失败提示
+    dynamic var successMsg  : String = ""   // 操作失败提示
+    
     // MARK: - View Model
     
     var moreCommentsViewModel:MoreCommentsViewModel!
