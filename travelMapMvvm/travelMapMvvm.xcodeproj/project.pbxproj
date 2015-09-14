@@ -49,6 +49,9 @@
 		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
 		E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */; };
 		E65673031BA6A8E3004E2C58 /* MoreCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673021BA6A8E3004E2C58 /* MoreCommentsViewModel.swift */; };
+		E65673051BA6B94A004E2C58 /* CommentFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673041BA6B94A004E2C58 /* CommentFormController.swift */; };
+		E65673071BA6B96D004E2C58 /* CommentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65673061BA6B96D004E2C58 /* CommentForm.storyboard */; };
+		E65673091BA6C3C3004E2C58 /* CommentFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673081BA6C3C3004E2C58 /* CommentFormViewModel.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */; };
@@ -300,6 +303,9 @@
 		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
 		E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
 		E65673021BA6A8E3004E2C58 /* MoreCommentsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCommentsViewModel.swift; sourceTree = "<group>"; };
+		E65673041BA6B94A004E2C58 /* CommentFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentFormController.swift; sourceTree = "<group>"; };
+		E65673061BA6B96D004E2C58 /* CommentForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CommentForm.storyboard; sourceTree = "<group>"; };
+		E65673081BA6C3C3004E2C58 /* CommentFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentFormViewModel.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -873,6 +879,7 @@
 				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
 				E6849E8B1BA29AC400A5631B /* POIMap.storyboard */,
 				E6E094BA1BA595E600B874CE /* POIDetail.storyboard */,
+				E65673061BA6B96D004E2C58 /* CommentForm.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -894,6 +901,7 @@
 				E6849E8F1BA2A18400A5631B /* POIMapViewModel.swift */,
 				E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */,
 				E65673021BA6A8E3004E2C58 /* MoreCommentsViewModel.swift */,
+				E65673081BA6C3C3004E2C58 /* CommentFormViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1240,6 +1248,7 @@
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
 				E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */,
+				E65673041BA6B94A004E2C58 /* CommentFormController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1478,6 +1487,7 @@
 				E688EFB51B91D52E00C01B23 /* MB-Error@2x.png in Resources */,
 				E688EFB21B91D52E00C01B23 /* MB-Checkmark.png in Resources */,
 				E688EFB41B91D52E00C01B23 /* MB-Error.png in Resources */,
+				E65673071BA6B96D004E2C58 /* CommentForm.storyboard in Resources */,
 				E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */,
 				E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
@@ -1566,6 +1576,7 @@
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
+				E65673091BA6C3C3004E2C58 /* CommentFormViewModel.swift in Sources */,
 				E69DCD721BA142F1000A9344 /* CoreTextImageData.swift in Sources */,
 				E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -1713,6 +1724,7 @@
 				E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */,
 				E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */,
 				E698AD901B905BA6001B7D71 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
+				E65673051BA6B94A004E2C58 /* CommentFormController.swift in Sources */,
 				E69DCD781BA142F1000A9344 /* CTDisplayView.swift in Sources */,
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,

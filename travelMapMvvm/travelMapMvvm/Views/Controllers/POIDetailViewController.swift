@@ -60,7 +60,7 @@ class POIDetailViewController: UITableViewController {
             
             let moreCommentsController = (segue.destinationViewController as! UINavigationController).topViewController as! MoreCommentsController
             
-            moreCommentsController.moreCommentViewModel = MoreCommentsViewModel(poiId: self.poiDetailViewModel.poiModel.poiId!)
+            moreCommentsController.moreCommentViewModel = MoreCommentsViewModel(poiDetailViewModel: self.poiDetailViewModel)
         }
     }
     

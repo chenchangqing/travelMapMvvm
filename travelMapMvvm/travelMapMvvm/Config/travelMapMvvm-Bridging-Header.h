@@ -30,3 +30,4 @@
 #import "CTFrameParserCAPI.h"
 #import "UIView+frameAdjust.h"
 #import <GONMarkupParser/GONMarkupParser.h>
+#import <KGModal/KGModal.h>

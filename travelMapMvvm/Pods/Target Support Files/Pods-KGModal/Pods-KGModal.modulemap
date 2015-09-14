@@ -1,0 +1,6 @@
+framework module KGModal {
+  umbrella header "Pods-KGModal-umbrella.h"
+
+  export *
+  module * { export * }
+}

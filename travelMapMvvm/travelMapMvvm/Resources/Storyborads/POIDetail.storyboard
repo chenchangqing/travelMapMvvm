@@ -724,7 +724,11 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem systemItem="flexibleSpace" id="bH7-8S-K8M"/>
-                        <barButtonItem title="发表评论" id="gGc-43-ZPd"/>
+                        <barButtonItem title="发表评论" id="gGc-43-ZPd">
+                            <connections>
+                                <action selector="addCommentAction:" destination="NAd-UQ-ZwY" id="CBj-Zf-6gg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem systemItem="flexibleSpace" id="lMZ-iU-VtC"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="评论" id="4fL-Yg-ECu">

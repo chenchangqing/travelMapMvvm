@@ -6,4 +6,5 @@ pod 'ReactiveCocoa', '~> 2.5'
 pod 'ReactiveViewModel', '~> 0.3'
 pod 'AFImageDownloader', '~> 1.0.0'
 pod 'GONMarkupParser', '~> 0.6.6'
+pod 'KGModal', '~> 1.2.0'
 use_frameworks!

@@ -19,7 +19,7 @@ class MoreCommentsViewModel: RVMViewModel {
     // MARK: - data
     
     var comments = OrderedDictionary<CommentModel,NSNumber>()
-    var poiId:String!
+    var poiDetailViewModel:POIDetailViewModel!
     
     // MARK: - 上拉加载命令/下拉刷新命令
     
@@ -30,10 +30,10 @@ class MoreCommentsViewModel: RVMViewModel {
     
     // MARK: - Init
     
-    init(poiId:String) {
+    init(poiDetailViewModel:POIDetailViewModel) {
         super.init()
         
-        self.poiId = poiId
+        self.poiDetailViewModel = poiDetailViewModel
         
         setup()
     }
@@ -51,12 +51,12 @@ class MoreCommentsViewModel: RVMViewModel {
         
         refreshCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            return self.commentModelDataSourceProtocol.queryPOICommentList(self.poiId, rows: 3, startId: nil).materialize()
+            return self.commentModelDataSourceProtocol.queryPOICommentList(self.poiDetailViewModel.poiModel.poiId!, rows: 3, startId: nil).materialize()
         })
         
         loadmoreCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            return self.commentModelDataSourceProtocol.queryPOICommentList(self.poiId, rows: 3, startId: nil).materialize()
+            return self.commentModelDataSourceProtocol.queryPOICommentList(self.poiDetailViewModel.poiModel.poiId!, rows: 3, startId: nil).materialize()
         })
     }
    

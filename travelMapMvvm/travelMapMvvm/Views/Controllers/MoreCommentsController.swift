@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import KGModal
 
 class MoreCommentsController: UITableViewController {
     
@@ -18,6 +19,10 @@ class MoreCommentsController: UITableViewController {
     // MARK: - TABLE Cell
     
     let kCellIdentifier = "cell"
+    
+    // MARK: - 评论表单
+    
+    lazy var commentFormController = UIViewController.getViewController("CommentForm", identifier: "CommentFormController") as! CommentFormController
     
     // MARK: - Life Cycle
 
@@ -160,5 +165,15 @@ class MoreCommentsController: UITableViewController {
         
         return CGFloat(self.moreCommentViewModel.comments[self.moreCommentViewModel.comments.keys[indexPath.row]]!.integerValue)
     }
-
+    
+    // MARK: - 新增评论
+    
+    @IBAction func addCommentAction(sender: AnyObject) {
+        
+        if self.commentFormController.commentFormViewModel == nil {
+            self.commentFormController.commentFormViewModel = CommentFormViewModel(moreCommentsViewModel: self.moreCommentViewModel)
+        }
+        
+        KGModal.sharedInstance().showWithContentViewController(self.commentFormController, andAnimated :true)
+    }
 }
