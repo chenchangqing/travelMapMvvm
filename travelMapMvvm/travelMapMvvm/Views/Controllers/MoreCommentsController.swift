@@ -7,91 +7,158 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class MoreCommentsController: UITableViewController {
+    
+    // MARK: - View Model
+    
+    var moreCommentViewModel: MoreCommentsViewModel!
+    
+    // MARK: - TABLE Cell
+    
+    let kCellIdentifier = "cell"
+    
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        setupMJRefresh()
+        setupCommands()
+        setupMessage()
+        
+        self.tableView.header.beginRefreshing()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - 初始化MJRefresh
+    
+    private func setupMJRefresh() {
+        
+        tableView.header = MJRefreshNormalHeader(refreshingBlock: { () -> Void in
+            
+            // 查询数据
+            self.moreCommentViewModel.refreshCommand.execute(nil)
+        })
+        
+        tableView.footer = MJRefreshBackNormalFooter { () -> Void in
+            
+            // 查询数据
+            self.moreCommentViewModel.loadmoreCommand.execute(nil)
+        }
+        tableView.footer.automaticallyChangeAlpha = true
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+    
+    // MARK: - Set Up Commands
+    
+    private func setupCommands() {
+        
+        moreCommentViewModel.refreshCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新数据
+                self.moreCommentViewModel.comments = CommentCell.caculateCellHeight(any as! [CommentModel])
+            
+                self.tableView.reloadData()
+            
+            }, error: { (error:NSError!) -> Void in
+                
+                self.moreCommentViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.resetNoMoreData()
+            })
+        }
+        
+        moreCommentViewModel.loadmoreCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新数据
+                self.moreCommentViewModel.comments = CommentCell.caculateCellHeight(any as! [CommentModel])
+                
+                self.tableView.reloadData()
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.moreCommentViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                
+                self.tableView.footer.endRefreshing()
+            })
+        }
     }
-
+    
+    // MARKO: - Setup Message 成功失败提示 加载提示
+    
+    private func setupMessage() {
+        
+        RACSignal.combineLatest([
+            RACObserve(moreCommentViewModel, "failureMsg"),
+            RACObserve(moreCommentViewModel, "successMsg"),
+            moreCommentViewModel.loadmoreCommand.executing,
+            moreCommentViewModel.refreshCommand.executing
+        ]).subscribeNextAs { (tuple: RACTuple) -> () in
+            
+            let failureMsg  = tuple.first as! String
+            let successMsg  = tuple.second as! String
+            
+            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if failureMsg.isEmpty && successMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
+            
+            if !failureMsg.isEmpty {
+                
+                self.showHUDErrorMessage(failureMsg)
+            }
+            
+            if !successMsg.isEmpty {
+                
+                self.showHUDMessage(successMsg)
+            }
+        }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return self.moreCommentViewModel.comments.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
+        
+        // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
+        if indexPath.row < self.moreCommentViewModel.comments.count {
+            
+            let item: AnyObject = self.moreCommentViewModel.comments.keys[indexPath.row]
+            if let reactiveView = cell as? ReactiveView {
+                reactiveView.bindViewModel(item)
+            }
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return CGFloat(self.moreCommentViewModel.comments[self.moreCommentViewModel.comments.keys[indexPath.row]]!.integerValue)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -624,6 +624,95 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="frD-5S-rx8" customClass="CommentCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="frD-5S-rx8" id="V9X-35-kvx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-4f-BtB">
+                                            <rect key="frame" x="16" y="4" width="343" height="44"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNM-bd-Vdj" customClass="GCircleControl" customModule="travelMapMvvm" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="4" width="36" height="36"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="NNM-bd-Vdj" secondAttribute="height" multiplier="1:1" id="0ci-a9-bRk"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="john" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-82-pM6">
+                                                    <rect key="frame" x="44" y="2" width="291" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="QO1-g2-RXR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUT-5R-tr6" customClass="RatingBar" customModule="travelMapMvvm" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="23" width="100" height="21"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="7GM-rR-pMY"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="ratingMax">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rUT-5R-tr6" secondAttribute="bottom" id="AuM-tk-vgW"/>
+                                                <constraint firstItem="QwR-82-pM6" firstAttribute="top" secondItem="zOK-4f-BtB" secondAttribute="top" constant="2" id="EQ2-ig-9r5"/>
+                                                <constraint firstAttribute="bottom" secondItem="NNM-bd-Vdj" secondAttribute="bottom" constant="4" id="G1t-r8-YGY"/>
+                                                <constraint firstItem="rUT-5R-tr6" firstAttribute="top" secondItem="QwR-82-pM6" secondAttribute="bottom" id="OeN-yV-3Z3"/>
+                                                <constraint firstItem="NNM-bd-Vdj" firstAttribute="leading" secondItem="zOK-4f-BtB" secondAttribute="leading" id="T8Q-dz-c7c"/>
+                                                <constraint firstItem="rUT-5R-tr6" firstAttribute="leading" secondItem="NNM-bd-Vdj" secondAttribute="trailing" constant="8" id="Tkb-Lg-Vbt"/>
+                                                <constraint firstAttribute="height" constant="44" id="Zwq-BK-bbC"/>
+                                                <constraint firstItem="QwR-82-pM6" firstAttribute="leading" secondItem="NNM-bd-Vdj" secondAttribute="trailing" constant="8" id="eMI-RB-mRD"/>
+                                                <constraint firstItem="NNM-bd-Vdj" firstAttribute="top" secondItem="zOK-4f-BtB" secondAttribute="top" constant="4" id="fkv-Ak-xI5"/>
+                                                <constraint firstAttribute="trailing" secondItem="QwR-82-pM6" secondAttribute="trailing" constant="8" id="mz1-DI-ID3"/>
+                                            </constraints>
+                                        </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLz-4s-QYq">
+                                            <rect key="frame" x="16" y="52" width="343" height="43"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="zOK-4f-BtB" secondAttribute="trailing" constant="16" id="9uz-py-XRp"/>
+                                        <constraint firstItem="zOK-4f-BtB" firstAttribute="leading" secondItem="V9X-35-kvx" secondAttribute="leading" constant="16" id="B9E-Fl-U5r"/>
+                                        <constraint firstAttribute="trailing" secondItem="zOK-4f-BtB" secondAttribute="trailing" id="PA0-CY-m3B"/>
+                                        <constraint firstAttribute="trailing" secondItem="MLz-4s-QYq" secondAttribute="trailing" constant="16" id="aPo-sj-oCe"/>
+                                        <constraint firstItem="MLz-4s-QYq" firstAttribute="leading" secondItem="V9X-35-kvx" secondAttribute="leading" constant="16" id="epQ-Ov-BS4"/>
+                                        <constraint firstItem="MLz-4s-QYq" firstAttribute="top" secondItem="zOK-4f-BtB" secondAttribute="bottom" constant="4" id="f7Z-1h-a05"/>
+                                        <constraint firstAttribute="bottom" secondItem="MLz-4s-QYq" secondAttribute="bottom" constant="4" id="jMW-Ei-b1D"/>
+                                        <constraint firstItem="zOK-4f-BtB" firstAttribute="leading" secondItem="V9X-35-kvx" secondAttribute="leading" id="qoM-yr-dYZ"/>
+                                        <constraint firstItem="zOK-4f-BtB" firstAttribute="top" secondItem="V9X-35-kvx" secondAttribute="top" constant="4" id="yN8-7L-AMX"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qoM-yr-dYZ"/>
+                                            <exclude reference="PA0-CY-m3B"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentV" destination="MLz-4s-QYq" id="zcu-IV-uSE"/>
+                                    <outlet property="headCircleV" destination="NNM-bd-Vdj" id="JkI-qA-ZzH"/>
+                                    <outlet property="levelV" destination="rUT-5R-tr6" id="EiD-TR-s9H"/>
+                                    <outlet property="userName" destination="QwR-82-pM6" id="0uv-wx-Bgv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="NAd-UQ-ZwY" id="eSP-e5-4yX"/>
                             <outlet property="delegate" destination="NAd-UQ-ZwY" id="XQ3-X7-VWf"/>
