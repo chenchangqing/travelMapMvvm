@@ -122,6 +122,21 @@ class CommentFormController: UIViewController {
             
             return String(text).length > 0 ? UIButton.defaultBackgroundColor : UIButton.enabledBackgroundColor
         } ~> RAC(self.sureBtn,"backgroundColor")
+        
+        // placeholder
+        self.commentTextArea.rac_textSignal().mapAs { (text:NSString) -> NSNumber in
+            
+            return String(text).length > 0
+        }.subscribeNextAs { (isValid:NSNumber) -> () in
+            
+            if isValid.boolValue {
+                
+                self.placeHolder.text = ""
+            } else {
+                
+                self.placeHolder.text = "点击添加文字..."
+            }
+        }
     }
     
     // MARKO: - Setup Message 成功失败提示 加载提示

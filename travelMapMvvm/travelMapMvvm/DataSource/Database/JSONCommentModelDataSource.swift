@@ -64,7 +64,7 @@ class JSONCommentModelDataSource: CommentModelDataSourceProtocol {
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
             let commentModel = CommentModel()
-            commentModel.commentId = "12345"
+            commentModel.commentId = "\(random())"
             commentModel.commentTime = "2015-08-08 00:00:00"
             commentModel.content = content
             commentModel.level = level
