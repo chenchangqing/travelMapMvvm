@@ -10,7 +10,7 @@
         <!--Detail View Controller-->
         <scene sceneID="hMV-0L-Ry7">
             <objects>
-                <tableViewController id="dK2-yV-I4G" customClass="POIDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="POIDetailViewController" id="dK2-yV-I4G" customClass="POIDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,16 +313,6 @@
                             <rect key="frame" x="0.0" y="139" width="375" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-r8-b3W">
-                                    <rect key="frame" x="16" y="16" width="343" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="Qx4-hj-Qz8"/>
-                                    </constraints>
-                                    <state key="normal" title="更多评价">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyA-to-VfO">
                                     <rect key="frame" x="0.0" y="72" width="375" height="17"/>
                                     <subviews>
@@ -478,6 +468,19 @@
                                         <constraint firstAttribute="width" secondItem="FH8-cN-lvQ" secondAttribute="width" multiplier="3:1" id="zMd-hG-IRs"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbx-r8-b3W">
+                                    <rect key="frame" x="16" y="16" width="343" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Qx4-hj-Qz8"/>
+                                    </constraints>
+                                    <state key="normal" title="更多评价">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="4Mg-R8-AZI" kind="show" identifier="FromPOIDetailViewControllerToMoreCommentsController" id="KiJ-HD-hVO"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -588,11 +591,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
-                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn">
-                            <connections>
-                                <action selector="back:" destination="dK2-yV-I4G" id="wAp-jI-6Uc"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -614,7 +613,63 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-Ie-dwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254.5" y="300.5"/>
+            <point key="canvasLocation" x="3066.5" y="300.5"/>
+        </scene>
+        <!--评论-->
+        <scene sceneID="yfQ-2g-Mz0">
+            <objects>
+                <tableViewController id="NAd-UQ-ZwY" customClass="MoreCommentsController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="U9f-6C-qqR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NAd-UQ-ZwY" id="eSP-e5-4yX"/>
+                            <outlet property="delegate" destination="NAd-UQ-ZwY" id="XQ3-X7-VWf"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="flexibleSpace" id="bH7-8S-K8M"/>
+                        <barButtonItem title="发表评论" id="gGc-43-ZPd"/>
+                        <barButtonItem systemItem="flexibleSpace" id="lMZ-iU-VtC"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="评论" id="4fL-Yg-ECu">
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="kvo-LS-igG">
+                            <connections>
+                                <segue destination="6aa-C5-ufA" kind="unwind" unwindAction="unwindSegueToPOIDetailViewController:" id="4ZI-mg-bHU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZc-eA-0ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6aa-C5-ufA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4038.5" y="300.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YIr-lp-WQo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="4Mg-R8-AZI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ooo-5V-pK6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.5" contentMode="scaleToFill" id="A8z-ML-xBx">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="NAd-UQ-ZwY" kind="relationship" relationship="rootViewController" id="tHh-zD-YCO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyK-hV-NkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564.5" y="300.5"/>
         </scene>
     </scenes>
     <resources>

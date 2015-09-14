@@ -48,6 +48,22 @@ class POIDetailViewController: UITableViewController {
         
     }
     
+    // MARK: - Navigation
+    
+    @IBAction func unwindSegueToPOIDetailViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == kSegueFromPOIDetailViewControllerToMoreCommentsController {
+            
+            let moreCommentsController = (segue.destinationViewController as! UINavigationController).topViewController as! MoreCommentsController
+        }
+    }
+    
+    
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
     }
@@ -185,6 +201,40 @@ class POIDetailViewController: UITableViewController {
                 self.showHUDMessage(successMsg)
             }
         }
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.poiDetailViewModel.comments.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
+        
+        // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
+        if indexPath.row < self.poiDetailViewModel.comments.count {
+            
+            let item: AnyObject = self.poiDetailViewModel.comments.keys[indexPath.row]
+            if let reactiveView = cell as? ReactiveView {
+                reactiveView.bindViewModel(item)
+            }
+            //            println(indexPath)
+        } else {
+            
+            //            print(indexPath)
+            //            print("-越界\n")
+        }
+        
+        return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return CGFloat(self.poiDetailViewModel.comments[self.poiDetailViewModel.comments.keys[indexPath.row]]!.integerValue)
     }
 
 }

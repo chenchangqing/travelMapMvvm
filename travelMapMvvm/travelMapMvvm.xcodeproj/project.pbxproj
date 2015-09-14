@@ -47,6 +47,7 @@
 		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
 		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
 		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
+		E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */; };
 		E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */; };
 		E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4811B8CEFFF005CD9FD /* Typealias.swift */; };
 		E659F4C21B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */; };
@@ -94,8 +95,7 @@
 		E6867C211BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */; };
 		E6867C231BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */; };
 		E6867C251BA6701D005BCDC7 /* queryPOICommentList.json in Resources */ = {isa = PBXBuildFile; fileRef = E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */; };
-		E6867C281BA67C27005BCDC7 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */; };
-		E6867C2A1BA67C43005BCDC7 /* POIDetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */; };
+		E6867C2C1BA69583005BCDC7 /* MoreCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -297,6 +297,7 @@
 		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
 		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
+		E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
 		E659F4771B8CEFFF005CD9FD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E659F47F1B8CEFFF005CD9FD /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E659F4801B8CEFFF005CD9FD /* travelMapMvvm-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "travelMapMvvm-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -348,8 +349,7 @@
 		E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCommentModelDataSource.swift; sourceTree = "<group>"; };
 		E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommentModelDataSource.swift; sourceTree = "<group>"; };
 		E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryPOICommentList.json; sourceTree = "<group>"; };
-		E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
-		E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIDetailViewController+TableView.swift"; sourceTree = "<group>"; };
+		E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCommentsController.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -993,15 +993,6 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		E6867C261BA67C27005BCDC7 /* POIDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */,
-				E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */,
-			);
-			path = POIDetailViewController;
-			sourceTree = "<group>";
-		};
 		E68730921B91689300F3EA40 /* MJRefresh2.4.7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,7 +1224,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E6867C261BA67C27005BCDC7 /* POIDetailViewController */,
+				E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
@@ -1245,6 +1236,7 @@
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
+				E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1587,7 +1579,6 @@
 				E6867C1B1BA66A25005BCDC7 /* CommentCell.swift in Sources */,
 				E6867C1D1BA66C77005BCDC7 /* CommentModel.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
-				E6867C2A1BA67C43005BCDC7 /* POIDetailViewController+TableView.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -1610,10 +1601,10 @@
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
 				E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
-				E6867C281BA67C27005BCDC7 /* POIDetailViewController.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
 				E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
@@ -1702,6 +1693,7 @@
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,
 				E698AD811B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */,
+				E6867C2C1BA69583005BCDC7 /* MoreCommentsController.swift in Sources */,
 				E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */,
 				E68730C91B91689400F3EA40 /* MJRefreshBackStateFooter.m in Sources */,
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
