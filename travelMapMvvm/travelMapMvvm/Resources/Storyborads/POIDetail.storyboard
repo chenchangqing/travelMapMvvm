@@ -11,11 +11,11 @@
         <scene sceneID="hMV-0L-Ry7">
             <objects>
                 <tableViewController id="dK2-yV-I4G" customClass="POIDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="25y-gd-v5g">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="25y-gd-v5g">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -308,6 +308,93 @@
                                 <constraint firstAttribute="trailing" secondItem="CVF-4I-3re" secondAttribute="trailing" constant="16" id="xrp-ur-T5A"/>
                             </constraints>
                         </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="pNq-Jp-aMS" customClass="CommentCell" customModule="travelMapMvvm" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pNq-Jp-aMS" id="MLM-5r-v3x">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qic-DL-mfE">
+                                            <rect key="frame" x="16" y="4" width="343" height="44"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of7-s9-Plo" customClass="GCircleControl" customModule="travelMapMvvm" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="4" width="36" height="36"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Of7-s9-Plo" secondAttribute="height" multiplier="1:1" id="2zE-pm-kd4"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="john" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b95-Hh-Bf1">
+                                                    <rect key="frame" x="44" y="2" width="291" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="F8U-ML-6L1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etf-8T-3UZ" customClass="RatingBar" customModule="travelMapMvvm" customModuleProvider="target">
+                                                    <rect key="frame" x="44" y="23" width="100" height="21"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="W0R-do-71E"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="ratingMax">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="b95-Hh-Bf1" secondAttribute="trailing" constant="8" id="EQf-Ya-Jd0"/>
+                                                <constraint firstItem="b95-Hh-Bf1" firstAttribute="leading" secondItem="Of7-s9-Plo" secondAttribute="trailing" constant="8" id="Pog-xV-LQB"/>
+                                                <constraint firstItem="Of7-s9-Plo" firstAttribute="top" secondItem="Qic-DL-mfE" secondAttribute="top" constant="4" id="h0e-7y-8Nj"/>
+                                                <constraint firstAttribute="bottom" secondItem="etf-8T-3UZ" secondAttribute="bottom" id="j56-M3-qdY"/>
+                                                <constraint firstItem="Of7-s9-Plo" firstAttribute="leading" secondItem="Qic-DL-mfE" secondAttribute="leading" id="lcy-cN-kKL"/>
+                                                <constraint firstItem="etf-8T-3UZ" firstAttribute="top" secondItem="b95-Hh-Bf1" secondAttribute="bottom" id="nxX-XE-Zox"/>
+                                                <constraint firstItem="b95-Hh-Bf1" firstAttribute="top" secondItem="Qic-DL-mfE" secondAttribute="top" constant="2" id="pVY-eI-AZX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Of7-s9-Plo" secondAttribute="bottom" constant="4" id="rbu-yc-Gyw"/>
+                                                <constraint firstItem="etf-8T-3UZ" firstAttribute="leading" secondItem="Of7-s9-Plo" secondAttribute="trailing" constant="8" id="uj3-Dt-hX8"/>
+                                                <constraint firstAttribute="height" constant="44" id="w2P-sn-5HS"/>
+                                            </constraints>
+                                        </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-HD-JsR">
+                                            <rect key="frame" x="16" y="52" width="343" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Abg-HD-JsR" secondAttribute="trailing" constant="16" id="Btn-8L-k4r"/>
+                                        <constraint firstItem="Qic-DL-mfE" firstAttribute="top" secondItem="MLM-5r-v3x" secondAttribute="top" constant="4" id="Hd2-0u-gc5"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qic-DL-mfE" secondAttribute="trailing" constant="16" id="KdI-Ya-xlL"/>
+                                        <constraint firstItem="Abg-HD-JsR" firstAttribute="top" secondItem="Qic-DL-mfE" secondAttribute="bottom" constant="4" id="ZlO-Em-dPq"/>
+                                        <constraint firstItem="Qic-DL-mfE" firstAttribute="leading" secondItem="MLM-5r-v3x" secondAttribute="leading" id="fQC-ZV-iQE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qic-DL-mfE" secondAttribute="trailing" id="iAL-yI-bDi"/>
+                                        <constraint firstAttribute="bottom" secondItem="Abg-HD-JsR" secondAttribute="bottom" constant="4" id="n1k-xB-Lsk"/>
+                                        <constraint firstItem="Abg-HD-JsR" firstAttribute="leading" secondItem="MLM-5r-v3x" secondAttribute="leading" constant="16" id="pUb-z1-hGv"/>
+                                        <constraint firstItem="Qic-DL-mfE" firstAttribute="leading" secondItem="MLM-5r-v3x" secondAttribute="leading" constant="16" id="s29-Q2-41C"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="fQC-ZV-iQE"/>
+                                            <exclude reference="iAL-yI-bDi"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.60961140759999999" green="1" blue="0.69422059690000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="userName" destination="b95-Hh-Bf1" id="Vaf-KU-GUI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
                         <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn">

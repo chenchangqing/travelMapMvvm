@@ -88,6 +88,7 @@
 		E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */; };
 		E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */; };
 		E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */; };
+		E6867C1B1BA66A25005BCDC7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -335,6 +336,7 @@
 		E6849EA01BA2BBF900A5631B /* LoginViewModel+QQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+QQ.swift"; sourceTree = "<group>"; };
 		E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
+		E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 		E659F4AD1B8CEFFF005CD9FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */,
 				E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */,
 				E611B3A91B8DB9080034B267 /* StrategyCell.swift */,
 			);
@@ -1553,6 +1556,7 @@
 				E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */,
 				E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				E6867C1B1BA66A25005BCDC7 /* CommentCell.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
