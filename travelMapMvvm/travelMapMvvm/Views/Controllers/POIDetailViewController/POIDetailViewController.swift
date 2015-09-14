@@ -15,6 +15,7 @@ class POIDetailViewController: UITableViewController {
     @IBOutlet weak var poiPicV  : UIImageView!  // POI 图片
     @IBOutlet weak var poiNameL : UILabel!      // POI 名称
     @IBOutlet weak var levelV   : RatingBar!    // POI 评分
+    @IBOutlet weak var moreMomentBtn: UIButton!
     
     @IBOutlet weak var poiDescTextView      : UITextView!   // POI 简介
     @IBOutlet weak var poiAddressTextView   : UITextView!   // POI 地址
@@ -53,6 +54,8 @@ class POIDetailViewController: UITableViewController {
     // MARK: - SetUp
     
     private func setup() {
+        
+        moreMomentBtn.loginBorderStyle()
         
         setupCommand()
         bindViewModel()

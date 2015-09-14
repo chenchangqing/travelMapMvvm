@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GONMarkupParser
 
 extension POIDetailViewController : UITableViewDataSource {
     
@@ -37,9 +38,13 @@ extension POIDetailViewController : UITableViewDataSource {
     }
 }
 
-//extension POIDetailViewController: UITableViewDelegate {
-//
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//    }
-//}
+extension POIDetailViewController: UITableViewDelegate {
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let comment = self.poiDetailViewModel.comments[indexPath.row]
+        let tempTextView = UITextView()
+        tempTextView.attributedText = GONMarkupParserManager.sharedParser().attributedStringFromString("<font size=\"14\">" + (comment.content == nil ? "" : "\(comment.content!)") + "</>")
+        return tempTextView.height(UIScreen.mainScreen().bounds.width - 32) + 60
+    }
+}
