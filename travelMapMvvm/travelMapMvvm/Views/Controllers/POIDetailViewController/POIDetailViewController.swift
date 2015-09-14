@@ -29,6 +29,10 @@ class POIDetailViewController: UITableViewController {
     @IBOutlet weak var poiOpenTimeTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var poiTiketTextViewHeightConstraint: NSLayoutConstraint!
     
+    // MARK: - TABLE Cell
+    
+    let kCellIdentifier = "cell"
+    
     // MARK: - View Model
     
     var poiDetailViewModel:POIDetailViewModel!
@@ -50,7 +54,9 @@ class POIDetailViewController: UITableViewController {
     
     private func setup() {
         
+        setupCommand()
         bindViewModel()
+        setupMessage()
     }
     
     // MARK: - Bind ViewModel
@@ -96,6 +102,73 @@ class POIDetailViewController: UITableViewController {
             
             self.headerViewContainer.setHeight(self.topViewContainer.height() + textViewContainerHeight)
             self.view.layoutIfNeeded()
+            
+            // 查询评论列表
+            self.poiDetailViewModel.searchCommentsCommand.execute(nil)
+        }
+    }
+    
+    // MARK: - SETUP Command
+    
+    private func setupCommand() {
+        
+        poiDetailViewModel.searchCommentsCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+            
+                // 处理POI评论列表
+                self.poiDetailViewModel.comments = any as! [CommentModel]
+                self.tableView.reloadData()
+            
+            }, error: { (error:NSError!) -> Void in
+                
+                self.poiDetailViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                
+                //                println("completed")
+            })
+        }
+    }
+    
+    // MARKO: - Setup Message
+    
+    /**
+     * 成功失败提示
+     */
+    private func setupMessage() {
+        
+        RACSignal.combineLatest([
+            RACObserve(poiDetailViewModel, "failureMsg"),
+            RACObserve(poiDetailViewModel, "successMsg"),
+            poiDetailViewModel.searchCommentsCommand.executing
+        ]).subscribeNextAs { (tuple: RACTuple) -> () in
+            
+            let failureMsg  = tuple.first as! String
+            let successMsg  = tuple.second as! String
+            
+            let isLoading   = tuple.third as! Bool
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if failureMsg.isEmpty && successMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
+            
+            if !failureMsg.isEmpty {
+                
+                self.showHUDErrorMessage(failureMsg)
+            }
+            
+            if !successMsg.isEmpty {
+                
+                self.showHUDMessage(successMsg)
+            }
         }
     }
 

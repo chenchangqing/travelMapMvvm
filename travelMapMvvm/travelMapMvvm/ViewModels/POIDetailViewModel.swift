@@ -11,15 +11,25 @@ import ReactiveViewModel
 import GONMarkupParser
 
 class POIDetailViewModel: RVMViewModel {
+    
+    // MARK: - 提示信息
+    
+    dynamic var failureMsg  : String = ""   // 操作失败提示
+    dynamic var successMsg  : String = ""   // 操作失败提示
    
     // MARK: - POI IMAGE
     
     var poiImageViewModel = ImageViewModel(urlString: nil, defaultImage:UIImage(named: "defaultImage.jpg")!)
     
-    // MARK: - POI Model
+    // MARK: - POI Model / Comment Model
     
     dynamic var poiModel : POIModel!
+    dynamic var comments = [CommentModel]()
     
+    // MARK: - Search Comments Command
+
+    var searchCommentsCommand: RACCommand!
+    private let commentModelDataSourceProtocol = JSONCommentModelDataSource.shareInstance()
     
     // MARK: - INIT
     
@@ -34,6 +44,17 @@ class POIDetailViewModel: RVMViewModel {
             self.poiImageViewModel.urlString = poiPicUrl as? String
             self.poiImageViewModel.downloadImageCommand.execute(nil)
         }
+        
+        searchCommentsCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            if let poiId=poiModel.poiId {
+                
+                return self.commentModelDataSourceProtocol.queryPOICommentList(poiId, rows: 3, startId: nil).materialize()
+            } else {
+                
+                return RACSignal.empty()
+            }
+        })
         
     }
     

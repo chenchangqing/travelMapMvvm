@@ -89,6 +89,13 @@
 		E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */; };
 		E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */; };
 		E6867C1B1BA66A25005BCDC7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */; };
+		E6867C1D1BA66C77005BCDC7 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C1C1BA66C77005BCDC7 /* CommentModel.swift */; };
+		E6867C1F1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C1E1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift */; };
+		E6867C211BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */; };
+		E6867C231BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */; };
+		E6867C251BA6701D005BCDC7 /* queryPOICommentList.json in Resources */ = {isa = PBXBuildFile; fileRef = E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */; };
+		E6867C281BA67C27005BCDC7 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */; };
+		E6867C2A1BA67C43005BCDC7 /* POIDetailViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */; };
 		E68730BF1B91689400F3EA40 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */; };
 		E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730971B91689300F3EA40 /* MJRefreshBackFooter.m */; };
 		E68730C11B91689400F3EA40 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = E68730991B91689300F3EA40 /* MJRefreshComponent.m */; };
@@ -224,7 +231,6 @@
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
 		E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E094BA1BA595E600B874CE /* POIDetail.storyboard */; };
-		E6E094BD1BA5A62100B874CE /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */; };
 		E6E094C01BA5A6CE00B874CE /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */; };
 		E6E094C21BA5AFD800B874CE /* POIDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
@@ -337,6 +343,13 @@
 		E6849EA11BA2BBF900A5631B /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E6849EA51BA2C47F00A5631B /* POIMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIMapViewController.swift; sourceTree = "<group>"; };
 		E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		E6867C1C1BA66C77005BCDC7 /* CommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		E6867C1E1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentModelDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCommentModelDataSource.swift; sourceTree = "<group>"; };
+		E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommentModelDataSource.swift; sourceTree = "<group>"; };
+		E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryPOICommentList.json; sourceTree = "<group>"; };
+		E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
+		E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIDetailViewController+TableView.swift"; sourceTree = "<group>"; };
 		E68730941B91689300F3EA40 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		E68730951B91689300F3EA40 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		E68730961B91689300F3EA40 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -502,7 +515,6 @@
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		E6E094BA1BA595E600B874CE /* POIDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIDetail.storyboard; sourceTree = "<group>"; };
-		E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
 		E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
 		E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewModel.swift; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
@@ -707,6 +719,7 @@
 				E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */,
 				E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */,
 				E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */,
+				E6867C1E1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -727,6 +740,7 @@
 				E659F4891B8CEFFF005CD9FD /* JSONStrategyModelDataSource.swift */,
 				E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */,
 				E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */,
+				E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */,
 				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
 			);
 			path = Database;
@@ -738,6 +752,7 @@
 				E659F48C1B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift */,
 				E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */,
 				E6849E891BA26B4700A5631B /* NetworkPOIModelDataSource.swift */,
+				E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */,
 				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
 				E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */,
 			);
@@ -794,6 +809,7 @@
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
 				E6A46F171B943B6400BA089B /* UserModel.swift */,
 				E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */,
+				E6867C1C1BA66C77005BCDC7 /* CommentModel.swift */,
 				E6D6B8901BA1C8CB00A715CF /* POIModel.swift */,
 				E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */,
 			);
@@ -838,6 +854,7 @@
 			children = (
 				E6849E831BA2687900A5631B /* queryPOIList.json */,
 				E687631B1B9971220006DD3D /* qqLogin.json */,
+				E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */,
 				E687631C1B9971220006DD3D /* sinaLogin.json */,
 				E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */,
 				E68763191B996F990006DD3D /* telephoneLogin.json */,
@@ -974,6 +991,15 @@
 				E6BFCADA1BA3219F0019FB07 /* DistanceAnnotationView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		E6867C261BA67C27005BCDC7 /* POIDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E6867C271BA67C27005BCDC7 /* POIDetailViewController.swift */,
+				E6867C291BA67C43005BCDC7 /* POIDetailViewController+TableView.swift */,
+			);
+			path = POIDetailViewController;
 			sourceTree = "<group>";
 		};
 		E68730921B91689300F3EA40 /* MJRefresh2.4.7 */ = {
@@ -1207,6 +1233,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6867C261BA67C27005BCDC7 /* POIDetailViewController */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
@@ -1218,7 +1245,6 @@
 				E6A46F241B94A0D000BA089B /* LoginViewController.swift */,
 				E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */,
 				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
-				E6E094BC1BA5A62100B874CE /* POIDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1461,6 +1487,7 @@
 				E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
+				E6867C251BA6701D005BCDC7 /* queryPOICommentList.json in Resources */,
 				E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */,
 				E6849E841BA2687900A5631B /* queryPOIList.json in Resources */,
 				E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */,
@@ -1548,6 +1575,7 @@
 				E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E69DCD731BA142F1000A9344 /* CoreTextLinkData.swift in Sources */,
+				E6867C231BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift in Sources */,
 				E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */,
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
@@ -1557,7 +1585,9 @@
 				E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
 				E6867C1B1BA66A25005BCDC7 /* CommentCell.swift in Sources */,
+				E6867C1D1BA66C77005BCDC7 /* CommentModel.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
+				E6867C2A1BA67C43005BCDC7 /* POIDetailViewController+TableView.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -1581,14 +1611,15 @@
 				E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */,
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
-				E6E094BD1BA5A62100B874CE /* POIDetailViewController.swift in Sources */,
 				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
+				E6867C281BA67C27005BCDC7 /* POIDetailViewController.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
 				E6EB10221B9FDF80009FA27F /* ModifyUInfoViewModel.swift in Sources */,
 				E659F4BE1B8CEFFF005CD9FD /* Typealias.swift in Sources */,
 				E688EFB71B91D52E00C01B23 /* UIViewController+MBProgressHUD.m in Sources */,
 				E698AD971B905BA6001B7D71 /* NVActivityIndicatorAnimationPacman.swift in Sources */,
+				E6867C1F1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
 				E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */,
@@ -1680,6 +1711,7 @@
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */,
 				E68F6B901B9A8FAD00AB2C72 /* LeftViewModel.swift in Sources */,
+				E6867C211BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift in Sources */,
 				E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */,
 				E688EFC31B9200C400C01B23 /* IndexViewFooter.swift in Sources */,
 				E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */,

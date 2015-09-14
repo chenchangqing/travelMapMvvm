@@ -11,10 +11,11 @@
         <scene sceneID="hMV-0L-Ry7">
             <objects>
                 <tableViewController id="dK2-yV-I4G" customClass="POIDetailViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="YIp-1v-md7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="25y-gd-v5g">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -363,7 +364,7 @@
                                                 <constraint firstAttribute="height" constant="44" id="w2P-sn-5HS"/>
                                             </constraints>
                                         </view>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-HD-JsR">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abg-HD-JsR">
                                             <rect key="frame" x="16" y="52" width="343" height="44"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -389,12 +390,18 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.60961140759999999" green="1" blue="0.69422059690000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="userName" destination="b95-Hh-Bf1" id="Vaf-KU-GUI"/>
+                                    <outlet property="contentV" destination="Abg-HD-JsR" id="6Cs-zc-9Xg"/>
+                                    <outlet property="headCircleV" destination="Of7-s9-Plo" id="njl-JU-0n2"/>
+                                    <outlet property="levelV" destination="etf-8T-3UZ" id="h0p-rT-wPE"/>
+                                    <outlet property="userName" destination="b95-Hh-Bf1" id="evS-jQ-b8n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dK2-yV-I4G" id="m6J-bC-P6P"/>
+                            <outlet property="delegate" destination="dK2-yV-I4G" id="dJa-hW-69s"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="CXe-3D-vOs">
                         <barButtonItem key="leftBarButtonItem" image="back_btn" id="UFA-pk-Ytn">
