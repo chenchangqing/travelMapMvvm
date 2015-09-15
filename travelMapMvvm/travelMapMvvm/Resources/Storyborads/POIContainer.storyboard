@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Yu-Fm-KEu">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Container Controller-->
+        <scene sceneID="HiH-pm-4Qf">
+            <objects>
+                <viewController id="6Yu-Fm-KEu" customClass="POIContainerController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iuO-tH-cKW"/>
+                        <viewControllerLayoutGuide type="bottom" id="wDJ-ZT-1YD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zRr-jC-eM7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="31L-QW-mZT">
+                        <barButtonItem key="leftBarButtonItem" image="back_btn" id="mgz-RI-hPI">
+                            <connections>
+                                <action selector="back:" destination="6Yu-Fm-KEu" id="5nh-jB-HaR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="地图" id="1dv-lK-cdZ"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBh-EK-pmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.5" y="133.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qci-36-RIi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46T-Yf-ZNn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s3t-8a-9c8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Yu-Fm-KEu" kind="relationship" relationship="rootViewController" id="Kqc-L3-EtZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="68l-BG-IJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_btn" width="15" height="15"/>
+    </resources>
+</document>

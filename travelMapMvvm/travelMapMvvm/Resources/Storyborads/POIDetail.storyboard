@@ -599,7 +599,10 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityBtn" destination="B5o-wm-yPo" id="L9b-Dq-ob7"/>
+                        <outlet property="foodBtn" destination="GnZ-Ku-JnF" id="ZlH-t3-MQ7"/>
                         <outlet property="headerViewContainer" destination="25y-gd-v5g" id="Y16-mf-d8M"/>
+                        <outlet property="hotelBtn" destination="Udw-au-DCS" id="tCB-Yi-7hF"/>
                         <outlet property="levelV" destination="jEh-fP-fPy" id="1h3-ex-Dzh"/>
                         <outlet property="moreMomentBtn" destination="xbx-r8-b3W" id="igE-Bd-11o"/>
                         <outlet property="poiAddressTextView" destination="7WZ-rg-Bfd" id="heB-xB-Rar"/>
@@ -612,7 +615,10 @@
                         <outlet property="poiPicV" destination="esa-LL-r19" id="tdk-VH-FbU"/>
                         <outlet property="poiTiketTextView" destination="xGR-Tq-VqU" id="4Yv-Uu-cZg"/>
                         <outlet property="poiTiketTextViewHeightConstraint" destination="XMa-ra-LyR" id="m2v-u7-za2"/>
+                        <outlet property="scenicBtn" destination="tow-8B-Fld" id="gxF-RK-dMV"/>
+                        <outlet property="shoppingBtn" destination="Qk6-qw-QpX" id="Ysx-ft-Mvy"/>
                         <outlet property="topViewContainer" destination="g6U-K1-WWx" id="15o-RO-f8x"/>
+                        <segue destination="HRf-Xr-r1v" kind="custom" identifier="FromPOIDetailViewControllerToPOIContainerController" customClass="RBStoryboardPushSegue" id="hIh-7a-Y3A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-Ie-dwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -744,6 +750,28 @@
                 <exit id="6aa-C5-ufA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4038.5" y="300.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="aQu-1z-cq0">
+            <objects>
+                <viewController id="HRf-Xr-r1v" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TE2-PR-28c"/>
+                        <viewControllerLayoutGuide type="bottom" id="rEp-dp-MuM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mZ7-3m-m8f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="POIContainer"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGF-3W-zCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564.5" y="-426.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YIr-lp-WQo">

@@ -237,6 +237,8 @@
 		E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E094BA1BA595E600B874CE /* POIDetail.storyboard */; };
 		E6E094C01BA5A6CE00B874CE /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */; };
 		E6E094C21BA5AFD800B874CE /* POIDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */; };
+		E6E1F0C01BA848910010F316 /* POIContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1F0BF1BA848910010F316 /* POIContainerController.swift */; };
+		E6E1F0C21BA848B20010F316 /* POIContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */; };
 		E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */; };
 		E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */; };
 		E6EB10201B9FD6C6009FA27F /* UITableViewCell+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */; };
@@ -525,6 +527,8 @@
 		E6E094BA1BA595E600B874CE /* POIDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIDetail.storyboard; sourceTree = "<group>"; };
 		E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
 		E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewModel.swift; sourceTree = "<group>"; };
+		E6E1F0BF1BA848910010F316 /* POIContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIContainerController.swift; sourceTree = "<group>"; };
+		E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIContainer.storyboard; sourceTree = "<group>"; };
 		E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ModifyUserInfo.storyboard; sourceTree = "<group>"; };
 		E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomLineCell.swift; sourceTree = "<group>"; };
 		E6EB101F1B9FD6C6009FA27F /* UITableViewCell+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+General.swift"; sourceTree = "<group>"; };
@@ -880,6 +884,7 @@
 				E6849E8B1BA29AC400A5631B /* POIMap.storyboard */,
 				E6E094BA1BA595E600B874CE /* POIDetail.storyboard */,
 				E65673061BA6B96D004E2C58 /* CommentForm.storyboard */,
+				E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -1235,6 +1240,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6E1F0BE1BA848910010F316 /* POIContainerController */,
 				E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
@@ -1317,6 +1323,14 @@
 				E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */,
 			);
 			path = RatingBar;
+			sourceTree = "<group>";
+		};
+		E6E1F0BE1BA848910010F316 /* POIContainerController */ = {
+			isa = PBXGroup;
+			children = (
+				E6E1F0BF1BA848910010F316 /* POIContainerController.swift */,
+			);
+			path = POIContainerController;
 			sourceTree = "<group>";
 		};
 		E6FD762F1B8C5F1800E527CD = {
@@ -1491,6 +1505,7 @@
 				E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */,
 				E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
+				E6E1F0C21BA848B20010F316 /* POIContainer.storyboard in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
 				E6867C251BA6701D005BCDC7 /* queryPOICommentList.json in Resources */,
 				E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */,
@@ -1586,6 +1601,7 @@
 				E68730CB1B91689400F3EA40 /* MJRefreshNormalHeader.m in Sources */,
 				E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */,
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
+				E6E1F0C01BA848910010F316 /* POIContainerController.swift in Sources */,
 				E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */,
 				E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */,
 				E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */,

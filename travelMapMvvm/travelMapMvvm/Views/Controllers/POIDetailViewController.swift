@@ -31,6 +31,12 @@ class POIDetailViewController: UITableViewController {
     @IBOutlet weak var poiOpenTimeTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var poiTiketTextViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var scenicBtn    : UIButton!
+    @IBOutlet weak var foodBtn      : UIButton!
+    @IBOutlet weak var shoppingBtn  : UIButton!
+    @IBOutlet weak var hotelBtn     : UIButton!
+    @IBOutlet weak var activityBtn  : UIButton!
+    
     // MARK: - TABLE Cell
     
     let kCellIdentifier = "cell"
@@ -62,6 +68,11 @@ class POIDetailViewController: UITableViewController {
             
             moreCommentsController.moreCommentViewModel = MoreCommentsViewModel(poiDetailViewModel: self.poiDetailViewModel)
         }
+        
+        if segue.identifier == kSegueFromPOIDetailViewControllerToPOIContainerController {
+            
+            let poiContainerController = segue.destinationViewController as! POIContainerController
+        }
     }
     
     // MARK: - SetUp
@@ -70,9 +81,36 @@ class POIDetailViewController: UITableViewController {
         
         moreMomentBtn.loginBorderStyle()
         
+        setUpButtonEvent()
         setupCommand()
         bindViewModel()
         setupMessage()
+    }
+    
+    // MARK: - Set Up Button Event
+    
+    private func setUpButtonEvent() {
+        
+        scenicBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
+        foodBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
+        shoppingBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
+        hotelBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
+        activityBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
     }
     
     // MARK: - Bind ViewModel
