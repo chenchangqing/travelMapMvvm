@@ -5,26 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="eHR-Zk-CNQ">
-            <objects>
-                <viewController id="W8l-Et-KjJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="P6C-JR-wph"/>
-                        <viewControllerLayoutGuide type="bottom" id="jWb-Fk-iR9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q9F-JG-Q8E">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93529958199999996" green="0.38352157279999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="CIh-pM-0Xf"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HW9-Z3-Pah" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6086.5" y="-146.5"/>
-        </scene>
         <!--列表-->
         <scene sceneID="SsW-ue-PF6">
             <objects>
@@ -40,13 +20,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-Vd-lhY" userLabel="Map Container View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
-                                    <segue destination="1zd-ga-0Ie" kind="embed" id="6ae-Is-F06"/>
+                                    <segue destination="ulH-CD-ZeU" kind="embed" id="0OI-DJ-X5y"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ae-Ii1" userLabel="List Container View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
-                                    <segue destination="W8l-Et-KjJ" kind="embed" id="5pp-Ak-gPW"/>
+                                    <segue destination="Iya-Hz-gRr" kind="embed" id="Tys-h4-TF1"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -80,42 +60,6 @@
             </objects>
             <point key="canvasLocation" x="5618.5" y="-548.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cMw-Ji-kS8">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1zd-ga-0Ie" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lgc-kU-m9L"/>
-                        <viewControllerLayoutGuide type="bottom" id="nh3-x6-RL2"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EiB-Hg-U8m">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.65490196079999996" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="07U-QG-nbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6086.5" y="-918.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VIz-SD-Qg2">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bDC-92-Q0o" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2dN-9V-YxE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mNc-wR-oiH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4167.5" y="-548.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Ag-LQ-arf">
             <objects>
@@ -134,6 +78,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZQ-L0-2q7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5101.5" y="-548.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hJC-xQ-8mK">
+            <objects>
+                <viewController id="ulH-CD-ZeU" customClass="ViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MHI-Ed-TVr"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rw-5q-X8a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cKL-dV-fVt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-gz-Qfs" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xg3-4g-KSo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-VI-H8o" customClass="SwipeView">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dPe-VI-H8o" secondAttribute="trailing" id="5Fi-df-qc5"/>
+                            <constraint firstItem="3rw-5q-X8a" firstAttribute="top" secondItem="dPe-VI-H8o" secondAttribute="bottom" id="Gw9-QJ-Oco"/>
+                            <constraint firstItem="dPe-VI-H8o" firstAttribute="top" secondItem="DYx-gz-Qfs" secondAttribute="bottom" id="eAm-Im-0a3"/>
+                            <constraint firstItem="DYx-gz-Qfs" firstAttribute="top" secondItem="MHI-Ed-TVr" secondAttribute="bottom" id="hB5-jC-hGU"/>
+                            <constraint firstItem="dPe-VI-H8o" firstAttribute="leading" secondItem="cKL-dV-fVt" secondAttribute="leading" id="lVG-3n-LVG"/>
+                            <constraint firstAttribute="trailing" secondItem="DYx-gz-Qfs" secondAttribute="trailing" id="uGC-fa-6Pv"/>
+                            <constraint firstItem="DYx-gz-Qfs" firstAttribute="leading" secondItem="cKL-dV-fVt" secondAttribute="leading" id="wFS-6k-sWw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TwN-aF-Lgz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="DYx-gz-Qfs" id="XXA-il-ddG"/>
+                        <outlet property="swipeView" destination="dPe-VI-H8o" id="1aL-bx-41h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IY8-Rk-Cy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6090.5" y="-1290.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UiJ-8h-YUt">
+            <objects>
+                <viewController id="Iya-Hz-gRr" customClass="ViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tv2-kW-SBd"/>
+                        <viewControllerLayoutGuide type="bottom" id="MAm-8M-Tzl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4oa-w1-iD2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7i-jp-ZOr" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gwS-PF-jIc"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-9I-oU6" customClass="SwipeView">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ftL-9I-oU6" firstAttribute="leading" secondItem="4oa-w1-iD2" secondAttribute="leading" id="8de-L1-mvB"/>
+                            <constraint firstAttribute="trailing" secondItem="ftL-9I-oU6" secondAttribute="trailing" id="92m-nl-FNu"/>
+                            <constraint firstItem="v7i-jp-ZOr" firstAttribute="leading" secondItem="4oa-w1-iD2" secondAttribute="leading" id="JEV-1h-UDh"/>
+                            <constraint firstAttribute="trailing" secondItem="v7i-jp-ZOr" secondAttribute="trailing" id="gbX-fz-tKo"/>
+                            <constraint firstItem="MAm-8M-Tzl" firstAttribute="top" secondItem="ftL-9I-oU6" secondAttribute="bottom" id="iZY-wE-7p9"/>
+                            <constraint firstItem="ftL-9I-oU6" firstAttribute="top" secondItem="v7i-jp-ZOr" secondAttribute="bottom" id="rHS-eB-d0z"/>
+                            <constraint firstItem="v7i-jp-ZOr" firstAttribute="top" secondItem="tv2-kW-SBd" secondAttribute="bottom" id="vMU-h6-Nvf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JYH-d6-VZn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="v7i-jp-ZOr" id="Ksd-LD-z8x"/>
+                        <outlet property="swipeView" destination="ftL-9I-oU6" id="4qs-gp-buW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf8-Mj-qVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6090.5" y="-548.5"/>
         </scene>
     </scenes>
     <resources>

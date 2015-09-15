@@ -74,7 +74,7 @@ class POIContainerController: UIViewController {
         
         var willShowViewController: UIViewController!
         
-        // 切换至列表模式
+        // 切换至地图模式        
         if self.title == self.kListModeBtnTitle {
             
             willShowViewController = self.mapViewController
@@ -84,7 +84,7 @@ class POIContainerController: UIViewController {
         
         else
         
-        // 切换至地图模式
+        // 切换至列表模式
         if self.title == self.kMapModeBtnTitle {
             
             willShowViewController = self.listViewController
@@ -93,7 +93,7 @@ class POIContainerController: UIViewController {
         }
         
         // 动画切换
-        self.transitionFromViewController(self.currentViewController, toViewController: willShowViewController, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
+        self.transitionFromViewController(self.currentViewController, toViewController: willShowViewController, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
             
         }, completion: { (finished) -> Void in
             

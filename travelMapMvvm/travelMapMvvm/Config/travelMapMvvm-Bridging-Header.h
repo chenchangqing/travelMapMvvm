@@ -31,3 +31,5 @@
 #import "UIView+frameAdjust.h"
 #import <GONMarkupParser/GONMarkupParser.h>
 #import <KGModal/KGModal.h>
+#import "HMSegmentedControl.h"
+#import "SwipeView.h"
