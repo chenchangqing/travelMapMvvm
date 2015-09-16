@@ -42,6 +42,7 @@ class POIContainerController: UIViewController {
     private func setUp() {
         
         setUpTitle()
+        setUpRightButton()
         setUpCurrentViewController()
         setUpChildViewControllers()
     }
@@ -51,6 +52,13 @@ class POIContainerController: UIViewController {
     private func setUpTitle() {
      
         self.title = kListModeBtnTitle
+    }
+    
+    // MARK: - Set Up Right Button
+    
+    private func setUpRightButton() {
+        
+        rightBtn.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.grayColor()], forState: UIControlState.Highlighted)
     }
     
     // MARK: - Set Up CurrentViewController
@@ -93,6 +101,7 @@ class POIContainerController: UIViewController {
         }
         
         // 动画切换
+        sender.enabled = false
         self.transitionFromViewController(self.currentViewController, toViewController: willShowViewController, duration: 0.3, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
             
         }, completion: { (finished) -> Void in
@@ -102,6 +111,7 @@ class POIContainerController: UIViewController {
                 willShowViewController.didMoveToParentViewController(self)
                 self.currentViewController = willShowViewController
             }
+            sender.enabled = true
         })
     }
 
