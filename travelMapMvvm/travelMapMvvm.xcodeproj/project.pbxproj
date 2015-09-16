@@ -215,6 +215,7 @@
 		E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */; };
 		E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */; };
 		E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */; };
+		E6B039D71BA90EE10047DF2A /* ShowPoiModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039D61BA90EE10047DF2A /* ShowPoiModeEnum.swift */; };
 		E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */; };
 		E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */; };
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
@@ -506,6 +507,7 @@
 		E6AB39341B957607003F88C5 /* UserModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUserModelDataSource.swift; sourceTree = "<group>"; };
 		E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUserModelDataSource.swift; sourceTree = "<group>"; };
+		E6B039D61BA90EE10047DF2A /* ShowPoiModeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPoiModeEnum.swift; sourceTree = "<group>"; };
 		E6B04FEA1B9E83DA00B3415B /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
 		E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
 		E6B04FED1B9E854000B3415B /* NSDictionary-DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-DeepMutableCopy.h"; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 		E659F4961B8CEFFF005CD9FD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E6B039D61BA90EE10047DF2A /* ShowPoiModeEnum.swift */,
 				E6D6B8921BA1C91900A715CF /* POILevelEnum.swift */,
 				E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */,
 				E659F4971B8CEFFF005CD9FD /* MonthEnum.swift */,
@@ -1633,6 +1636,7 @@
 				E659F4B91B8CEFFF005CD9FD /* AppDelegate.swift in Sources */,
 				E6E1F0C01BA848910010F316 /* POIContainerController.swift in Sources */,
 				E67CFA3E1B94B93C00988426 /* ForgetPwdController.swift in Sources */,
+				E6B039D71BA90EE10047DF2A /* ShowPoiModeEnum.swift in Sources */,
 				E6849EA21BA2BBF900A5631B /* LoginViewModel+QQ.swift in Sources */,
 				E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */,
 				E698AD9B1B905BA6001B7D71 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,

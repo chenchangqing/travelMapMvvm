@@ -14,11 +14,6 @@ class POIContainerController: UIViewController {
     // MARK: - 切换地图或列表按钮
     
     @IBOutlet weak var rightBtn: UIBarButtonItem!
-
-    // MARK: - Constant
-    
-    private let kMapModeBtnTitle    = "地图"
-    private let kListModeBtnTitle   = "列表"
     
     // MARK: - 子视图控制器
     
@@ -51,7 +46,7 @@ class POIContainerController: UIViewController {
     
     private func setUpTitle() {
      
-        self.title = kListModeBtnTitle
+        self.title = ShowPoiModeEnum.List.rawValue
     }
     
     // MARK: - Set Up Right Button
@@ -83,21 +78,21 @@ class POIContainerController: UIViewController {
         var willShowViewController: UIViewController!
         
         // 切换至地图模式        
-        if self.title == self.kListModeBtnTitle {
+        if self.title == ShowPoiModeEnum.List.rawValue {
             
             willShowViewController = self.mapViewController
             
-            self.title = kMapModeBtnTitle
+            self.title = ShowPoiModeEnum.Map.rawValue
         }
         
         else
         
         // 切换至列表模式
-        if self.title == self.kMapModeBtnTitle {
+        if self.title == ShowPoiModeEnum.Map.rawValue {
             
             willShowViewController = self.listViewController
             
-            self.title = kListModeBtnTitle
+            self.title = ShowPoiModeEnum.List.rawValue
         }
         
         // 动画切换
