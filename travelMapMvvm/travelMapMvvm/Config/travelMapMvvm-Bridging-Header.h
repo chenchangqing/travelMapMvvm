@@ -33,3 +33,5 @@
 #import <KGModal/KGModal.h>
 #import "HMSegmentedControl.h"
 #import "SwipeView.h"
+#import "THSegmentedPager.h"
+#import "THSegmentedPageViewControllerDelegate.h"

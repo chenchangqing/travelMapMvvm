@@ -40,6 +40,7 @@
 		E60400501B9BE3BD00C3C0A8 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */; };
 		E60B2C251BA52060003DE0DA /* POIMapViewController+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B2C241BA52060003DE0DA /* POIMapViewController+Location.swift */; };
 		E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B2C261BA52ACB003DE0DA /* CaculateDistanceHelper.swift */; };
+		E60C9B961BA9BB07009DA433 /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */; };
 		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
 		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
@@ -306,6 +307,9 @@
 		E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		E60B2C241BA52060003DE0DA /* POIMapViewController+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIMapViewController+Location.swift"; sourceTree = "<group>"; };
 		E60B2C261BA52ACB003DE0DA /* CaculateDistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaculateDistanceHelper.swift; sourceTree = "<group>"; };
+		E60C9B931BA9BB07009DA433 /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPager.h; sourceTree = "<group>"; };
+		E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPager.m; sourceTree = "<group>"; };
+		E60C9B951BA9BB07009DA433 /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPageViewControllerDelegate.h; sourceTree = "<group>"; };
 		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
@@ -718,6 +722,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		E60C9B921BA9BB07009DA433 /* THSegmentedPager */ = {
+			isa = PBXGroup;
+			children = (
+				E60C9B931BA9BB07009DA433 /* THSegmentedPager.h */,
+				E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */,
+				E60C9B951BA9BB07009DA433 /* THSegmentedPageViewControllerDelegate.h */,
+			);
+			path = THSegmentedPager;
+			sourceTree = "<group>";
+		};
 		E649B4331BA4622600B99A2F /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +810,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E60C9B921BA9BB07009DA433 /* THSegmentedPager */,
 				E6E1F0C51BA88A600010F316 /* HMSegmentedControl */,
 				E6E1F0C81BA88A600010F316 /* SwipeView */,
 				E6E094BE1BA5A6CE00B874CE /* RatingBar */,
@@ -1768,6 +1783,7 @@
 				E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */,
 				E69DCD761BA142F1000A9344 /* CTFrameParserCAPI.m in Sources */,
 				E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */,
+				E60C9B961BA9BB07009DA433 /* THSegmentedPager.m in Sources */,
 				E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,
