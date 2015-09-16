@@ -46,27 +46,27 @@ class POIContainerViewModel: RVMViewModel {
             
             self.queryPOIListScenicCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListFoodCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListShoppingCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListHotelCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListActivityCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCityId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String)).materialize()
             })
             
             break;
@@ -74,27 +74,27 @@ class POIContainerViewModel: RVMViewModel {
             
             self.queryPOIListScenicCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListFoodCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListShoppingCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListHotelCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListActivityCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByUserId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String)).materialize()
             })
             
             break;
@@ -102,27 +102,27 @@ class POIContainerViewModel: RVMViewModel {
             
             self.queryPOIListScenicCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Scenic, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListFoodCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Food, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListShoppingCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Shopping, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListHotelCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Hotel, rows: 5, startId: (any as? String)).materialize()
             })
             
             self.queryPOIListActivityCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String))
+                return self.poiModelDataSourceProtocol.queryPOIListByCenterPOIId(self.paramTuple.param, poiType: POITypeEnum.Activity, rows: 5, startId: (any as? String)).materialize()
             })
             
             break;

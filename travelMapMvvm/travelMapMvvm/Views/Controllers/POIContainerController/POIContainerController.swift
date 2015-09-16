@@ -42,7 +42,14 @@ class POIContainerController: UIViewController {
         
         if let poiTypeViewController=segue.destinationViewController as? POITypeViewController {
             
-            poiTypeViewController.poiTypeViewModel = POITypeViewModel(poiContainerViewModel: self.poiContainerViewModel)
+            if  segue.identifier == kSegueFromPOIContainerControllerToListPOITypeViewController {
+                
+                poiTypeViewController.poiTypeViewModel = POITypeViewModel(poiContainerViewModel: self.poiContainerViewModel,showPoiMode:ShowPoiModeEnum.List)
+            }
+            if  segue.identifier == kSegueFromPOIContainerControllerToMapPOITypeViewController {
+                
+                poiTypeViewController.poiTypeViewModel = POITypeViewModel(poiContainerViewModel: self.poiContainerViewModel,showPoiMode:ShowPoiModeEnum.Map)
+            }
         }
     }
     

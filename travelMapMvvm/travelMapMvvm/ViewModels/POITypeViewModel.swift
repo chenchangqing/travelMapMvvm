@@ -17,14 +17,16 @@ class POITypeViewModel: RVMViewModel {
     var poiContainerViewModel: POIContainerViewModel!
     
     // MARK: - Data
-    var segmentedControlItems = POITypeEnum.allValues // 分段数据
+    var segmentedControlItems = POITypeEnum.allValues   // 分段数据
+    var showPoiMode: ShowPoiModeEnum                    // 地图/列表
     
     // MARK: - Init
     
-    init(poiContainerViewModel: POIContainerViewModel) {
-        
-        super.init()
+    init(poiContainerViewModel: POIContainerViewModel,showPoiMode:ShowPoiModeEnum) {
         
         self.poiContainerViewModel = poiContainerViewModel
+        self.showPoiMode = showPoiMode
+        
+        super.init()
     }
 }

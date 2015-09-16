@@ -57,6 +57,7 @@ class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDel
     private func setUp() {
         
         setUpSegmentedControl()
+        setUpChildViewController()
         setUpSwipeView()
     }
     
@@ -88,6 +89,117 @@ class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDel
         self.view.addSubview(segmentedControl)
     }
     
+    // MARK: - Set Up ChildViewController
+    
+    private func setUpChildViewController() {
+        
+        let queryPOIListScenicCommand   = self.poiTypeViewModel.poiContainerViewModel.queryPOIListScenicCommand
+        let queryPOIListFoodCommand     = self.poiTypeViewModel.poiContainerViewModel.queryPOIListFoodCommand
+        let queryPOIListShoppingCommand = self.poiTypeViewModel.poiContainerViewModel.queryPOIListShoppingCommand
+        let queryPOIListHotelCommand    = self.poiTypeViewModel.poiContainerViewModel.queryPOIListHotelCommand
+        let queryPOIListActivityCommand = self.poiTypeViewModel.poiContainerViewModel.queryPOIListActivityCommand
+        
+        switch (self.poiTypeViewModel.showPoiMode) {
+            
+        case .Map:  // 地图模式
+            
+            for item in enumerate(self.poiTypeViewModel.segmentedControlItems) {
+                
+                let poiMapViewController = UIViewController.getViewController("POIMap", identifier: "POIMapViewController") as! POIMapViewController
+                
+                switch(item.element) {
+                    
+                    case .Scenic:
+                        
+                        poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: queryPOIListScenicCommand)
+                        
+                        break
+                        
+                    case .Food:
+                        
+                        poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: queryPOIListFoodCommand)
+                        
+                        break
+                        
+                    case .Shopping:
+                        
+                        poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: queryPOIListShoppingCommand)
+                        
+                        break
+                        
+                    case .Hotel:
+                        
+                        poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: queryPOIListHotelCommand)
+                        
+                        break
+                        
+                    case .Activity:
+                        
+                        poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: queryPOIListActivityCommand)
+                        
+                        break
+                    default:
+                        
+                        break
+                }
+                
+                self.addChildViewController(poiMapViewController)
+            }
+            
+            break;
+        case .List: // 列表模式
+            
+            for item in enumerate(self.poiTypeViewModel.segmentedControlItems) {
+                
+                let poiListViewController = UIViewController.getViewController("POIList", identifier: "POIListViewController") as! POIListViewController
+                
+                switch(item.element) {
+                    
+                    case .Scenic:
+                        
+                        poiListViewController.poiListViewModel = POIListViewModel(refreshCommand: queryPOIListScenicCommand, loadmoreCommand: queryPOIListScenicCommand)
+                        
+                        break
+                    
+                    case .Food:
+                        
+                        poiListViewController.poiListViewModel = POIListViewModel(refreshCommand: queryPOIListFoodCommand, loadmoreCommand: queryPOIListFoodCommand)
+                        
+                        break
+                    
+                    case .Shopping:
+                        
+                        poiListViewController.poiListViewModel = POIListViewModel(refreshCommand: queryPOIListShoppingCommand, loadmoreCommand: queryPOIListShoppingCommand)
+                        
+                        break
+                    
+                    case .Hotel:
+                        
+                        poiListViewController.poiListViewModel = POIListViewModel(refreshCommand: queryPOIListHotelCommand, loadmoreCommand: queryPOIListHotelCommand)
+                        
+                        break
+                    
+                    case .Activity:
+                        
+                        poiListViewController.poiListViewModel = POIListViewModel(refreshCommand: queryPOIListActivityCommand, loadmoreCommand: queryPOIListActivityCommand)
+                        
+                        break
+                    
+                    default:
+                        
+                        break
+                }
+                
+                self.addChildViewController(poiListViewController)
+            }
+            
+            break;
+            
+        default:
+            break;
+        }
+    }
+    
     // MARK: - Set Up SwipeView
     
     private func setUpSwipeView() {
@@ -101,34 +213,38 @@ class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDel
     
     func swipeView(swipeView: SwipeView!, viewForItemAtIndex index: Int, reusingView view: UIView!) -> UIView! {
         
-        var label:UILabel?
-        var resultView = view
+//        var label:UILabel?
+//        var resultView = view
+//        
+//        if resultView == nil {
+//            
+//            resultView = UIView(frame: self.swipeView.bounds)
+//            resultView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+//            
+//            label = UILabel(frame: self.swipeView.bounds)
+//            label?.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+//            label?.backgroundColor = UIColor.clearColor()
+//            label?.textAlignment = NSTextAlignment.Center
+//            label?.font = label?.font.fontWithSize(50)
+//            label?.tag = 1
+//            
+//            resultView.addSubview(label!)
+//        } else {
+//            
+//            label = view.viewWithTag(1) as? UILabel
+//        }
+//        
+//        let key     = items.keys[index]
+//        let value   = items[key]
+//        
+//        label?.text = "\(key)"
+//        resultView.backgroundColor = value
+//        
+//        return resultView
         
-        if resultView == nil {
-            
-            resultView = UIView(frame: self.swipeView.bounds)
-            resultView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
-            
-            label = UILabel(frame: self.swipeView.bounds)
-            label?.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
-            label?.backgroundColor = UIColor.clearColor()
-            label?.textAlignment = NSTextAlignment.Center
-            label?.font = label?.font.fontWithSize(50)
-            label?.tag = 1
-            
-            resultView.addSubview(label!)
-        } else {
-            
-            label = view.viewWithTag(1) as? UILabel
-        }
+        let childViewController = self.childViewControllers[index] as! UIViewController
         
-        let key     = items.keys[index]
-        let value   = items[key]
-        
-        label?.text = "\(key)"
-        resultView.backgroundColor = value
-        
-        return resultView
+        return childViewController.view
     }
     
     func numberOfItemsInSwipeView(swipeView: SwipeView!) -> Int {

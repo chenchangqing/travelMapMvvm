@@ -20,13 +20,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vw7-Vd-lhY" userLabel="Map Container View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
-                                    <segue destination="ulH-CD-ZeU" kind="embed" id="0OI-DJ-X5y"/>
+                                    <segue destination="ulH-CD-ZeU" kind="embed" identifier="FromPOIContainerControllerToMapPOITypeViewController" id="0OI-DJ-X5y"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-ae-Ii1" userLabel="List Container View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
-                                    <segue destination="Iya-Hz-gRr" kind="embed" id="Tys-h4-TF1"/>
+                                    <segue destination="Iya-Hz-gRr" kind="embed" identifier="FromPOIContainerControllerToListPOITypeViewController" id="Tys-h4-TF1"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -131,6 +131,7 @@
         <!--Type View Controller-->
         <scene sceneID="UiJ-8h-YUt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf8-Mj-qVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Iya-Hz-gRr" customClass="POITypeViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tv2-kW-SBd"/>
@@ -170,7 +171,6 @@
                         <outlet property="swipeView" destination="ftL-9I-oU6" id="4qs-gp-buW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf8-Mj-qVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6090.5" y="-548.5"/>
         </scene>

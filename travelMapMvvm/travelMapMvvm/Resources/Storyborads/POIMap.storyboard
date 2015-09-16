@@ -8,7 +8,7 @@
         <!--Map View Controller-->
         <scene sceneID="Y42-Ft-G1p">
             <objects>
-                <viewController id="Ola-zI-zMc" customClass="POIMapViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="POIMapViewController" id="Ola-zI-zMc" customClass="POIMapViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Je-Gb-FJG"/>
                         <viewControllerLayoutGuide type="bottom" id="yBg-id-UES"/>
