@@ -52,7 +52,7 @@ class StrategyDetailViewModel: RVMViewModel {
             
             if let strategyId=self.strategyModel.strategyId {
                 
-                return self.poiModelDataSourceProtocol.queryPOIListByStrategyId(strategyId, poiType: nil, rows: 5, startId: nil)
+                return self.poiModelDataSourceProtocol.queryPOIListByStrategyId(strategyId, poiType: nil, rows: 5, startId: nil).materialize()
             }
             return RACSignal.empty()
         })
