@@ -38,10 +38,14 @@ class POIMapViewModel: RVMViewModel {
     // MARK: - Commands
     
     var updatingLocationPlacemarkCommand: RACCommand!
+    var searchPOIListCommand: RACCommand!
     
     
-    override init() {
+    init(poiList:[POIModel],searchPOIListCommand:RACCommand) {
+        
         super.init()
+        self.poiList = poiList
+        self.searchPOIListCommand = searchPOIListCommand
         
         locationManager.showVerboseMessage = true
         locationManager.autoUpdate = true // 标准定位
@@ -71,6 +75,11 @@ class POIMapViewModel: RVMViewModel {
                 return RACSignal.empty()
             }
         })
+        
+        self.didBecomeActiveSignal.subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.searchPOIListCommand.execute(nil)
+        }
         
     }
     

@@ -47,13 +47,13 @@ class StrategyDetailViewController: UIViewController {
         if segue.identifier == kSegueFromStrategyDetailViewControllerToPOIMapViewController {
             
             let poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
+            poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: self.strategyDetailViewModel.poiList, searchPOIListCommand: self.strategyDetailViewModel.searchPOIListCommand)
             
             // bind
             RACObserve(self, "strategyDetailViewModel.poiList") ~> RAC(poiMapViewController, "poiMapViewModel.poiList")
             
             // 查询POI列表
             setupCommand()              // 监视命令执行设置
-            strategyDetailViewModel.active = true
         }
     }
 
@@ -125,7 +125,7 @@ class StrategyDetailViewController: UIViewController {
      */
     private func setupCommand() {
         
-        strategyDetailViewModel.searchStrategyListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        strategyDetailViewModel.searchPOIListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
             
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
@@ -153,25 +153,11 @@ class StrategyDetailViewController: UIViewController {
         
         RACSignal.combineLatest([
             RACObserve(strategyDetailViewModel, "failureMsg"),
-            RACObserve(strategyDetailViewModel, "successMsg"),
-            strategyDetailViewModel.searchStrategyListCommand.executing
+            RACObserve(strategyDetailViewModel, "successMsg")
         ]).subscribeNextAs { (tuple: RACTuple) -> () in
             
             let failureMsg  = tuple.first as! String
             let successMsg  = tuple.second as! String
-            
-            let isLoading   = tuple.third as! Bool
-            
-            if isLoading {
-                
-                self.showHUDIndicator()
-            } else {
-                
-                if failureMsg.isEmpty && successMsg.isEmpty {
-                    
-                    self.hideHUD()
-                }
-            }
             
             if !failureMsg.isEmpty {
                 

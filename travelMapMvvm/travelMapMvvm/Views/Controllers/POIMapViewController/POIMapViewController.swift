@@ -19,7 +19,7 @@ class POIMapViewController: UIViewController {
     
     // MARK: - View Model
     
-    var poiMapViewModel: POIMapViewModel = POIMapViewModel()
+    var poiMapViewModel: POIMapViewModel!
     
     // MARK: - reuseIdentifier
     
@@ -43,6 +43,12 @@ class POIMapViewController: UIViewController {
             self.showHUDMessage(kMsgStopLocation)
             self.poiMapViewModel.locationManager.stopUpdatingLocation()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.poiMapViewModel.active = true
     }
     
     // MARK: - Navigation
@@ -186,11 +192,25 @@ class POIMapViewController: UIViewController {
         
         RACSignal.combineLatest([
             RACObserve(poiMapViewModel, "failureMsg"),
-            RACObserve(poiMapViewModel, "successMsg")
+            RACObserve(poiMapViewModel, "successMsg"),
+            self.poiMapViewModel.searchPOIListCommand.executing
         ]).subscribeNextAs { (tuple: RACTuple) -> () in
             
             let failureMsg  = tuple.first as! String
             let successMsg  = tuple.second as! String
+            
+            let isLoading = tuple.third as! Bool
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if failureMsg.isEmpty && successMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
             
             if !failureMsg.isEmpty {
                 

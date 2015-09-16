@@ -20,7 +20,7 @@ class StrategyDetailViewModel: RVMViewModel {
     dynamic var poiList     = [POIModel]()  // POI列表
     
     var strategyModel               : StrategyModel!    // 攻略model
-    var searchStrategyListCommand   : RACCommand!       // 查询攻略列表命令
+    var searchPOIListCommand        : RACCommand!       // 查询攻略列表命令
     
     var poiModelDataSourceProtocol = JSONPOIModelDataSource.shareInstance() // 查询攻略类
     
@@ -34,12 +34,6 @@ class StrategyDetailViewModel: RVMViewModel {
         
         // 初始化命令
         setupCommands()
-        
-        // 响应active
-        self.didBecomeActiveSignal.subscribeNext { (any:AnyObject!) -> Void in
-            
-            self.searchStrategyListCommand.execute(nil)
-        }
     
     }
     
@@ -48,7 +42,7 @@ class StrategyDetailViewModel: RVMViewModel {
     private func setupCommands() {
         
         // 初始化攻略列表命令
-        searchStrategyListCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+        searchPOIListCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
             
             if let strategyId=self.strategyModel.strategyId {
                 
