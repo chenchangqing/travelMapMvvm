@@ -10,6 +10,10 @@ import UIKit
 
 class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate, SSASideMenuDelegate {
     
+    // MARK: - View Model
+    
+    var poiTypeViewModel: POITypeViewModel!
+    
     // MARK: - UI HMSegmentedControl/SwipeView
     
     @IBOutlet var segmentedControl  : HMSegmentedControl!
@@ -60,7 +64,14 @@ class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDel
     
     private func setUpSegmentedControl() {
         
-        segmentedControl.sectionTitles               = ["景点","餐饮","购物","酒店","活动"]
+        var titles = [String]()
+        
+        for item in self.poiTypeViewModel.segmentedControlItems {
+            
+            titles.append(item.rawValue)
+        }
+        
+        segmentedControl.sectionTitles               = titles
         segmentedControl.selectionIndicatorHeight    = 2.0
         segmentedControl.selectionIndicatorColor     = UIColor.blueColor()
         segmentedControl.selectionIndicatorLocation  = HMSegmentedControlSelectionIndicatorLocationDown

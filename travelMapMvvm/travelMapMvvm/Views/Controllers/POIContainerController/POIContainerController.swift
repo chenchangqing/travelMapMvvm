@@ -36,6 +36,16 @@ class POIContainerController: UIViewController {
         setUp()
     }
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let poiTypeViewController=segue.destinationViewController as? POITypeViewController {
+            
+            poiTypeViewController.poiTypeViewModel = POITypeViewModel(poiContainerViewModel: self.poiContainerViewModel)
+        }
+    }
+    
     // MARK: - Set Up
     
     private func setUp() {

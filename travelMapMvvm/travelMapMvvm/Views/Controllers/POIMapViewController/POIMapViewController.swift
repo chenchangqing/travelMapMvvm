@@ -32,6 +32,8 @@ class POIMapViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        
+        self.poiMapViewModel.active = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -43,12 +45,6 @@ class POIMapViewController: UIViewController {
             self.showHUDMessage(kMsgStopLocation)
             self.poiMapViewModel.locationManager.stopUpdatingLocation()
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.poiMapViewModel.active = true
     }
     
     // MARK: - Navigation

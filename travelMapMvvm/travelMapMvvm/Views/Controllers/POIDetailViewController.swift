@@ -72,6 +72,7 @@ class POIDetailViewController: UITableViewController {
         if segue.identifier == kSegueFromPOIDetailViewControllerToPOIContainerController {
             
             let poiContainerController = segue.destinationViewController as! POIContainerController
+            poiContainerController.poiContainerViewModel = POIContainerViewModel(paramTuple: (QueryTypeEnum.POIListByCenterPOIId,self.poiDetailViewModel.poiModel.poiId!))
         }
     }
     

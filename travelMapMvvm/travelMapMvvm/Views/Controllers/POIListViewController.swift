@@ -25,11 +25,6 @@ class POIListViewController: UITableViewController {
         super.viewDidLoad()
         
         setUp()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.tableView.header.beginRefreshing()
     }
     
