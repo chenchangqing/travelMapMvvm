@@ -71,6 +71,7 @@
 		E66575F51B9F147F00C44CAC /* ValidHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F41B9F147F00C44CAC /* ValidHelper.swift */; };
 		E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */; };
 		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
+		E674283B1BA9C05300B3C42A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E67428391BA9C05300B3C42A /* THSegmentedPager.m */; };
 		E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */; };
 		E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */; };
 		E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */; };
@@ -339,6 +340,9 @@
 		E66575F41B9F147F00C44CAC /* ValidHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidHelper.swift; sourceTree = "<group>"; };
 		E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewModel.swift; sourceTree = "<group>"; };
 		E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageParamModel.swift; sourceTree = "<group>"; };
+		E67428381BA9C05300B3C42A /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPager.h; sourceTree = "<group>"; };
+		E67428391BA9C05300B3C42A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPager.m; sourceTree = "<group>"; };
+		E674283A1BA9C05300B3C42A /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPageViewControllerDelegate.h; sourceTree = "<group>"; };
 		E67B281A1B9D279D0070E3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		E67B281C1B9D279D0070E3AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
@@ -796,6 +800,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E67428371BA9C05300B3C42A /* THSegmentedPager */,
 				E6E1F0C51BA88A600010F316 /* HMSegmentedControl */,
 				E6E1F0C81BA88A600010F316 /* SwipeView */,
 				E6E094BE1BA5A6CE00B874CE /* RatingBar */,
@@ -963,6 +968,16 @@
 				E611B39C1B8D916F0034B267 /* GCircleControl.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E67428371BA9C05300B3C42A /* THSegmentedPager */ = {
+			isa = PBXGroup;
+			children = (
+				E67428381BA9C05300B3C42A /* THSegmentedPager.h */,
+				E67428391BA9C05300B3C42A /* THSegmentedPager.m */,
+				E674283A1BA9C05300B3C42A /* THSegmentedPageViewControllerDelegate.h */,
+			);
+			path = THSegmentedPager;
 			sourceTree = "<group>";
 		};
 		E67B28181B9D279D0070E3AD /* SMS_SDK */ = {
@@ -1768,6 +1783,7 @@
 				E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */,
 				E69DCD761BA142F1000A9344 /* CTFrameParserCAPI.m in Sources */,
 				E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */,
+				E674283B1BA9C05300B3C42A /* THSegmentedPager.m in Sources */,
 				E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
 				E68730D01B91689400F3EA40 /* UIScrollView+MJRefresh.m in Sources */,

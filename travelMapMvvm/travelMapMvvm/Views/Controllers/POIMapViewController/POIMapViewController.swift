@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveCocoa
 
-class POIMapViewController: UIViewController {
+class POIMapViewController: UIViewController, THSegmentedPageViewControllerDelegate {
     
     // MARK: - UI
     
@@ -258,5 +258,12 @@ class POIMapViewController: UIViewController {
                 self.showHUDMessage(successMsg)
             }
         }
+    }
+    
+    // MARK: - THSegmentedPageViewControllerDelegate
+    
+    func viewControllerTitle() -> String! {
+        
+        return self.title
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UWL-Cg-jif">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UWL-Cg-jif">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Xg3-4g-KSo"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-VI-H8o" customClass="SwipeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-VI-H8o">
                                 <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -120,8 +120,8 @@
                     <navigationItem key="navigationItem" id="TwN-aF-Lgz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="segmentedControl" destination="DYx-gz-Qfs" id="XXA-il-ddG"/>
-                        <outlet property="swipeView" destination="dPe-VI-H8o" id="1aL-bx-41h"/>
+                        <outlet property="contentContainer" destination="dPe-VI-H8o" id="Bmv-dJ-Q33"/>
+                        <outlet property="pageControl" destination="DYx-gz-Qfs" id="rdU-nV-7Mj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IY8-Rk-Cy1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +131,6 @@
         <!--Type View Controller-->
         <scene sceneID="UiJ-8h-YUt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf8-Mj-qVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Iya-Hz-gRr" customClass="POITypeViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tv2-kW-SBd"/>
@@ -148,7 +147,7 @@
                                     <constraint firstAttribute="height" constant="40" id="gwS-PF-jIc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-9I-oU6" customClass="SwipeView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftL-9I-oU6">
                                 <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -167,10 +166,11 @@
                     <navigationItem key="navigationItem" id="JYH-d6-VZn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="segmentedControl" destination="v7i-jp-ZOr" id="Ksd-LD-z8x"/>
-                        <outlet property="swipeView" destination="ftL-9I-oU6" id="4qs-gp-buW"/>
+                        <outlet property="contentContainer" destination="ftL-9I-oU6" id="T0B-q9-bpi"/>
+                        <outlet property="pageControl" destination="v7i-jp-ZOr" id="NS5-jY-LsQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf8-Mj-qVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6090.5" y="-548.5"/>
         </scene>

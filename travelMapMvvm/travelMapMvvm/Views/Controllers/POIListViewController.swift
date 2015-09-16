@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveCocoa
 
-class POIListViewController: UITableViewController {
+class POIListViewController: UITableViewController,THSegmentedPageViewControllerDelegate {
     
     // MARK: - View Model
     
@@ -158,6 +158,13 @@ class POIListViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    // MARK: - THSegmentedPageViewControllerDelegate
+    
+    func viewControllerTitle() -> String! {
+        
+        return self.title
     }
 
 }
