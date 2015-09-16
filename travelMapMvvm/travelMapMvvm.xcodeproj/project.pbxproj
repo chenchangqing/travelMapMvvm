@@ -65,7 +65,6 @@
 		E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F4991B8CEFFF005CD9FD /* StrategyThemeEnum.swift */; };
 		E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */; };
 		E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */; };
-		E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F49D1B8CEFFF005CD9FD /* QueryModelListParams01.swift */; };
 		E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */; };
 		E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* Main.storyboard */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
@@ -216,6 +215,7 @@
 		E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */; };
 		E6AB39391B9587A7003F88C5 /* JSONUserModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */; };
 		E6B039D71BA90EE10047DF2A /* ShowPoiModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039D61BA90EE10047DF2A /* ShowPoiModeEnum.swift */; };
+		E6B039DD1BA932B50047DF2A /* QueryTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039DC1BA932B50047DF2A /* QueryTypeEnum.swift */; };
 		E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */; };
 		E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */; };
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
@@ -327,7 +327,6 @@
 		E659F4991B8CEFFF005CD9FD /* StrategyThemeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyThemeEnum.swift; sourceTree = "<group>"; };
 		E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyTypeEnum.swift; sourceTree = "<group>"; };
 		E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyModel.swift; sourceTree = "<group>"; };
-		E659F49D1B8CEFFF005CD9FD /* QueryModelListParams01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryModelListParams01.swift; sourceTree = "<group>"; };
 		E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryStrategyList.json; sourceTree = "<group>"; };
 		E659F4A21B8CEFFF005CD9FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -508,6 +507,7 @@
 		E6AB39361B957E3B003F88C5 /* NetworkUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUserModelDataSource.swift; sourceTree = "<group>"; };
 		E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUserModelDataSource.swift; sourceTree = "<group>"; };
 		E6B039D61BA90EE10047DF2A /* ShowPoiModeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPoiModeEnum.swift; sourceTree = "<group>"; };
+		E6B039DC1BA932B50047DF2A /* QueryTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTypeEnum.swift; sourceTree = "<group>"; };
 		E6B04FEA1B9E83DA00B3415B /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
 		E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
 		E6B04FED1B9E854000B3415B /* NSDictionary-DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-DeepMutableCopy.h"; sourceTree = "<group>"; };
@@ -829,7 +829,6 @@
 			isa = PBXGroup;
 			children = (
 				E659F4961B8CEFFF005CD9FD /* Enums */,
-				E659F49C1B8CEFFF005CD9FD /* Structs */,
 				E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */,
 				E6A46F171B943B6400BA089B /* UserModel.swift */,
 				E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */,
@@ -852,16 +851,9 @@
 				E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */,
 				E611B3A71B8DB01B0034B267 /* OperationEnum.swift */,
 				E688EFA51B919B5200C01B23 /* ErrorEnum.swift */,
+				E6B039DC1BA932B50047DF2A /* QueryTypeEnum.swift */,
 			);
 			path = Enums;
-			sourceTree = "<group>";
-		};
-		E659F49C1B8CEFFF005CD9FD /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				E659F49D1B8CEFFF005CD9FD /* QueryModelListParams01.swift */,
-			);
-			path = Structs;
 			sourceTree = "<group>";
 		};
 		E659F49E1B8CEFFF005CD9FD /* Resources */ = {
@@ -1659,7 +1651,6 @@
 				E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
 				E698AD551B8FF356001B7D71 /* IndexViewModel.swift in Sources */,
-				E659F4CF1B8CEFFF005CD9FD /* QueryModelListParams01.swift in Sources */,
 				E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */,
 				E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */,
 				E68730CA1B91689400F3EA40 /* MJRefreshGifHeader.m in Sources */,
@@ -1685,6 +1676,7 @@
 				E68763151B994B0D0006DD3D /* String+General.swift in Sources */,
 				E68730C21B91689400F3EA40 /* MJRefreshFooter.m in Sources */,
 				E698AD941B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				E6B039DD1BA932B50047DF2A /* QueryTypeEnum.swift in Sources */,
 				E698AD8F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				E698AD981B905BA6001B7D71 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				E68730C71B91689400F3EA40 /* MJRefreshBackGifFooter.m in Sources */,

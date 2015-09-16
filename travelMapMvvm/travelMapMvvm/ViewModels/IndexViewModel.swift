@@ -38,7 +38,7 @@ class IndexViewModel: RVMViewModel {
         
         refreshSearch = RACCommand() { (any:AnyObject!) -> RACSignal in
             
-            return self.strategyModelDataSourceProtocol.queryStrategyList(QueryStrategyModelListParams01())
+            return self.strategyModelDataSourceProtocol.queryStrategyListBySystem(StrategyThemeEnum.allValues, strategyMonthArray: MonthEnum.allValues, strategyTypeArray: StrategyTypeEnum.allValues, order: StrategyOrderEnum.Default, rowCount: 5, startId: nil)
         }
         
         refreshSearch.errors.subscribeNextAs { (error:NSError!) -> Void in
@@ -60,7 +60,7 @@ class IndexViewModel: RVMViewModel {
         
         loadmoreSearch = RACCommand() { (any:AnyObject!) -> RACSignal in
             
-            return self.strategyModelDataSourceProtocol.queryStrategyList(QueryStrategyModelListParams01())
+            return self.strategyModelDataSourceProtocol.queryStrategyListBySystem(StrategyThemeEnum.allValues, strategyMonthArray: MonthEnum.allValues, strategyTypeArray: StrategyTypeEnum.allValues, order: StrategyOrderEnum.Default, rowCount: 5, startId: nil)
         }
         
         loadmoreSearch.errors.subscribeNextAs { (error:NSError!) -> Void in

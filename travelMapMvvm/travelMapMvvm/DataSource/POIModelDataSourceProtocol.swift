@@ -12,13 +12,66 @@ import Foundation
 protocol POIModelDataSourceProtocol {
     
     /**
-     * 查询POI列表
+     * 攻略POI
      * 
-     * @strategyId 攻略ID
-     * @rows       行数
-     * @startPOIId 从这ID开始查询
+     * @param strategyId 攻略ID
+     * @param poiType 攻略类型
+     * @param rows       行数
+     * @param startId 从这ID开始查询
      *
-     * @return  POI列表信号
+     * @return  RACSignal
      */
-    func queryPOIList(strategyId:String, rows:Int, startId:String?) -> RACSignal
+    func queryPOIListByStrategyId(strategyId:String, poiType:POITypeEnum?,rows:Int, startId:String?) -> RACSignal
+    
+    
+    /**
+     * 城市POI
+     *
+     * @param cityId 城市ID
+     * @param poiType 攻略类型
+     * @param rows       行数
+     * @param startId 从这ID开始查询
+     *
+     * @return  RACSignal
+     */
+    func queryPOIListByCityId(cityId:String, poiType:POITypeEnum?,rows:Int, startId:String?) -> RACSignal
+    
+    
+    /**
+     * 关键字POI
+     *
+     * @param keyword 关键字
+     * @param poiType 攻略类型
+     * @param rows       行数
+     * @param startId 从这ID开始查询
+     *
+     * @return  RACSignal
+     */
+    func queryPOIListByKeyword(keyword:String, poiType:POITypeEnum?,rows:Int, startId:String?) -> RACSignal
+    
+    
+    /**
+     * 已收藏POI
+     *
+     * @param userId 用户ID
+     * @param poiType 攻略类型
+     * @param rows       行数
+     * @param startId 从这ID开始查询
+     *
+     * @return  RACSignal
+     */
+    func queryPOIListByUserId(userId:String, poiType:POITypeEnum?,rows:Int, startId:String?) -> RACSignal
+    
+    
+    /**
+     * 某个POI周边的POI
+     *
+     * @param centerPoiId 某个POIID
+     * @param poiType 攻略类型
+     * @param rows       行数
+     * @param startId 从这ID开始查询
+     *
+     * @return  RACSignal
+     */
+    func queryPOIListByCenterPOIId(centerPoiId:String, poiType:POITypeEnum?,rows:Int, startId:String?) -> RACSignal
 }

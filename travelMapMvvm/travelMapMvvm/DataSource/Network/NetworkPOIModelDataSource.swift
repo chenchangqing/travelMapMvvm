@@ -24,37 +24,62 @@ class NetworkPOIModelDataSource: POIModelDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    func queryPOIList(strategyId: String, rows: Int, startId: String?) -> RACSignal {
+//    func queryPOIList(strategyId: String, rows: Int, startId: String?) -> RACSignal {
+//        
+//        return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
+//            
+//            // 参数
+//            let startId = startId == nil ? "" : startId!
+//            let parameters:[String : AnyObject] = [
+//                
+//                "strategyId"        : strategyId,
+//                "rows"              : rows,
+//                "startId"           : startId
+//            ]
+//            
+//            NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
+//                
+//                if error == nil {
+//                    
+//                    var list = [POIModel]()
+//                    
+//                    list <-- data!
+//                    
+//                    subscriber.sendNext(list)
+//                    subscriber.sendCompleted()
+//                } else {
+//                    
+//                    subscriber.sendError(error)
+//                    
+//                }
+//                }, requestURlString: "URL", parameters: parameters)
+//            
+//            return nil
+//        })
+//    }
+    
+    func queryPOIListByCenterPOIId(centerPoiId: String, poiType: POITypeEnum?, rows: Int, startId: String?) -> RACSignal {
         
-        return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
-            
-            // 参数
-            let startId = startId == nil ? "" : startId!
-            let parameters:[String : AnyObject] = [
-                
-                "strategyId"        : strategyId,
-                "rows"              : rows,
-                "startId"           : startId
-            ]
-            
-            NetRequestClass.netRequestGETWithRequestURL({ (error, data) -> Void in
-                
-                if error == nil {
-                    
-                    var list = [POIModel]()
-                    
-                    list <-- data!
-                    
-                    subscriber.sendNext(list)
-                    subscriber.sendCompleted()
-                } else {
-                    
-                    subscriber.sendError(error)
-                    
-                }
-                }, requestURlString: "URL", parameters: parameters)
-            
-            return nil
-        })
+        return RACSignal.empty()
+    }
+    
+    func queryPOIListByCityId(cityId: String, poiType: POITypeEnum?, rows: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
+    }
+    
+    func queryPOIListByKeyword(keyword: String, poiType: POITypeEnum?, rows: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
+    }
+    
+    func queryPOIListByStrategyId(strategyId: String, poiType: POITypeEnum?, rows: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
+    }
+    
+    func queryPOIListByUserId(userId: String, poiType: POITypeEnum?, rows: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
     }
 }

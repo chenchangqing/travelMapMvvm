@@ -23,18 +23,19 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
         return YRSingleton.instance!
     }
     
-    func queryStrategyList(params: QueryStrategyModelListParams01) -> RACSignal {
+    func queryStrategyListBySystem(
+        strategyThemeArray:[StrategyThemeEnum],strategyMonthArray:[MonthEnum],strategyTypeArray:[StrategyTypeEnum],order: StrategyOrderEnum,rowCount: Int,startId: String?) -> RACSignal {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
             // 参数
-            let startId = params.startId == nil ? "" : params.startId!
+            let startId = startId == nil ? "" : startId!
             let parameters:[String : AnyObject] = [
                 
-                "strategyThemeArray": StrategyThemeEnum.covertToString(params.strategyThemeArray),
-                "strategyMonthArray": MonthEnum.covertToString(params.strategyMonthArray),
-                "strategyTypeArray" : StrategyTypeEnum.covertToString(params.strategyTypeArray),
-                "order"             : params.rowCount,
+                "strategyThemeArray": StrategyThemeEnum.covertToString(strategyThemeArray),
+                "strategyMonthArray": MonthEnum.covertToString(strategyMonthArray),
+                "strategyTypeArray" : StrategyTypeEnum.covertToString(strategyTypeArray),
+                "order"             : rowCount,
                 "startId"           : startId
             ]
                 
@@ -57,5 +58,15 @@ class NetworkStrategyModelDataSource: StrategyModelDataSourceProtocol {
             
             return nil
         })
+    }
+    
+    func queryStrategyListByKeyword(keyword: String, order: StrategyOrderEnum, rowCount: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
+    }
+    
+    func queryStrategyListByUserId(userId: String, order: StrategyOrderEnum, rowCount: Int, startId: String?) -> RACSignal {
+        
+        return RACSignal.empty()
     }
 }
