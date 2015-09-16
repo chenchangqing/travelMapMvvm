@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="5101.5" y="-548.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Type View Controller-->
         <scene sceneID="hJC-xQ-8mK">
             <objects>
-                <viewController id="ulH-CD-ZeU" customClass="ViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ulH-CD-ZeU" customClass="POITypeViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MHI-Ed-TVr"/>
                         <viewControllerLayoutGuide type="bottom" id="3rw-5q-X8a"/>
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="6090.5" y="-1290.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Type View Controller-->
         <scene sceneID="UiJ-8h-YUt">
             <objects>
-                <viewController id="Iya-Hz-gRr" customClass="ViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Iya-Hz-gRr" customClass="POITypeViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tv2-kW-SBd"/>
                         <viewControllerLayoutGuide type="bottom" id="MAm-8M-Tzl"/>

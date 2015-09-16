@@ -47,13 +47,7 @@ class StrategyDetailViewController: UIViewController {
         if segue.identifier == kSegueFromStrategyDetailViewControllerToPOIMapViewController {
             
             let poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
-            poiMapViewController.poiMapViewModel = POIMapViewModel(poiList: self.strategyDetailViewModel.poiList, searchPOIListCommand: self.strategyDetailViewModel.searchPOIListCommand)
-            
-            // bind
-            RACObserve(self, "strategyDetailViewModel.poiList") ~> RAC(poiMapViewController, "poiMapViewModel.poiList")
-            
-            // 查询POI列表
-            setupCommand()              // 监视命令执行设置
+            poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: self.strategyDetailViewModel.searchPOIListCommand)
         }
     }
 
@@ -118,32 +112,6 @@ class StrategyDetailViewController: UIViewController {
             self.textVerticalConstraint.constant = 64
             self.view.layoutIfNeeded()
         })
-    }
-    
-    /**
-     * 命令设置
-     */
-    private func setupCommand() {
-        
-        strategyDetailViewModel.searchPOIListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
-            
-            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
-                
-                // 处理POI列表
-                self.strategyDetailViewModel.poiList = any as! [POIModel]
-                
-            }, error: { (error:NSError!) -> Void in
-                
-                self.strategyDetailViewModel.failureMsg = error.localizedDescription
-                
-                // 处理POI列表
-                self.strategyDetailViewModel.poiList = [POIModel]()
-                
-            }, completed: { () -> Void in
-                
-//                println("completed")
-            })
-        }
     }
     
     /**

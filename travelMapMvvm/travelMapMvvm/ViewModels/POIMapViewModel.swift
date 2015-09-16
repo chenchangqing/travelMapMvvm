@@ -41,10 +41,9 @@ class POIMapViewModel: RVMViewModel {
     var searchPOIListCommand: RACCommand!
     
     
-    init(poiList:[POIModel],searchPOIListCommand:RACCommand) {
+    init(searchPOIListCommand:RACCommand) {
         
         super.init()
-        self.poiList = poiList
         self.searchPOIListCommand = searchPOIListCommand
         
         locationManager.showVerboseMessage = true

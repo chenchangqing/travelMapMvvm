@@ -220,6 +220,8 @@
 		E6B039E11BA947E90047DF2A /* POIList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B039E01BA947E90047DF2A /* POIList.storyboard */; };
 		E6B039E31BA94C2E0047DF2A /* POIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039E21BA94C2E0047DF2A /* POIListViewController.swift */; };
 		E6B039E51BA94D290047DF2A /* POICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039E41BA94D290047DF2A /* POICell.swift */; };
+		E6B039E71BA9569B0047DF2A /* POIContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039E61BA9569B0047DF2A /* POIContainerViewModel.swift */; };
+		E6B039E91BA957F20047DF2A /* POITypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B039E81BA957F20047DF2A /* POITypeViewModel.swift */; };
 		E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */; };
 		E6B04FEF1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FEE1B9E854000B3415B /* NSDictionary-DeepMutableCopy.m */; };
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
@@ -516,6 +518,8 @@
 		E6B039E01BA947E90047DF2A /* POIList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIList.storyboard; sourceTree = "<group>"; };
 		E6B039E21BA94C2E0047DF2A /* POIListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIListViewController.swift; sourceTree = "<group>"; };
 		E6B039E41BA94D290047DF2A /* POICell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POICell.swift; sourceTree = "<group>"; };
+		E6B039E61BA9569B0047DF2A /* POIContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIContainerViewModel.swift; sourceTree = "<group>"; };
+		E6B039E81BA957F20047DF2A /* POITypeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITypeViewModel.swift; sourceTree = "<group>"; };
 		E6B04FEA1B9E83DA00B3415B /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
 		E6B04FEB1B9E83DA00B3415B /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
 		E6B04FED1B9E854000B3415B /* NSDictionary-DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-DeepMutableCopy.h"; sourceTree = "<group>"; };
@@ -922,6 +926,8 @@
 				E65673021BA6A8E3004E2C58 /* MoreCommentsViewModel.swift */,
 				E65673081BA6C3C3004E2C58 /* CommentFormViewModel.swift */,
 				E6B039DE1BA946E30047DF2A /* POIListViewModel.swift */,
+				E6B039E61BA9569B0047DF2A /* POIContainerViewModel.swift */,
+				E6B039E81BA957F20047DF2A /* POITypeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1731,6 +1737,7 @@
 				E698AD8E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				E698AD931B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				E68763181B9964320006DD3D /* UITextField+General.swift in Sources */,
+				E6B039E71BA9569B0047DF2A /* POIContainerViewModel.swift in Sources */,
 				E69DCD771BA142F1000A9344 /* CTFrameParserConfig.swift in Sources */,
 				E698AD861B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E698AD7E1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
@@ -1786,6 +1793,7 @@
 				E65673051BA6B94A004E2C58 /* CommentFormController.swift in Sources */,
 				E69DCD781BA142F1000A9344 /* CTDisplayView.swift in Sources */,
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				E6B039E91BA957F20047DF2A /* POITypeViewModel.swift in Sources */,
 				E659F4C61B8CEFFF005CD9FD /* StrategyModelDataSourceProtocol.swift in Sources */,
 				E6AB39311B954F17003F88C5 /* KeyboardProcessProtocol.swift in Sources */,
 				E688EFBA1B91D60D00C01B23 /* MBProgressHUD.m in Sources */,

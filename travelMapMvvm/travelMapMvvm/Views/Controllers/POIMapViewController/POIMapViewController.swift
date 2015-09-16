@@ -67,11 +67,51 @@ class POIMapViewController: UIViewController {
     
     private func setup() {
         
+        setUpCommand()
         bindViewModel()
         setupMap()
         setupEvents()
         setupMessage()
-        setupCommand()
+    }
+    
+    /**
+     * 命令设置
+     */
+    private func setUpCommand() {
+        
+        poiMapViewModel.searchPOIListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 处理POI列表
+                self.poiMapViewModel.poiList = any as! [POIModel]
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.poiMapViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                
+                //                println("completed")
+            })
+        }
+        
+        poiMapViewModel.updatingLocationPlacemarkCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 处理定位地址
+            self.poiMapViewModel.lastUserAnnotation = MKPlacemark(placemark: any as! CLPlacemark)
+            
+            }, error: { (error:NSError!) -> Void in
+                
+                self.poiMapViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                    
+                    
+            })
+        }
     }
     
     /**
@@ -221,29 +261,6 @@ class POIMapViewController: UIViewController {
                 
                 self.showHUDMessage(successMsg)
             }
-        }
-    }
-
-    /**
-     * 命令设置
-     */
-    private func setupCommand() {
-        
-        poiMapViewModel.updatingLocationPlacemarkCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
-            
-            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
-                
-                // 处理定位地址
-                self.poiMapViewModel.lastUserAnnotation = MKPlacemark(placemark: any as! CLPlacemark)
-            
-            }, error: { (error:NSError!) -> Void in
-                
-                self.poiMapViewModel.failureMsg = error.localizedDescription
-                
-            }, completed: { () -> Void in
-                    
-                    
-            })
         }
     }
 }

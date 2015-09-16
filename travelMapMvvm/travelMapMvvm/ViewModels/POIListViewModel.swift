@@ -29,11 +29,10 @@ class POIListViewModel: RVMViewModel {
     
     // MARK: - Init
     
-    init(poiList:[POIModel],refreshCommand:RACCommand,loadmoreCommand: RACCommand) {
+    init(refreshCommand:RACCommand,loadmoreCommand: RACCommand) {
         
         super.init()
         
-        self.poiList = poiList
         self.refreshCommand = refreshCommand
         self.loadmoreCommand = loadmoreCommand
     }

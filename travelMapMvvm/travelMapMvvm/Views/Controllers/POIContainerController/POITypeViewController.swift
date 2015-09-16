@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate, SSASideMenuDelegate {
+class POITypeViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate, SSASideMenuDelegate {
     
     // MARK: - UI HMSegmentedControl/SwipeView
     
@@ -16,6 +16,7 @@ class ViewController: UIViewController, SwipeViewDataSource, SwipeViewDelegate, 
     @IBOutlet var swipeView         : SwipeView!
     
     // MARK: - 页面切换时间
+    
     let kDuration:Double = 0.3
     
     // MARK: - Items

@@ -11,6 +11,10 @@ import ReactiveCocoa
 
 class POIContainerController: UIViewController {
     
+    // MARK: - View Model
+    
+    var poiContainerViewModel: POIContainerViewModel!
+    
     // MARK: - 切换地图或列表按钮
     
     @IBOutlet weak var rightBtn: UIBarButtonItem!
