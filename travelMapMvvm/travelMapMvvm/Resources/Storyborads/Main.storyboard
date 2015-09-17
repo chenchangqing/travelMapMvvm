@@ -168,7 +168,11 @@
                                 <action selector="presentLeftMenuViewController" destination="uIO-7s-XOw" id="fLm-Rg-9Nz"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="cXh-NA-6By"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="cXh-NA-6By">
+                            <connections>
+                                <segue destination="6Iq-Tq-f7Y" kind="custom" customClass="RBStoryboardPushSegue" id="zl4-J8-umJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -573,6 +577,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ha-dj-cih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1427.5" y="928.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="9xN-vH-Dql">
+            <objects>
+                <viewController id="6Iq-Tq-f7Y" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcm-06-dbI"/>
+                        <viewControllerLayoutGuide type="bottom" id="c20-E4-BhL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vxn-3O-v9F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="Search"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjH-QP-zGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427.5" y="1694.5"/>
         </scene>
     </scenes>
     <resources>

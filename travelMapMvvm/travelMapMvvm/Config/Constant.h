@@ -53,6 +53,7 @@
 // text constant
 #define kTextLoginAccount @"    登录帐号"
 #define kTextExitAccount @"    退出帐号"
+#define kTextSearchPlaceHolder            @"搜索地图、目的地......"
 
 // msg
 #define kMsgLogined @"用户已经登录"

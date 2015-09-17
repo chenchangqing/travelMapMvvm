@@ -40,12 +40,13 @@
 		E60400501B9BE3BD00C3C0A8 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */; };
 		E60B2C251BA52060003DE0DA /* POIMapViewController+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B2C241BA52060003DE0DA /* POIMapViewController+Location.swift */; };
 		E60B2C271BA52ACB003DE0DA /* CaculateDistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B2C261BA52ACB003DE0DA /* CaculateDistanceHelper.swift */; };
-		E60C9B961BA9BB07009DA433 /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */; };
 		E611B3941B8D82C00034B267 /* ImageDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */; };
 		E611B3961B8D84730034B267 /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3951B8D84730034B267 /* ImageDataSource.swift */; };
 		E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B39C1B8D916F0034B267 /* GCircleControl.swift */; };
 		E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A71B8DB01B0034B267 /* OperationEnum.swift */; };
 		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
+		E6217E6A1BAA6A0E004936FA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6217E691BAA6A0E004936FA /* Search.storyboard */; };
+		E6217E6C1BAA6B80004936FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E6B1BAA6B80004936FA /* SearchViewController.swift */; };
 		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
 		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
 		E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */; };
@@ -308,14 +309,13 @@
 		E604004F1B9BE3BD00C3C0A8 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		E60B2C241BA52060003DE0DA /* POIMapViewController+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "POIMapViewController+Location.swift"; sourceTree = "<group>"; };
 		E60B2C261BA52ACB003DE0DA /* CaculateDistanceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaculateDistanceHelper.swift; sourceTree = "<group>"; };
-		E60C9B931BA9BB07009DA433 /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPager.h; sourceTree = "<group>"; };
-		E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPager.m; sourceTree = "<group>"; };
-		E60C9B951BA9BB07009DA433 /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPageViewControllerDelegate.h; sourceTree = "<group>"; };
 		E611B3931B8D82C00034B267 /* ImageDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E611B3951B8D84730034B267 /* ImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
 		E611B39C1B8D916F0034B267 /* GCircleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCircleControl.swift; sourceTree = "<group>"; };
 		E611B3A71B8DB01B0034B267 /* OperationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationEnum.swift; sourceTree = "<group>"; };
 		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
+		E6217E691BAA6A0E004936FA /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		E6217E6B1BAA6B80004936FA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
 		E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
@@ -726,16 +726,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		E60C9B921BA9BB07009DA433 /* THSegmentedPager */ = {
-			isa = PBXGroup;
-			children = (
-				E60C9B931BA9BB07009DA433 /* THSegmentedPager.h */,
-				E60C9B941BA9BB07009DA433 /* THSegmentedPager.m */,
-				E60C9B951BA9BB07009DA433 /* THSegmentedPageViewControllerDelegate.h */,
-			);
-			path = THSegmentedPager;
-			sourceTree = "<group>";
-		};
 		E649B4331BA4622600B99A2F /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,7 +804,6 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
-
 				E67428371BA9C05300B3C42A /* THSegmentedPager */,
 				E6E1F0C51BA88A600010F316 /* HMSegmentedControl */,
 				E6E1F0C81BA88A600010F316 /* SwipeView */,
@@ -923,6 +912,7 @@
 				E65673061BA6B96D004E2C58 /* CommentForm.storyboard */,
 				E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */,
 				E6B039E01BA947E90047DF2A /* POIList.storyboard */,
+				E6217E691BAA6A0E004936FA /* Search.storyboard */,
 			);
 			path = Storyborads;
 			sourceTree = "<group>";
@@ -1308,6 +1298,7 @@
 				E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */,
 				E65673041BA6B94A004E2C58 /* CommentFormController.swift */,
 				E6B039E21BA94C2E0047DF2A /* POIListViewController.swift */,
+				E6217E6B1BAA6B80004936FA /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1584,6 +1575,7 @@
 				E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */,
 				E6849E841BA2687900A5631B /* queryPOIList.json in Resources */,
 				E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */,
+				E6217E6A1BAA6A0E004936FA /* Search.storyboard in Resources */,
 				E604002A1B9BE0A400C3C0A8 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1707,6 +1699,7 @@
 				E698AD8B1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */,
 				E698AD8A1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				E6217E6C1BAA6B80004936FA /* SearchViewController.swift in Sources */,
 				E6849EA61BA2C47F00A5631B /* POIMapViewController.swift in Sources */,
 				E69DCD741BA142F1000A9344 /* CoreTextUtils.swift in Sources */,
 				E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */,
@@ -1798,7 +1791,6 @@
 				E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */,
 				E69DCD761BA142F1000A9344 /* CTFrameParserCAPI.m in Sources */,
 				E6D6B8911BA1C8CB00A715CF /* POIModel.swift in Sources */,
-
 				E674283B1BA9C05300B3C42A /* THSegmentedPager.m in Sources */,
 				E698AD481B8FEF94001B7D71 /* JSONHelper.swift in Sources */,
 				E659F4C81B8CEFFF005CD9FD /* NetRequestClass.swift in Sources */,
