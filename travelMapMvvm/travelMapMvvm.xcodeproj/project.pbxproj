@@ -47,6 +47,8 @@
 		E611B3AA1B8DB9080034B267 /* StrategyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611B3A91B8DB9080034B267 /* StrategyCell.swift */; };
 		E6217E6A1BAA6A0E004936FA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6217E691BAA6A0E004936FA /* Search.storyboard */; };
 		E6217E6C1BAA6B80004936FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E6B1BAA6B80004936FA /* SearchViewController.swift */; };
+		E6217E721BAA9D40004936FA /* SearchViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */; };
+		E6217E741BAA9E3D004936FA /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */; };
 		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
 		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
 		E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */; };
@@ -316,6 +318,8 @@
 		E611B3A91B8DB9080034B267 /* StrategyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell.swift; sourceTree = "<group>"; };
 		E6217E691BAA6A0E004936FA /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E6217E6B1BAA6B80004936FA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSourceProtocol.swift; sourceTree = "<group>"; };
+		E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
 		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
 		E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
@@ -762,6 +766,7 @@
 				E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */,
 				E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */,
 				E6867C1E1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift */,
+				E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -784,6 +789,7 @@
 				E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */,
 				E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */,
 				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
+				E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1650,6 +1656,7 @@
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
 				E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */,
 				E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */,
+				E6217E741BAA9E3D004936FA /* SearchViewDataSource.swift in Sources */,
 				E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */,
 				E6D6B8941BA1C91900A715CF /* POILevelEnum.swift in Sources */,
 				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
@@ -1807,6 +1814,7 @@
 				E659F4CC1B8CEFFF005CD9FD /* StrategyThemeEnum.swift in Sources */,
 				E698AD4F1B8FF108001B7D71 /* RACObserve.swift in Sources */,
 				E68F6B901B9A8FAD00AB2C72 /* LeftViewModel.swift in Sources */,
+				E6217E721BAA9D40004936FA /* SearchViewDataSourceProtocol.swift in Sources */,
 				E6E1F0C41BA889EF0010F316 /* POITypeViewController.swift in Sources */,
 				E6867C211BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift in Sources */,
 				E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */,

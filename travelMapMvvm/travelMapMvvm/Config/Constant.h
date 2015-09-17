@@ -43,17 +43,21 @@
 #define kSegueFromPOIContainerControllerToListPOITypeViewController @"FromPOIContainerControllerToListPOITypeViewController"
 #define kSegueFromPOIContainerControllerToMapPOITypeViewController @"FromPOIContainerControllerToMapPOITypeViewController"
 
-// user operation key
+// operation key
 #define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)
 #define kUpdateUserCompletionNotificationName @"updateUserCompletionNotificationName"           // 登录成功通知(比如侧边栏信息需要登录后刷新)
 #define kLoginPageDefaultTelephone @"loginPageDefaultTelephone"                                 // 登录页面默认显示的手机号码
 #define kPresentLoginPageActionNotificationName @"presentLoginPageNotificationName"             // 呈现登录页面通知
 #define kPresentLoginPageActionExitLoginNotificationName @"presentLoginPageActionExitLoginNotificationName"           // 登录或退出通知
+#define kHotSearchData @"hotSearchData"
+#define kHistorySearchData @"historySearchData"
 
 // text constant
 #define kTextLoginAccount @"    登录帐号"
 #define kTextExitAccount @"    退出帐号"
 #define kTextSearchPlaceHolder            @"搜索地图、目的地......"
+#define kTextHotSearch @"热门搜索"
+#define kTextHistorySearch @"历史搜索"
 
 // msg
 #define kMsgLogined @"用户已经登录"
