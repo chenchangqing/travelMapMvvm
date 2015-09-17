@@ -30,5 +30,19 @@ class ColorHelper {
             alpha: CGFloat(1.0)
         )
     }
+//    
 
+    class func imageWithColor(color:UIColor,size:CGSize) -> UIImage {
+        
+        let rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }

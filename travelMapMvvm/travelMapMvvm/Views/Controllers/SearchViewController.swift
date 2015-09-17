@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController,UISearchDisplayDelegate {
+class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBarDelegate {
     
     // MARK: - SearchDisplayController
     
@@ -35,17 +35,40 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate {
     private func setUpSearchDisplayController() {
         
         let searchBar = UISearchBar()
-        searchBar.showsCancelButton = false
+        searchBar.showsCancelButton = true
         searchBar.placeholder = kTextSearchPlaceHolder
         searchBar.sizeToFit()
-        searchBar.translucent = true
+        searchBar.translucent = false
+        searchBar.delegate = self
+    
+        digui(searchBar) // 设置UISearchBarTextField
+        
         
         mySearchDisplayController = UISearchDisplayController(searchBar: searchBar, contentsController: self)
-//        customSearchDisplayController.searchResultsDataSource = self
-//        customSearchDisplayController.searchResultsDelegate = self
         mySearchDisplayController.delegate = self
         mySearchDisplayController.displaysSearchBarInNavigationBar = true
-        mySearchDisplayController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_btn"), style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("back:"))
+        self.navigationItem.hidesBackButton = true
+//        customSearchDisplayController.searchResultsDataSource = self
+//        customSearchDisplayController.searchResultsDelegate = self
+    }
+    
+    private func digui(view:UIView) {
+        
+        for item in enumerate(view.subviews) {
+            
+            let className = NSStringFromClass(item.element.classForCoder)
+            
+            if className == "UISearchBarTextField" {
+                
+                (item.element as! UIView).backgroundColor = ColorHelper.hexStringToUIColor("#e7e7e7")
+                break;
+            }
+            
+            if item.element.subviews.count > 0 {
+                
+                digui(item.element as! UIView)
+            }
+        }
     }
     
     // MARK: - UISearchDisplayDelegate
@@ -53,6 +76,13 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate {
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
         
         return true
+    }
+    
+    // MARK: - UISearchBarDelegate
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        
+        self.back(searchBar)
     }
 
 }
