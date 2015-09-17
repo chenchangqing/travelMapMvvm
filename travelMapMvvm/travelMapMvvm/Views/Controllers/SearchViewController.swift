@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveCocoa
 
-class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBarDelegate {
+class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - View Model
     
@@ -60,8 +60,12 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
         mySearchDisplayController.delegate = self
         mySearchDisplayController.displaysSearchBarInNavigationBar = true
         self.navigationItem.hidesBackButton = true
-//        customSearchDisplayController.searchResultsDataSource = self
-//        customSearchDisplayController.searchResultsDelegate = self
+        mySearchDisplayController.searchResultsDataSource = self
+        mySearchDisplayController.searchResultsDelegate = self
+        
+        mySearchDisplayController.searchResultsTableView.scrollEnabled = false
+        mySearchDisplayController.searchResultsTableView.backgroundColor = UIColor.redColor()
+        mySearchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     private func digui(view:UIView) {
@@ -165,7 +169,46 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchViewModel.keyword = searchText
+        searchViewModel.keyword = searchText.trim()
+        searchBar.text = searchText.trim()
+    }
+    
+    // MARK: - UITableViewDataSource
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return CGRectGetHeight(UIScreen.mainScreen().bounds) - 64
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let identifier = "resultCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? UITableViewCell
+        
+        if let cell=cell {
+            
+            cell.textLabel?.text = "TEST"
+            cell.detailTextLabel?.text = "TEST"
+            return cell
+        } else {
+            
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
+            cell!.textLabel?.text = "TEST"
+            cell!.detailTextLabel?.text = "TEST"
+            return cell!
+        }
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
     }
 
 }

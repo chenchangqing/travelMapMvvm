@@ -77,6 +77,7 @@
 		E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */; };
 		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
 		E674283B1BA9C05300B3C42A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E67428391BA9C05300B3C42A /* THSegmentedPager.m */; };
+		E674441C1BAB06DE0020B252 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E674441B1BAB06DE0020B252 /* CityModel.swift */; };
 		E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */; };
 		E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */; };
 		E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */; };
@@ -353,6 +354,7 @@
 		E67428381BA9C05300B3C42A /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPager.h; sourceTree = "<group>"; };
 		E67428391BA9C05300B3C42A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPager.m; sourceTree = "<group>"; };
 		E674283A1BA9C05300B3C42A /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPageViewControllerDelegate.h; sourceTree = "<group>"; };
+		E674441B1BAB06DE0020B252 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		E67B281A1B9D279D0070E3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		E67B281C1B9D279D0070E3AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 				E6867C1C1BA66C77005BCDC7 /* CommentModel.swift */,
 				E6D6B8901BA1C8CB00A715CF /* POIModel.swift */,
 				E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */,
+				E674441B1BAB06DE0020B252 /* CityModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1665,6 +1668,7 @@
 				E6B04FEC1B9E83DA00B3415B /* SectionsViewController.m in Sources */,
 				E6AA5E4E1B9357CA009C7DA1 /* CJSelectionCollectionView.swift in Sources */,
 				E698AD9D1B905BA6001B7D71 /* NVActivityIndicatorView.swift in Sources */,
+				E674441C1BAB06DE0020B252 /* CityModel.swift in Sources */,
 				E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */,
 				E6E1F0CC1BA88A600010F316 /* SwipeView.m in Sources */,
 				E65673091BA6C3C3004E2C58 /* CommentFormViewModel.swift in Sources */,
