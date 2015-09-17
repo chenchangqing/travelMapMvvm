@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBarDelegate {
+    
+    // MARK: - View Model
+    
+    let searchViewModel = SearchViewModel()
     
     // MARK: - SearchDisplayController
     
     var mySearchDisplayController: UISearchDisplayController!
+    
+    // MARK: - 选择控件
+    
+    @IBOutlet private weak var selectionCollectionView : CJSelectionCollectionView!
     
     // MARK: - Life Cycle
 
@@ -27,6 +36,9 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     private func setUp() {
         
         setUpSearchDisplayController()
+        setUpCommands()
+        setUpMessage()
+        setUpSelectionCollectionView()
         
     }
     
@@ -71,6 +83,72 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
         }
     }
     
+    // MARK: - Set Up Commands 
+    
+    private func setUpCommands() {
+        
+        searchViewModel.querySearchViewDataCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新数据
+                self.searchViewModel.searchViewData     = any as! DataSource
+                self.selectionCollectionView.dataSource = self.searchViewModel.searchViewData.dataSource
+                self.selectionCollectionView.reloadData()
+                
+            }, error: { (error:NSError!) -> Void in
+                
+            }, completed: { () -> Void in
+                
+            })
+        }
+    }
+    
+    // MARK: - Set Up Message 
+    
+    private func setUpMessage() {
+        
+        RACSignal.combineLatest([
+            RACObserve(searchViewModel, "failureMsg"),
+            RACObserve(searchViewModel, "successMsg"),
+            searchViewModel.querySearchViewDataCommand.executing
+        ]).subscribeNextAs { (tuple: RACTuple) -> () in
+            
+            let failureMsg  = tuple.first as! String
+            let successMsg  = tuple.second as! String
+            
+            let isLoading   = tuple.third as! Bool
+            
+            if isLoading {
+                
+                self.showHUDIndicator()
+            } else {
+                
+                if failureMsg.isEmpty && successMsg.isEmpty {
+                    
+                    self.hideHUD()
+                }
+            }
+            
+            if !failureMsg.isEmpty {
+                
+                self.showHUDErrorMessage(failureMsg)
+            }
+            
+            if !successMsg.isEmpty {
+                
+                self.showHUDMessage(successMsg)
+            }
+        }
+    }
+    
+    // MARK: - Set Up SelectionCollectionView
+    
+    private func setUpSelectionCollectionView() {
+        
+        self.searchViewModel.active = true
+    }
+    
     // MARK: - UISearchDisplayDelegate
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
@@ -83,6 +161,11 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         
         self.back(searchBar)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchViewModel.keyword = searchText
     }
 
 }

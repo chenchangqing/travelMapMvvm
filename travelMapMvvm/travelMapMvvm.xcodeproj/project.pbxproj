@@ -49,6 +49,7 @@
 		E6217E6C1BAA6B80004936FA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E6B1BAA6B80004936FA /* SearchViewController.swift */; };
 		E6217E721BAA9D40004936FA /* SearchViewDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */; };
 		E6217E741BAA9E3D004936FA /* SearchViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */; };
+		E6217E761BAAB1AD004936FA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6217E751BAAB1AD004936FA /* SearchViewModel.swift */; };
 		E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4341BA4623D00B99A2F /* LocationManager.swift */; };
 		E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */; };
 		E65673011BA6A5B9004E2C58 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */; };
@@ -320,6 +321,7 @@
 		E6217E6B1BAA6B80004936FA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewDataSource.swift; sourceTree = "<group>"; };
+		E6217E751BAAB1AD004936FA /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E649B4341BA4623D00B99A2F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E649B4361BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DModel.swift; sourceTree = "<group>"; };
 		E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
@@ -944,6 +946,7 @@
 				E6B039DE1BA946E30047DF2A /* POIListViewModel.swift */,
 				E6B039E61BA9569B0047DF2A /* POIContainerViewModel.swift */,
 				E6B039E81BA957F20047DF2A /* POITypeViewModel.swift */,
+				E6217E751BAAB1AD004936FA /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1666,6 +1669,7 @@
 				E6E1F0CC1BA88A600010F316 /* SwipeView.m in Sources */,
 				E65673091BA6C3C3004E2C58 /* CommentFormViewModel.swift in Sources */,
 				E69DCD721BA142F1000A9344 /* CoreTextImageData.swift in Sources */,
+				E6217E761BAAB1AD004936FA /* SearchViewModel.swift in Sources */,
 				E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */,
 				E698AD951B905BA6001B7D71 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E69DCD731BA142F1000A9344 /* CoreTextLinkData.swift in Sources */,

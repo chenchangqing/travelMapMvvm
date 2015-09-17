@@ -25,6 +25,6 @@ extension String {
     
     func nsString() -> NSString {
         
-        return self as! NSString
+        return self as NSString
     }
 }
