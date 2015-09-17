@@ -78,6 +78,7 @@
 		E66B93C91B9B26500054CD42 /* LoginPageParamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B93C81B9B26500054CD42 /* LoginPageParamModel.swift */; };
 		E674283B1BA9C05300B3C42A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = E67428391BA9C05300B3C42A /* THSegmentedPager.m */; };
 		E674441C1BAB06DE0020B252 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E674441B1BAB06DE0020B252 /* CityModel.swift */; };
+		E674441E1BAB20FC0020B252 /* CityModelDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E674441D1BAB20FC0020B252 /* CityModelDataSourceProtocol.swift */; };
 		E67B281D1B9D279D0070E3AD /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E67B28191B9D279D0070E3AD /* SMS_SDKLocalizable.strings */; };
 		E67B281E1B9D279D0070E3AD /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */; };
 		E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B281F1B9D2FB60070E3AD /* SMSDataSourceProtocol.swift */; };
@@ -355,6 +356,7 @@
 		E67428391BA9C05300B3C42A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPager.m; sourceTree = "<group>"; };
 		E674283A1BA9C05300B3C42A /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSegmentedPageViewControllerDelegate.h; sourceTree = "<group>"; };
 		E674441B1BAB06DE0020B252 /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		E674441D1BAB20FC0020B252 /* CityModelDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModelDataSourceProtocol.swift; sourceTree = "<group>"; };
 		E67B281A1B9D279D0070E3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
 		E67B281B1B9D279D0070E3AD /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		E67B281C1B9D279D0070E3AD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
@@ -771,6 +773,7 @@
 				E6849E851BA2692400A5631B /* POIModelDataSourceProtocol.swift */,
 				E6867C1E1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift */,
 				E6217E711BAA9D40004936FA /* SearchViewDataSourceProtocol.swift */,
+				E674441D1BAB20FC0020B252 /* CityModelDataSourceProtocol.swift */,
 				E659F4861B8CEFFF005CD9FD /* Cache */,
 				E659F4881B8CEFFF005CD9FD /* Database */,
 				E659F48B1B8CEFFF005CD9FD /* Network */,
@@ -1763,6 +1766,7 @@
 				E69DCD791BA142F1000A9344 /* UIView+frameAdjust.m in Sources */,
 				E69DCD751BA142F1000A9344 /* CTFrameParser.swift in Sources */,
 				E698AD9A1B905BA6001B7D71 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				E674441E1BAB20FC0020B252 /* CityModelDataSourceProtocol.swift in Sources */,
 				E6BFCADE1BA3219F0019FB07 /* DistanceAnnotationView.swift in Sources */,
 				E68730C41B91689400F3EA40 /* MJRefreshAutoGifFooter.m in Sources */,
 				E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */,
