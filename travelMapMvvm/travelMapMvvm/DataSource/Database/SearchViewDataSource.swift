@@ -33,11 +33,11 @@ class SearchViewDataSource: SearchViewDataSourceProtocol {
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
             // 热门搜索
-            let hotHeaderModel      = CJCollectionViewHeaderModel(icon: nil, title: kTextHotSearch, type: CJCollectionViewHeaderModelTypeEnum.SingleClick, isExpend: false, isShowClearButton: false)
+            let hotHeaderModel      = CJCollectionViewHeaderModel(icon: nil, title: kTextHotSearch, type: CJCollectionViewHeaderModelTypeEnum.SingleClick, isExpend: true, isShowClearButton: false)
             let hotCellModels       = self.queryHotSearchData()
             
             // 历史搜索
-            let historyHeaderModel  = CJCollectionViewHeaderModel(icon: nil, title: kTextHistorySearch, type: CJCollectionViewHeaderModelTypeEnum.SingleClick, isExpend: false, isShowClearButton: false)
+            let historyHeaderModel  = CJCollectionViewHeaderModel(icon: nil, title: kTextHistorySearch, type: CJCollectionViewHeaderModelTypeEnum.SingleClick, isExpend: true, isShowClearButton: false)
             let historyCellModels   = self.queryHistorySearchData()
             
             var dataSource = OrderedDictionary<CJCollectionViewHeaderModel,[CJCollectionViewCellModel]>()
