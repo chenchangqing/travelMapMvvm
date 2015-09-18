@@ -203,6 +203,8 @@
 		E6A46F211B949EDC00BA089B /* UIButton+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F201B949EDC00BA089B /* UIButton+Login.swift */; };
 		E6A46F231B94A00000BA089B /* UIView+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F221B94A00000BA089B /* UIView+Login.swift */; };
 		E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F241B94A0D000BA089B /* LoginViewController.swift */; };
+		E6A663741BABAE2000DB46AA /* queryCityList.json in Resources */ = {isa = PBXBuildFile; fileRef = E6A663731BABAE2000DB46AA /* queryCityList.json */; };
+		E6A663761BABB2F800DB46AA /* NetworkCityModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663751BABB2F800DB46AA /* NetworkCityModelDataSource.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
@@ -238,6 +240,7 @@
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
+		E6BD550F1BABAAD2003B3EC7 /* JSONCityModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BD550E1BABAAD2003B3EC7 /* JSONCityModelDataSource.swift */; };
 		E6BFCADB1BA3219F0019FB07 /* BasicMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */; };
 		E6BFCADC1BA3219F0019FB07 /* BasicMapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */; };
 		E6BFCADD1BA3219F0019FB07 /* DistanceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */; };
@@ -508,6 +511,8 @@
 		E6A46F201B949EDC00BA089B /* UIButton+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Login.swift"; sourceTree = "<group>"; };
 		E6A46F221B94A00000BA089B /* UIView+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Login.swift"; sourceTree = "<group>"; };
 		E6A46F241B94A0D000BA089B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E6A663731BABAE2000DB46AA /* queryCityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryCityList.json; sourceTree = "<group>"; };
+		E6A663751BABB2F800DB46AA /* NetworkCityModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCityModelDataSource.swift; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
@@ -548,6 +553,7 @@
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
+		E6BD550E1BABAAD2003B3EC7 /* JSONCityModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONCityModelDataSource.swift; sourceTree = "<group>"; };
 		E6BFCAD71BA3219F0019FB07 /* BasicMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotation.swift; sourceTree = "<group>"; };
 		E6BFCAD81BA3219F0019FB07 /* BasicMapAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMapAnnotationView.swift; sourceTree = "<group>"; };
 		E6BFCAD91BA3219F0019FB07 /* DistanceAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceAnnotation.swift; sourceTree = "<group>"; };
@@ -795,6 +801,7 @@
 				E6AB39381B9587A7003F88C5 /* JSONUserModelDataSource.swift */,
 				E6849E871BA26A6D00A5631B /* JSONPOIModelDataSource.swift */,
 				E6867C201BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift */,
+				E6BD550E1BABAAD2003B3EC7 /* JSONCityModelDataSource.swift */,
 				E6A46F111B93EF6300BA089B /* SelectionViewDataSource.swift */,
 				E6217E731BAA9E3D004936FA /* SearchViewDataSource.swift */,
 			);
@@ -810,6 +817,7 @@
 				E6867C221BA66F9C005BCDC7 /* NetworkCommentModelDataSource.swift */,
 				E611B3951B8D84730034B267 /* ImageDataSource.swift */,
 				E67B28211B9D37CB0070E3AD /* SMSDataSource.swift */,
+				E6A663751BABB2F800DB46AA /* NetworkCityModelDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -904,6 +912,7 @@
 		E659F49F1B8CEFFF005CD9FD /* Json */ = {
 			isa = PBXGroup;
 			children = (
+				E6A663731BABAE2000DB46AA /* queryCityList.json */,
 				E6849E831BA2687900A5631B /* queryPOIList.json */,
 				E687631B1B9971220006DD3D /* qqLogin.json */,
 				E6867C241BA6701D005BCDC7 /* queryPOICommentList.json */,
@@ -1563,6 +1572,7 @@
 				E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */,
 				E6EB101A1B9FCAAB009FA27F /* ModifyUserInfo.storyboard in Resources */,
 				E687631E1B9971220006DD3D /* sinaLogin.json in Resources */,
+				E6A663741BABAE2000DB46AA /* queryCityList.json in Resources */,
 				E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */,
 				E6849E981BA2B9EB00A5631B /* ScrollSubView.xib in Resources */,
 				E60400321B9BE0A400C3C0A8 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -1709,6 +1719,7 @@
 				E659F4C41B8CEFFF005CD9FD /* NetworkStrategyModelDataSource.swift in Sources */,
 				E6EB101E1B9FD5CF009FA27F /* BottomLineCell.swift in Sources */,
 				E659F4CB1B8CEFFF005CD9FD /* StrategyOrderEnum.swift in Sources */,
+				E6BD550F1BABAAD2003B3EC7 /* JSONCityModelDataSource.swift in Sources */,
 				E698AD551B8FF356001B7D71 /* IndexViewModel.swift in Sources */,
 				E649B4371BA46ED100B99A2F /* CLLocationCoordinate2DModel.swift in Sources */,
 				E611B3A81B8DB01B0034B267 /* OperationEnum.swift in Sources */,
@@ -1756,6 +1767,7 @@
 				E6849E861BA2692400A5631B /* POIModelDataSourceProtocol.swift in Sources */,
 				E6AA5E511B9357CA009C7DA1 /* OrderedDictionary.swift in Sources */,
 				E6AB39351B957607003F88C5 /* UserModelDataSourceProtocol.swift in Sources */,
+				E6A663761BABB2F800DB46AA /* NetworkCityModelDataSource.swift in Sources */,
 				E6AA5E551B935FB8009C7DA1 /* DesViewController.swift in Sources */,
 				E6AA5E4F1B9357CA009C7DA1 /* CJCollectionViewCellModel.swift in Sources */,
 				E698AD841B905BA6001B7D71 /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,

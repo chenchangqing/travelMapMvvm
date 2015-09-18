@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReactiveCocoa
 
 protocol CityModelDataSourceProtocol {
     
@@ -14,5 +15,8 @@ protocol CityModelDataSourceProtocol {
      * 城市列表
      * 
      * @param keyword 关键字
+     *
+     * @return 城市列表
      */
+    func queryCityListByKeyword(keyword:String) -> RACSignal
 }

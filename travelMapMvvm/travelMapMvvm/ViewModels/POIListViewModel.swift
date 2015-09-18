@@ -23,7 +23,6 @@ class POIListViewModel: RVMViewModel {
     
     // MARK: - Commands
     
-    var updatingLocationPlacemarkCommand: RACCommand!
     var refreshCommand: RACCommand!
     var loadmoreCommand: RACCommand!
     

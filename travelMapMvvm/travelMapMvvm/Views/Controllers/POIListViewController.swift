@@ -59,9 +59,9 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     
     private func setUpCommands() {
         
-        poiListViewModel.refreshCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
-            
-            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+//        poiListViewModel.refreshCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        
+            poiListViewModel.refreshCommand.executionSignals.switchToLatest().dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 更新数据
                 self.poiListViewModel.poiList = any as! [POIModel]
@@ -71,17 +71,19 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
             }, error: { (error:NSError!) -> Void in
                 
                 self.poiListViewModel.failureMsg = error.localizedDescription
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.resetNoMoreData()
                 
             }, completed: { () -> Void in
                 
                 self.tableView.header.endRefreshing()
                 self.tableView.footer.resetNoMoreData()
             })
-        }
+//        }
         
-        poiListViewModel.loadmoreCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
-            
-            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+//        poiListViewModel.loadmoreCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        
+            poiListViewModel.loadmoreCommand.executionSignals.switchToLatest().dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
                 // 更新数据
                 self.poiListViewModel.poiList = any as! [POIModel]
@@ -91,12 +93,14 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
             }, error: { (error:NSError!) -> Void in
                 
                 self.poiListViewModel.failureMsg = error.localizedDescription
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.resetNoMoreData()
                 
             }, completed: { () -> Void in
                 
                 self.tableView.footer.endRefreshing()
             })
-        }
+//        }
     }
     
     // MARKO: - Setup Message 成功失败提示 加载提示

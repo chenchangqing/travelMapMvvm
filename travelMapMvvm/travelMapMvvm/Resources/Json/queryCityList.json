@@ -1,0 +1,28 @@
+{
+    "success":"1",
+    "msg":"恭喜，查询城市OK",
+    "data":
+    [
+     {
+     "cityId":"001",
+     "cityName":"纽约",
+     "cityEnName":"New York",
+     "cityPicUrl":"http://pic41.nipic.com/20140521/4619680_130452333000_2.jpg",
+     "country":"美国"
+     },
+     {
+     "cityId":"002",
+     "cityName":"华盛顿",
+     "cityEnName":"Hua Sheng Dun",
+     "cityPicUrl":"http://img5.imgtn.bdimg.com/it/u=1465053960,2685072887&fm=21&gp=0.jpg",
+     "country":"美国"
+     },
+     {
+     "cityId":"003",
+     "cityName":"东京",
+     "cityEnName":"DJ",
+     "cityPicUrl":"http://h.hiphotos.baidu.com/image/h%3D200/sign=3497f1919645d688bc02b5a494c37dab/f703738da97739124471bdc3fc198618367ae239.jpg",
+     "country":"日本"
+     }
+    ]
+}
