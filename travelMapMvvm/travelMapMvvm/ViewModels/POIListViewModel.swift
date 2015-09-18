@@ -131,7 +131,7 @@ class POIListViewModel: RVMViewModel {
         
         self.searchCityListCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            return self.cityModelDataSourceProtocol.queryCityListByKeyword(self.paramTuple.param)
+            return self.cityModelDataSourceProtocol.queryCityListByKeyword(self.paramTuple.param).materialize()
         })
     }
 }
