@@ -205,6 +205,9 @@
 		E6A46F251B94A0D000BA089B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A46F241B94A0D000BA089B /* LoginViewController.swift */; };
 		E6A663741BABAE2000DB46AA /* queryCityList.json in Resources */ = {isa = PBXBuildFile; fileRef = E6A663731BABAE2000DB46AA /* queryCityList.json */; };
 		E6A663761BABB2F800DB46AA /* NetworkCityModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663751BABB2F800DB46AA /* NetworkCityModelDataSource.swift */; };
+		E6A663781BABD42300DB46AA /* StrategyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663771BABD42300DB46AA /* StrategyListViewModel.swift */; };
+		E6A6637A1BABDCC700DB46AA /* StrategyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */; };
+		E6A6637C1BABEB4B00DB46AA /* StrategyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6637B1BABEB4B00DB46AA /* StrategyCell2.swift */; };
 		E6AA5E381B9356D4009C7DA1 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
@@ -513,6 +516,9 @@
 		E6A46F241B94A0D000BA089B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E6A663731BABAE2000DB46AA /* queryCityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryCityList.json; sourceTree = "<group>"; };
 		E6A663751BABB2F800DB46AA /* NetworkCityModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCityModelDataSource.swift; sourceTree = "<group>"; };
+		E6A663771BABD42300DB46AA /* StrategyListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyListViewModel.swift; sourceTree = "<group>"; };
+		E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyListViewController.swift; sourceTree = "<group>"; };
+		E6A6637B1BABEB4B00DB46AA /* StrategyCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell2.swift; sourceTree = "<group>"; };
 		E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
@@ -945,6 +951,7 @@
 			children = (
 				E6849E9F1BA2BBF900A5631B /* LoginViewModel */,
 				E698AD521B8FF356001B7D71 /* IndexViewModel.swift */,
+				E6A663771BABD42300DB46AA /* StrategyListViewModel.swift */,
 				E6A46F131B93F1D700BA089B /* FilterViewModel.swift */,
 				E6A46F151B93F1E500BA089B /* DesViewModel.swift */,
 				E6A46F191B94405E00BA089B /* ImageViewModel.swift */,
@@ -986,6 +993,7 @@
 				E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */,
 				E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */,
 				E611B3A91B8DB9080034B267 /* StrategyCell.swift */,
+				E6A6637B1BABEB4B00DB46AA /* StrategyCell2.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1310,6 +1318,7 @@
 				E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6AA5E361B9356D4009C7DA1 /* IndexViewController.swift */,
+				E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
 				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
 				E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */,
@@ -1705,6 +1714,7 @@
 				E6867C1D1BA66C77005BCDC7 /* CommentModel.swift in Sources */,
 				E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */,
 				E67B28271B9D43330070E3AD /* RegisterViewModel.swift in Sources */,
+				E6A6637A1BABDCC700DB46AA /* StrategyListViewController.swift in Sources */,
 				E698AD961B905BA6001B7D71 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				E698AD871B905BA6001B7D71 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */,
@@ -1739,6 +1749,7 @@
 				E6867C1F1BA66E36005BCDC7 /* CommentModelDataSourceProtocol.swift in Sources */,
 				E688EFA61B919B5200C01B23 /* ErrorEnum.swift in Sources */,
 				E68730C31B91689400F3EA40 /* MJRefreshHeader.m in Sources */,
+				E6A6637C1BABEB4B00DB46AA /* StrategyCell2.swift in Sources */,
 				E67B28201B9D2FB60070E3AD /* SMSDataSourceProtocol.swift in Sources */,
 				E6AB39331B95577F003F88C5 /* UIViewController+Keyboard.swift in Sources */,
 				E66575F51B9F147F00C44CAC /* ValidHelper.swift in Sources */,
@@ -1760,6 +1771,7 @@
 				E698AD8D1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				E6AA5E4C1B9357CA009C7DA1 /* CJCollectionViewEmptyCell.swift in Sources */,
 				E698AD8C1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				E6A663781BABD42300DB46AA /* StrategyListViewModel.swift in Sources */,
 				E6849E991BA2B9EB00A5631B /* ScrollSubView.swift in Sources */,
 				E6A46F1F1B949E5A00BA089B /* ColorHelper.swift in Sources */,
 				E6A46F141B93F1D700BA089B /* FilterViewModel.swift in Sources */,
