@@ -137,6 +137,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
         if let tel = user.telephone {
             
             NSUserDefaults.standardUserDefaults().setObject("\(tel)", forKey: kLoginPageDefaultTelephone)
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
         NSUserDefaults.standardUserDefaults().synchronize()
     }
@@ -144,6 +145,7 @@ class JSONUserModelDataSource: UserModelDataSourceProtocol {
     func clearUser() {
         
         NSUserDefaults.standardUserDefaults().removeObjectForKey(kLoginUserKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     func queryUser() -> UserModel? {

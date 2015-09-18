@@ -106,6 +106,19 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
                 
             })
         }
+        
+        searchViewModel.updateHistoryDataCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                if let newHistory=any as? [String] {
+                    
+                    self.searchViewModel.querySearchViewDataCommand.execute(nil)
+                    
+                }
+            })
+            
+        }
     }
     
     // MARK: - Set Up Message 
@@ -115,13 +128,14 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
         RACSignal.combineLatest([
             RACObserve(searchViewModel, "failureMsg"),
             RACObserve(searchViewModel, "successMsg"),
-            searchViewModel.querySearchViewDataCommand.executing
+            searchViewModel.querySearchViewDataCommand.executing,
+            searchViewModel.updateHistoryDataCommand.executing
         ]).subscribeNextAs { (tuple: RACTuple) -> () in
             
             let failureMsg  = tuple.first as! String
             let successMsg  = tuple.second as! String
             
-            let isLoading   = tuple.third as! Bool
+            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool
             
             if isLoading {
                 
@@ -151,6 +165,10 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     private func setUpSelectionCollectionView() {
         
         self.searchViewModel.active = true
+        self.selectionCollectionView.cellClicked = { (headerModel,cellModel) in
+        
+            self.searchViewModel.updateHistoryDataCommand.execute(cellModel.title!)
+        }
     }
     
     // MARK: - UISearchDisplayDelegate
@@ -169,8 +187,12 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchViewModel.keyword = searchText.trim()
         searchBar.text = searchText.trim()
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        
+        self.searchViewModel.updateHistoryDataCommand.execute(searchBar.text)
     }
     
     // MARK: - UITableViewDataSource

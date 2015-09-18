@@ -55,42 +55,15 @@ class SearchViewDataSource: SearchViewDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            if keyword.length == 0 {
+            if let newStringArray = self.updateHistoryOrHotDataWithKeyword(keyword, dataKey: kHistorySearchData) {
+                
+                subscriber.sendNext(newStringArray)
+                subscriber.sendCompleted()
+            } else {
                 
                 subscriber.sendNext(nil)
                 subscriber.sendCompleted()
-                return nil
             }
-            
-            let stringArray = NSUserDefaults.standardUserDefaults().stringArrayForKey(kHistorySearchData)
-            
-            var newStringArray: [String]!
-            if let stringArray = stringArray as? [String] {
-                
-                if NSMutableArray(array: stringArray).containsObject(keyword) {
-                    
-                    subscriber.sendNext(nil)
-                    subscriber.sendCompleted()
-                    return nil
-                } else {
-                    
-                    newStringArray = stringArray + [keyword]
-                    
-                    if newStringArray.count > self.maxCount {
-                        
-                        newStringArray.removeAtIndex(0)
-                    }
-                }
-                
-            } else {
-                
-                newStringArray = [keyword]
-            }
-            
-            NSUserDefaults.standardUserDefaults().setObject(newStringArray, forKey: kHistorySearchData)
-            
-            subscriber.sendNext(newStringArray)
-            subscriber.sendCompleted()
             
             return nil
         })
@@ -100,40 +73,54 @@ class SearchViewDataSource: SearchViewDataSourceProtocol {
         
         return RACSignal.createSignal({ (subscriber:RACSubscriber!) -> RACDisposable! in
             
-            if keyword.length == 0 {
+            if let newStringArray = self.updateHistoryOrHotDataWithKeyword(keyword, dataKey: kHotSearchData) {
+                
+                subscriber.sendNext(newStringArray)
+                subscriber.sendCompleted()
+            } else {
                 
                 subscriber.sendNext(nil)
                 subscriber.sendCompleted()
-                return nil
             }
-            
-            let stringArray = NSUserDefaults.standardUserDefaults().stringArrayForKey(kHotSearchData)
-            
-            var newStringArray: [String]!
-            if let stringArray = stringArray as? [String] {
-                
-                if NSMutableArray(array: stringArray).containsObject(keyword) {
-                    
-                    subscriber.sendNext(nil)
-                    subscriber.sendCompleted()
-                    return nil
-                } else {
-                    
-                    newStringArray = stringArray + [keyword]
-                }
-                
-            } else {
-                
-                newStringArray = [keyword]
-            }
-            
-            NSUserDefaults.standardUserDefaults().setObject(newStringArray, forKey: kHotSearchData)
-            
-            subscriber.sendNext(newStringArray)
-            subscriber.sendCompleted()
             
             return nil
         })
+    }
+    
+    private func updateHistoryOrHotDataWithKeyword(keyword: String,dataKey: String) -> [String]? {
+            
+        if keyword.length == 0 {
+            
+            return nil
+        }
+        
+        let stringArray = NSUserDefaults.standardUserDefaults().stringArrayForKey(dataKey)
+
+        var newStringArray: [String]!
+        if let stringArray = stringArray as? [String] {
+            
+            if NSMutableArray(array: stringArray).containsObject(keyword) {
+                
+                newStringArray = stringArray + [keyword]
+                newStringArray.removeAtIndex(NSMutableArray(array: stringArray).indexOfObject(keyword))                } else {
+                
+                newStringArray = stringArray + [keyword]
+                
+                if newStringArray.count > self.maxCount {
+                    
+                    newStringArray.removeAtIndex(0)
+                }
+            }
+            
+        } else {
+            
+            newStringArray = [keyword]
+        }
+        
+        NSUserDefaults.standardUserDefaults().setObject(newStringArray, forKey: dataKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    
+        return newStringArray
     }
     
     /**
@@ -143,13 +130,13 @@ class SearchViewDataSource: SearchViewDataSourceProtocol {
         
         var historySearchData = [CJCollectionViewCellModel]()
         
-        let stringArray = NSUserDefaults.standardUserDefaults().stringArrayForKey(kHotSearchData)
+        let stringArray = NSUserDefaults.standardUserDefaults().stringArrayForKey(kHistorySearchData)
         
         if let stringArray = stringArray as? [String] {
             
-            for item in enumerate(stringArray) {
+            for (var i=stringArray.count-1;i>=0;i--) {
                 
-                let cellModel = CJCollectionViewCellModel(icon: nil, title: item.element)
+                let cellModel = CJCollectionViewCellModel(icon: nil, title: stringArray[i])
                 historySearchData.append(cellModel)
             }
         }
@@ -169,9 +156,9 @@ class SearchViewDataSource: SearchViewDataSourceProtocol {
         
         if let stringArray = stringArray as? [String] {
             
-            for item in enumerate(stringArray) {
+            for (var i=stringArray.count-1;i>=0;i--) {
                 
-                let cellModel = CJCollectionViewCellModel(icon: nil, title: item.element)
+                let cellModel = CJCollectionViewCellModel(icon: nil, title: stringArray[i])
                 hotSearchData.append(cellModel)
             }
         }

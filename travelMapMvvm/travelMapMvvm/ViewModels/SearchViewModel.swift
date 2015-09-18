@@ -21,8 +21,6 @@ class SearchViewModel: RVMViewModel {
     
     dynamic var searchViewData = DataSource(dataSource: OrderedDictionary<CJCollectionViewHeaderModel, [CJCollectionViewCellModel]>())
     
-    dynamic var keyword: String!
-    
     // MARK: - Commands
     
     var querySearchViewDataCommand: RACCommand! // 查询历史、热门数据命令
@@ -50,8 +48,7 @@ class SearchViewModel: RVMViewModel {
         
         updateHistoryDataCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
             
-            
-            return self.searchViewDataSourceProtocol.updateHistoryDataWithKeyword(self.keyword)
+            return self.searchViewDataSourceProtocol.updateHistoryDataWithKeyword(any as! String).materialize()
             
         })
         

@@ -162,7 +162,7 @@ class CJSelectionCollectionView: UIView, UICollectionViewDataSource, UICollectio
     /**
     * 点击单元格事件
     */
-    var cellClicked : (cellModel:CJCollectionViewCellModel) -> Void = { celModel in }
+    var cellClicked : (headerModel:CJCollectionViewHeaderModel,cellModel:CJCollectionViewCellModel) -> Void = { (header,celModel) in }
     
     /**
     * 选中数组
@@ -484,7 +484,7 @@ class CJSelectionCollectionView: UIView, UICollectionViewDataSource, UICollectio
             break;
         case .SingleClick:
             
-            self.cellClicked(cellModel: cellModel)
+            self.cellClicked(headerModel:headerModel, cellModel: cellModel)
             
             break;
             
