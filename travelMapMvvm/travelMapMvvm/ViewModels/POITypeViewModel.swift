@@ -17,7 +17,7 @@ class POITypeViewModel: RVMViewModel {
     var poiContainerViewModel: POIContainerViewModel!
     
     // MARK: - Data
-    var segmentedControlItems = POITypeEnum.allValues   // 分段数据
+    
     var showPoiMode: ShowPoiModeEnum                    // 地图/列表
     
     // MARK: - Init

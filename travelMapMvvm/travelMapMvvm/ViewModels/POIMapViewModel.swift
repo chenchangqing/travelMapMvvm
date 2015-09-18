@@ -10,16 +10,7 @@ import ReactiveViewModel
 import ReactiveCocoa
 import MapKit
 
-class POIMapViewModel: RVMViewModel {
-    
-    // MARK: - 提示信息
-    
-    dynamic var failureMsg  : String = ""   // 操作失败提示
-    dynamic var successMsg  : String = ""   // 操作失败提示
-    
-    // MARK: - POI列表
-    
-    dynamic var poiList = [POIModel]()
+class POIMapViewModel: POIListViewModel {
     
     // MARK: - 标注
     
@@ -38,13 +29,11 @@ class POIMapViewModel: RVMViewModel {
     // MARK: - Commands
     
     var updatingLocationPlacemarkCommand: RACCommand!
-    var searchPOIListCommand: RACCommand!
     
     
-    init(searchPOIListCommand:RACCommand) {
+    override init(paramTuple:(queryType:QueryTypeEnum, poiType:POITypeEnum?, param:String)) {
         
-        super.init()
-        self.searchPOIListCommand = searchPOIListCommand
+        super.init(paramTuple: paramTuple)
         
         locationManager.showVerboseMessage = true
         locationManager.autoUpdate = true // 标准定位
@@ -77,7 +66,7 @@ class POIMapViewModel: RVMViewModel {
         
         self.didBecomeActiveSignal.subscribeNext { (any:AnyObject!) -> Void in
             
-            self.searchPOIListCommand.execute(nil)
+            self.refreshCommand.execute(nil)
         }
         
     }

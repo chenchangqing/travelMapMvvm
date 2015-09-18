@@ -38,12 +38,38 @@ class POITypeViewController: THSegmentedPager {
             
         case .Map:  // 地图模式
             
-            self.pages = NSMutableArray(array: self.poiTypeViewModel.poiContainerViewModel.poiMapControllerDic.values.array)
+            var pages = [POIMapViewController]()
+            
+            for item in enumerate(POITypeEnum.allValues) {
+                
+                let poiMapViewController = UIViewController.getViewController("POIMap", identifier: "POIMapViewController") as! POIMapViewController
+                
+                poiMapViewController.poiMapViewModel = POIMapViewModel(paramTuple: (self.poiTypeViewModel.poiContainerViewModel.paramTuple.queryType,item.element,self.poiTypeViewModel.poiContainerViewModel.paramTuple.param))
+                
+                poiMapViewController.title = item.element.rawValue
+                
+                pages.append(poiMapViewController)
+            }
+            
+            self.pages = NSMutableArray(array: pages)
             
             break;
         case .List: // 列表模式
             
-            self.pages = NSMutableArray(array: self.poiTypeViewModel.poiContainerViewModel.poiListControllerDic.values.array)
+            var pages = [POIListViewController]()
+            
+            for item in enumerate(POITypeEnum.allValues) {
+                
+                let poiListViewController = UIViewController.getViewController("POIList", identifier: "POIListViewController") as! POIListViewController
+                
+                poiListViewController.poiListViewModel = POIMapViewModel(paramTuple: (self.poiTypeViewModel.poiContainerViewModel.paramTuple.queryType,item.element,self.poiTypeViewModel.poiContainerViewModel.paramTuple.param))
+                
+                poiListViewController.title = item.element.rawValue
+                
+                pages.append(poiListViewController)
+            }
+            
+            self.pages = NSMutableArray(array: pages)
             
             break;
             

@@ -47,7 +47,7 @@ class StrategyDetailViewController: UIViewController {
         if segue.identifier == kSegueFromStrategyDetailViewControllerToPOIMapViewController {
             
             let poiMapViewController = (segue.destinationViewController as! RBStoryboardLink).scene as! POIMapViewController
-            poiMapViewController.poiMapViewModel = POIMapViewModel(searchPOIListCommand: self.strategyDetailViewModel.searchPOIListCommand)
+            poiMapViewController.poiMapViewModel = POIMapViewModel(paramTuple: (QueryTypeEnum.POIListByStrategyId, nil, param: self.strategyDetailViewModel.strategyModel.strategyId!))
         }
     }
 

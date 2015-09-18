@@ -75,7 +75,7 @@ class POIMapViewController: UIViewController, THSegmentedPageViewControllerDeleg
      */
     private func setUpCommand() {
         
-        poiMapViewModel.searchPOIListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        poiMapViewModel.refreshCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
             
             signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
@@ -229,7 +229,7 @@ class POIMapViewController: UIViewController, THSegmentedPageViewControllerDeleg
         RACSignal.combineLatest([
             RACObserve(poiMapViewModel, "failureMsg"),
             RACObserve(poiMapViewModel, "successMsg"),
-            self.poiMapViewModel.searchPOIListCommand.executing
+            self.poiMapViewModel.refreshCommand.executing
         ]).subscribeNextAs { (tuple: RACTuple) -> () in
             
             let failureMsg  = tuple.first as! String

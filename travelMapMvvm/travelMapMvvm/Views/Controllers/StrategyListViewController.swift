@@ -183,45 +183,53 @@ class StrategyListViewController: UITableViewController {
     private func setUpCommands() {
         
         // 下拉刷新
-        self.strategyListViewModel.refreshCommand.executionSignals.switchToLatest().dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
-            
-            self.strategyListViewModel.strategyList = any as! [StrategyModel]
-            self.tableView.reloadData()
-            
-        }, error: { (error:NSError!) -> Void in
-            
-            self.strategyListViewModel.failureMsg = error.localizedDescription
-            
-            self.tableView.header.endRefreshing()
-            self.tableView.footer.resetNoMoreData()
+        self.strategyListViewModel.refreshCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                self.strategyListViewModel.strategyList = any as! [StrategyModel]
+                self.tableView.reloadData()
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.strategyListViewModel.failureMsg = error.localizedDescription
+                
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.resetNoMoreData()
 
-        }) { () -> Void in
-            
-            self.tableView.header.endRefreshing()
-            self.tableView.footer.resetNoMoreData()
+            }) { () -> Void in
+                
+                self.tableView.header.endRefreshing()
+                self.tableView.footer.resetNoMoreData()
 
+            }
+            
         }
         
         // 上拉加载
-        self.strategyListViewModel.loadmoreCommand.executionSignals.switchToLatest().dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
-            
-            self.strategyListViewModel.strategyList += any as! [StrategyModel]
-            self.tableView.reloadData()
-            
-        }, error: { (error:NSError!) -> Void in
-            
-            self.strategyListViewModel.failureMsg = error.localizedDescription
-            
-            self.tableView.footer.endRefreshing()
-            
-        }) { () -> Void in
-            
-            self.tableView.footer.endRefreshing()
-            
-            if self.strategyListViewModel.strategyList.count > 20 {
+        self.strategyListViewModel.loadmoreCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+        
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
                 
-                self.tableView.footer.noticeNoMoreData()
+                self.strategyListViewModel.strategyList += any as! [StrategyModel]
+                self.tableView.reloadData()
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.strategyListViewModel.failureMsg = error.localizedDescription
+                
+                self.tableView.footer.endRefreshing()
+                
+            }) { () -> Void in
+                
+                self.tableView.footer.endRefreshing()
+                
+                if self.strategyListViewModel.strategyList.count > 20 {
+                    
+                    self.tableView.footer.noticeNoMoreData()
+                }
             }
+            
         }
     }
     
