@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v0G-r0-ilc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v0G-r0-ilc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -38,6 +38,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBR-1F-ShV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="545" y="354"/>
+        </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="M1f-1c-4Ch">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" id="kmR-uw-4Uj" customClass="SearchResultViewController" customModule="travelMapMvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3ym-vA-szm"/>
+                        <viewControllerLayoutGuide type="bottom" id="ozn-e4-yRX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rl3-vR-RwE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRj-S8-lke" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bWL-wp-CWk"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haY-HJ-f0K">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LRj-S8-lke" secondAttribute="trailing" id="Fu3-N2-eVV"/>
+                            <constraint firstItem="haY-HJ-f0K" firstAttribute="top" secondItem="LRj-S8-lke" secondAttribute="bottom" id="IWa-zJ-22c"/>
+                            <constraint firstItem="haY-HJ-f0K" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" id="aIZ-YG-SbH"/>
+                            <constraint firstItem="ozn-e4-yRX" firstAttribute="top" secondItem="haY-HJ-f0K" secondAttribute="bottom" id="hFP-6V-ZkT"/>
+                            <constraint firstItem="LRj-S8-lke" firstAttribute="top" secondItem="rl3-vR-RwE" secondAttribute="top" id="jLt-I9-iB0"/>
+                            <constraint firstAttribute="trailing" secondItem="haY-HJ-f0K" secondAttribute="trailing" id="rac-Jk-Zxp"/>
+                            <constraint firstItem="LRj-S8-lke" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" id="xB7-2h-hWT"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="contentContainer" destination="haY-HJ-f0K" id="8vw-jq-0tO"/>
+                        <outlet property="pageControl" destination="LRj-S8-lke" id="nbr-8M-Pmo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tJ-ds-Ehw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955.5" y="353.5"/>
         </scene>
     </scenes>
 </document>

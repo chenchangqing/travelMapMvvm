@@ -19,6 +19,14 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     var mySearchDisplayController: UISearchDisplayController!
     
+    // MARK: - SearchResultViewController
+
+    var searchResultViewController: SearchResultViewController!
+    
+    // MARK: - Cell Identifier
+    
+    private let kCellIdentifier = "Cell"
+    
     // MARK: - 选择控件
     
     @IBOutlet private weak var selectionCollectionView : CJSelectionCollectionView!
@@ -35,11 +43,20 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     private func setUp() {
         
+        setUpSearchResultViewController()
         setUpSearchDisplayController()
         setUpCommands()
         setUpMessage()
         setUpSelectionCollectionView()
         
+    }
+    
+    // MARK: - Set Up SearchResultViewController
+    
+    private func setUpSearchResultViewController() {
+        
+        searchResultViewController = UIViewController.getViewController("Search", identifier: "SearchResultViewController") as! SearchResultViewController
+        searchResultViewController.searchResultViewModel = SearchResultViewModel()
     }
     
     // MARK: - Set Up SearchDisplayController
@@ -64,7 +81,6 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
         mySearchDisplayController.searchResultsDelegate = self
         
         mySearchDisplayController.searchResultsTableView.scrollEnabled = false
-        mySearchDisplayController.searchResultsTableView.backgroundColor = UIColor.redColor()
         mySearchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
@@ -168,6 +184,9 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
         self.selectionCollectionView.cellClicked = { (headerModel,cellModel) in
         
             self.searchViewModel.updateHistoryDataCommand.execute(cellModel.title!)
+            self.mySearchDisplayController.setActive(true, animated: true)
+            self.mySearchDisplayController.searchBar.text = cellModel.title!
+            self.searchResultViewController.searchResultViewModel.keyword = cellModel.title!
         }
     }
     
@@ -188,6 +207,9 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchBar.text = searchText.trim()
+        
+        // 开始搜索
+        searchResultViewController.searchResultViewModel.keyword = searchBar.text
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -209,21 +231,25 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let identifier = "resultCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as? UITableViewCell
         
-        if let cell=cell {
+        if cell == nil {
             
-            cell.textLabel?.text = "TEST"
-            cell.detailTextLabel?.text = "TEST"
-            return cell
-        } else {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: kCellIdentifier)
+            cell!.selectionStyle = .None
             
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
-            cell!.textLabel?.text = "TEST"
-            cell!.detailTextLabel?.text = "TEST"
-            return cell!
+            cell!.contentView.addSubview(self.searchResultViewController.view)
+            
+            self.searchResultViewController.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+            
+            cell!.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[resultView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["resultView":self.searchResultViewController.view]))
+            
+            cell!.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[resultView]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["resultView":self.searchResultViewController.view]))
+            
         }
+        
+        
+        return cell!
     }
     
     // MARK: - UITableViewDelegate

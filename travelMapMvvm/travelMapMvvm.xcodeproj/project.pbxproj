@@ -255,6 +255,8 @@
 		E6D6B8951BA1C91900A715CF /* POITypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */; };
 		E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */; };
 		E6D9E4391B94C87500FF5F31 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */; };
+		E6DCC88A1BACA3960043530A /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DCC8891BACA3960043530A /* SearchResultViewModel.swift */; };
+		E6DCC88C1BACA44D0043530A /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DCC88B1BACA44D0043530A /* SearchResultViewController.swift */; };
 		E6E094BB1BA595E600B874CE /* POIDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E094BA1BA595E600B874CE /* POIDetail.storyboard */; };
 		E6E094C01BA5A6CE00B874CE /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */; };
 		E6E094C21BA5AFD800B874CE /* POIDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */; };
@@ -571,6 +573,8 @@
 		E6D6B8931BA1C91900A715CF /* POITypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POITypeEnum.swift; sourceTree = "<group>"; };
 		E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
+		E6DCC8891BACA3960043530A /* SearchResultViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		E6DCC88B1BACA44D0043530A /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		E6E094BA1BA595E600B874CE /* POIDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = POIDetail.storyboard; sourceTree = "<group>"; };
 		E6E094BF1BA5A6CE00B874CE /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
 		E6E094C11BA5AFD800B874CE /* POIDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POIDetailViewModel.swift; sourceTree = "<group>"; };
@@ -969,6 +973,7 @@
 				E6B039E61BA9569B0047DF2A /* POIContainerViewModel.swift */,
 				E6B039E81BA957F20047DF2A /* POITypeViewModel.swift */,
 				E6217E751BAAB1AD004936FA /* SearchViewModel.swift */,
+				E6DCC8891BACA3960043530A /* SearchResultViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1332,6 +1337,7 @@
 				E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */,
 				E65673041BA6B94A004E2C58 /* CommentFormController.swift */,
 				E6217E6B1BAA6B80004936FA /* SearchViewController.swift */,
+				E6DCC88B1BACA44D0043530A /* SearchResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1854,11 +1860,13 @@
 				E6E1F0C41BA889EF0010F316 /* POITypeViewController.swift in Sources */,
 				E6867C211BA66F4C005BCDC7 /* JSONCommentModelDataSource.swift in Sources */,
 				E6D9E4381B94C87500FF5F31 /* RegisterViewController.swift in Sources */,
+				E6DCC88C1BACA44D0043530A /* SearchResultViewController.swift in Sources */,
 				E688EFC31B9200C400C01B23 /* IndexViewFooter.swift in Sources */,
 				E68730D11B91689400F3EA40 /* UIView+MJExtension.m in Sources */,
 				E611B39D1B8D916F0034B267 /* GCircleControl.swift in Sources */,
 				E698AD901B905BA6001B7D71 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
 				E65673051BA6B94A004E2C58 /* CommentFormController.swift in Sources */,
+				E6DCC88A1BACA3960043530A /* SearchResultViewModel.swift in Sources */,
 				E69DCD781BA142F1000A9344 /* CTDisplayView.swift in Sources */,
 				E698AD7F1B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E6B039E91BA957F20047DF2A /* POITypeViewModel.swift in Sources */,

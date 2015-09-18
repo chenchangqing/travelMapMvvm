@@ -38,13 +38,19 @@ class StrategyListViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        footer.hidden = false
+        if let footer=footer {
+            
+            footer.hidden = false
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        footer.hidden = true
+        if let footer=footer {
+            
+            footer.hidden = true
+        }
     }
     
     // MARK: - 首次进入是否应该加载数据
@@ -84,6 +90,11 @@ class StrategyListViewController: UITableViewController {
      * 设置查询条件按钮
      */
     private func setUpFooter() {
+        
+        if self.strategyListViewModel.paramTuple.queryType == .StrategyListByKeyword {
+            
+            return
+        }
         
         for item in enumerate(self.navigationController!.view.subviews) {
             

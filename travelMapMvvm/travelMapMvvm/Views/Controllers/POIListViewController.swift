@@ -44,7 +44,9 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 
                 break;
                 
-            case .StrategyListByKeyword:
+            case .POIListByKeyword:
+                
+                self.poiListViewModel.refreshCommand.execute(nil)
                 
                 break;
                 
@@ -193,7 +195,27 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier1) as! UITableViewCell
+        var cell : UITableViewCell!
+        
+        switch (self.poiListViewModel.paramTuple.queryType)
+        {
+            
+            case .POIListByCenterPOIId,.POIListByCityId,.POIListByStrategyId,.POIListByUserId:
+                
+                cell = self.tableView.dequeueReusableCellWithIdentifier(kCellIdentifier1) as! UITableViewCell
+                
+                break;
+                
+            case .POIListByKeyword:
+                
+                cell = self.tableView.dequeueReusableCellWithIdentifier(kCellIdentifier2) as! UITableViewCell
+                
+                break;
+                
+            default:
+                
+                break;
+        }
         
         // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
         if indexPath.row < self.poiListViewModel.poiList.count {
@@ -205,6 +227,27 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         }
         
         return cell
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        switch (self.poiListViewModel.paramTuple.queryType)
+        {
+            case .POIListByCenterPOIId,.POIListByCityId,.POIListByStrategyId,.POIListByUserId:
+                
+                return 250
+                
+            case .POIListByKeyword:
+                
+                return 100
+                
+            default:
+                
+                break;
+        }
+        return 0
     }
     
     // MARK: - THSegmentedPageViewControllerDelegate
