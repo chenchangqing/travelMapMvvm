@@ -30,6 +30,9 @@ class StrategyListViewController: UITableViewController {
         super.viewDidLoad()
         
         setUp()
+        
+        // 首次进入是否应该加载数据
+        shouldLoadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,6 +45,29 @@ class StrategyListViewController: UITableViewController {
         super.viewWillDisappear(animated)
         
         footer.hidden = true
+    }
+    
+    // MARK: - 首次进入是否应该加载数据
+    
+    private func shouldLoadData() {
+        
+        switch (self.strategyListViewModel.paramTuple.queryType)
+        {
+            case .StrategyListBySystem,.StrategyListByUserId:
+                
+                // 首次进入刷新
+                self.tableView.header.beginRefreshing()
+                
+                break;
+                
+            case .StrategyListByKeyword:
+                
+                break;
+                
+            default:
+                
+                break;
+        }
     }
     
     // MARK: - Set Up 
@@ -59,29 +85,37 @@ class StrategyListViewController: UITableViewController {
      */
     private func setUpFooter() {
         
-        footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? IndexViewFooter
-        
-        if let footer=footer {
+        for item in enumerate(self.navigationController!.view.subviews) {
             
+            if let footer=item.element as? IndexViewFooter {
+                
+                self.footer = footer
+                break
+            }
+        }
+        
+        if self.footer == nil {
+            
+            footer = NSBundle.mainBundle().loadNibNamed("IndexViewFooter", owner: nil, options: nil).first as? IndexViewFooter
             footer.setTranslatesAutoresizingMaskIntoConstraints(false)
             self.navigationController?.view.addSubview(footer)
             
             // constrains
             self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[footer]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
             self.navigationController?.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[footer(50)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["footer":footer]))
-            
-            // 跳转至筛选页面
-            footer.goFilterBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
-                
-                self.performSegueWithIdentifier(kSegueFromIndexViewControllerToFilterViewController, sender: nil)
-            })
-            
-            // 跳转至排序页面
-            footer.goOrderBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
-                
-                self.performSegueWithIdentifier(kSegueFromIndexViewControllerToDesViewController, sender: nil)
-            })
         }
+        
+        // 跳转至筛选页面
+        footer.goFilterBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromStrategyListViewControllerToFilterViewController, sender: nil)
+        })
+        
+        // 跳转至排序页面
+        footer.goOrderBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext({ (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromStrategyListViewControllerToDesViewController, sender: nil)
+        })
     }
     
     /**
@@ -193,13 +227,13 @@ class StrategyListViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    @IBAction func unwindSegueToIndexViewController(segue: UIStoryboardSegue) {
+    @IBAction func unwindSegueToStrategyListViewController(segue: UIStoryboardSegue) {
         
-        if segue.identifier == kSegueFromFilterViewControllerToIndexViewController {
+        if segue.identifier == kSegueFromFilterViewControllerToStrategyListViewController {
             
         }
         
-        if segue.identifier == kSegueFromDesViewControllerToIndexViewController {
+        if segue.identifier == kSegueFromDesViewControllerToStrategyListViewController {
             
         }
     }
@@ -207,7 +241,7 @@ class StrategyListViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // 跳转至攻略详情页面
-        if segue.identifier == kSegueFromIndexViewControllerToStrategyDetailViewController {
+        if segue.identifier == kSegueFromStrategyListViewControllerToStrategyDetailViewController {
             
             let strategyViewController = segue.destinationViewController as! StrategyDetailViewController
             
@@ -261,7 +295,7 @@ class StrategyListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.performSegueWithIdentifier(kSegueFromIndexViewControllerToStrategyDetailViewController, sender: self.strategyListViewModel.strategyList[indexPath.row])
+        self.performSegueWithIdentifier(kSegueFromStrategyListViewControllerToStrategyDetailViewController, sender: self.strategyListViewModel.strategyList[indexPath.row])
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -27,7 +27,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="scaleBackgroundImageView" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="parallaxEnabled" value="NO"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="LeftMenuViewController"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="IndexViewControllerNav"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="StrategyListViewControllerNav"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="panGestureEnabled" value="YES"/>
                         <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="nbg"/>
                     </userDefinedRuntimeAttributes>
@@ -252,9 +252,9 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="bz7-8v-DKg" kind="presentation" identifier="FromIndexViewControllerToFilterViewController" id="4HT-u1-4ka"/>
-                        <segue destination="tK5-IC-uFA" kind="presentation" identifier="FromIndexViewControllerToDesViewController" id="mSf-Ng-eyN"/>
-                        <segue destination="X3p-Ww-EOJ" kind="custom" identifier="FromIndexViewControllerToStrategyDetailViewController" customClass="RBStoryboardPushSegue" id="3X8-Mj-g1a"/>
+                        <segue destination="bz7-8v-DKg" kind="presentation" identifier="FromStrategyListViewControllerToFilterViewController" id="4HT-u1-4ka"/>
+                        <segue destination="tK5-IC-uFA" kind="presentation" identifier="FromStrategyListViewControllerToDesViewController" id="mSf-Ng-eyN"/>
+                        <segue destination="X3p-Ww-EOJ" kind="custom" identifier="FromStrategyListViewControllerToStrategyDetailViewController" customClass="RBStoryboardPushSegue" id="3X8-Mj-g1a"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK8-Vf-DD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -435,7 +435,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xgd-xZ-B3z">
             <objects>
-                <navigationController storyboardIdentifier="IndexViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="0ca-JJ-hJ3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StrategyListViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="0ca-JJ-hJ3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fPu-ym-wYc">
@@ -510,7 +510,7 @@
                     <navigationItem key="navigationItem" title="排序" id="YkC-yv-vJr">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="UIP-xr-u4L">
                             <connections>
-                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromDesViewControllerToIndexViewController" unwindAction="unwindSegueToIndexViewController:" id="fhm-oK-fs8"/>
+                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromDesViewControllerToStrategyListViewController" unwindAction="unwindSegueToStrategyListViewController:" id="fhm-oK-fs8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -620,7 +620,7 @@
                     <navigationItem key="navigationItem" title="筛选" id="aoe-dH-xsq">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="f1R-dD-u6O">
                             <connections>
-                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromFilterViewControllerToIndexViewController" unwindAction="unwindSegueToIndexViewController:" id="RtN-eY-jOG"/>
+                                <segue destination="Bzd-d5-TaE" kind="unwind" identifier="FromFilterViewControllerToStrategyListViewController" unwindAction="unwindSegueToStrategyListViewController:" id="RtN-eY-jOG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

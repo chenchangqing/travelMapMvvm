@@ -124,7 +124,7 @@ class LeftViewController: UITableViewController {
         // 点击首页所在行
         case 1:
             
-            sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "IndexViewControllerNav")
+            sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "StrategyListViewControllerNav")
             sideMenuViewController?.hideMenuViewController()
             
             break;
@@ -199,7 +199,7 @@ class LeftViewController: UITableViewController {
         }, exitLoginSuccessCompletionCallback: { () -> Void in
             
             // 退出登录后回调
-            self.sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "IndexViewControllerNav")
+            self.sideMenuViewController?.contentViewController = UIViewController.getViewController("Main", identifier: "StrategyListViewControllerNav")
             self.sideMenuViewController?.hideMenuViewController()
         })
         NSNotificationCenter.defaultCenter().postNotificationName(kPresentLoginPageActionExitLoginNotificationName, object: paramObj, userInfo: nil)

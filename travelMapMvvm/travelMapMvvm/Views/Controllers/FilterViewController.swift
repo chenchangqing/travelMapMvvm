@@ -86,7 +86,7 @@ class FilterViewController: UIViewController {
         // ok event
         okBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
             
-            self.performSegueWithIdentifier(kSegueFromFilterViewControllerToIndexViewController, sender: nil)
+            self.performSegueWithIdentifier(kSegueFromFilterViewControllerToStrategyListViewController, sender: nil)
         }
         
         // reset event

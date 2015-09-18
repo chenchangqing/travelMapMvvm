@@ -93,7 +93,7 @@ class DesViewController: UIViewController {
         okBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
          
             println(self.selectionCollectionView.resultDictionary)
-            self.performSegueWithIdentifier(kSegueFromDesViewControllerToIndexViewController, sender: nil)
+            self.performSegueWithIdentifier(kSegueFromDesViewControllerToStrategyListViewController, sender: nil)
         }
         
         // reset event
