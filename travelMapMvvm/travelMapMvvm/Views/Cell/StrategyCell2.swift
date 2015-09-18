@@ -21,6 +21,8 @@ class StrategyCell2: UITableViewCell, ReactiveView {
     // MARK: - View Model
     
     private var strategyImageViewModel: ImageViewModel!
+    
+    // MARK: - Init
 
     override func awakeFromNib() {
         super.awakeFromNib()

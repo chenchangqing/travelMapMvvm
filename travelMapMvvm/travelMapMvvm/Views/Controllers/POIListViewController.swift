@@ -13,11 +13,12 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     
     // MARK: - View Model
     
-    var poiListViewModel: POIListViewModel!
+    var poiListViewModel: POIListViewModel!    
     
-    // MARK: - TABLE Cell
+    // MARK: - Cell Identifier
     
-    let kCellIdentifier = "cell"
+    private let kCellIdentifier1 = "Cell1"
+    private let kCellIdentifier2 = "Cell2"
 
     // MARK: - Init
     
@@ -25,7 +26,32 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         super.viewDidLoad()
         
         setUp()
-        self.tableView.header.beginRefreshing()
+        
+        // 首次进入是否应该加载数据
+        shouldLoadData()
+    }
+    
+    // MARK: - 首次进入是否应该加载数据
+    
+    private func shouldLoadData() {
+        
+        switch (self.poiListViewModel.paramTuple.queryType)
+        {
+            case .POIListByCenterPOIId,.POIListByCityId,.POIListByStrategyId,.POIListByUserId:
+                
+                // 首次进入刷新
+                self.tableView.header.beginRefreshing()
+                
+                break;
+                
+            case .StrategyListByKeyword:
+                
+                break;
+                
+            default:
+                
+                break;
+        }
     }
     
     // MARK: - Set Up
@@ -101,9 +127,25 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 self.tableView.footer.endRefreshing()
             })
         }
+        
+        poiListViewModel.searchCityListCommand.executionSignals.subscribeNextAs { (signal:RACSignal) -> () in
+            
+            signal.dematerialize().deliverOn(RACScheduler.mainThreadScheduler()).subscribeNext({ (any:AnyObject!) -> Void in
+                
+                // 更新城市
+                self.poiListViewModel.cityList = any as! [CityModel]
+                
+            }, error: { (error:NSError!) -> Void in
+                
+                self.poiListViewModel.failureMsg = error.localizedDescription
+                
+            }, completed: { () -> Void in
+                
+            })
+        }
     }
     
-    // MARKO: - Setup Message 成功失败提示 加载提示
+    // MARK: - Setup Message
     
     private func setUpMessage() {
         
@@ -111,13 +153,14 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
             RACObserve(poiListViewModel, "failureMsg"),
             RACObserve(poiListViewModel, "successMsg"),
             poiListViewModel.loadmoreCommand.executing,
-            poiListViewModel.refreshCommand.executing
+            poiListViewModel.refreshCommand.executing,
+            poiListViewModel.searchCityListCommand.executing,
         ]).subscribeNextAs { (tuple: RACTuple) -> () in
             
             let failureMsg  = tuple.first as! String
             let successMsg  = tuple.second as! String
             
-            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool
+            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool || tuple.fifth as! Bool
             
             if isLoading {
                 
@@ -150,14 +193,14 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier1) as! UITableViewCell
         
         // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
         if indexPath.row < self.poiListViewModel.poiList.count {
             
-            let item: AnyObject = self.poiListViewModel.poiList[indexPath.row]
             if let reactiveView = cell as? ReactiveView {
-                reactiveView.bindViewModel(item)
+                
+                reactiveView.bindViewModel(self.poiListViewModel.poiList[indexPath.row])
             }
         }
         

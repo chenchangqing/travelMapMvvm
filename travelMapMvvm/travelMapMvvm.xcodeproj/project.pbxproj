@@ -208,6 +208,7 @@
 		E6A663781BABD42300DB46AA /* StrategyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663771BABD42300DB46AA /* StrategyListViewModel.swift */; };
 		E6A6637A1BABDCC700DB46AA /* StrategyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */; };
 		E6A6637C1BABEB4B00DB46AA /* StrategyCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6637B1BABEB4B00DB46AA /* StrategyCell2.swift */; };
+		E6A6637E1BAC105D00DB46AA /* POICell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A6637D1BAC105D00DB46AA /* POICell2.swift */; };
 		E6AA5E391B9356D4009C7DA1 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */; };
 		E6AA5E4A1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */; };
 		E6AA5E4B1B9357CA009C7DA1 /* CJCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA5E3E1B9357CA009C7DA1 /* CJCollectionViewCell.swift */; };
@@ -518,6 +519,7 @@
 		E6A663771BABD42300DB46AA /* StrategyListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyListViewModel.swift; sourceTree = "<group>"; };
 		E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyListViewController.swift; sourceTree = "<group>"; };
 		E6A6637B1BABEB4B00DB46AA /* StrategyCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyCell2.swift; sourceTree = "<group>"; };
+		E6A6637D1BAC105D00DB46AA /* POICell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POICell2.swift; sourceTree = "<group>"; };
 		E6AA5E371B9356D4009C7DA1 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E6AA5E3C1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CollectionCellStyle.h"; sourceTree = "<group>"; };
 		E6AA5E3D1B9357CA009C7DA1 /* UIButton+CollectionCellStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CollectionCellStyle.m"; sourceTree = "<group>"; };
@@ -988,6 +990,7 @@
 			isa = PBXGroup;
 			children = (
 				E6B039E41BA94D290047DF2A /* POICell.swift */,
+				E6A6637D1BAC105D00DB46AA /* POICell2.swift */,
 				E6867C1A1BA66A25005BCDC7 /* CommentCell.swift */,
 				E6EB101D1B9FD5CF009FA27F /* BottomLineCell.swift */,
 				E611B3A91B8DB9080034B267 /* StrategyCell.swift */,
@@ -1316,6 +1319,7 @@
 				E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
 				E6A663791BABDCC700DB46AA /* StrategyListViewController.swift */,
+				E6B039E21BA94C2E0047DF2A /* POIListViewController.swift */,
 				E6D9E4361B94C87500FF5F31 /* RegisterViewController.swift */,
 				E6D9E4371B94C87500FF5F31 /* VerifyViewController.swift */,
 				E67CFA3D1B94B93C00988426 /* ForgetPwdController.swift */,
@@ -1327,7 +1331,6 @@
 				E6849EA41BA2C47F00A5631B /* POIMapViewController */,
 				E6867C2B1BA69583005BCDC7 /* MoreCommentsController.swift */,
 				E65673041BA6B94A004E2C58 /* CommentFormController.swift */,
-				E6B039E21BA94C2E0047DF2A /* POIListViewController.swift */,
 				E6217E6B1BAA6B80004936FA /* SearchViewController.swift */,
 			);
 			path = Controllers;
@@ -1679,6 +1682,7 @@
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
+				E6A6637E1BAC105D00DB46AA /* POICell2.swift in Sources */,
 				E6849EA31BA2BBF900A5631B /* LoginViewModel.swift in Sources */,
 				E6217E741BAA9E3D004936FA /* SearchViewDataSource.swift in Sources */,
 				E6849E971BA2B9EB00A5631B /* GScrollView.swift in Sources */,

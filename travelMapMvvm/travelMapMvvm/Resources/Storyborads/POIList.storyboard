@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--List View Controller-->
@@ -14,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="sn9-nd-keK" customClass="POICell" customModule="travelMapMvvm" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell1" id="sn9-nd-keK" customClass="POICell" customModule="travelMapMvvm" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sn9-nd-keK" id="jdb-JG-p1C">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -135,6 +136,80 @@
                                     <outlet property="poiPic" destination="fJO-AY-FNa" id="1fd-UA-moV"/>
                                     <outlet property="score" destination="0mj-GF-8iA" id="bkj-3c-cio"/>
                                     <outlet property="star" destination="qlc-oN-tqD" id="3ia-bk-PuU"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="100" id="rIs-kO-uQ1" customClass="POICell2" customModule="travelMapMvvm" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rIs-kO-uQ1" id="AUi-cG-8EZ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-sA-7Ie">
+                                            <rect key="frame" x="16" y="8" width="83" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Zlp-sA-7Ie" secondAttribute="height" multiplier="1:1" id="khJ-Q4-w55"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK3-yP-n5S">
+                                            <rect key="frame" x="107" y="8" width="260" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="797-jy-jJ7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="景点" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-cj-GOU">
+                                            <rect key="frame" x="325" y="43" width="42" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="hwV-TF-RJr"/>
+                                                <constraint firstAttribute="height" constant="14" id="k4H-B5-g6r"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6n-0K-ZlC">
+                                            <rect key="frame" x="107" y="77" width="260" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="eCO-Dj-cik"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gP-mc-EqO">
+                                            <rect key="frame" x="107" y="33" width="260" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="6Pd-yp-tlE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="0Yt-cj-GOU" secondAttribute="trailing" constant="8" id="BJW-Hi-e6G"/>
+                                        <constraint firstItem="nK3-yP-n5S" firstAttribute="top" secondItem="AUi-cG-8EZ" secondAttribute="top" constant="8" id="H9O-2c-u06"/>
+                                        <constraint firstAttribute="centerY" secondItem="0Yt-cj-GOU" secondAttribute="centerY" id="MM6-WL-KhV"/>
+                                        <constraint firstItem="Zlp-sA-7Ie" firstAttribute="top" secondItem="AUi-cG-8EZ" secondAttribute="top" constant="8" id="OZ5-kK-EBP"/>
+                                        <constraint firstItem="q6n-0K-ZlC" firstAttribute="leading" secondItem="Zlp-sA-7Ie" secondAttribute="trailing" constant="8" id="XTE-HC-NbX"/>
+                                        <constraint firstAttribute="trailing" secondItem="nK3-yP-n5S" secondAttribute="trailing" constant="8" id="Yfx-TL-m06"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zlp-sA-7Ie" secondAttribute="bottom" constant="8" id="ibM-Ly-dkf"/>
+                                        <constraint firstItem="nK3-yP-n5S" firstAttribute="leading" secondItem="Zlp-sA-7Ie" secondAttribute="trailing" constant="8" id="isJ-bZ-YaS"/>
+                                        <constraint firstItem="2gP-mc-EqO" firstAttribute="top" secondItem="nK3-yP-n5S" secondAttribute="bottom" constant="4" id="kw1-qQ-ohP"/>
+                                        <constraint firstAttribute="trailing" secondItem="q6n-0K-ZlC" secondAttribute="trailing" constant="8" id="pdP-lq-hH7"/>
+                                        <constraint firstItem="2gP-mc-EqO" firstAttribute="leading" secondItem="Zlp-sA-7Ie" secondAttribute="trailing" constant="8" id="rIp-by-Fwp"/>
+                                        <constraint firstAttribute="bottom" secondItem="q6n-0K-ZlC" secondAttribute="bottom" constant="8" id="tRm-YU-VZG"/>
+                                        <constraint firstItem="Zlp-sA-7Ie" firstAttribute="leading" secondItem="AUi-cG-8EZ" secondAttribute="leading" constant="16" id="tbB-no-dDk"/>
+                                        <constraint firstAttribute="trailing" secondItem="2gP-mc-EqO" secondAttribute="trailing" constant="8" id="vWP-9r-e17"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityEnNameL" destination="2gP-mc-EqO" id="azg-ip-xKD"/>
+                                    <outlet property="countryL" destination="q6n-0K-ZlC" id="BN5-7C-xCc"/>
+                                    <outlet property="poiNameL" destination="nK3-yP-n5S" id="6xu-wF-T97"/>
+                                    <outlet property="poiPic" destination="Zlp-sA-7Ie" id="1Qk-P9-yaf"/>
+                                    <outlet property="poiTypeL" destination="0Yt-cj-GOU" id="T7l-vw-4x5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

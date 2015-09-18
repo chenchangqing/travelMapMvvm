@@ -24,13 +24,16 @@ class POIListViewModel: RVMViewModel {
     // MARK: - POI列表
     
     dynamic var poiList = [POIModel]()
+    dynamic var cityList = [CityModel]()
     
     // MARK: - Commands
     
     var refreshCommand: RACCommand!
     var loadmoreCommand: RACCommand!
+    var searchCityListCommand: RACCommand!
     
     private let poiModelDataSourceProtocol = JSONPOIModelDataSource.shareInstance()
+    private let cityModelDataSourceProtocol = JSONCityModelDataSource.shareInstance()
     
     // MARK: - Init
     
@@ -123,5 +126,12 @@ class POIListViewModel: RVMViewModel {
                 
                 break;
         }
+        
+        // 设置搜索关键字城市命令
+        
+        self.searchCityListCommand = RACCommand(signalBlock: { (any:AnyObject!) -> RACSignal! in
+            
+            return self.cityModelDataSourceProtocol.queryCityListByKeyword(self.paramTuple.param)
+        })
     }
 }
