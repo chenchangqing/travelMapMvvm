@@ -617,13 +617,15 @@
                         <outlet property="poiTiketTextViewHeightConstraint" destination="XMa-ra-LyR" id="m2v-u7-za2"/>
                         <outlet property="scenicBtn" destination="tow-8B-Fld" id="gxF-RK-dMV"/>
                         <outlet property="shoppingBtn" destination="Qk6-qw-QpX" id="Ysx-ft-Mvy"/>
+                        <outlet property="showGuideLineBtn" destination="CVF-4I-3re" id="g17-4q-C0o"/>
                         <outlet property="topViewContainer" destination="g6U-K1-WWx" id="15o-RO-f8x"/>
                         <segue destination="HRf-Xr-r1v" kind="custom" identifier="FromPOIDetailViewControllerToPOIContainerController" customClass="RBStoryboardPushSegue" id="hIh-7a-Y3A"/>
+                        <segue destination="Z05-2d-JT8" kind="custom" identifier="FromPOIDetailViewControllerToGuideLineViewController" customClass="RBStoryboardPushSegue" id="wGw-YW-fGj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqP-Ie-dwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066.5" y="300.5"/>
+            <point key="canvasLocation" x="3060.5" y="300.5"/>
         </scene>
         <!--评论-->
         <scene sceneID="yfQ-2g-Mz0">
@@ -795,6 +797,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyK-hV-NkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3564.5" y="300.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="bL1-qV-EYS">
+            <objects>
+                <viewController id="Z05-2d-JT8" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AZF-6I-01c"/>
+                        <viewControllerLayoutGuide type="bottom" id="S5d-Tj-9Ao"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z42-yN-fUG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="ShowGuideLine"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAt-Hb-fSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564.5" y="1058.5"/>
         </scene>
     </scenes>
     <resources>

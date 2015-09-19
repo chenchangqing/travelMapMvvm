@@ -87,7 +87,7 @@ extension POIMapViewController: MKMapViewDelegate {
         
         let annotationView  = annotationView as! BasicMapAnnotationView
         let annotation      = annotationView.annotation as! BasicMapAnnotation
-        let poi             = self.poiMapViewModel.poiList[annotation.index]
+        let poi: (AnyObject)             = self.poiMapViewModel.poiList[annotation.index]
         
         self.performSegueWithIdentifier(kSegueFromPOIMapViewControllerToPOIDetailViewController, sender: poi)
     }

@@ -241,6 +241,10 @@
 		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
 		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
 		E6B7BDA41BAD290300D4E5F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */; };
+		E6B7BDA61BAD94F100D4E5F1 /* GuideLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7BDA51BAD94F100D4E5F1 /* GuideLineViewController.swift */; };
+		E6B7BDA81BAD94FE00D4E5F1 /* ShowGuideLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B7BDA71BAD94FE00D4E5F1 /* ShowGuideLine.storyboard */; };
+		E6B7BDAB1BAD95D000D4E5F1 /* ASMapLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7BDAA1BAD95D000D4E5F1 /* ASMapLauncher.swift */; };
+		E6B7BDAD1BAD966F00D4E5F1 /* SecondFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B7BDAC1BAD966F00D4E5F1 /* SecondFormat.swift */; };
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
@@ -560,6 +564,10 @@
 		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
 		E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E6B7BDA51BAD94F100D4E5F1 /* GuideLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideLineViewController.swift; sourceTree = "<group>"; };
+		E6B7BDA71BAD94FE00D4E5F1 /* ShowGuideLine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowGuideLine.storyboard; sourceTree = "<group>"; };
+		E6B7BDAA1BAD95D000D4E5F1 /* ASMapLauncher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASMapLauncher.swift; sourceTree = "<group>"; };
+		E6B7BDAC1BAD966F00D4E5F1 /* SecondFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondFormat.swift; sourceTree = "<group>"; };
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
@@ -837,6 +845,7 @@
 		E659F48F1B8CEFFF005CD9FD /* General */ = {
 			isa = PBXGroup;
 			children = (
+				E6B7BDA91BAD95D000D4E5F1 /* ASMapLauncher */,
 				E67428371BA9C05300B3C42A /* THSegmentedPager */,
 				E6E1F0C51BA88A600010F316 /* HMSegmentedControl */,
 				E6E1F0C81BA88A600010F316 /* SwipeView */,
@@ -867,6 +876,7 @@
 		E659F4921B8CEFFF005CD9FD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E6B7BDAC1BAD966F00D4E5F1 /* SecondFormat.swift */,
 				E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */,
 				E6A46F1E1B949E5A00BA089B /* ColorHelper.swift */,
 				E698AD461B8FEF94001B7D71 /* JSONHelper.h */,
@@ -938,6 +948,7 @@
 		E659F4A11B8CEFFF005CD9FD /* Storyborads */ = {
 			isa = PBXGroup;
 			children = (
+				E6B7BDA71BAD94FE00D4E5F1 /* ShowGuideLine.storyboard */,
 				E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */,
 				E659F4A21B8CEFFF005CD9FD /* StrategyList.storyboard */,
 				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
@@ -1323,6 +1334,7 @@
 		E6AA5E351B9356D4009C7DA1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6B7BDA51BAD94F100D4E5F1 /* GuideLineViewController.swift */,
 				E6E1F0BE1BA848910010F316 /* POIContainerController */,
 				E65673001BA6A5B9004E2C58 /* POIDetailViewController.swift */,
 				E6849E9A1BA2BBF000A5631B /* ModifyUInfoViewController */,
@@ -1401,6 +1413,14 @@
 				E6AB39301B954F17003F88C5 /* KeyboardProcessProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E6B7BDA91BAD95D000D4E5F1 /* ASMapLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				E6B7BDAA1BAD95D000D4E5F1 /* ASMapLauncher.swift */,
+			);
+			path = ASMapLauncher;
 			sourceTree = "<group>";
 		};
 		E6E094BE1BA5A6CE00B874CE /* RatingBar */ = {
@@ -1613,6 +1633,7 @@
 				E688EFB31B91D52E00C01B23 /* MB-Checkmark@2x.png in Resources */,
 				E6849E8C1BA29AC400A5631B /* POIMap.storyboard in Resources */,
 				E60400291B9BE0A400C3C0A8 /* ShareSDKLocalizable.strings in Resources */,
+				E6B7BDA81BAD94FE00D4E5F1 /* ShowGuideLine.storyboard in Resources */,
 				E6E1F0C21BA848B20010F316 /* POIContainer.storyboard in Resources */,
 				E68730CD1B91689400F3EA40 /* MJRefresh.bundle in Resources */,
 				E6867C251BA6701D005BCDC7 /* queryPOICommentList.json in Resources */,
@@ -1689,6 +1710,7 @@
 				E6849E8A1BA26B4700A5631B /* NetworkPOIModelDataSource.swift in Sources */,
 				E6AB39371B957E3B003F88C5 /* NetworkUserModelDataSource.swift in Sources */,
 				E68730CC1B91689400F3EA40 /* MJRefreshStateHeader.m in Sources */,
+				E6B7BDAB1BAD95D000D4E5F1 /* ASMapLauncher.swift in Sources */,
 				E698AD821B905BA6001B7D71 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				E68730C61B91689400F3EA40 /* MJRefreshAutoStateFooter.m in Sources */,
 				E6A46F161B93F1E500BA089B /* DesViewModel.swift in Sources */,
@@ -1851,9 +1873,11 @@
 				E698AD811B905BA6001B7D71 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				E688EFB61B91D52E00C01B23 /* MBProgressHUD+Simplify.m in Sources */,
 				E6867C2C1BA69583005BCDC7 /* MoreCommentsController.swift in Sources */,
+				E6B7BDA61BAD94F100D4E5F1 /* GuideLineViewController.swift in Sources */,
 				E649B4351BA4623D00B99A2F /* LocationManager.swift in Sources */,
 				E68730C91B91689400F3EA40 /* MJRefreshBackStateFooter.m in Sources */,
 				E68730C01B91689400F3EA40 /* MJRefreshBackFooter.m in Sources */,
+				E6B7BDAD1BAD966F00D4E5F1 /* SecondFormat.swift in Sources */,
 				E6849E9D1BA2BBF000A5631B /* ModifyUInfoViewController+ImagePicker.swift in Sources */,
 				E68730CF1B91689400F3EA40 /* UIScrollView+MJExtension.m in Sources */,
 				E68730C51B91689400F3EA40 /* MJRefreshAutoNormalFooter.m in Sources */,

@@ -124,7 +124,7 @@ class IndexUITapGestureRecognizer:UITapGestureRecognizer{
     
     func focus(index: Int?) {
         
-        if index != nil {
+        if index != nil && index < self.subviews.count {
             
             // 位置使选中成为第一个
             let v = self.subviews[index!] as! UIView

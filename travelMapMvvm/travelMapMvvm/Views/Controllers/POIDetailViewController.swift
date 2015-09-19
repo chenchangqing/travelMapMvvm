@@ -17,6 +17,7 @@ class POIDetailViewController: UITableViewController {
     @IBOutlet weak var poiNameL : UILabel!      // POI 名称
     @IBOutlet weak var levelV   : RatingBar!    // POI 评分
     @IBOutlet weak var moreMomentBtn: UIButton!
+    @IBOutlet weak var showGuideLineBtn: UIButton!
     
     @IBOutlet weak var poiDescTextView      : UITextView!   // POI 简介
     @IBOutlet weak var poiAddressTextView   : UITextView!   // POI 地址
@@ -74,6 +75,14 @@ class POIDetailViewController: UITableViewController {
             let poiContainerController = segue.destinationViewController as! POIContainerController
             poiContainerController.poiContainerViewModel = POIContainerViewModel(paramTuple: (QueryTypeEnum.POIListByCenterPOIId,self.poiDetailViewModel.poiModel.poiId!))
         }
+        
+        if segue.identifier == kSegueFromPOIDetailViewControllerToGuideLineViewController {
+            
+            let guideLineViewController = segue.destinationViewController as! GuideLineViewController
+            let latitude = Double((self.poiDetailViewModel.poiModel.latitude! as NSString).floatValue)
+            let longitude = Double((self.poiDetailViewModel.poiModel.longitude! as NSString).floatValue)
+            guideLineViewController.destinationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
     }
     
     // MARK: - SetUp
@@ -111,6 +120,12 @@ class POIDetailViewController: UITableViewController {
         activityBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
             
             self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToPOIContainerController, sender: nil)
+        }
+        
+        // 显示路线
+        showGuideLineBtn.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (any:AnyObject!) -> Void in
+            
+            self.performSegueWithIdentifier(kSegueFromPOIDetailViewControllerToGuideLineViewController, sender: nil)
         }
     }
     
