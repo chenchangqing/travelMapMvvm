@@ -46,7 +46,7 @@ class POICell2: UITableViewCell, ReactiveView {
         
         if let poiModel = viewModel as? POIModel {
             
-            self.poiNameL.text      = poiModel.cityName
+            self.poiNameL.text      = poiModel.poiName
             self.cityEnNameL.text   = poiModel.cityEnName
             self.countryL.text      = poiModel.country
             self.poiTypeL.text      = poiModel.poiType?.rawValue

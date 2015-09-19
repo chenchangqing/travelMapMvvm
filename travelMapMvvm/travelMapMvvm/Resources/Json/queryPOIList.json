@@ -15,7 +15,7 @@
      "ticketPrice":"门票35美元",
      "longitude":"121.587560439984",
      "latitude":"31.216739784766",
-     "poiType":"1",
+     "poiType":"景点",
      "cityName":"马尔代夫",
      "cityEnName":"Ma Er Dai Fu",
      "country":"澳大利亚"
@@ -32,7 +32,7 @@
      "ticketPrice":"一般35$",
      "longitude":"121.587427106208",
      "latitude":"31.20978380004",
-     "poiType":"2",
+     "poiType":"餐饮",
      "cityName":"东京",
      "cityEnName":"Dong J",
      "country":"日本"
@@ -49,7 +49,7 @@
      "ticketPrice":"261￥",
      "longitude":"121.5856271066",
      "latitude":"31.2029413491045",
-     "poiType":"3",
+     "poiType":"购物",
      "cityName":"马尔代夫",
      "cityEnName":"Ma Er Dai Fu",
      "country":"澳大利亚"
@@ -66,7 +66,7 @@
      "ticketPrice":"434￥",
      "longitude":"121.59569376976",
      "latitude":"31.1976951351251",
-     "poiType":"4",
+     "poiType":"酒店",
      "cityName":"东京",
      "cityEnName":"Dong J",
      "country":"日本"
@@ -83,7 +83,7 @@
      "ticketPrice":"23798￥",
      "longitude":"121.607960428769",
      "latitude":"31.1984934909861",
-     "poiType":"5",
+     "poiType":"活动",
      "cityName":"马尔代夫",
      "cityEnName":"Ma Er Dai Fu",
      "country":"澳大利亚"

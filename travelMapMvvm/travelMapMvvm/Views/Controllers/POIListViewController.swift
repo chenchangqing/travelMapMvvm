@@ -51,6 +51,7 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 self.tableView.reloadData()
                 
                 self.poiListViewModel.refreshCommand.execute(nil)
+                self.poiListViewModel.searchCityListCommand.execute(nil)
                 
                 break;
                 
@@ -98,7 +99,10 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 // 更新数据
                 self.poiListViewModel.poiList = any as! [POIModel]
                 
-                self.tableView.reloadData()
+                if self.poiListViewModel.poiList.count > 0 {
+                    
+                    self.poiListViewModel.resultList = self.poiListViewModel.cityList + self.poiListViewModel.poiList
+                }
                 
             }, error: { (error:NSError!) -> Void in
                 
@@ -120,7 +124,10 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 // 更新数据
                 self.poiListViewModel.poiList = any as! [POIModel]
                 
-                self.tableView.reloadData()
+                if self.poiListViewModel.poiList.count > 0 {
+                    
+                    self.poiListViewModel.resultList = self.poiListViewModel.cityList + self.poiListViewModel.poiList
+                }
                 
             }, error: { (error:NSError!) -> Void in
                 
@@ -141,6 +148,11 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 // 更新城市
                 self.poiListViewModel.cityList = any as! [CityModel]
                 
+                if self.poiListViewModel.cityList.count > 0 {
+                    
+                    self.poiListViewModel.resultList = self.poiListViewModel.cityList + self.poiListViewModel.poiList
+                }
+                
             }, error: { (error:NSError!) -> Void in
                 
                 self.poiListViewModel.failureMsg = error.localizedDescription
@@ -148,6 +160,13 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
             }, completed: { () -> Void in
                 
             })
+        }
+        
+        // 更新数据
+        RACObserve(self.poiListViewModel, "resultList").subscribeNext { (any:AnyObject!) -> Void in
+            
+            println(any)
+            self.tableView.reloadData()
         }
     }
     
@@ -198,7 +217,8 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.poiListViewModel.poiList.count
+        
+        return self.poiListViewModel.resultList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -226,11 +246,11 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         }
         
         // 解决模拟器越界 避免设置数据与reloadData时间差引起的错误
-        if indexPath.row < self.poiListViewModel.poiList.count {
+        if indexPath.row < self.poiListViewModel.resultList.count {
             
             if let reactiveView = cell as? ReactiveView {
                 
-                reactiveView.bindViewModel(self.poiListViewModel.poiList[indexPath.row])
+                reactiveView.bindViewModel(self.poiListViewModel.resultList[indexPath.row])
             }
         }
         

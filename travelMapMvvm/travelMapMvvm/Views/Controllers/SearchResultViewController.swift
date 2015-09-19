@@ -57,6 +57,7 @@ class SearchResultViewController: THSegmentedPager {
             // 查询
             self.strategyListViewController.strategyListViewModel.refreshCommand.execute(nil)
             self.poiListViewController.poiListViewModel.refreshCommand.execute(nil)
+            self.poiListViewController.poiListViewModel.searchCityListCommand.execute(nil)
         }
     }
 

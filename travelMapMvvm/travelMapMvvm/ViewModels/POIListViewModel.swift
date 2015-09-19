@@ -23,8 +23,10 @@ class POIListViewModel: RVMViewModel {
     
     // MARK: - POI列表
     
-    dynamic var poiList = [POIModel]()
-    dynamic var cityList = [CityModel]()
+    dynamic var poiList = [AnyObject]()
+    dynamic var cityList = [AnyObject]()
+    
+    dynamic var resultList = [AnyObject]()
     
     // MARK: - Commands
     
