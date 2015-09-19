@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -17,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ8-uU-2XD">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="kmR-uw-4Uj" kind="embed" id="zg0-ZK-tFV"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5S-AQ-tjv" customClass="CJSelectionCollectionView" customModule="travelMapMvvm" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,19 +32,46 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b5S-AQ-tjv" firstAttribute="top" secondItem="t4j-xW-MBI" secondAttribute="top" constant="64" id="6zJ-Q5-0o6"/>
+                            <constraint firstItem="CJ8-uU-2XD" firstAttribute="leading" secondItem="t4j-xW-MBI" secondAttribute="leading" placeholder="YES" id="HpY-Ad-c7U"/>
+                            <constraint firstItem="CJ8-uU-2XD" firstAttribute="top" secondItem="llG-pz-RWM" secondAttribute="bottom" constant="64" placeholder="YES" id="PUf-X6-n5O"/>
                             <constraint firstItem="b5S-AQ-tjv" firstAttribute="leading" secondItem="t4j-xW-MBI" secondAttribute="leading" id="RIJ-IG-Edc"/>
                             <constraint firstAttribute="trailing" secondItem="b5S-AQ-tjv" secondAttribute="trailing" id="RvL-ew-fKM"/>
                             <constraint firstItem="zhB-53-7aa" firstAttribute="top" secondItem="b5S-AQ-tjv" secondAttribute="bottom" id="YJZ-5f-yCQ"/>
+                            <constraint firstItem="zhB-53-7aa" firstAttribute="top" secondItem="CJ8-uU-2XD" secondAttribute="bottom" placeholder="YES" id="pAB-u6-1S9"/>
+                            <constraint firstAttribute="trailing" secondItem="CJ8-uU-2XD" secondAttribute="trailing" placeholder="YES" id="rcg-Dq-96y"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="selectionCollectionView" destination="b5S-AQ-tjv" id="rvV-87-Gj9"/>
+                        <segue destination="gen-DO-gSI" kind="custom" identifier="FromSearchViewControllerToStrategyDetailViewController" customClass="RBStoryboardPushSegue" id="XPh-kv-MjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBR-1F-ShV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="354"/>
+            <point key="canvasLocation" x="316.5" y="353.5"/>
+        </scene>
+        <!--StrategyDetail Storyboard Link-->
+        <scene sceneID="bIh-5i-Lep">
+            <objects>
+                <viewController id="gen-DO-gSI" userLabel="StrategyDetail Storyboard Link" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AlU-BJ-iD1"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyk-9V-lOf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BZm-Ya-g13">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="StrategyDetail"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L77-lt-OGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955.5" y="-403.5"/>
         </scene>
         <!--Search Result View Controller-->
         <scene sceneID="M1f-1c-4Ch">
@@ -58,6 +92,12 @@
                                     <constraint firstAttribute="height" constant="40" id="bWL-wp-CWk"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFm-S5-MZt" userLabel="StrategyList Container View">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4w3-7a-Tte" userLabel="POIList Container View">
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haY-HJ-f0K">
                                 <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,14 +105,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ozn-e4-yRX" firstAttribute="top" secondItem="4w3-7a-Tte" secondAttribute="bottom" placeholder="YES" id="6GW-V0-GGY"/>
+                            <constraint firstItem="RFm-S5-MZt" firstAttribute="top" secondItem="LRj-S8-lke" secondAttribute="bottom" constant="104" id="6gw-N2-e8V"/>
+                            <constraint firstItem="ozn-e4-yRX" firstAttribute="top" secondItem="RFm-S5-MZt" secondAttribute="bottom" id="6in-pF-gHQ"/>
+                            <constraint firstItem="RFm-S5-MZt" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" placeholder="YES" id="8Pg-uf-QnX"/>
                             <constraint firstAttribute="trailing" secondItem="LRj-S8-lke" secondAttribute="trailing" id="Fu3-N2-eVV"/>
                             <constraint firstItem="haY-HJ-f0K" firstAttribute="top" secondItem="LRj-S8-lke" secondAttribute="bottom" id="IWa-zJ-22c"/>
+                            <constraint firstItem="ozn-e4-yRX" firstAttribute="top" secondItem="RFm-S5-MZt" secondAttribute="bottom" placeholder="YES" id="N4b-qs-0WH"/>
+                            <constraint firstItem="RFm-S5-MZt" firstAttribute="top" secondItem="LRj-S8-lke" secondAttribute="bottom" placeholder="YES" id="Tu0-CL-MwQ"/>
                             <constraint firstItem="haY-HJ-f0K" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" id="aIZ-YG-SbH"/>
+                            <constraint firstItem="4w3-7a-Tte" firstAttribute="top" secondItem="LRj-S8-lke" secondAttribute="bottom" placeholder="YES" id="asu-xk-fof"/>
+                            <constraint firstAttribute="trailing" secondItem="RFm-S5-MZt" secondAttribute="trailing" placeholder="YES" id="dcX-d4-XRL"/>
                             <constraint firstItem="ozn-e4-yRX" firstAttribute="top" secondItem="haY-HJ-f0K" secondAttribute="bottom" id="hFP-6V-ZkT"/>
                             <constraint firstItem="LRj-S8-lke" firstAttribute="top" secondItem="rl3-vR-RwE" secondAttribute="top" id="jLt-I9-iB0"/>
+                            <constraint firstAttribute="trailing" secondItem="4w3-7a-Tte" secondAttribute="trailing" placeholder="YES" id="m0i-8K-NNI"/>
+                            <constraint firstItem="RFm-S5-MZt" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leadingMargin" id="qUs-Ia-rHf"/>
                             <constraint firstAttribute="trailing" secondItem="haY-HJ-f0K" secondAttribute="trailing" id="rac-Jk-Zxp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RFm-S5-MZt" secondAttribute="trailing" id="s7R-gn-A9C"/>
+                            <constraint firstItem="4w3-7a-Tte" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" placeholder="YES" id="vTD-uV-Q9u"/>
                             <constraint firstItem="LRj-S8-lke" firstAttribute="leading" secondItem="rl3-vR-RwE" secondAttribute="leading" id="xB7-2h-hWT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6gw-N2-e8V"/>
+                                <exclude reference="qUs-Ia-rHf"/>
+                                <exclude reference="s7R-gn-A9C"/>
+                                <exclude reference="6in-pF-gHQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -83,6 +143,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tJ-ds-Ehw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955.5" y="353.5"/>
+        </scene>
+        <!--POIDetail Storyboard Link-->
+        <scene sceneID="Elf-A9-mkV">
+            <objects>
+                <viewController id="EXE-6T-Pf3" userLabel="POIDetail Storyboard Link" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f2O-s6-aJt"/>
+                        <viewControllerLayoutGuide type="bottom" id="jxj-Kj-oDq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oDW-lX-0Wn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="POIDetail"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="v0G-r0-ilc" kind="custom" identifier="FromSearchViewControllerToPOIDetailViewController" customClass="RBStoryboardPushSegue" id="1Xr-73-kl3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZeG-y5-9Rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955.5" y="1109.5"/>
         </scene>
     </scenes>
 </document>

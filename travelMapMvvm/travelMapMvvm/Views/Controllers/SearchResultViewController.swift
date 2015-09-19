@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import RBStoryboardLink
 
 class SearchResultViewController: THSegmentedPager {
     
     // MARK: - View Model
     
-    var searchResultViewModel: SearchResultViewModel!
+    var searchResultViewModel = SearchResultViewModel()
     
     // MARK: - 搜索结果控制器
     
@@ -31,13 +32,11 @@ class SearchResultViewController: THSegmentedPager {
     
     private func setUp() {
         
-        strategyListViewController = UIViewController.getViewController("Main", identifier: "StrategyListViewController") as! StrategyListViewController
+        strategyListViewController = UIViewController.getViewController("StrategyList", identifier: "StrategyListViewController")  as! StrategyListViewController
         strategyListViewController.title = "攻略"
-        strategyListViewController.strategyListViewModel = StrategyListViewModel(paramTuple: (QueryTypeEnum.StrategyListByKeyword,self.searchResultViewModel.keyword))
         
         poiListViewController = UIViewController.getViewController("POIList", identifier: "POIListViewController") as! POIListViewController
         poiListViewController.title = "目的地"
-        poiListViewController.poiListViewModel = POIListViewModel(paramTuple: (QueryTypeEnum.POIListByKeyword, poiType: nil, param: self.searchResultViewModel.keyword))
         
         self.pages = NSMutableArray(array: [strategyListViewController,poiListViewController])
         

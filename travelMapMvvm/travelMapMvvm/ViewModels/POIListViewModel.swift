@@ -37,7 +37,7 @@ class POIListViewModel: RVMViewModel {
     
     // MARK: - Init
     
-    init(paramTuple:(queryType:QueryTypeEnum, poiType:POITypeEnum?, param:String)) {
+    init(paramTuple:(queryType:QueryTypeEnum, poiType:POITypeEnum?, param:String)=(QueryTypeEnum.POIListByKeyword,nil,"")) {
         
         self.paramTuple = paramTuple
         

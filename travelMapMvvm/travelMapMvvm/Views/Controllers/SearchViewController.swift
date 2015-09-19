@@ -55,8 +55,7 @@ class SearchViewController: UIViewController,UISearchDisplayDelegate, UISearchBa
     
     private func setUpSearchResultViewController() {
         
-        searchResultViewController = UIViewController.getViewController("Search", identifier: "SearchResultViewController") as! SearchResultViewController
-        searchResultViewController.searchResultViewModel = SearchResultViewModel()
+        searchResultViewController = self.childViewControllers[0] as! SearchResultViewController
     }
     
     // MARK: - Set Up SearchDisplayController

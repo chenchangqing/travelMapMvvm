@@ -96,12 +96,15 @@ class StrategyListViewController: UITableViewController {
             return
         }
         
-        for item in enumerate(self.navigationController!.view.subviews) {
+        if let navigationController=self.navigationController {
             
-            if let footer=item.element as? IndexViewFooter {
+            for item in enumerate(navigationController.view.subviews) {
                 
-                self.footer = footer
-                break
+                if let footer=item.element as? IndexViewFooter {
+                    
+                    self.footer = footer
+                    break
+                }
             }
         }
         

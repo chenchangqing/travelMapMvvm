@@ -13,7 +13,7 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     
     // MARK: - View Model
     
-    var poiListViewModel: POIListViewModel!    
+    var poiListViewModel = POIListViewModel()
     
     // MARK: - Cell Identifier
     
