@@ -219,10 +219,58 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="uMv-Lp-EN5" kind="custom" identifier="FromPOIListViewControllerToPOIDetailViewController" customClass="RBStoryboardPushSegue" id="r4F-ho-PQO"/>
+                        <segue destination="6jn-uM-9b7" kind="custom" identifier="FromPOIListViewControllerToPOIContainerController" customClass="RBStoryboardPushSegue" id="Nto-Co-mLl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71m-7r-MtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4947.5" y="-146.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="lTT-XI-sJt">
+            <objects>
+                <viewController id="6jn-uM-9b7" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dd7-7m-bEf"/>
+                        <viewControllerLayoutGuide type="bottom" id="xuU-4V-J6v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GBe-ah-xeP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="POIContainer"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVN-Tx-Qhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5453.5" y="-514.5"/>
+        </scene>
+        <!--Storyboard Link-->
+        <scene sceneID="PUf-bU-wxf">
+            <objects>
+                <viewController id="uMv-Lp-EN5" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rgi-qv-T6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="rPK-j5-Fwh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g1R-PA-AdS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="POIDetail"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02w-Oi-hg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5453.5" y="259.5"/>
         </scene>
     </scenes>
 </document>

@@ -940,14 +940,14 @@
 			children = (
 				E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */,
 				E659F4A21B8CEFFF005CD9FD /* StrategyList.storyboard */,
+				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
+				E6B039E01BA947E90047DF2A /* POIList.storyboard */,
+				E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */,
+				E6E094BA1BA595E600B874CE /* POIDetail.storyboard */,
+				E6849E8B1BA29AC400A5631B /* POIMap.storyboard */,
 				E6A46F1C1B94994A00BA089B /* Login.storyboard */,
 				E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */,
-				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
-				E6849E8B1BA29AC400A5631B /* POIMap.storyboard */,
-				E6E094BA1BA595E600B874CE /* POIDetail.storyboard */,
 				E65673061BA6B96D004E2C58 /* CommentForm.storyboard */,
-				E6E1F0C11BA848B20010F316 /* POIContainer.storyboard */,
-				E6B039E01BA947E90047DF2A /* POIList.storyboard */,
 				E6217E691BAA6A0E004936FA /* Search.storyboard */,
 			);
 			path = Storyborads;

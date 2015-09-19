@@ -31,6 +31,33 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         shouldLoadData()
     }
     
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == kSegueFromPOIListViewControllerToPOIDetailViewController {
+            
+            if let poiModel = sender as? POIModel {
+                
+                let poiDetailViewController = segue.destinationViewController as! POIDetailViewController
+                poiDetailViewController.poiDetailViewModel = POIDetailViewModel(poiModel: poiModel)
+            }
+            
+            if let cityModel = sender as? CityModel {
+                
+            }
+        }
+        
+        if segue.identifier == kSegueFromPOIListViewControllerToPOIContainerController {
+            
+            if let cityModel = sender as? CityModel {
+                
+                let poiContainerController = segue.destinationViewController as! POIContainerController
+                poiContainerController.poiContainerViewModel = POIContainerViewModel(paramTuple:  (QueryTypeEnum.POIListByCityId, param: cityModel.cityId!))
+            }
+        }
+    }
+    
     // MARK: - 首次进入是否应该加载数据
     
     private func shouldLoadData() {
@@ -165,7 +192,6 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         // 更新数据
         RACObserve(self.poiListViewModel, "resultList").subscribeNext { (any:AnyObject!) -> Void in
             
-            println(any)
             self.tableView.reloadData()
         }
     }
@@ -262,6 +288,16 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if let poiModel = self.poiListViewModel.resultList[indexPath.row] as? POIModel {
+            
+            self.performSegueWithIdentifier(kSegueFromPOIListViewControllerToPOIDetailViewController, sender: poiModel)
+        }
+        
+        if let cityModel = self.poiListViewModel.resultList[indexPath.row] as? CityModel {
+            
+            self.performSegueWithIdentifier(kSegueFromPOIListViewControllerToPOIContainerController, sender: cityModel)
+        }
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
