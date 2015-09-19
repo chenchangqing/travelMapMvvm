@@ -162,27 +162,31 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
             let failureMsg  = tuple.first as! String
             let successMsg  = tuple.second as! String
             
-            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool || tuple.fifth as! Bool
+            let isLoading   = tuple.third as! Bool || tuple.fourth as! Bool
             
             if isLoading {
                 
-                self.showHUDIndicator()
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController?.showHUDIndicator()
+                //                self.showHUDIndicator()
             } else {
                 
                 if failureMsg.isEmpty && successMsg.isEmpty {
                     
-                    self.hideHUD()
+                    (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController?.hideHUD()
+                    //                    self.hideHUD()
                 }
             }
             
             if !failureMsg.isEmpty {
                 
-                self.showHUDErrorMessage(failureMsg)
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController?.showHUDErrorMessage(failureMsg)
+                //                self.showHUDErrorMessage(failureMsg)
             }
             
             if !successMsg.isEmpty {
                 
-                self.showHUDMessage(successMsg)
+                (UIApplication.sharedApplication().delegate as! AppDelegate).window?.rootViewController?.showHUDErrorMessage(successMsg)
+                //                self.showHUDMessage(successMsg)
             }
         }
     }
@@ -230,6 +234,11 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
     }
     
     // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
