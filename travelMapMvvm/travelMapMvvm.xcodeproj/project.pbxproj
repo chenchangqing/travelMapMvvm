@@ -71,7 +71,7 @@
 		E659F4CD1B8CEFFF005CD9FD /* StrategyTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */; };
 		E659F4CE1B8CEFFF005CD9FD /* StrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */; };
 		E659F4D01B8CEFFF005CD9FD /* queryStrategyList.json in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */; };
-		E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* Main.storyboard */; };
+		E659F4D11B8CEFFF005CD9FD /* StrategyList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E659F4A21B8CEFFF005CD9FD /* StrategyList.storyboard */; };
 		E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E659F4DD1B8CF008005CD9FD /* Info.plist */; };
 		E66575F51B9F147F00C44CAC /* ValidHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F41B9F147F00C44CAC /* ValidHelper.swift */; };
 		E66575F71B9F175F00C44CAC /* ForgetPwdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */; };
@@ -240,6 +240,7 @@
 		E6B04FF11B9E869000B3415B /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF01B9E869000B3415B /* country.plist */; };
 		E6B04FF31B9E86A700B3415B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6B04FF21B9E86A700B3415B /* Localizable.strings */; };
 		E6B04FF71B9EB9DC00B3415B /* VerifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */; };
+		E6B7BDA41BAD290300D4E5F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */; };
 		E6BCCC311BA05F6B00238124 /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */; };
 		E6BCCC331BA07CB600238124 /* StrategyDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */; };
 		E6BCCC351BA07D7E00238124 /* StrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */; };
@@ -355,7 +356,7 @@
 		E659F49A1B8CEFFF005CD9FD /* StrategyTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyTypeEnum.swift; sourceTree = "<group>"; };
 		E659F49B1B8CEFFF005CD9FD /* StrategyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyModel.swift; sourceTree = "<group>"; };
 		E659F4A01B8CEFFF005CD9FD /* queryStrategyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = queryStrategyList.json; sourceTree = "<group>"; };
-		E659F4A21B8CEFFF005CD9FD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E659F4A21B8CEFFF005CD9FD /* StrategyList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyList.storyboard; sourceTree = "<group>"; };
 		E659F4DD1B8CF008005CD9FD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66575F41B9F147F00C44CAC /* ValidHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidHelper.swift; sourceTree = "<group>"; };
 		E66575F61B9F175F00C44CAC /* ForgetPwdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewModel.swift; sourceTree = "<group>"; };
@@ -558,6 +559,7 @@
 		E6B04FF01B9E869000B3415B /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
 		E6B04FF21B9E86A700B3415B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E6B04FF61B9EB9DC00B3415B /* VerifyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewModel.swift; sourceTree = "<group>"; };
+		E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E6BCCC301BA05F6B00238124 /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StrategyDetail.storyboard; sourceTree = "<group>"; };
 		E6BCCC341BA07D7E00238124 /* StrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyDetailViewController.swift; sourceTree = "<group>"; };
@@ -936,7 +938,8 @@
 		E659F4A11B8CEFFF005CD9FD /* Storyborads */ = {
 			isa = PBXGroup;
 			children = (
-				E659F4A21B8CEFFF005CD9FD /* Main.storyboard */,
+				E6B7BDA31BAD290300D4E5F1 /* Main.storyboard */,
+				E659F4A21B8CEFFF005CD9FD /* StrategyList.storyboard */,
 				E6A46F1C1B94994A00BA089B /* Login.storyboard */,
 				E6EB10191B9FCAAB009FA27F /* ModifyUserInfo.storyboard */,
 				E6BCCC321BA07CB600238124 /* StrategyDetail.storyboard */,
@@ -1597,7 +1600,8 @@
 				E659F4DE1B8CF008005CD9FD /* Info.plist in Resources */,
 				E604002F1B9BE0A400C3C0A8 /* WeiboSDK.bundle in Resources */,
 				E687631D1B9971220006DD3D /* qqLogin.json in Resources */,
-				E659F4D11B8CEFFF005CD9FD /* Main.storyboard in Resources */,
+				E6B7BDA41BAD290300D4E5F1 /* Main.storyboard in Resources */,
+				E659F4D11B8CEFFF005CD9FD /* StrategyList.storyboard in Resources */,
 				E687631A1B996F990006DD3D /* telephoneLogin.json in Resources */,
 				E6B04FF11B9E869000B3415B /* country.plist in Resources */,
 				E60400361B9BE25600C3C0A8 /* readme.txt in Resources */,
