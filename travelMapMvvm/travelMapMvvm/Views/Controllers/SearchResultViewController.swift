@@ -34,10 +34,13 @@ class SearchResultViewController: THSegmentedPager {
         
         strategyListViewController = UIViewController.getViewController("StrategyList", identifier: "StrategyListViewController")  as! StrategyListViewController
         strategyListViewController.title = "攻略"
+        self.addChildViewController(strategyListViewController)
+        strategyListViewController.didMoveToParentViewController(self)
         
         poiListViewController = UIViewController.getViewController("POIList", identifier: "POIListViewController") as! POIListViewController
         poiListViewController.title = "目的地"
-        
+        self.addChildViewController(poiListViewController)
+        poiListViewController.didMoveToParentViewController(self)
         
         // 设置参数
         self.strategyListViewController.strategyListViewModel.paramTuple = (QueryTypeEnum.StrategyListByKeyword,self.searchResultViewModel.keyword)

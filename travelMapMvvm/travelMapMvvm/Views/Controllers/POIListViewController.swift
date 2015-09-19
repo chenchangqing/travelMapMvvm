@@ -269,5 +269,21 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
         
         return self.title
     }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y != 0 {
+            
+            if let searchViewController = self.parentViewController?.parentViewController?.parentViewController as? SearchViewController {
+                
+                if searchViewController.mySearchDisplayController.searchBar.isFirstResponder() {
+                    
+                    searchViewController.mySearchDisplayController.searchBar.resignFirstResponder()
+                }
+            }
+        }
+    }
 
 }
