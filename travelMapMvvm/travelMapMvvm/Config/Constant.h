@@ -42,8 +42,6 @@
 #define kSegueFromPOIDetailViewControllerToPOIContainerController @"FromPOIDetailViewControllerToPOIContainerController"
 #define kSegueFromPOIContainerControllerToListPOITypeViewController @"FromPOIContainerControllerToListPOITypeViewController"
 #define kSegueFromPOIContainerControllerToMapPOITypeViewController @"FromPOIContainerControllerToMapPOITypeViewController"
-#define kSegueFromSearchViewControllerToPOIDetailViewController @"FromSearchViewControllerToPOIDetailViewController"
-#define kSegueFromSearchViewControllerToStrategyDetailViewController @"FromSearchViewControllerToStrategyDetailViewController"
 
 // operation key
 #define kLoginUserKey @"loginUserKey"                                                           // 登录用户key(保存用户信息在NSUserDefaultStand)

@@ -38,11 +38,16 @@ class SearchResultViewController: THSegmentedPager {
         poiListViewController = UIViewController.getViewController("POIList", identifier: "POIListViewController") as! POIListViewController
         poiListViewController.title = "目的地"
         
+        
+        // 设置参数
+        self.strategyListViewController.strategyListViewModel.paramTuple = (QueryTypeEnum.StrategyListByKeyword,self.searchResultViewModel.keyword)
+        self.poiListViewController.poiListViewModel.paramTuple = (QueryTypeEnum.POIListByKeyword, poiType: nil, param: self.searchResultViewModel.keyword)
+        
         self.pages = NSMutableArray(array: [strategyListViewController,poiListViewController])
         
         RACObserve(self.searchResultViewModel, "keyword").ignore("").subscribeNextAs { (keyword:NSString) -> () in
             
-            // 设置参数
+            // 更新参数
             self.strategyListViewController.strategyListViewModel.paramTuple = (QueryTypeEnum.StrategyListByKeyword,self.searchResultViewModel.keyword)
             self.poiListViewController.poiListViewModel.paramTuple = (QueryTypeEnum.POIListByKeyword, poiType: nil, param: self.searchResultViewModel.keyword)
             

@@ -68,6 +68,9 @@ class StrategyListViewController: UITableViewController {
                 
             case .StrategyListByKeyword:
                 
+                self.strategyListViewModel.strategyList = []
+                self.tableView.reloadData()
+                
                 break;
                 
             default:

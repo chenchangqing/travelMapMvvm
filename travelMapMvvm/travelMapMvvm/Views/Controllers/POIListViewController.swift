@@ -46,6 +46,10 @@ class POIListViewController: UITableViewController,THSegmentedPageViewController
                 
             case .POIListByKeyword:
                 
+                
+                self.poiListViewModel.poiList = []
+                self.tableView.reloadData()
+                
                 self.poiListViewModel.refreshCommand.execute(nil)
                 
                 break;
